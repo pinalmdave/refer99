@@ -1,0 +1,52 @@
+<ion-content class="redapp_bg">
+    <div class="row">
+        <div class="logo_account">
+            <a ui-sref="#"><img src="images/redlogo@x.png"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center login">
+            <form name="loginForm">
+                <div class="list">
+                    <label class="item item-input user_name">
+                        <input type="email" name="userEmail" placeholder="Email" ng-model="userEmail" required>
+                    </label>
+                    <label class="item item-input user_pass">
+                        <input type="password" name="password" placeholder="Password" ng-model="password" required>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col forgot text-center" ui-sref="app.screen25">
+            <p>Forgot Password?</p>
+        </div>
+    </div>
+    <div class="padding">
+        <p ng-show="loginForm.userEmail.$error.required">* Email is required</p>
+        <p ng-show="loginForm.userEmail.$invalid && !loginForm.userEmail.$pristine">* Invalid email address</p>
+        <p ng-show="loginForm.password.$error.required">* Password is required</p>
+        <p ng-show="invalidUserPass">* Invalid email or password</p>
+    </div>
+    <div class="row ">
+        <div class=" col Sign_in text-center padding_remove">
+            <button class="button" ng-click="loginForm.$valid && login(userEmail,password)"> SIGN IN </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col or_option text-center">
+            <p><span></span>or<span></span></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col Facebook text-center padding_remove">
+            <button class="button" ui-sref="app.screen25"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class=" col text-center dont_have">
+            <h2>Don't have an account? <span>SIGN UP</span></h2>
+        </div>
+    </div>
+</ion-content>

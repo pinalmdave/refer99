@@ -1,0 +1,142 @@
+.loader {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]{ background: #FFF!important;}
+
+.title{color:#2b3b4e!important; font-size:21px!important; text-align:center!important; margin:0px; padding:0px; right:0px!important; left:0px!important;}
+.redapp_bg{ background: url(../images/bg_white@3x.png); background-size: cover; background-position: center top; background-repeat: no-repeat; height: 100%; padding: 0px 32px!important; }
+.logo_frist{ width: 100%; text-align: center; padding:170px 0px 0px 0px;}
+.create_account button{ background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 20px; width:100%!important; margin: 70px 0px 0px 0px; font-family: 'Open Sans', sans-serif; }
+
+.frist_time h4{ color: #333237; font-size: 18px; padding:0px; font-weight: 500; margin: 0px; padding:160px 0px 15px 0px; font-family: 'Open Sans', sans-serif;}
+.frist_time h3{ color: #FE3B69; font-size: 22px; padding:0px; margin: 0px; font-weight: bold; letter-spacing: 1px; font-family: 'Open Sans', sans-serif;}
+.frist_time p{ color: #C6C6C6; font-size: 12px; padding:0px; margin: 0px; font-weight: 400; padding:10px 0px; font-family: 'Open Sans', sans-serif;}
+.frist_time p a{ text-decoration: underline; color: #C6C6C6;}
+
+.login{ padding:50px 0px 0px 0px;}
+.logo_account{ width: 100%; text-align: center; padding:73px 0px 0px 0px;}
+.login label{ margin: 0px auto; padding:0px; width: 100%;}
+.user_name input{ border-top: 1px solid #B5B5B5!important; border-left: 1px solid #B5B5B5 !important; border-right: 1px solid #B5B5B5 !important; border-bottom: 0px solid #B5B5B5 !important; border-top-right-radius: 3px!important; border-top-left-radius: 3px!important; padding:0px 0px 0px 10px!important; height: 50px!important; font-family: 'Open Sans', sans-serif!important;}
+.user_pass input{ border-top: 1px solid #B5B5B5!important; border-left: 1px solid #B5B5B5!important; border-right: 1px solid #B5B5B5!important; border-bottom: 1px solid #B5B5B5!important; border-bottom-right-radius: 3px!important; border-bottom-left-radius: 3px!important; padding:0px 0px 0px 10px!important;  height: 50px!important; width: 340px!important; font-family: 'Open Sans', sans-serif!important;}
+
+.forgot p{ color: #B5B5B5;  font-size: 15px; font-weight: 300; margin: 0px; padding:10px 0px; letter-spacing: 1px; font-family: 'Open Sans', sans-serif; }
+
+.Sign_in button{ background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif;  font-weight: 600;}
+
+.or_option p span{ border-top: 1px solid #B5B5B5; display: inline-block;  width: 104px; margin: 0px 11px; position: relative; top: -4px;}
+.or_option p{color: #B5B5B5; font-size: 15px; font-weight: normal; margin: 0px; padding:10px 10px; letter-spacing: 0px;}
+
+.Facebook button{ background:#3A5999; border: 1px solid #3A5999; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 20px; width:100%!important; margin: 0px 0px 0px 0px; letter-spacing: 1px; font-weight: 300;  font-family: 'Open Sans', sans-serif;}
+.Facebook button span img{     position: relative; top: 5px; right: 10px; }
+.Facebook button span{ font-weight: bold;  font-family: 'Open Sans', sans-serif; text-transform: uppercase;}
+.dont_have h2{ color: #3C474D; font-size: 17px; font-weight: 300; margin: 0px; padding:30px 0px 0px 0px; font-family: 'Open Sans', sans-serif; }
+.dont_have h2 span{ font-weight: bold; letter-spacing: 1px; font-family: 'Open Sans', sans-serif; }
+
+.forgot_email input{ border: 1px solid #B5B5B5; border-radius: 3px; padding:0px 0px 0px 10px; height: 50px; margin: 20px 0px 10px 0px; font-family: 'Open Sans', sans-serif;  }
+.forgott p{ color: #363636; font-size: 17px; font-weight: normal; line-height: 24px; font-family: 'Open Sans', sans-serif;}
+.forgott{ padding:20px 0px 0px 0px;}
+.close{ float: right;    padding: 13px 10px 0px 0px;}
+
+.mail input{ border-top: 1px solid #B5B5B5; border-left: 1px solid #B5B5B5; border-right: 1px solid #B5B5B5; border-bottom: 0px solid #B5B5B5; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; padding:0px 0px 0px 10px; height: 50px; }
+
+.up_pass input{ border-top: 1px solid #B5B5B5; border-left: 1px solid #B5B5B5; border-right: 1px solid #B5B5B5; border-bottom: 1px solid #B5B5B5; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; padding:0px 0px 0px 10px; height: 50px;  margin-bottom:15px;}
+
+.custom_header{ height: 130px!important; position: fixed!important; z-index: 9999!important; }
+.plus{ text-align: center; cursor: pointer;}
+.plus h2{color: #5B5A63; font-size: 13px; margin: 0px; font-weight: 300; padding: 0px; line-height: 16px; letter-spacing: 1px; font-family: 'Open Sans', sans-serif;}
+
+.blank_body{ padding:370px 0px 370px 0px!important;}
+.blank_body h6{ color: #363636; font-size: 18px; margin: 0px; padding:0px; font-weight: 300; line-height: 28px; font-family: 'Open Sans', sans-serif;}
+
+.nav_background{ background: url(../images/navbar@2x.png); height: 100px; background-size: cover;  background-position: center top; background-repeat: no-repeat;  padding: 54px 0px 0px 0px;}
+.foter_menu{ text-align: center;}
+.foter_main{text-align: center;position: relative; top: -51px; left: 2px; background: #0ACD8D; border-radius: 100px; width: 65px; height: 65px;  }
+.foter_main img{ padding: 21px 0px 0px 1px;}
+.card{width: 100%!important; height: 73px!important; border: 1px solid #E8E8E8; margin: 0px; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8;}
+.background_color{ background: #F3F3F3; height: 100%;}
+.padding_remove{padding: 0px!important;}
+.pink_bar input{color: #f3f3f2;}
+.margin_top{ margin: 20px 0px 0px 0px;}
+.campagin{width: 100%; float: left; padding: 12px 0px 0px 0px;}
+.campagin img{float: left; padding: 13px 0px 0px 33px;}
+.campagin h3{padding: 13px 0px 0px 86px; font-family: 'Roboto', sans-serif; font-size: 18px; color: #2b3b4e; font-weight: normal; margin: 0px; line-height: 24px; letter-spacing: 1px; }
+.campagin h4{padding: 13px 0px 0px 86px; font-family: 'Roboto', sans-serif; font-size: 18px; color: #A0A0A0; font-weight: normal; margin: 0px; line-height: 24px; letter-spacing: 1px; }
+
+.margin_top select {z-index: 9999; float: right; width: 78%; height: 50px; position: absolute; border: 0px; font-size: 18px; padding: 0px 0px 0px 25px; margin: 0px 0px 0px 0px; font-size: 18px; color: #2b3b4e; font-weight: normal;  font-family: 'Roboto', sans-serif;}
+.discount select {z-index: 9999; float: right; width: 78%; height: 50px; position: absolute; border: 0px; font-size: 18px; padding: 0px 0px 0px 25px; margin: 0px 0px 0px 0px; font-size: 18px; color: #A0A0A0; font-weight: normal;  font-family: 'Roboto', sans-serif;}
+.drop_foter{ background: #00CC87; text-align: center; height: 60px; }
+.preview{color: #FFF!important; font-size: 20px!important; font-weight: normal!important; padding: 11px 0px!important; margin: 0px;  letter-spacing: 1px;  font-family: 'Open Sans', sans-serif;}
+
+.campagin_INFO_HEIGHT{width: 100%!important; height: 300px!important; border: 1px solid #E8E8E8; margin: 30px 0px 0px 0px; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 20px;}
+.campagin_INFO{width: 100%; float: left; padding: 12px 0px 0px 0px;}
+.campagin_INFO h2{padding: 0px 0px 0px 0px;  font-family: 'Roboto', sans-serif; font-size: 18px; color: #A0A0A0; font-weight: 300; margin: 0px; line-height: 33px; letter-spacing: 1px; }
+.campagin_INFO h3{padding: 0px 0px 0px 0px; font-family: 'Roboto', sans-serif; font-size: 16px; color: #2b3b4e; font-weight: 600; margin: 0px; line-height: 33px; letter-spacing: 1px; }
+.share_background{ background: #f3f3f2; padding: 0px 14px }
+.piza_screen{ padding: 20px 0px 0px 0px; text-align: center;}
+.piza_screen h2{ font-size: 21px; color: #2b3b4e; font-weight: 400; margin: 0px; padding: 0px; letter-spacing: 1px; font-family: 'Roboto', sans-serif; }
+.piza_screen h2 span{ color: #ff3b69; padding: 0px 0px 0px 10px; font-family: 'Roboto', sans-serif;}
+.piza_screen p{ color: #b0b0b0; font-size: 17px; font-weight: 500; padding: 9px 0px 0px 0px;  line-height: 25px!important; }
+.whtasapp img {position: relative; top: 6px; right: 11px; }
+.whtasapp button{ background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 19px; text-align: center; padding:0px 0px; height: 55px; width: 340px!important; margin: 0px 0px 0px 0px; letter-spacing: 1px; font-weight: 500; font-family: 'Roboto', sans-serif;}
+.whtasapp p{ color: #b0b0b0; font-size: 14px; font-weight: 300; padding: 15px 0px 0px 0px;  line-height: 25px!important; font-family: 'Roboto', sans-serif;}
+
+.piza_coupon{ text-align: center; background: url(../images/Rectangle@x.png); height: 335px; background-repeat: no-repeat; background-size: cover; background-position: center top;}
+.piza_coupon h1{ color: #FFF; margin: 0px; padding: 30px 0px 0px 0px; font-size: 27px; font-weight: bold; line-height: 32px; font-family: 'Roboto', sans-serif;}
+.piza_coupon p{ color: #FFF; margin: 0px; padding: 0px 0px 0px 0px; font-size: 15px; font-weight: bold; line-height: 24px; font-family: 'Open Sans', sans-serif;}
+.piza_coupon h2{font-size: 29px; color: #2b3b4e; font-weight: 600; margin: 0px; padding: 30px 0px 0px 0px; letter-spacing: 1px; font-family: 'Open Sans', sans-serif;}
+.piza_coupon h4{font-size: 18px; color: #2b3b4e; font-weight: bold; margin: 0px; padding: 6px 0px 0px 0px; letter-spacing: 1px;}
+.piza_coupon h5{padding: 1px 0px 3px 0px; font-size: 14px; color: #A0A0A0; font-weight: normal; margin: 0px; line-height: 25px; letter-spacing: 1px; }
+
+.eleps_icon img{ padding: 0px; width: 51%;}
+.edit{ width: 114px!important; float: left; background: #2A3B4D; text-align: center; padding: 23px 0px 0px 0px!important; height: 69px!important; }
+.edit a{color: #FFF; font-size: 18px; padding: 0px; margin: 0px; text-decoration: none; font-weight: 400; letter-spacing: 1px; font-family: 'Roboto', sans-serif;}
+.gernate{ width: 300px; background: #FF3B69; text-align: center; padding: 23px 0px 0px 0px !important; height: 69px !important; font-family: 'Roboto', sans-serif;}
+.gernate a{color: #FFF; font-size: 18px; font-weight: 400;  padding: 0px; margin: 0px; text-decoration: none; letter-spacing: 1px;}
+.gernate_edit{ height: 60px!important;}
+.lock img{padding: 10px 0px 0px 35px;}
+.logout button{ background: #ff3b69; margin: 30px 0px 0px 0px; border: 1px solid #ff3b69; width: 100%; color: #FFF; font-size: 18px; height: 65px; text-align: center; padding: 2px 0px 0px 0px; font-family: 'Roboto', sans-serif; font-weight: 300; text-transform: uppercase;}
+.foter_main_disable{text-align: center;position: relative; top: -51px; left: 2px; background: #d5d5d5; border-radius: 100px; width: 65px; height: 65px;  }
+.foter_main_disable img{ padding: 21px 0px 0px 1px;}
+.SAVE_CHANGES{ background: #00CC87; height: 60px; border: 1px solid #00CC87; color: #FFF; font-size: 18px; margin: 0px; padding: 0px;}
+.SAVE_CHANGES button{ background: #00CC87;  width: 100%; letter-spacing: 1px; border: 1px solid #00CC87; color: #FFF; font-size: 21px; margin: 0px; padding: 14px 0px 0px 0px;  font-family: 'Roboto', sans-serif;}
+.active_coupon_view{padding: 150px 0px 0px 0px;}
+.active_coupon_view h1{ color: #4e4d57; font-size: 20px; margin:0px; padding: 0px 0px 14px 18px; font-family: 'Open Sans', sans-serif;}
+.active_coupon_view_box{width: 90%!important; height: 300px!important; border: 1px solid #E8E8E8; margin:0px auto; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 20px;}
+.active_coupon_view_box h4{color: #2b3b4e; font-family: 'Roboto', sans-serif; font-size: 19px; font-weight: normal; margin: 0px; padding:0px; line-height: 43px;}
+
+.active_coupon_view_box_pink{ width: 314px!important; float: left; background: #2A3B4D; text-align: center; padding: 23px 0px 0px 0px!important; height: 69px!important;  color: #FFF;}
+.active_coupon_view_box_grre{ width: 200px; background: #FF3B69; text-align: center; padding: 23px 0px 0px 0px !important; height: 69px !important
+    ; color: #FFF;}
+
+.active_coupon_view_box_pink h3{font-family: 'Roboto', sans-serif; color: #FFF; font-size: 18px; font-weight: 600; margin: 0px; padding: 0px 0px 0px 0px; letter-spacing: 2px;}    
+.active_coupon_view_box_grre h3{ font-family: 'Roboto', sans-serif; color: #FFF; font-size: 18px; font-weight: 600; margin: 0px; padding: 0px 0px 0px 0px; letter-spacing: 2px; }  
+.main_active_width{width: 90%; margin: 0px auto; padding: 0px;}  
+.disextant{ margin: 50px 0px 0px 0px;}
+.option{ padding: 29px 0px 0px 40px;}
+.option a{ color: #2b3b4e; font-size: 17px; font-weight: 800; margin: 0px; padding: 0px; text-decoration: none;}
+
+.ADD_CUSTOMER{ background: #00CC87; height: 60px; border: 1px solid #00CC87; color: #FFF; font-size: 18px; margin: 0px; padding: 0px;}
+.ADD_CUSTOMER button{ background: #00CC87;  width: 100%; letter-spacing: 1px; border: 1px solid #00CC87; color: #FFF; font-size: 19px; margin: 0px; padding: 14px 0px 0px 0px;  font-family: 'Roboto', sans-serif; font-weight: 600;}
+
+.select_coupen button{ background: #00CC87; margin: 30px 0px 0px 0px; border: 1px solid #00CC87; width: 100%; color: #FFF; font-size: 22px; height: 65px; text-align: center; padding: 2px 0px 0px 0px; font-family: 'Roboto', sans-serif; font-weight: 500;}
+
+.SEND_TO_CALL button{ background: #ff3b69; margin: 30px 0px 0px 0px; border: 1px solid #ff3b69; width: 100%; color: #FFF; font-size: 20px; height: 65px; text-align: center; padding: 2px 0px 0px 0px; font-family: 'Roboto', sans-serif; font-weight: 500;}  
+
+.SEND_TO_CALL p{ font-family: 'Roboto', sans-serif; color: #2b3b4e; font-size: 16px; text-align: center; margin: 0px; padding: 20px 0px 0px 0px; font-weight: 800;}
+
+.save{ width: 207px!important; float: left; background: #2A3B4D; text-align: center; padding: 23px 0px 0px 0px!important; height: 69px!important; }
+.save a {font-family: 'Open Sans', sans-serif; color: #FFF; text-decoration: none; font-size: 20px; text-align: center;  font-weight: 500; text-transform: uppercase;}
+.cancel{ width: 207px; background: #FF3B69; text-align: center; padding: 23px 0px 0px 0px !important; height: 69px !important; }
+.cancel a {font-family: 'Open Sans', sans-serif; color: #FFF; text-decoration: none; font-size: 20px; text-align: center;  font-weight: 500; text-transform: uppercase;}
+
+.VALIDATE{ background: #ff3b69; height: 60px; border: 1px solid #ff3b69; color: #FFF; font-size: 18px; margin: 0px; padding: 0px;}
+.VALIDATE button{ background: #ff3b69;  width: 100%; letter-spacing: 1px; border: 1px solid #ff3b69; color: #FFF; font-size: 19px; margin: 0px; padding: 14px 0px 0px 0px;}
+.ENTER h2{color: #2b3b4e; font-size: 20px; font-family: 'Roboto', sans-serif; text-align: center; font-weight: 800; margin: 0px; padding: 300px 0px 10px 0px;}
+.ENTER_code{width: 170px!important;height: 66px!important;  margin: 0px auto; padding: 16px 0px 0px 0px; box-shadow:4px 18px 48px #E8E8E8; text-align: center; background: #FFF;  }
+.ENTER_code h3{font-weight: bold;  font-family: 'Open Sans', sans-serif;font-size: 26px; padding: 8px 0px 0px 0px;}
+.customer_list_NAME h2{color: #2b3b4e; font-size: 20px;  font-weight: 400; font-family: 'Roboto', sans-serif; margin: 0px; padding:0px; line-height: 28px;}
+.customer_list_NAME span{ color: #ff3b69; padding: 0px 0px 0px 10px}
+
+.name_last{width: 90%!important; height: 300px!important; border: 1px solid #E8E8E8; margin: 30px auto; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 20px;}
