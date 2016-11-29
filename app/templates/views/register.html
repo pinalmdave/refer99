@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-header-bar id="head" align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#fff;" menu-toggle="left"></button>
+        <h1 class="title" style="color:#fff;">Registration</h1>
+    </ion-header-bar>
+    <ion-content class="padding redapp_bg">
+        <div class="row">
+            <div class="logo_account">
+                <a><img src="images/redlogo@x.png"></a>
+            </div>
+        </div>
+        <form name="signupForm">
+            <div class="row">
+                <div class="col text-center login">
+                    <div class="list">
+                        <label class="item item-input user_name">
+                            <input type="text" placeholder="Full Name" ng-model="username" name="username" required>
+                        </label>
+                        <label class="item item-input mail">
+                            <input type="email" placeholder="Email" ng-model="userEmail" name="userEmail" required>
+                        </label>
+                        <label class="item item-input up_pass">
+                            <input type="password" placeholder="Password" ng-model="password" name="password" required>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="padding">
+                <p ng-show="signupForm.username.$error.required">* full name is required</p>
+                <p ng-show="signupForm.userEmail.$error.required">* Email is required</p>
+                <p ng-show="signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
+                <p ng-show="signupForm.password.$error.required">* Password is required</p>
+                <p ng-show="res_signup">* {{signupMessage}}</p>
+            </div>
+            <div class="row">
+                <div class=" col Sign_in text-center padding_remove">
+                    <button class="button" ng-click="signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class=" col or_option text-center">
+                <p><span></span>or<span></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col Facebook text-center padding_remove">
+                <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col text-center dont_have">
+                <h2>Do have an account? <span ui-sref="app.home">SIGN IN</span></h2>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

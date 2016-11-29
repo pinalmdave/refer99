@@ -1,0 +1,24 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "com.lampa.startapp": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        }
+    },
+    "dependent_plugins": {}
+}

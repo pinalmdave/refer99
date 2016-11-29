@@ -1,0 +1,143 @@
+<style>
+.popup-head {
+    display: none;
+}
+
+.popup-body {
+    padding: 0px;
+}
+
+.popupBody {
+    min-height: 200px;
+    background: #E5E5E5;
+    padding: 5px;
+    max-height: 80%;
+    overflow-y: scroll;
+}
+
+.bar-header {
+    display: block !important;
+    margin-bottom: 40px;
+}
+
+.popDef {
+    margin-top: 30px;
+}
+
+.popDef img {
+    border-radius: 50%;
+    height: 20vw;
+    width: 20vw;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.star {
+    font-size: 30px;
+}
+
+.star2 {
+    font-size: 23px;
+}
+
+.topClass h1 {
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.rating li {
+    display: inline;
+}
+
+.ovarAll .rating li i {
+    font-size: 30px !important;
+}
+
+.overAll2 .rating li i {
+    font-size: 22px !important;
+}
+</style>
+<main class="popupBody">
+    <div ng-show="!isDiscount">
+        <div class="topClass">
+            <h1 class="title">Customer Ratings</h1>
+        </div>
+        <div class="popDef ">
+            <img class="center" ng-src="{{ratingData[pos].imgurl}}" onerror="this.src='images/user.ico'" />
+            <div class="padding">
+                <div style="text-align: center;font-size: 1.0em;">{{ratingData[pos].customerName}}</div>
+                <div style="text-align: center;font-size: 1.0em;">Came On:<span style="border-bottom: 1px solid rgb(0,0,0)">{{getDayDate(ratingData[pos].bookingDate)}},{{ratingData[pos].arrivalTime}}</span></div>
+            </div>
+            <div class="padding" style="margin-bottom: 40px;">
+                <div style="text-align: center;font-size: 1.1em;">Share Your Overall experiance with customers</div>
+                <div class="center ovarAll" id="star" style="width: 135px !important;">
+                    <rating ng-model="overAllRating" max="5"></rating>
+                </div>
+                <!--  <div class="center" style="width: 135px !important;">
+                
+            </div> -->
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div class="row" style="padding: 10px 0px;">
+                    <div class="col" style="padding: 0px;text-align: center">Tipping Behaviour</div>
+                    <div class="col" style="padding: 0px;">
+                        <div class="center overAll2" style="width: 108px;">
+                            <rating ng-model="tippingBehave" max="5"></rating>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding: 10px 0px;">
+                    <div class="col" style="padding: 0px;text-align: center">General Behaviour</div>
+                    <div class="col" style="padding: 0px;">
+                        <div class="center overAll2" style="width: 108px;">
+                            <rating ng-model="genralBehave" max="5"></rating>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button ng-click="ratingsSubmit(overAllRating,tippingBehave,genralBehave);overAllRating=0;tippingBehave=0;genralBehave=0;" class="button center" style="color: #fff;background-color: #19A5A3;">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </div>
+    <div ng-if="isDiscount">
+        <div style="position: relative;">
+            <div class="topClass">
+                <h1 class="title">Discount</h1>
+            </div>
+        </div>
+        <div style="min-height: 100px;">
+            <div class="row" style="padding:0px 30px;margin-top: 60px;">
+                <div style="width:20%;">
+                    <button class="button button-icon ion-ios-minus-outline center" style="color: rgb(0,0,0); font-size: 30px;" ng-click="removeDiscount()" on-hold="holdRemoveDiscount()" on-release="releaseRemoveDiscount()"></button>
+                </div>
+                <div style="width:60%;">
+                    <ion-item style="padding: 10px;">
+                        <ion-label>
+                            <center>{{discount}} %</center>
+                        </ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </div>
+                <div style="width:20%;">
+                    <button class="button button-icon ion-ios-plus-outline center" style="color: rgb(0,0,0); font-size: 30px;" ng-click="addDiscount()"  on-hold="holdAddDiscount()" on-release="releaseAddDiscount()"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button class="button center" style="color: #fff;background-color: #19A5A3; " ng-click="setDiscount()">
+                Submit
+            </button>
+        </div>
+    </div>
+</main>
