@@ -1,0 +1,70 @@
+<style>
+.bottomContent {
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+.noPadding {
+    padding: 0px;
+}
+
+.noBackground {
+    background: transparent;
+}
+</style>
+<ion-view id="body" style="background-image:url(images/new_background.jpg) !important; filter: alpha(opacity=10); background-repeat: no-repeat; background-size: cover;">
+    <ion-header-bar id="head" align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#fff;" menu-toggle="left"></button>
+        <h1 class="title" style="color:#fff;">Pending Payments</h1>
+    </ion-header-bar>
+    <div id="subHead" class="row noPadding" style="position: absolute;top:45px;z-index: 10;">
+        <div class="col" style="padding: 0 5px;">
+            <ionic-datepicker idate="fromDate" disablepreviousdates="true">
+                <button ng-click="openFromDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{fromDate | date:'dd-MMMM-yyyy' }}{{!fromDate?'From':''}} </button>
+            </ionic-datepicker>
+        </div>
+        <div class="col" style="padding: 0 5px;">
+            <ionic-datepicker idate="toDate" disablepreviousdates="true">
+                <button ng-click="openToDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{ toDate | date:'dd-MMMM-yyyy' }}{{!toDate?'To':''}} </button>
+            </ionic-datepicker>
+        </div>
+    </div>
+    <ion-content id="content" style="position: fixed;top:110px;display: block;">
+        <div class="row" ng-if="invoiceData.length==0">
+            <h4 style="text-align: center;color: #fff;width: 100%;">Sorry No Pending Payment Available !</h4>
+        </div>
+        <div class="list">
+            <div class="card noBackground row" ng-repeat="invoice in invoiceData" style="margin-left: 5px;">
+                <div class="row">
+                    <div style="width:20%;">
+                        <img ng-src="{{invoice.imgUrl}}" onerror="this.src='images/user.ico'" style="width:15vw;height:15vw;max-height:65px;max-width:65px; border-radius:50%;display: block;margin: auto auto;">
+                    </div>
+                    <div style="width:60%;">
+                        <div class="item noBackground" style="padding: 5px;">
+                            <h3 style="color: #fff;">{{invoice.customerName ? invoice.customerName : 'N/A'}} {{invoice.attendees}} Attendee(s)</h3>
+                            <h3 style="color: #fff;">TicketId : {{invoice.ticketId}}</h3>
+                            <h3 style="color: #fff;">{{getDayDate(invoice.bookingDate)}}, {{invoice.arrivalTime}}</h3>
+                        </div>
+                    </div>
+                    <div style="width:20%;padding: 5px;">
+                        <a href ng-click="raiseQuery(invoice.id)" style="margin-left: 19px;">
+                            <i class="ion-help-circled" style="text-align:center;font-size:1.7em;margin-top: 0px;color: #fff;width:28px;height: 28px;"></i>
+                        </a>
+                        <h4 style="color: #fff;text-align: center;">Rs {{invoice.totalAmount}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div id="footer" class="bar bar-footer row" style="background: transparent;border-top: 1px solid #fff;padding-top: 0px;">
+        <h2 class="col bottomContent" style="color: #fff;padding: 0px;">Total</h2>
+        <h2 class="col bottomContent" style="color: #fff;padding:0px; margin-top: 0px;">Rs {{totalPaid}}</h2>
+    </div>
+</ion-view>
+<script>
+console.log('How are you?');
+</script>
