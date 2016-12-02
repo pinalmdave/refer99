@@ -7,16 +7,24 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "de.tmaximini.viralDi"
-        },
-        "cordova-plugin-device": {
+        "com.lampa.startapp": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
         "com.phonegap.plugins.PushPlugin": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
-        "com.lampa.startapp": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "phonegap-facebook-plugin": {
+            "APP_ID": "1178098532304502",
+            "APP_NAME": "ViralDi",
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },

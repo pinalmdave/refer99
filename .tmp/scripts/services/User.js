@@ -30,6 +30,19 @@
           return next(error, null);
         });
     };
+    this.get_user_campaigns = function(next) {
+      Restangular
+        .one('members')
+        .one('get_user_campaigns')
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.send_forget_password_email = function(data, next) {
       Restangular
         .one('members')

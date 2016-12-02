@@ -1,8 +1,21 @@
 angular.module('viralDi')
-  .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval) {
+  .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval,Campaign) {
     var userDash = this;
     $ionicSideMenuDelegate.canDragContent(true)
     $scope.user = Storage.getUser();
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
+    (function init() {
+      User.get_user_campaigns(function(err, data) {
+        $ionicLoading.hide();
+        if (err) {
+          console.log('err', err);
+        } else {
+          console.log('campaigns', data);
+        }
+      });
+    })();
 
   });
 Date.prototype.yyyymmdd = function() {

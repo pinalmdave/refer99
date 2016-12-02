@@ -1,131 +1,57 @@
-<style>
-.bottomContent {
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 44px;
-}
-
-.noPadding {
-    padding: 0px;
-}
-
-.noBackground {
-    background: transparent;
-}
-
-.center {
-    margin: 0 auto;
-    display: block;
-}
-</style>
-<ion-view id="body" style="background-image:url(images/new_background.jpg) !important; filter: alpha(opacity=10); background-repeat: no-repeat; background-size: cover;">
+<ion-view>
     <ion-header-bar id="head" align-title="center">
         <button class="button button-icon icon ion-navicon" style="display: block;color:#fff;" menu-toggle="left"></button>
         <h1 class="title" style="color:#fff;">Registration</h1>
     </ion-header-bar>
-    <ion-content class="padding">
-        <form name="details" ng-show="detailsView">
-            <h5 class="title" style="color:#fff;text-align: center;">Details Of Business</h5>
-            <div class="list">
-                <label class="item item-input">
-                    <input type="text" ng-model="bussinessName" placeholder="Name of the business*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="email" ng-model="userEmail" placeholder="Email*" required>
-                </label>
-                <br>
-                <div class="row">
-                    <div class="col col-90">
-                        <label class="item item-input" style="margin-left: -4%;">
-                            <input type="number" ng-model="phone" placeholder="Add phone number*">
+    <ion-content class="padding redapp_bg">
+        <div class="row">
+            <div class="logo_account">
+                <a><img src="images/redlogo@x.png"></a>
+            </div>
+        </div>
+        <form name="signupForm">
+            <div class="row">
+                <div class="col text-center login">
+                    <div class="list">
+                        <label class="item item-input user_name">
+                            <input type="text" placeholder="Full Name" ng-model="username" name="username" required>
+                        </label>
+                        <label class="item item-input mail">
+                            <input type="email" placeholder="Email" ng-model="userEmail" name="userEmail" required>
+                        </label>
+                        <label class="item item-input up_pass">
+                            <input type="password" placeholder="Password" ng-model="password" name="password" required>
                         </label>
                     </div>
-                    <div class="col" style="margin-top: 4%;">
-                        <i class="icon ion-plus-round" ng-click="addContact(phone);phone =''" style="font-size: 1.5em;float: right;"></i>
-                    </div>
                 </div>
-                <div class="row" ng-repeat="contact in userContacts track by $index">
-                    <div class="col">
-                        <h5 class="title" style="color:#fff;text-align: left;">{{$index+1}}. {{contact}}</h5>
-                    </div>
-                    <div class="col" style="margin-top: 3%;">
-                        <i class="icon ion-android-close" ng-click="removeContact($index)" style="font-size: 1.5em;"></i>
-                    </div>
-                </div>
+            </div>
+            <div class="padding">
+                <p ng-show="signupForm.username.$error.required">* full name is required</p>
+                <p ng-show="signupForm.userEmail.$error.required">* Email is required</p>
+                <p ng-show="signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
+                <p ng-show="signupForm.password.$error.required">* Password is required</p>
+                <p ng-show="res_signup">* {{signupMessage}}</p>
             </div>
             <div class="row">
-                <button class="button button-clear button-default center textButton" style="font-size: 1.5em; color: rgba(256,256,256,0.7);" ng-click="details.$valid && getDetails(bussinessName,userEmail,phone)">
-                    Next
-                </button>
+                <div class=" col Sign_in text-center padding_remove">
+                    <button class="button" ng-click="signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
+                </div>
             </div>
-            <h6 class="title" ng-if="!details.$valid" style="color:orange;text-align: center;">*Please fill all required fields</h6>
         </form>
-        <form name="manager" ng-show="managerView">
-            <h5 class="title" style="color:#fff;text-align: center;">Details Of Manager</h5>
+        <div class="row">
+            <div class=" col or_option text-center">
+                <p><span></span>or<span></span></p>
             </div>
-            <div class="list">
-                <label class="item item-input">
-                    <input type="text" ng-model="managerName" placeholder="Name*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="text" ng-model="managerTitle" placeholder="Title*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="number" ng-model="managerPhone" minlength="10" placeholder="Phone number*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="email" ng-model="managerEmail" placeholder="Email*" required>
-                </label>
+        </div>
+        <div class="row">
+            <div class=" col Facebook text-center padding_remove">
+                <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
             </div>
-            <div class="row">
-                <button class="button button-clear button-default center textButton" style="font-size: 1.5em; color: rgba(256,256,256,0.7);" ng-click="backDetails()">
-                    Back
-                </button>
-                <button class="button button-clear button-default center textButton" style="font-size: 1.5em; color: rgba(256,256,256,0.7);" ng-click="manager.$valid && getManager(managerName,managerTitle,managerPhone,managerEmail)">
-                    Next
-                </button>
+        </div>
+        <div class="row">
+            <div class=" col text-center dont_have">
+                <h2>Do have an account? <span ui-sref="app.home">SIGN IN</span></h2>
             </div>
-             <h6 class="title" ng-if="!manager.$valid" style="color:orange;text-align: center;">*Please fill all required fields</h6>
-        </form>
-        <form name="owner" ng-show="ownerView">
-            <h5 class="title" style="color:#fff;text-align: center;">Details Of Owner</h5>
-            <div class="list">
-                <label class="item item-input">
-                    <input type="text" ng-model="ownerName" placeholder="Name*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="email" ng-model="ownerEmail" placeholder="Email*" required>
-                </label>
-                <br>
-                <label class="item item-input">
-                    <input type="number" ng-model="ownerPhone" minlength="10" placeholder="Phone number*" required>
-                </label>
-            </div>
-            <div class="row">
-                <div class="col col-20">
-                    <ion-checkbox style="background: none;border-width: 0px;" ng-model="isTermsChecked"></ion-checkbox>
-                </div>
-                <div class="col" style="margin-top: 1.5%;">
-                    <span style="font-size: 1.0em;color: #fff">I agree to the </span><a ng-click="getTerms()" style="color:#2535FF;font-size: 1.0em;text-decoration: underline;">Terms & Conditions</a>
-                </div>
-            </div>
-            <div class="row">
-                <button class="button button-clear button-default center textButton" style="font-size: 1.5em; color: rgba(256,256,256,0.7);" ng-click="backManager()">
-                    Back
-                </button>
-                <button class="button button-clear button-default center textButton" style="font-size: 1.5em; color: rgba(256,256,256,0.7);" ng-click="owner.$valid && isTermsChecked && getOwner(ownerName,ownerEmail,ownerPhone)">
-                    Register
-                </button>
-            </div>
-            <h6 class="title" ng-if="!owner.$valid" style="color:orange;text-align: center;">*Please fill all required fields</h6>
-        </form>
+        </div>
     </ion-content>
 </ion-view>
