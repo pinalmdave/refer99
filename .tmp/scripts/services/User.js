@@ -43,6 +43,19 @@
           return next(error, null);
         });
     };
+     this.change_password = function(data,next) {
+      Restangular
+        .one('members')
+        .all('change_password')
+        .post(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.send_forget_password_email = function(data, next) {
       Restangular
         .one('members')

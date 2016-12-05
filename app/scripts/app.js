@@ -105,23 +105,14 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           }
         }
       })
-      .state('app.cleared', {
-        url: '/clearedPayments',
+      .state('app.settings', {
+        url: '/settings',
         cache: false,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/cleared.html',
-            controller: 'ClearedPaymentController',
-            controllerAs: 'cleared'
-          }
-        }
-      })
-      .state('app.settings', {
-        url: '/settings',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/settings.html'
+            templateUrl: 'templates/views/settings.html',
+            controller:'SettingsController',
+            controllerAs:'settings'
           }
         }
       })
@@ -135,6 +126,17 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
             controllerAs: 'register'
           }
         }
+      })
+      .state('app.new_campaign', {
+        url: '/new_campaign',
+        cache: true,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/new_campaign.html',
+            controller: 'NewCampaignController',
+            controllerAs: 'newCampaign'
+          }
+        }
       });
 
 
@@ -144,8 +146,8 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
     } else {
       $urlRouterProvider.otherwise('/app/home');
     }
-    // }).constant('api', 'http://')
-  }).constant('api', 'http://localhost:3000/api')
+    }).constant('api', 'http://35.162.137.242:3001/api')
+  // }).constant('api', 'http://localhost:3000/api')
   .constant('GCM', {
     senderId: ''
   }).constant('facebook', {

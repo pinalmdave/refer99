@@ -17,6 +17,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AutoHideSplashScreen" value="true" />
     <preference name="android-targetSdkVersion" value="20" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
@@ -61,4 +62,5 @@
         <variable name="APP_ID" value="1178098532304502" />
         <variable name="APP_NAME" value="ViralDi" />
     </plugin>
+    <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
 </widget>

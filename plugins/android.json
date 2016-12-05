@@ -26,6 +26,9 @@
             "APP_ID": "1178098532304502",
             "APP_NAME": "ViralDi",
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
     "dependent_plugins": {}

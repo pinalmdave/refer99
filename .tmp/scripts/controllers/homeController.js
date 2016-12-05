@@ -40,10 +40,18 @@ angular.module('viralDi')
     $scope.facebookLogin = function() {
       $cordovaFacebook.login(["public_profile", "email"])
         .then(function(success) {
-          console.log('success',success);
+          console.log('success', success);
+
+          $cordovaFacebook.api("me?fields=name,id,email")
+            .then(function(success) {
+              // success
+              console.log('me', success);
+            }, function(error) {
+              // error
+            });
         }, function(error) {
           // error
-          console.log('error',error);
+          console.log('error', error);
         });
 
     };

@@ -53,5 +53,13 @@
             "APP_ID": "1178098532304502",
             "APP_NAME": "ViralDi"
         }
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-splashscreen@~4.0.0"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

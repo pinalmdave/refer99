@@ -7,7 +7,7 @@
  * # RegisterController
  */
 angular.module('viralDi')
-  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate) {
+  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate,$cordovaFacebook) {
     var register = this;
     $scope.register_user = function(username, userEmail, password) {
       console.log('register', userEmail, password);
@@ -55,5 +55,24 @@ angular.module('viralDi')
           }
         });
       }
+    };
+
+    $scope.facebookSignup = function() {
+      $cordovaFacebook.login(["public_profile", "email"])
+        .then(function(success) {
+          console.log('success', success);
+
+          $cordovaFacebook.api("me?fields=name,id,email")
+            .then(function(success) {
+              // success
+              console.log('me', success);
+            }, function(error) {
+              // error
+            });
+        }, function(error) {
+          // error
+          console.log('error', error);
+        });
+
     };
   });

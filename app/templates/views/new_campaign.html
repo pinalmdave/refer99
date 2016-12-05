@@ -1,0 +1,159 @@
+<ion-view>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Create Campaign</h1>
+        <button class="button button-icon icon" style="display: block;color:#000;" menu-toggle="right" ng-show="cp_screen_first" ng-click="cp_screen_first=false;cp_screen_second=true;"><strong>Next</strong></button>
+    </ion-header-bar>
+    <ion-content>
+        <section ng-show="cp_screen_first">
+            <!--       <div class="row padding_remove">
+            <div class="col padding_remove">
+                <div class="card">
+                    <div class="item item-text-wrap">
+                        <div class="item range pink_bar">
+                            <input type="range" name="volume">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_coupon@x.png">
+                            <!-- <h4>Campaign Name</h4> -->
+                            <input type="text" placeholder="Campaign Name" name="cp_name" ng-model="cp_name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_date@x.png">
+                            <!-- <h4>Start Date</h4> -->
+                            <input type="date" placeholder="Start Date" name="start_date" ng-model="start_date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_date@x.png">
+                            <!-- <h4>End date</h4> -->
+                            <input type="date" placeholder="End Date" name="end_date" ng-model="end_date">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_business@x.png">
+                            <!-- <h4>Business Name</h4> -->
+                            <input type="text" placeholder="Business Name" name="bussiness_name" ng-model="bussiness_name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin discount">
+                            <img src="images/ic_business@x.png">
+                            <select ng-model="bussiness_type">
+                                <option disabled value="default">Business type</option>
+                                <option value="clothes">Clothes</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="hardware">Hardware</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin discount">
+                            <img src="images/ic_discount_amount@x.png">
+                            <select ng-model="discount_type">
+                                <option disabled value="default">Discount Type</option>
+                                <option value="price">Price</option>
+                                <option value="bulk">Bulk Purchase</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_discount_type@x.png">
+                            <!-- <h4>Discount Amount</h4> -->
+                            <input type="number" placeholder="Discount Amount" name="dis_amount" ng-model="dis_amount">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_email@x.png">
+                            <!-- <h4>Email</h4> -->
+                            <input type="email" placeholder="Email" name="cp_email" ng-model="cp_email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ng-show="cp_screen_second">
+            <!-- <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card">
+                        <div class="item item-text-wrap">
+                            <div class="item range pink_bar">
+                                <input type="range" name="volume">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="campagin_INFO_HEIGHT margin_top">
+                        <div class="campagin_INFO">
+                            <!-- <h2>Campaign Info</h2> -->
+                            <textarea class="text_box_area" rows="4" cols="100" placeholder="Campaign Info"></textarea>
+                            <!-- <input type="text area" name="cp_info" ng-model="cp_info"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="campagin_INFO_HEIGHT margin_top">
+                        <div class="campagin_INFO">
+                            <!-- <h2>Terms& Condition</h2> -->
+                            <textarea class="text_box_area" rows="4" cols="100" placeholder="Terms & Conditions"></textarea>
+                            <!-- <input type="text area" name="cp_terms" ng-model="cp_terms"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="button button-assertive button-outline" style="text-align: center;display: block;width: 100%;">
+                Create Campaign
+            </button>
+        </section>
+        <section ng-show="cp_screen_third">
+        </section>
+    </ion-content>
+</ion-view>

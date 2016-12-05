@@ -69,7 +69,8 @@
     "cordova-plugin-device",
     "cordova-plugin-device@~1.1.1",
     "com.lampa.startapp",
-    "com.lampa.startapp@~0.1.4"
+    "com.lampa.startapp@~0.1.4",
+    "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [
     "android"

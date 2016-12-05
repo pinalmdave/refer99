@@ -1,28 +1,61 @@
 <ion-view>
-    <ion-header-bar align-title="center" class="bar-positive">
-    <button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Settings</h1>
     </ion-header-bar>
+    <ion-content class="redapp_bg">
+        <!-- <div class="row">
+<div class="col text-center blank_body">
+    <h6>You don't have any active campaign</h6>
+    <h6>Create a new campaign to get started</h6>
 
-    <ion-content>
-        <div class="list">
-
-            <!-- connect toggles to controller using ng-model -->
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow Push Notifications
-                </span>
-            </ion-toggle>
-
-            <ion-toggle>
-                <span class="settings-item__text">
-                    Allow cookies
-                </span>
-            </ion-toggle>
-
-
+</div>  
+</div> -->
+        <form name="form_change_pass">
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_pas@2x (3).png">
+                            <!-- <h4>Old Password</h4> -->
+                            <input type="Password" placeholder="Old Password" name="old_pass" ng-model="old_pass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_pas@2x (3).png">
+                            <!-- <h4>New Password</h4> -->
+                            <input type="Password" placeholder="New Password" name="new_pass" ng-model="new_pass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <div class="card margin_top">
+                        <div class="campagin">
+                            <img src="images/ic_pas@2x (3).png">
+                            <!-- <h4>Confirm Password</h4> -->
+                            <input type="Password" placeholder="Confirm Password" name="confirm_pass" ng-model="confirm_pass">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="padding">
+            <p ng-show="change_pass.isErr">* {{change_pass.message}}</p>
         </div>
+        <!--         <div class="bar bar-footer SAVE_CHANGES SAVSGFS">
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    
+                </div>
+            </div>
+        </div> -->
+        <button class="SAVE_CHANGES full_width" type="button" ng-click="change_password(old_pass, new_pass, confirm_pass)">SAVE CHANGES</button>
     </ion-content>
-
 </ion-view>
