@@ -6,7 +6,7 @@
     .service('User', User);
 
   /** @ngInject */
-  function User(Restangular, Storage, Notification) {
+  function User(Restangular, Storage, Notification, $rootScope) {
     var thisVar = this;
     this.login = function(data, next) {
       Restangular
@@ -16,6 +16,9 @@
         .then(function(data) {
           // do on success
           Storage.setUser(data.plain());
+          Restangular.setDefaultRequestParams({
+            access_token: data.id
+          });
           /*Notification.registerDevice(function() {
               thisVar.addDeviceToken(function(err, user) {
                   if (err) {
@@ -43,7 +46,7 @@
           return next(error, null);
         });
     };
-     this.change_password = function(data,next) {
+    this.change_password = function(data, next) {
       Restangular
         .one('members')
         .all('change_password')
@@ -95,21 +98,24 @@
           return next(error, null);
         });
     };
-    
+
     this.clearToken = function(data, next) {
-      Restangular
-        .one('venue')
-        .one('cleargcm')
-        .get(data)
-        .then(function(data) {
-          // do on success
-          return next(null, data);
-        }, function(error) {
-          // do on failure
-          return next(error, null);
-        });
+      /* Restangular
+         .one('venue')
+         .one('cleargcm')
+         .get(data)
+         .then(function(data) {
+           // do on success
+         }, function(error) {
+           // do on failure
+           return next(error, null);
+         });*/
+      return next(null, {});
+      Restangular.setDefaultRequestParams({
+        access_token: ""
+      });
     };
-    
+
     this.addDeviceToken = function(next) {
       var user = Storage.getUser();
       console.log('user', user);

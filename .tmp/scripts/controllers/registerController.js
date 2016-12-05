@@ -7,7 +7,7 @@
  * # RegisterController
  */
 angular.module('viralDi')
-  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate,$cordovaFacebook) {
+  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook) {
     var register = this;
     $scope.register_user = function(username, userEmail, password) {
       console.log('register', userEmail, password);
@@ -33,9 +33,9 @@ angular.module('viralDi')
           } else {
             // console.log('register', data);
             $scope.signupMessage = "Success."
-            var loginData={
-                email:signupData.email,
-                password:signupData.password
+            var loginData = {
+              email: signupData.email,
+              password: signupData.password
             };
             User.login(loginData, function(err, res) {
               $ionicLoading.hide();
@@ -46,6 +46,7 @@ angular.module('viralDi')
                   $scope.signupMessage = "Please try after some time."
                 }
               } else {
+                console.log('res', res);
                 $ionicHistory.nextViewOptions({
                   disableBack: true
                 });
@@ -66,11 +67,59 @@ angular.module('viralDi')
             .then(function(success) {
               // success
               console.log('me', success);
+              if (success.email && success.name) {
+                $ionicLoading.show({
+                  template: 'Loading...'
+                });
+                var signupData = {
+                  username: success.name,
+                  email: success.email
+                };
+                User.registerUser(signupData, function(err, data) {
+                  $scope.res_signup = true;
+                  if (err) {
+                    $ionicLoading.hide();
+                    console.log('err', err);
+                    if (err.data && err.data.error && err.data.error.message) {
+                      $scope.signupMessage = err.data.error.message;
+                    } else {
+                      $scope.signupMessage = "Please try after some time."
+                    }
+                  } else {
+                    // console.log('register', data);
+                    $scope.signupMessage = "Success."
+                    var loginData = {
+                      email: signupData.email,
+                      password: "fb"
+                    };
+                    User.login(loginData, function(err, res) {
+                      $ionicLoading.hide();
+                      if (err) {
+                        if (err.data && err.data.error && err.data.error.message) {
+                          $scope.signupMessage = err.data.error.message;
+                        } else {
+                          $scope.signupMessage = "Please try after some time."
+                        }
+                      } else {
+                        console.log('res', res);
+                        $ionicHistory.nextViewOptions({
+                          disableBack: true
+                        });
+                        $state.go('app.dashboard');
+                      }
+                    });
+                  }
+                });
+              } else {
+                alert("Unable get your email and name please change your facebook privay settings.")
+              }
             }, function(error) {
               // error
+              $scope.signupMessage = "Please try after some time."
             });
         }, function(error) {
           // error
+          $scope.signupMessage = "Please try after some time."
           console.log('error', error);
         });
 

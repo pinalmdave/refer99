@@ -24,7 +24,7 @@ angular.module('viralDi')
       var data = {
       
       };
-      /*User.clearToken(data, function(err, data) {
+      User.clearToken(data, function(err, data) {
             $ionicLoading.hide();
           if (err) {
               console.log('err', err);
@@ -36,13 +36,13 @@ angular.module('viralDi')
               $state.go('app.home');
               $ionicSideMenuDelegate.toggleLeft(false);
           }
-      });*/
-      $ionicLoading.hide();
+      });
+    /*  $ionicLoading.hide();
       Storage.removeUser();
       Storage.clearAll();
       $scope.user = undefined;
       $state.go('app.home');
-      $ionicSideMenuDelegate.toggleLeft(false);
+      $ionicSideMenuDelegate.toggleLeft(false);*/
 
     };
   });

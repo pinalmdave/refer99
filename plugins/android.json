@@ -29,6 +29,9 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
     "dependent_plugins": {}

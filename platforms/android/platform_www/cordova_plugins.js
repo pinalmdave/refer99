@@ -48,6 +48,14 @@ module.exports = [
         "clobbers": [
             "navigator.splashscreen"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-actionsheet/www/ActionSheet.js",
+        "id": "cordova-plugin-actionsheet.ActionSheet",
+        "pluginId": "cordova-plugin-actionsheet",
+        "clobbers": [
+            "window.plugins.actionsheet"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -59,7 +67,8 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.6.0-dev",
     "cordova-plugin-whitelist": "1.3.1-dev",
     "phonegap-facebook-plugin": "0.12.0",
-    "cordova-plugin-splashscreen": "4.0.0"
+    "cordova-plugin-splashscreen": "4.0.0",
+    "cordova-plugin-actionsheet": "2.3.1"
 }
 // BOTTOM OF METADATA
 });

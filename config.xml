@@ -63,4 +63,5 @@
         <variable name="APP_NAME" value="ViralDi" />
     </plugin>
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
+    <plugin name="cordova-plugin-actionsheet" spec="https://github.com/EddyVerbruggen/cordova-plugin-actionsheet.git" />
 </widget>

@@ -49,7 +49,11 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
     // $httpProvider.interceptors.push('interceptor-name');
     RestangularProvider.setBaseUrl(api);
     var user = StorageProvider.$get().getUser();
-    RestangularProvider.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
+    var didTutorial = StorageProvider.$get().getDidTutorial();
+    RestangularProvider.setDefaultRequestParams({
+      access_token: user ? user.id : ""
+    });
+    /*RestangularProvider.setFullRequestInterceptor(function(element, operation, route, url, headers, params) {
       // console.log('config', StorageProvider.$get().getUser())
       // var user = StorageProvider.$get().getUser();
       return {
@@ -58,13 +62,18 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           access_token: user ? user.id : ''
         })
       };
-    });
+    });*/
 
     localStorageServiceProvider
       .setPrefix('viralDi')
       .setStorageType('localStorage');
     // Application routing
     $stateProvider
+      .state('intro', {
+        url: '/',
+        templateUrl: 'templates/views/intro.html',
+        controller: 'IntroController'
+      })
       .state('app', {
         url: '/app',
         abstract: true,
@@ -111,8 +120,8 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         views: {
           'viewContent': {
             templateUrl: 'templates/views/settings.html',
-            controller:'SettingsController',
-            controllerAs:'settings'
+            controller: 'SettingsController',
+            controllerAs: 'settings'
           }
         }
       })
@@ -141,12 +150,14 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
 
 
     // redirects to default route for undefined routes
-    if (user) {
+    if(!didTutorial){
+      $urlRouterProvider.otherwise('/');
+    }else if (user) {
       $urlRouterProvider.otherwise('/app/dashboard');
     } else {
       $urlRouterProvider.otherwise('/app/home');
     }
-    }).constant('api', 'http://35.162.137.242:3001/api')
+  }).constant('api', 'http://35.162.137.242:3001/api')
   // }).constant('api', 'http://localhost:3000/api')
   .constant('GCM', {
     senderId: ''
