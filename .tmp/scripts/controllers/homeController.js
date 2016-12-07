@@ -30,7 +30,7 @@ angular.module('viralDi')
           email: userEmail,
           password: password
         };
-        User.login(data, function(err, data) {
+        User.login(data,"sys", function(err, data) {
           $ionicLoading.hide();
           if (err) {
             console.log('err', err);
@@ -50,19 +50,18 @@ angular.module('viralDi')
       $cordovaFacebook.login(["public_profile", "email"])
         .then(function(success) {
           console.log('success', success);
-
+          $ionicLoading.show({
+            template: 'Loading...'
+          });
           $cordovaFacebook.api("me?fields=name,id,email")
             .then(function(success) {
               // success
               console.log('me', success);
-              $ionicLoading.show({
-                template: 'Loading...'
-              });
               var loginData = {
                 email: success.email,
                 password: "fb"
               };
-              User.login(loginData, function(err, res) {
+              User.login(loginData,"fb", function(err, res) {
                 $ionicLoading.hide();
                 if (err) {
                   console.log('err', err);
@@ -78,6 +77,7 @@ angular.module('viralDi')
               });
             }, function(error) {
               // error
+              $ionicLoading.hide();
               console.log('error', error);
               alert("Please try again letter.")
             });

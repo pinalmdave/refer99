@@ -96,6 +96,8 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "card.io.cordova.mobilesdk/viralDi-build.gradle"
+apply from: "com.paypal.cordova.mobilesdk/viralDi-build.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()

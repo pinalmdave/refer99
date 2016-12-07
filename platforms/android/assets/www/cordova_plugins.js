@@ -56,6 +56,22 @@ module.exports = [
         "clobbers": [
             "window.plugins.actionsheet"
         ]
+    },
+    {
+        "file": "plugins/card.io.cordova.mobilesdk/www/cdv-plugin-card-io.js",
+        "id": "card.io.cordova.mobilesdk.CardIO",
+        "pluginId": "card.io.cordova.mobilesdk",
+        "clobbers": [
+            "CardIO"
+        ]
+    },
+    {
+        "file": "plugins/com.paypal.cordova.mobilesdk/www/cdv-plugin-paypal-mobile-sdk.js",
+        "id": "com.paypal.cordova.mobilesdk.PayPalMobile",
+        "pluginId": "com.paypal.cordova.mobilesdk",
+        "clobbers": [
+            "PayPalMobile"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -68,7 +84,9 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1-dev",
     "phonegap-facebook-plugin": "0.12.0",
     "cordova-plugin-splashscreen": "4.0.0",
-    "cordova-plugin-actionsheet": "2.3.1"
+    "cordova-plugin-actionsheet": "2.3.1",
+    "card.io.cordova.mobilesdk": "2.1.0",
+    "com.paypal.cordova.mobilesdk": "3.3.1"
 }
 // BOTTOM OF METADATA
 });

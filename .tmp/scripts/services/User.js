@@ -8,13 +8,18 @@
   /** @ngInject */
   function User(Restangular, Storage, Notification, $rootScope) {
     var thisVar = this;
-    this.login = function(data, next) {
+    this.login = function(data, type, next) {
       Restangular
         .one('members')
         .all('login')
         .post(data)
         .then(function(data) {
           // do on success
+          if (type == "fb") {
+            data.user_type = "fb";
+          } else {
+            data.user_type = "sys";
+          }
           Storage.setUser(data.plain());
           Restangular.setDefaultRequestParams({
             access_token: data.id

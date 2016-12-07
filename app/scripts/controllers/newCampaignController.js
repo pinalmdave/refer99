@@ -24,18 +24,20 @@ angular.module('viralDi')
         cp_terms: $scope.camp_data.cp_terms,
         cp_email: $scope.camp_data.cp_email
       };
-      console.log(data,$scope.camp_data);
-       $ionicLoading.show({
-         template: 'Loading...'
-       });
-       Campaign.create_new_campaign(data, function(err, data) {
-         $ionicLoading.hide();
-         if (err) {
-           console.log('err', err);
-         } else {
-           console.log('data', data);
-         }
-       });
+      console.log(data, $scope.camp_data);
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      Campaign.create_new_campaign(data, function(err, data) {
+        $ionicLoading.hide();
+        if (err) {
+          console.log('err', err);
+          alert("Invalid data");
+        } else {
+          console.log('data', data);
+          $state.go('app.dashboard');
+        }
+      });
     };
   });
 Date.prototype.yyyymmdd = function() {

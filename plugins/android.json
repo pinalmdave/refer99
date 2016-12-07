@@ -32,7 +32,14 @@
         },
         "cordova-plugin-actionsheet": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        }
+    }
 }

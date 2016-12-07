@@ -96,7 +96,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         url: '/dashboard',
         cache: false,
         views: {
-          'viewContent': {
+          'view_dashboard': {
             templateUrl: 'templates/views/dashboard.html',
             controller: 'DashboardController',
             controllerAs: 'userDash'
@@ -118,7 +118,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         url: '/settings',
         cache: false,
         views: {
-          'viewContent': {
+          'view_settings': {
             templateUrl: 'templates/views/settings.html',
             controller: 'SettingsController',
             controllerAs: 'settings'
@@ -144,6 +144,26 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
             templateUrl: 'templates/views/new_campaign.html',
             controller: 'NewCampaignController',
             controllerAs: 'newCampaign'
+          }
+        }
+      })
+      .state('app.payment', {
+        url: '/payment',
+        cache: true,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/payment.html',
+            controller: 'PaymentController',
+            controllerAs: 'payment'
+          }
+        }
+      })
+      .state('app.notification', {
+        url: '/notification',
+        cache: true,
+        views: {
+          'view_notification': {
+            templateUrl: 'templates/views/notification.html'
           }
         }
       });

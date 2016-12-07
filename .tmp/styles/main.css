@@ -9105,10 +9105,10 @@ a.button {
 
 .plus h2 {
   color: #5B5A63;
-  font-size: 13px;
+  font-size: 11px;
   margin: 0px;
   font-weight: 300;
-  padding: 0px;
+  padding: 1px;
   line-height: 16px;
   letter-spacing: 1px;
   font-family: 'Open Sans', sans-serif; }
@@ -9151,9 +9151,9 @@ a.button {
 
 .card {
   width: 100% !important;
-  height: 73px !important;
+  height: auto;
   border: 1px solid #E8E8E8;
-  margin: 0px;
+  margin: 15px 0px 15px 0px !important;
   padding: 0px;
   box-shadow: 2px 2px 13px #E8E8E8; }
 
@@ -9173,11 +9173,11 @@ a.button {
 .campagin {
   width: 100%;
   float: left;
-  padding: 12px 0px 0px 0px; }
+  padding: 2px 0px 8px 0px; }
 
 .campagin img {
   float: left;
-  padding: 13px 0px 0px 33px; }
+  padding: 10px 0px 10px 16px; }
 
 .campagin h3 {
   padding: 13px 0px 0px 86px;
@@ -9190,7 +9190,7 @@ a.button {
   letter-spacing: 1px; }
 
 .campagin input {
-  padding: 13px 0px 6px 31px !important;
+  padding: 19px 0px 6px 31px !important;
   font-family: "Roboto", sans-serif !important;
   font-size: 18px !important;
   color: #2b3b4e !important;
@@ -9225,6 +9225,7 @@ a.button {
   font-family: 'Roboto', sans-serif; }
 
 .discount select {
+  background: transparent;
   z-index: 9999;
   float: right;
   width: 78%;
@@ -9255,7 +9256,7 @@ a.button {
 
 .campagin_INFO_HEIGHT {
   width: 100% !important;
-  height: 300px !important;
+  height: 190px !important;
   border: 1px solid #E8E8E8;
   margin: 30px 0px 0px 0px;
   padding: 0px;
@@ -9504,23 +9505,23 @@ a.button {
   font-family: 'Open Sans', sans-serif; }
 
 .active_coupon_view_box {
-  width: 90% !important;
+  width: 100% !important;
   height: 300px !important;
   border: 1px solid #E8E8E8;
   margin: 0px auto;
   padding: 0px;
   box-shadow: 2px 2px 13px #E8E8E8;
   background: #FFF;
-  padding: 20px; }
+  padding: 20px !important; }
 
 .active_coupon_view_box h4 {
   color: #2b3b4e;
   font-family: 'Roboto', sans-serif;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: normal;
   margin: 0px;
   padding: 0px;
-  line-height: 43px; }
+  line-height: 41px; }
 
 .active_coupon_view_box_pink {
   width: 314px !important;
@@ -9528,7 +9529,7 @@ a.button {
   background: #2A3B4D;
   text-align: center;
   padding: 23px 0px 0px 0px !important;
-  height: 69px !important;
+  height: 62px !important;
   color: #FFF; }
 
 .active_coupon_view_box_grre {
@@ -9536,13 +9537,13 @@ a.button {
   background: #FF3B69;
   text-align: center;
   padding: 23px 0px 0px 0px !important;
-  height: 69px !important;
+  height: 62px !important;
   color: #FFF; }
 
 .active_coupon_view_box_pink h3 {
   font-family: 'Roboto', sans-serif;
   color: #FFF;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0px;
   padding: 0px 0px 0px 0px;
@@ -9551,7 +9552,7 @@ a.button {
 .active_coupon_view_box_grre h3 {
   font-family: 'Roboto', sans-serif;
   color: #FFF;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
   margin: 0px;
   padding: 0px 0px 0px 0px;
@@ -9738,6 +9739,36 @@ a.button {
 .ng-invalid {
   border-color: red;
   border-width: 2px; }
+
+.make button {
+  background-color: #FF3B69;
+  color: #FFF;
+  font-size: 18px;
+  border: 1px solid #FF3B69;
+  text-align: center;
+  padding: 7px 32px;
+  margin: 100px 0px 0px 0px; }
+
+.Settings_text input {
+  padding: 25px 0px 6px 12px !important;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 18px !important;
+  color: #2b3b4e !important;
+  font-weight: normal !important;
+  margin: 0px !important;
+  line-height: 24px !important;
+  float: left;
+  width: 77% !important;
+  letter-spacing: 1px !important; }
+
+.new_create button {
+  background-color: #FF3B69;
+  color: #FFF;
+  font-size: 18px;
+  border: 1px solid #FF3B69;
+  text-align: center;
+  padding: 3px 43px;
+  margin: 17px 0px 0px 0px; }
 
 /**
  * MENU

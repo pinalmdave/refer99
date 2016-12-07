@@ -37,7 +37,7 @@ angular.module('viralDi')
               email: signupData.email,
               password: signupData.password
             };
-            User.login(loginData, function(err, res) {
+            User.login(loginData,"sys", function(err, res) {
               $ionicLoading.hide();
               if (err) {
                 if (err.data && err.data.error && err.data.error.message) {
@@ -62,15 +62,14 @@ angular.module('viralDi')
       $cordovaFacebook.login(["public_profile", "email"])
         .then(function(success) {
           console.log('success', success);
-
+          $ionicLoading.show({
+            template: 'Loading...'
+          });
           $cordovaFacebook.api("me?fields=name,id,email")
             .then(function(success) {
               // success
               console.log('me', success);
               if (success.email && success.name) {
-                $ionicLoading.show({
-                  template: 'Loading...'
-                });
                 var signupData = {
                   username: success.name,
                   email: success.email
@@ -92,7 +91,7 @@ angular.module('viralDi')
                       email: signupData.email,
                       password: "fb"
                     };
-                    User.login(loginData, function(err, res) {
+                    User.login(loginData,"fb", function(err, res) {
                       $ionicLoading.hide();
                       if (err) {
                         if (err.data && err.data.error && err.data.error.message) {
@@ -111,10 +110,12 @@ angular.module('viralDi')
                   }
                 });
               } else {
+                $ionicLoading.hide();
                 alert("Unable get your email and name please change your facebook privay settings.")
               }
             }, function(error) {
               // error
+              $ionicLoading.hide();
               $scope.signupMessage = "Please try after some time."
             });
         }, function(error) {

@@ -15,7 +15,7 @@
             <div class="row padding_remove">
                 <div class="col padding_remove">
                     <div class="card margin_top">
-                        <div class="campagin">
+                        <div class="campagin Settings_text">
                             <img src="images/ic_pas@2x (3).png">
                             <!-- <h4>Old Password</h4> -->
                             <input type="Password" placeholder="Old Password" name="old_pass" ng-model="old_pass">
@@ -26,7 +26,7 @@
             <div class="row padding_remove">
                 <div class="col padding_remove">
                     <div class="card margin_top">
-                        <div class="campagin">
+                        <div class="campagin Settings_text">
                             <img src="images/ic_pas@2x (3).png">
                             <!-- <h4>New Password</h4> -->
                             <input type="Password" placeholder="New Password" name="new_pass" ng-model="new_pass">
@@ -37,7 +37,7 @@
             <div class="row padding_remove">
                 <div class="col padding_remove">
                     <div class="card margin_top">
-                        <div class="campagin">
+                        <div class="campagin Settings_text">
                             <img src="images/ic_pas@2x (3).png">
                             <!-- <h4>Confirm Password</h4> -->
                             <input type="Password" placeholder="Confirm Password" name="confirm_pass" ng-model="confirm_pass">
@@ -49,6 +49,9 @@
         <div class="padding">
             <p ng-show="change_pass.isErr">* {{change_pass.message}}</p>
         </div>
+        <div class="padding">
+            <p ng-show="is_fb_user">*Change password not applicable for facebook user.</p>
+        </div>
         <!--         <div class="bar bar-footer SAVE_CHANGES SAVSGFS">
             <div class="row padding_remove">
                 <div class="col padding_remove">
@@ -56,6 +59,6 @@
                 </div>
             </div>
         </div> -->
-        <button class="SAVE_CHANGES full_width" type="button" ng-click="change_password(old_pass, new_pass, confirm_pass)">SAVE CHANGES</button>
+        <button ng-show="!is_fb_user" class="SAVE_CHANGES full_width" type="button" ng-click="change_password(old_pass, new_pass, confirm_pass)">SAVE CHANGES</button>
     </ion-content>
 </ion-view>

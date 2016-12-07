@@ -7,14 +7,19 @@
  * # SettingsController
  */
 angular.module('viralDi')
-  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage) {
+  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService) {
 
     $ionicSideMenuDelegate.canDragContent(true)
     $scope.user = Storage.getUser();
+    console.log('user', $scope.user);
+    if ($scope.user.user_type == "fb") {
+      $scope.is_fb_user = true;
+    }
     $scope.change_pass = {
       isErr: false,
       message: ""
     };
+
     $scope.change_password = function(old_pass, new_pass, confirm_pass) {
       // console.log(old_pass, new_pass, confirm_pass);
       if (!old_pass) {
@@ -70,5 +75,6 @@ angular.module('viralDi')
         });
       }
     };
+
 
   });
