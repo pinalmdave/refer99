@@ -71,7 +71,8 @@
     "com.lampa.startapp",
     "com.lampa.startapp@~0.1.4",
     "cordova-plugin-splashscreen",
-    "com.paypal.cordova.mobilesdk"
+    "com.paypal.cordova.mobilesdk",
+    "cordova-plugin-contacts"
   ],
   "cordovaPlatforms": [
     "android"

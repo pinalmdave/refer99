@@ -65,4 +65,6 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.0" />
     <plugin name="cordova-plugin-actionsheet" spec="https://github.com/EddyVerbruggen/cordova-plugin-actionsheet.git" />
     <plugin name="com.paypal.cordova.mobilesdk" spec="~3.3.1" />
+    <plugin name="cordova-plugin-contacts" spec="~2.2.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" />
 </widget>

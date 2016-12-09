@@ -1,5 +1,5 @@
 angular.module('viralDi')
-  .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign,$cordovaActionSheet) {
+  .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $cordovaActionSheet) {
     var userDash = this;
     $ionicSideMenuDelegate.canDragContent(true)
     $scope.user = Storage.getUser();
@@ -26,16 +26,21 @@ angular.module('viralDi')
     };
 
 
-    $scope.showCampActions = function() {
+    $scope.showCampActions = function(id) {
       var options = {
         'title': 'What do you want with this campaign?',
-        'buttonLabels': ['Edit'],
+        'buttonLabels': ['Edit', 'Send Coupon'],
         'androidEnableCancelButton': true, // default false
         'addCancelButtonWithLabel': 'Cancel'
       };
       $cordovaActionSheet.show(options)
         .then(function(btnIndex) {
           var index = btnIndex;
+          if (index == 1) {
+            $state.go('app.send_coupons', {
+              camp_id: id
+            });
+          }
 
         });
     };

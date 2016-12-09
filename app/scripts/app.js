@@ -96,7 +96,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         url: '/dashboard',
         cache: false,
         views: {
-          'view_dashboard': {
+          'viewContent': {
             templateUrl: 'templates/views/dashboard.html',
             controller: 'DashboardController',
             controllerAs: 'userDash'
@@ -118,7 +118,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         url: '/settings',
         cache: false,
         views: {
-          'view_settings': {
+          'viewContent': {
             templateUrl: 'templates/views/settings.html',
             controller: 'SettingsController',
             controllerAs: 'settings'
@@ -162,17 +162,48 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         url: '/notification',
         cache: true,
         views: {
-          'view_notification': {
+          'viewContent': {
             templateUrl: 'templates/views/notification.html'
+          }
+        }
+      })
+      .state('app.coupon', {
+        url: '/coupon',
+        cache: true,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/coupon.html'
+          }
+        }
+      })
+      .state('app.send_coupons', {
+        url: '/:camp_id/send_coupons',
+        cache: true,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/send_coupons.html',
+            controller: 'SendCouponController',
+            controllerAs: 'coupon'
+          }
+        }
+      })
+      .state('app.manage_customers', {
+        url: '/manage_customers',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/manage_customers.html',
+            controller: 'ManageCustomersController',
+            controllerAs: 'manage'
           }
         }
       });
 
 
     // redirects to default route for undefined routes
-    if(!didTutorial){
+    if (!didTutorial) {
       $urlRouterProvider.otherwise('/');
-    }else if (user) {
+    } else if (user) {
       $urlRouterProvider.otherwise('/app/dashboard');
     } else {
       $urlRouterProvider.otherwise('/app/home');

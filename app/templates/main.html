@@ -1,17 +1,29 @@
-<ion-tabs class="tabs-stable tabs-icon-top tabs-color-positive" ng-cloak>
-    <ion-tab icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" href="#/tab/recents">
-        <ion-nav-view name="tab-recents"></ion-nav-view>
-    </ion-tab>
-    <ion-tab icon-off="ion-ios-person-outline" icon-on="ion-ios-person" href="#/tab/contacts">
-        <ion-nav-view name="tab-contacts"></ion-nav-view>
-    </ion-tab>
-    <ion-tab icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/app/dashboard">
-        <ion-nav-view name="view_dashboard"></ion-nav-view>
-    </ion-tab>
-    <ion-tab icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/app/notification">
-        <ion-nav-view name="view_notification"></ion-nav-view>
-    </ion-tab>
-    <ion-tab icon-off="ion-ios-cog-outline" icon-on="ion-ios-cog" href="#/app/settings">
-        <ion-nav-view name="view_settings"></ion-nav-view>
-    </ion-tab>
-</ion-tabs>
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content>
+        <ion-nav-view name="viewContent">
+        </ion-nav-view>
+    </ion-side-menu-content>
+    <!-- Left menu -->
+    <ion-side-menu side="left" class="side-menu">
+        <ion-header-bar align-title="center" class="bar-positive">
+            <h1 class="title">Viral DI</h1>
+        </ion-header-bar>
+        <ion-content class="has-header">
+            <div class="list">
+                <a menu-close class="item item-icon-left" ui-sref="app.dashboard" ui-sref-active="active" ng-if="user">
+                    <i class="icon ion-clipboard"></i> Dashboard
+                </a>
+                <a menu-close class="item item-icon-left" ui-sref="app.payment" ui-sref-active="active" ng-if="user">
+                    <i class="icon ion-gear-b"></i> Payments
+                </a>
+                <a menu-close class="item item-icon-left" ui-sref="app.settings" ui-sref-active="active" ng-if="user">
+                    <i class="icon ion-gear-b"></i> Settings
+                </a>
+                <a menu-close class="item item-icon-left" ui-sref-active="active" ng-if="user" ng-click="logout()">
+                    <i class="icon ion-log-out"></i> Logout
+                </a>
+            </div>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

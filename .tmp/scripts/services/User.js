@@ -51,6 +51,19 @@
           return next(error, null);
         });
     };
+    this.get_user_customers = function(next) {
+      Restangular
+        .one('members')
+        .one('get_user_customers')
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.change_password = function(data, next) {
       Restangular
         .one('members')

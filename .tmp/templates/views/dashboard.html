@@ -10,20 +10,20 @@
                         <h2>NEW</br>CAMPAIGN</h2>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="plus">
+                <div class="col" ui-sref="app.send_coupons">
+                    <div class="plus" ng-if="user_camp_data.campaigns">
                         <img src="images/ic_sendcoupon@2x.png">
                         <h2>SEND</br>COUPON</h2>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="plus">
+                    <div class="plus" ng-if="user_camp_data.campaigns">
                         <img src="images/ic_validatecoupon@2x.png">
                         <h2>VALIDATE</br>COUPON</h2>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="plus">
+                    <div class="plus" ui-sref="app.manage_customers">
                         <img src="images/ic_managecustomer@2x.png">
                         <h2>MANAGE</br>CUSTOMER</h2>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="active_coupon_view_box_pink ">
                     <h3>VIEW COUPONS</h3>
                 </div>
-                <div class="active_coupon_view_box_grre " ng-click="showCampActions()">
+                <div class="active_coupon_view_box_grre " ng-click="showCampActions(campaign.id)">
                     <h3>ACTIONS</h3>
                 </div>
             </div>
