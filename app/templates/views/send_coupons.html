@@ -26,13 +26,13 @@
     <ion-content class="redapp_bg">
         <div class="row">
             <div class="col send_coupon text-center">
-                <label>Select Campaign</label>
+                <h1>Select Campaign</h1>
                 <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="selectedCamp"></select>
             </div>
         </div>
         <div class="row padding_remove">
             <div class="col text-center SEND_TO_CALL padding_remove">
-                <button type="button">SEND TO ALL CUSTOMERS</button>
+                <button type="button" ng-click="showShareActions()">SEND TO ALL CUSTOMERS</button>
             </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
                 <div class="card margin_top">
                     <div class="campagin lock">
                         <img src="images/ic_mobile_active@x.png">
-                        <h3>+919991299912</h3>
+                        <input type="number" placeholder="+919991299912" ng-model="contact.cust_contact">
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="card margin_top">
                     <div class="campagin lock">
                         <img src="images/ic_name_active@x.png">
-                        <h3>Customer Name</h3>
+                        <input type="text" placeholder="Customer Name" ng-model="contact.cust_name">
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                 <div class="card margin_top">
                     <div class="campagin lock">
                         <img src="images/ic_email_active@x.png">
-                        <h3>Email</h3>
+                        <input type="email" placeholder="Email" ng-model="contact.cust_email">
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
         <div class="bar bar-footer ADD_CUSTOMER">
             <div class="row padding_remove">
                 <div class="col padding_remove">
-                    <button type="button">ADD CUSTOMER AND SEND COUPON</button>
+                    <button type="button" ng-click="contact.cust_contact && addCustomerSendCoupon()">ADD CUSTOMER AND SEND COUPON</button>
                 </div>
             </div>
         </div>

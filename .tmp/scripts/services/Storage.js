@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('viralDi')
+    .module('viralDL')
     .service('Storage', Storage);
 
   /** @ngInject */

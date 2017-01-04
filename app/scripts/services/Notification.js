@@ -2,10 +2,11 @@
     'use strict';
 
     angular
-        .module('viralDi')
+        .module('viralDL')
         .service('Notification', Notification);
 
     /** @ngInject */
+    //change gcm to fcm
     function Notification($cordovaDevice, GCM, $cordovaPush, $rootScope, Storage, $state) {
 
         this.registerDevice = function(next) {

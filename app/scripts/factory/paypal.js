@@ -1,4 +1,4 @@
-angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'shopSettings', '$filter', '$timeout', function($q, $ionicPlatform, shopSettings, $filter, $timeout) {
+angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'shopSettings', '$filter', '$timeout', function($q, $ionicPlatform, shopSettings, $filter, $timeout) {
 
 
 
@@ -60,7 +60,7 @@ angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
     // "Sale  == >  immediate payment
     // "Auth" for payment authorization only, to be captured separately at a later time.
     // "Order" for taking an order, with authorization and capture to be done separately at a later time.
-    var payment = new PayPalPayment("" + total, "EUR", "" + name, "Sale");
+    var payment = new PayPalPayment(""+total, "USD", ""+name, "Sale");
     return payment;
   }
   /**
@@ -133,10 +133,10 @@ angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
 }]).constant('shopSettings', {
 
 
-  payPalSandboxId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
-  payPalProductionId: 'production id here',
+  payPalSandboxId: 'ARa-9ko0g5tj4i999OfEYPtuL-40BT8aKBBSrvYMn672ItmQNfi164Rfg_G50kFeHWpF1N46NiaIcRTj',
+  payPalProductionId: 'Ae3JDtHYBK8PAF5q_jkF-ukpoCpLSh3PS1fXIg6k6WNyBHsQXY_5HGwBnTmSJKtQdcUSpjDxxq-FHd_E',
   payPalEnv: 'PayPalEnvironmentSandbox', // for testing  production for production
-  payPalShopName: 'MyShopName',
+  payPalShopName: 'Viral99',
   payPalMerchantPrivacyPolicyURL: 'url to policy',
   payPalMerchantUserAgreementURL: ' url to user agreement '
 

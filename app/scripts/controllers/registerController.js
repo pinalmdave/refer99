@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:RegisterController
+ * @name viralDL.controller:RegisterController
  * @description
  * # RegisterController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook) {
     var register = this;
     $scope.register_user = function(username, userEmail, password) {

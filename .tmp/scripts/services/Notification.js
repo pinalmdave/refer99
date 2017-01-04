@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('viralDi')
+        .module('viralDL')
         .service('Notification', Notification);
 
     /** @ngInject */

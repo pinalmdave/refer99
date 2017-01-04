@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('viralDi')
+    .module('viralDL')
     .service('User', User);
 
   /** @ngInject */
@@ -12,7 +12,9 @@
       Restangular
         .one('members')
         .all('login')
-        .post(data)
+        .post(data, {
+          include: 'user'
+        })
         .then(function(data) {
           // do on success
           if (type == "fb") {
@@ -51,6 +53,32 @@
           return next(error, null);
         });
     };
+    this.update_user = function(id, data, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .customPUT(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.get_user = function(id, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.get_user_customers = function(next) {
       Restangular
         .one('members')
@@ -68,6 +96,18 @@
       Restangular
         .one('members')
         .all('change_password')
+        .post(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.create_payment = function(data, next) {
+      Restangular
+        .all('payments')
         .post(data)
         .then(function(data) {
           // do on success

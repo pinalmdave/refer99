@@ -10,9 +10,6 @@
         "com.lampa.startapp": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "de.tmaximini.viralDi"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
@@ -41,6 +38,15 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
     "dependent_plugins": {
@@ -48,6 +54,9 @@
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-file": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     }

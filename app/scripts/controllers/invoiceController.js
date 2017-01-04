@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # HomeController
  */
-angular.module('viralDi')
+angular.module('viralDL')
     .controller('InvoiceController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
         var invoice = this;
         $scope.user = Storage.getUser();

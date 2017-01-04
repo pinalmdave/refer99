@@ -2,16 +2,18 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # ForgotPasswordController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('ForgotPasswordController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
     var forgot = this;
     $scope.user = Storage.getUser();
     $scope.res_forget = false;
-    (function init() {})();
+    (function init() {
+      $ionicSideMenuDelegate.canDragContent(false);
+    })();
 
     $scope.send_forgot_email = function(forgetEmail) {
       // console.log('email', forgetEmail);
@@ -29,12 +31,14 @@ angular.module('viralDi')
             console.log('err', err);
             if (err.data && err.data.error && err.data.error.message) {
               $scope.forgetMessage = err.data.error.message;
-            }else{
-                $scope.forgetMessage="Please try after some time."
+            } else {
+              $scope.forgetMessage = "Please try after some time."
             }
+            alert($scope.forgetMessage);
           } else {
             console.log('login', data);
             $scope.forgetMessage = data.result.message;
+            alert("Success! Reset password link send to your email address.");
           }
         });
       }

@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:MainController
+ * @name viralDL.controller:MainController
  * @description
  * # IntroController
  * This controller handles the Intro
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('IntroController', function($scope, $state, Storage) {
 
     // Called to navigate to the main app

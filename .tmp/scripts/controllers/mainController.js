@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:MainController
+ * @name viralDL.controller:MainController
  * @description
  * # MainController
  * This controller handles the side menu
  */
-angular.module('viralDi')
-  .controller('MainController', function($scope, $rootScope, Storage, $state, $ionicSideMenuDelegate, User, $ionicLoading) {
+angular.module('viralDL')
+  .controller('MainController', function($scope, $rootScope, Storage, $state, $ionicSideMenuDelegate, User, $ionicLoading, $ionicHistory, $cordovaFacebook) {
     var main = this;
     $scope.user = Storage.getUser();
     $rootScope.$on('$stateChangeStart', function(event, toState, toStateParams, fromState, fromStateParams) {
@@ -22,27 +22,25 @@ angular.module('viralDi')
         template: 'Loading...'
       });
       var data = {
-      
+
       };
+
       User.clearToken(data, function(err, data) {
-            $ionicLoading.hide();
-          if (err) {
-              console.log('err', err);
-          } else {
-              console.log('success', data);
-              Storage.removeUser();
-              Storage.clearAll();
-              $scope.user = undefined;
-              $state.go('app.home');
-              $ionicSideMenuDelegate.toggleLeft(false);
-          }
+        $ionicLoading.hide();
+        if (err) {
+          console.log('err', err);
+        } else {
+          console.log('success', data);
+          Storage.removeUser();
+          Storage.clearAll();
+          $scope.user = undefined;
+          $ionicHistory.nextViewOptions({
+            disableBack: true
+          });
+          $state.go('app.home');
+          $ionicSideMenuDelegate.toggleLeft(false);
+        }
       });
-    /*  $ionicLoading.hide();
-      Storage.removeUser();
-      Storage.clearAll();
-      $scope.user = undefined;
-      $state.go('app.home');
-      $ionicSideMenuDelegate.toggleLeft(false);*/
 
     };
   });

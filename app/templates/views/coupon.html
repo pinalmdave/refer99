@@ -1,57 +1,65 @@
 <ion-view>
     <ion-header-bar align-title="center">
+        <button ui-sref="app.dashboard" class="button button-clear button-light icon-left ion-chevron-left"></button>
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
-        <h1 class="title">Coupon Design</h1>
+        <h1 class="title">Coupon Preview</h1>
     </ion-header-bar>
     <!-- <ion-content class="redapp_bg"> -->
-        <ion-content class="share_background">
-            <div class="row">
-                <div class="col">
-                    <div class="piza_coupon">
-                        <h1>DOMINO PIZZAS </BR>20% OFF</h1>
-                        <p>ON PURCHASE OF $ 100 OR MORE</p>
-                        <h2>0001-1234</h2>
-                        <h4>Redeemable at</h4>
-                        <h5>Domino Outlet, 65 Smitham Cape Suite 063</h5>
-                        <h5>Phone:+91 9991299912</h5>
-                        <h5>City:Manchester,United Kingdom</h5>
-                        <h5>Valid Date:27/10/2016 to 01/01/2017</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col piza_screen">
-                    <h2>Coupon Status:<span>Not Activated</span></h2>
-                    <p>To activate this coupon please forward it to atleast one of your Contacts on Whatsaap.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class=" col whtasapp text-center">
-                    <button class="button"><span><img src="images/ic_whatsapp@x.png"></span>Share on Whatsapp</button>
-                    <p>Optionally,please share the coupon and social media</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center eleps_icon">
-                    <img src="images/ic_face@2x.png">
-                </div>
-                <div class="col text-center eleps_icon">
-                    <img src="images/ic_twitter@2x.png">
-                </div>
-                <div class="col text-center eleps_icon">
-                    <img src="images/ic_instagram@2x.png">
-                </div>
-            </div>
-        </ion-content>
-        <div class="bar bar-footer padding_remove gernate_edit ">
-            <div class="row padding_remove">
-                <div class="padding_remove edit">
-                    <a href="#">EDIT</a>
-                </div>
-                <div class="gernate">
-                    <a href="#">GENERATE COUPON</a>
+    <ion-content class="share_background">
+        <div class="row">
+            <div class="col">
+                <div class="piza_coupon">
+                    <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}} </BR><span ng-if="camp_data.discount_type=='price'">${{camp_data.discount_amount}} OFF</span>
+                <span ng-if="camp_data.discount_type=='percent'">{{camp_data.discount_amount}}% OFF</span>
+                    <span ng-if="camp_data.discount_type=='buy_1_get_1'">Buy {{camp_data.buy_value}} Get {{camp_data.get_value}}</span>
+                    <span ng-if="camp_data.discount_type=='free_item'">Free Item</span></h1>
+                    <p ng-if="camp_data.business_type == 'clothes'">ON PURCHASE OF Clothes</p>
+                    <p ng-if="camp_data.business_type == 'electronics'">ON PURCHASE OF Electronic Items</p>
+                    <p ng-if="camp_data.business_type == 'hardware'">ON PURCHASE OF Hardware Items</p>
+                    <p ng-if="camp_data.business_type == 'other'">ON PURCHASE</p>
+                    <p ng-if="camp_data.business_type == 'default'">ON PURCHASE</p>
+                    <h2>0001-1234</h2>
+                    <h4>Redeemable at</h4>
+                    <h5>{{camp_data.business_address}}</h5>
+                    <h5>Phone:{{camp_data.contact ?camp_data.contact:'N/A'}}</h5>
+                    <h5 ng-if="camp_data.city">City:{{camp_data.city}},{{camp_data.state}}</h5>
+                    <h5>Valid Date:{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</h5>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col piza_screen">
+                <h2>Coupon Status:<span>Not Activated</span></h2>
+                <p>To activate this coupon please forward it to atleast one of your Contacts on Whatsaap.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col whtasapp text-center">
+                <button class="button"><span><img src="images/ic_whatsapp@x.png"></span>Share on Whatsapp</button>
+                <p>Optionally,please share the coupon and social media</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center eleps_icon">
+                <img src="images/ic_face@2x.png">
+            </div>
+            <div class="col text-center eleps_icon">
+                <img src="images/ic_twitter@2x.png">
+            </div>
+            <div class="col text-center eleps_icon">
+                <img src="images/ic_instagram@2x.png">
+            </div>
+        </div>
+    </ion-content>
+    <!--  <div class="bar bar-footer padding_remove gernate_edit ">
+        <div class="row padding_remove">
+            <div class="padding_remove edit">
+                <a href="#">EDIT</a>
+            </div>
+            <div class="gernate">
+                <a href="#">GENERATE COUPON</a>
+            </div>
+        </div>
+    </div> -->
     </ion-content>
 </ion-view>

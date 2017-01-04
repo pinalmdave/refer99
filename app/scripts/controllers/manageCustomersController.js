@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:ManageCustomersController
+ * @name viralDL.controller:ManageCustomersController
  * @description
  * # ManageCustomersController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('ManageCustomersController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, $cordovaContacts, Customer) {
 
     $ionicSideMenuDelegate.canDragContent(true)
@@ -45,6 +45,11 @@ angular.module('viralDi')
           $ionicLoading.hide();
           if (err) {
             console.log('err', err);
+            if (err.data && err.data.error && err.data.error.message) {
+              alert(err.data.error.message);
+            } else {
+              alert("Please try again later!");
+            }
           } else {
             // console.log('customers', data);
             $scope.user_cust_data.customers.push(data);
@@ -57,13 +62,16 @@ angular.module('viralDi')
       $ionicLoading.show({
         template: 'Loading...'
       });
+      var intIndex = $scope.user_cust_data.customers.map(function(el) {
+        return el.id;
+      }).indexOf(id);
       Customer.remove_customer(id, function(err, data) {
         $ionicLoading.hide();
         if (err) {
           console.log('err', err);
         } else {
           // console.log('customers', data);
-          $scope.user_cust_data.customers.splice(index, 1);
+          $scope.user_cust_data.customers.splice(intIndex, 1);
         }
       });
     }

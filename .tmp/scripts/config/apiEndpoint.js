@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc constant
- * @name viralDi.API_ENDPOINT
+ * @name viralDL.API_ENDPOINT
  * @description
  * # API_ENDPOINT
  * Defines the API endpoint where our resources will make requests against.
@@ -10,7 +10,7 @@
  */
 
 
-angular.module('viralDi')
+angular.module('viralDL')
 
     // development
     .constant('API_ENDPOINT', {

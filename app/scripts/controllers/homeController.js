@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # HomeController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('HomeController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook, Storage) {
     var home = this;
     $ionicSideMenuDelegate.canDragContent(false)
@@ -30,7 +30,7 @@ angular.module('viralDi')
           email: userEmail,
           password: password
         };
-        User.login(data,"sys", function(err, data) {
+        User.login(data, "sys", function(err, data) {
           $ionicLoading.hide();
           if (err) {
             console.log('err', err);
@@ -41,7 +41,20 @@ angular.module('viralDi')
             $ionicHistory.nextViewOptions({
               disableBack: true
             });
-            $state.go('app.dashboard');
+            if (!data.user.last_payment) {
+              $state.go('app.payment');
+            } else if (data.user.last_payment) {
+              var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
+              // console.log('monthDiff', monthDiff);
+              if (monthDiff >= 1) {
+                alert('Your monthly subscribtion is expired.Please make payment.');
+                $state.go('app.payment');
+              } else {
+                $state.go('app.dashboard');
+              }
+            } else {
+              $state.go('app.dashboard');
+            }
           }
         });
       }
@@ -61,7 +74,7 @@ angular.module('viralDi')
                 email: success.email,
                 password: "fb"
               };
-              User.login(loginData,"fb", function(err, res) {
+              User.login(loginData, "fb", function(err, res) {
                 $ionicLoading.hide();
                 if (err) {
                   console.log('err', err);

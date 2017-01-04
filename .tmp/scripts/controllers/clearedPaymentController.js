@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # HomeController
  */
-angular.module('viralDi')
+angular.module('viralDL')
     .controller('ClearedPaymentController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
         var cleared = this;
         $scope.user = Storage.getUser();

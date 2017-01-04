@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:SettingsController
+ * @name viralDL.controller:SettingsController
  * @description
  * # SettingsController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService) {
 
     $ionicSideMenuDelegate.canDragContent(true)
@@ -19,7 +19,7 @@ angular.module('viralDi')
       isErr: false,
       message: ""
     };
-
+    $scope.s3OptionsUri = {};
     $scope.change_password = function(old_pass, new_pass, confirm_pass) {
       // console.log(old_pass, new_pass, confirm_pass);
       if (!old_pass) {

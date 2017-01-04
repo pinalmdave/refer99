@@ -10,14 +10,14 @@
                         <h2>NEW</br>CAMPAIGN</h2>
                     </div>
                 </div>
-                <div class="col" ui-sref="app.send_coupons">
-                    <div class="plus" ng-if="user_camp_data.campaigns">
+                <div class="col" ng-click="goToSendCoupons()" ng-if="user_camp_data.campaigns.length">
+                    <div class="plus">
                         <img src="images/ic_sendcoupon@2x.png">
-                        <h2>SEND</br>COUPON</h2>
+                        <h2>DISTRIBUTE</br>COUPON</h2>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="plus" ng-if="user_camp_data.campaigns">
+                <div class="col" ng-if="user_camp_data.campaigns.length">
+                    <div class="plus" ui-sref="app.validate_coupon">
                         <img src="images/ic_validatecoupon@2x.png">
                         <h2>VALIDATE</br>COUPON</h2>
                     </div>
@@ -43,22 +43,22 @@
                 <h1>ACTIVE CAMPAIGN</h1>
             </div>
         </div>
-        <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns">
+        <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns | orderBy:'-created'">
             <div clas="row">
                 <div class="col active_coupon_view_box margin_top">
                     <h4>Campagin:Name:{{campaign.cp_name}}</h4>
-                    <h4>Start Date: {{getDateFormally(user_camp_data.start_date)}}</h4>
-                    <h4>End Date:{{getDateFormally(user_camp_data.end_date)}}</h4>
-                    <h4>Coupons Activated:65</h4>
-                    <h4>Coupons Redeemed:50</h4>
-                    <h4>Coupons Redemptions:</h4>
+                    <h4>Start Date: {{getDateFormally(campaign.start_date)}}</h4>
+                    <h4>End Date:{{getDateFormally(campaign.end_date)}}</h4>
+                    <h4>Coupons Activated:{{campaign.coupons_activated.length}}</h4>
+                    <h4>Coupons Redeemed:{{campaign.coupons_redeemed.length}}</h4>
+                    <!-- <h4>Coupons Redemptions:</h4> -->
                 </div>
             </div>
             <div class="row main_active_width">
-                <div class="active_coupon_view_box_pink ">
-                    <h3>VIEW COUPONS</h3>
+                <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
+                    <h3>VIEW COUPON</h3>
                 </div>
-                <div class="active_coupon_view_box_grre " ng-click="showCampActions(campaign.id)">
+                <div class="active_coupon_view_box_grre " ng-click="showCampActions($index,campaign.id)">
                     <h3>ACTIONS</h3>
                 </div>
             </div>

@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name viralDi
+ * @name viralDL
  * @description
  * # Initializes main application and routing
  *
  * Main module of the application.
  */
 
-angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 'restangular', 'LocalStorageModule', 'ionic-datepicker', 'ionic.rating'])
+angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 'restangular', 'LocalStorageModule', 'ionic-datepicker', 'ionic.rating'])
 
 .run(function($ionicPlatform, Notification, User) {
 
@@ -65,7 +65,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
     });*/
 
     localStorageServiceProvider
-      .setPrefix('viralDi')
+      .setPrefix('viralDL')
       .setStorageType('localStorage');
     // Application routing
     $stateProvider
@@ -105,7 +105,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.forgot_password', {
         url: '/forgot_password',
-        cache: true,
+        cache: false,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/forgot_password.html',
@@ -138,7 +138,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.new_campaign', {
         url: '/new_campaign',
-        cache: true,
+        cache: false,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/new_campaign.html',
@@ -149,7 +149,7 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.payment', {
         url: '/payment',
-        cache: true,
+        cache: false,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/payment.html',
@@ -167,18 +167,20 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           }
         }
       })
-      .state('app.coupon', {
-        url: '/coupon',
+      .state('app.view_coupon', {
+        url: '/:camp_id/view_coupon',
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/coupon.html'
+            templateUrl: 'templates/views/coupon.html',
+             controller: 'ViewCouponController',
+            controllerAs: 'viewCoupon'
           }
         }
       })
       .state('app.send_coupons', {
         url: '/:camp_id/send_coupons',
-        cache: true,
+        cache: false,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/send_coupons.html',
@@ -195,6 +197,28 @@ angular.module('viralDi', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
             templateUrl: 'templates/views/manage_customers.html',
             controller: 'ManageCustomersController',
             controllerAs: 'manage'
+          }
+        }
+      })
+      .state('app.validate_coupon', {
+        url: '/validate_coupon',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/validate.html',
+            controller: 'ValidateCouponController',
+            controllerAs: 'validate'
+          }
+        }
+      })
+      .state('app.business_profile', {
+        url: '/business_profile',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/business_profile.html',
+            controller:'BusinessProfileController',
+            controllerAs:'profile'
           }
         }
       });
