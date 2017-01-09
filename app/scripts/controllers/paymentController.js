@@ -7,7 +7,7 @@
  * # PaymentsController
  */
 angular.module('viralDL')
-  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService) {
+  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state) {
 
     $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -18,7 +18,7 @@ angular.module('viralDL')
       $scope.isloading = true;
       User.get_user($scope.user.userId, function(err, data) {
         $ionicLoading.hide();
-        $scope.isloading=false;
+        $scope.isloading = false;
         if (err) {
           console.log('err', err);
         } else {
@@ -37,7 +37,7 @@ angular.module('viralDL')
               console.log('dueDate', $scope.dueDate);
             }
           } else {
-            $scope.isPaidUser = true;
+            $scope.isPaidUser = false;
           }
         }
       });
@@ -62,8 +62,13 @@ angular.module('viralDL')
               console.log('err', err);
             } else {
               console.log('res', res);
-              alert("Thanks for payment.");
-              $state.go("app.dashboard");
+              $scope.isPaidUser = true;
+              $scope.user.is_paid_user = true;
+              $scope.user.user.last_payment = res.created;
+              Storage.setUser($scope.user);
+              $scope.dueDate = moment(res.created).add(1, 'M').format('LL');
+              alert("Thanks for the payment.");
+              $state.go("app.business_profile");
             }
           });
 

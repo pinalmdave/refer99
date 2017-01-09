@@ -190,6 +190,7 @@ android {
         }
         targetSdkVersion 21        
         multiDexEnabled true
+        applicationId "de.tmaximini.viralDi"
     }
 
     compileSdkVersion cdvCompileSdkVersion

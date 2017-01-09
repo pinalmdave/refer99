@@ -6,7 +6,7 @@
     .service('User', User);
 
   /** @ngInject */
-  function User(Restangular, Storage, Notification, $rootScope) {
+  function User(Restangular, Storage, Notification, $rootScope, $cordovaDevice) {
     var thisVar = this;
     this.login = function(data, type, next) {
       Restangular
@@ -22,18 +22,25 @@
           } else {
             data.user_type = "sys";
           }
+          if (!data.user.last_payment) {
+            data.is_paid_user = false;
+          } else if (data.user.last_payment) {
+            var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
+            if (monthDiff >= 1) {
+              data.is_paid_user = false;
+            } else {
+              data.is_paid_user = true;
+            }
+          } else {
+            data.is_paid_user = false;
+          }
           Storage.setUser(data.plain());
           Restangular.setDefaultRequestParams({
             access_token: data.id
           });
-          /*Notification.registerDevice(function() {
-              thisVar.addDeviceToken(function(err, user) {
-                  if (err) {
-                      console.log('err #getUser @User.Service.js: ', err);
-                  }
-              });
-              // do nothing
-          });*/
+          Notification.registerDevice(data.userId, function() {
+            // do nothing
+          });
           return next(null, data.plain());
         }, function(error) {
           // do on failure
@@ -130,6 +137,18 @@
           return next(error, null);
         });
     };
+    this.send_contact_us_query = function(data, next) {
+      Restangular
+        .all('faqs')
+        .post(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.registerUser = function(data, next) {
       Restangular
         .one('members')
@@ -157,21 +176,34 @@
         });
     };
 
-    this.clearToken = function(data, next) {
-      /* Restangular
-         .one('venue')
-         .one('cleargcm')
-         .get(data)
-         .then(function(data) {
-           // do on success
-         }, function(error) {
-           // do on failure
-           return next(error, null);
-         });*/
-      return next(null, {});
-      Restangular.setDefaultRequestParams({
-        access_token: ""
-      });
+    this.clearToken = function(id, next) {
+      var data = {};
+      var devicePlatform = $cordovaDevice.getPlatform();
+      if (devicePlatform === 'Android') {
+        data.m_token_firebase = "";
+      } else if (devicePlatform === 'iOS') {
+        data.m_device = "";
+      } else {
+        return next(null, {});
+        Restangular.setDefaultRequestParams({
+          access_token: ""
+        });
+      }
+      Restangular
+        .one('members')
+        .one(id)
+        .customPUT(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+          Restangular.setDefaultRequestParams({
+            access_token: ""
+          });
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+
     };
 
     this.addDeviceToken = function(next) {

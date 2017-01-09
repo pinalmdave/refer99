@@ -1,10 +1,10 @@
 angular.module('viralDL')
-  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker) {
+  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate) {
     $ionicSideMenuDelegate.canDragContent(true)
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
     $scope.today = new Date();
-    $scope.isToTouched=false;
+    $scope.isToTouched = false;
     (function init() {
       $scope.camp_data = {};
       $ionicLoading.show({
@@ -17,8 +17,9 @@ angular.module('viralDL')
         } else {
           console.log('user_data', user_data);
           $scope.user_data = user_data;
-          if (!user_data.business_name && !user_data.business_address) {
-            $scope.is_first_camp = true;
+          if (!user_data.work_through) {
+            alert('Please provide your business details to start new campaign');
+            $state.go("app.business_profile");
           }
           $scope.camp_data.business_type = user_data.business_type ? user_data.business_type : "default";
           $scope.camp_data.business_name = user_data.business_name;
@@ -33,8 +34,9 @@ angular.module('viralDL')
           // $scope.camp_data.business_type = "default";
           $scope.cp_screen_first = true;
           $scope.cp_screen_second = false;
-          $scope.camp_data.discount_type = "price";
-          $scope.camp_data.redeemable_at = "location";
+          // $scope.camp_data.discount_type = "price";
+          $scope.camp_data.redeemable_at = user_data.work_through;
+          $scope.camp_data.web_address = user_data.web_address;
           $scope.camp_data.buy_value = 1;
           $scope.camp_data.get_value = 1;
           $scope.camp_data.cp_additional_text = "On your purchase of $100 or more(Some exclusions may apply.See store for more detail).";
@@ -83,7 +85,7 @@ angular.module('viralDL')
     };
     $scope.openToDatePicker = function() {
       ionicDatePicker.openDatePicker(dateObj2);
-      $scope.isToTouched=true;
+      $scope.isToTouched = true;
     };
     $scope.createCampaign = function() {
       var data = {
@@ -121,49 +123,57 @@ angular.module('viralDL')
           alert("Invalid data");
         } else {
           console.log('data', data);
-          if ($scope.is_first_camp) {
-            var update = {
-              business_name: $scope.user_data.business_name ? $scope.user_data.business_name : $scope.camp_data.business_name,
-              business_type: $scope.user_data.business_type ? $scope.user_data.business_type : $scope.camp_data.business_type,
-              business_address: $scope.user_data.business_address ? $scope.user_data.business_address : $scope.camp_data.business_address,
-              business_address_opt: $scope.user_data.business_address_opt ? $scope.user_data.business_address_opt : $scope.camp_data.business_address_opt,
-              contact: $scope.user_data.contact ? $scope.user_data.contact : $scope.camp_data.contact,
-              contact_person: $scope.user_data.contact_person ? $scope.user_data.contact_person : $scope.camp_data.contact_person,
-              city: $scope.user_data.city ? $scope.user_data.city : $scope.camp_data.city,
-              state: $scope.user_data.state ? $scope.user_data.state : $scope.camp_data.state,
-              zip_code: $scope.user_data.zip_code ? $scope.user_data.zip_code : $scope.camp_data.zip_code
-            };
-            User.update_user($scope.user.userId, update, function(err, res) {
-              $ionicLoading.hide();
-              if (err) {
-                console.log('err', err);
-              }
-              $ionicHistory.nextViewOptions({
-                disableBack: true
-              });
-              $state.go("app.view_coupon", {
-                camp_id: data.id
-              });
-            });
-          } else {
-            $ionicLoading.hide();
-            $ionicHistory.nextViewOptions({
-              disableBack: true
-            });
-            $state.go("app.view_coupon", {
-              camp_id: data.id
-            });
-          }
+          $ionicHistory.nextViewOptions({
+            disableBack: true
+          });
+          $state.go("app.view_coupon", {
+            camp_id: data.id
+          });
+          /* if ($scope.is_first_camp) {
+             var update = {
+               business_name: $scope.user_data.business_name ? $scope.user_data.business_name : $scope.camp_data.business_name,
+               business_type: $scope.user_data.business_type ? $scope.user_data.business_type : $scope.camp_data.business_type,
+               business_address: $scope.user_data.business_address ? $scope.user_data.business_address : $scope.camp_data.business_address,
+               business_address_opt: $scope.user_data.business_address_opt ? $scope.user_data.business_address_opt : $scope.camp_data.business_address_opt,
+               contact: $scope.user_data.contact ? $scope.user_data.contact : $scope.camp_data.contact,
+               contact_person: $scope.user_data.contact_person ? $scope.user_data.contact_person : $scope.camp_data.contact_person,
+               city: $scope.user_data.city ? $scope.user_data.city : $scope.camp_data.city,
+               state: $scope.user_data.state ? $scope.user_data.state : $scope.camp_data.state,
+               zip_code: $scope.user_data.zip_code ? $scope.user_data.zip_code : $scope.camp_data.zip_code
+             };
+             User.update_user($scope.user.userId, update, function(err, res) {
+               $ionicLoading.hide();
+               if (err) {
+                 console.log('err', err);
+               }
+               $ionicHistory.nextViewOptions({
+                 disableBack: true
+               });
+               $state.go("app.view_coupon", {
+                 camp_id: data.id
+               });
+             });
+           } else {
+             $ionicLoading.hide();
+             $ionicHistory.nextViewOptions({
+               disableBack: true
+             });
+             $state.go("app.view_coupon", {
+               camp_id: data.id
+             });
+           }*/
         }
       });
     };
     $scope.goToNext = function() {
       $scope.cp_screen_first = false;
       $scope.cp_screen_second = true;
+      $ionicScrollDelegate.scrollTop();
     }
     $scope.goBack = function() {
       $scope.cp_screen_first = true;
       $scope.cp_screen_second = false;
+      $ionicScrollDelegate.scrollTop();
     }
   });
 Date.prototype.yyyymmdd = function() {

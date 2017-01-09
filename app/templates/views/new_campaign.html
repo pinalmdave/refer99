@@ -61,7 +61,7 @@
                         <p>Discount Type</p>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
                     <div class="col padding_remove">
                         <ion-radio name="discount_type_option" ng-model="camp_data.discount_type" ng-value="'price'">$</ion-radio>
                     </div>
@@ -95,245 +95,209 @@
                             <div class="campagin ">
                                 <img src="images/ic_discount_type@x.png ">
                                 <!-- <h4>Discount Amount</h4> -->
-                                <input type="number " placeholder="Discount Amount " name="dis_amount " min="1 " ng-model="camp_data.discount_amount " required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val " ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.required ">Discount amount is required</p>
-                <p class="new_camp_val " ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.min ">Discount amount should not be less than 1%</p>
-               <!--  <p class="new_camp_val " ng-show="campagin_first.dis_amount.$touched && camp_data.discount_amount> 100 && camp_data.discount_type =='percent'">Discount amount should not be greater than 100%</p> -->
-                <div class="row">
-                    <div class="col disscount">
-                        <p>Redeemable At</p>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col">
-                        <ion-radio name="redeemable_at" ng-model="camp_data.redeemable_at" ng-value="'online'">Online</ion-radio>
-                    </div>
-                    <div class="col">
-                        <ion-radio name="redeemable_at" ng-model="camp_data.redeemable_at" ng-value="'location'">At a location</ion-radio>
-                    </div>
-                </div>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="text" placeholder="Contact Person" name="contact_person" ng-model="camp_data.contact_person" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.contact_person.$touched && campagin_first.contact_person.$invalid">Contact person is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="text" placeholder="Contact Number" name="contact" ng-model="camp_data.contact" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.contact.$touched && campagin_first.contact.$invalid">Contact number is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='online'">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin">
-                                <img src="images/ic_business@x.png">
-                                <!-- <h4>Business Name</h4> -->
-                                <input type="text" placeholder="Web Address" name="web_address" ng-model="camp_data.web_address" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.web_address.$touched && campagin_first.web_address.$invalid">Web address is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin">
-                                <img src="images/ic_business@x.png">
-                                <!-- <h4>Business Name</h4> -->
-                                <input type="text" placeholder="Business Name" name="business_name" ng-model="camp_data.business_name" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.business_name.$touched && campagin_first.business_name.$invalid">Business name is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin discount">
-                                <img src="images/ic_business@x.png">
-                                <select ng-model="camp_data.business_type">
-                                    <option disabled value="default">Business type</option>
-                                    <option value="clothes">Clothes</option>
-                                    <option value="electronics">Electronics</option>
-                                    <option value="hardware">Hardware</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="text" placeholder="Business Address 1" name="business_address" ng-model="camp_data.business_address" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.business_address.$touched && campagin_first.business_address.$invalid">Business address is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="text" placeholder="Business Address 2 (opt)" name="business_address2" ng-model="camp_data.business_address_opt">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="text" placeholder="City" name="city" ng-model="camp_data.city" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.city.$touched && campagin_first.city.$invalid">City name is required.</p>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin discount">
-                                <img src="images/ic_email@x.png">
-                                <select ng-model="camp_data.state">
-                                    <option disabled value="default">Select State</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <option value="AR">Arkansas</option>
-                                    <option value="CA">California</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="CT">Connecticut</option>
-                                    <option value="DE">Delaware</option>
-                                    <option value="DC">District Of Columbia</option>
-                                    <option value="FL">Florida</option>
-                                    <option value="GA">Georgia</option>
-                                    <option value="HI">Hawaii</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="IN">Indiana</option>
-                                    <option value="IA">Iowa</option>
-                                    <option value="KS">Kansas</option>
-                                    <option value="KY">Kentucky</option>
-                                    <option value="LA">Louisiana</option>
-                                    <option value="ME">Maine</option>
-                                    <option value="MD">Maryland</option>
-                                    <option value="MA">Massachusetts</option>
-                                    <option value="MI">Michigan</option>
-                                    <option value="MN">Minnesota</option>
-                                    <option value="MS">Mississippi</option>
-                                    <option value="MO">Missouri</option>
-                                    <option value="MT">Montana</option>
-                                    <option value="NE">Nebraska</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="NH">New Hampshire</option>
-                                    <option value="NJ">New Jersey</option>
-                                    <option value="NM">New Mexico</option>
-                                    <option value="NY">New York</option>
-                                    <option value="NC">North Carolina</option>
-                                    <option value="ND">North Dakota</option>
-                                    <option value="OH">Ohio</option>
-                                    <option value="OK">Oklahoma</option>
-                                    <option value="OR">Oregon</option>
-                                    <option value="PA">Pennsylvania</option>
-                                    <option value="RI">Rhode Island</option>
-                                    <option value="SC">South Carolina</option>
-                                    <option value="SD">South Dakota</option>
-                                    <option value="TN">Tennessee</option>
-                                    <option value="TX">Texas</option>
-                                    <option value="UT">Utah</option>
-                                    <option value="VT">Vermont</option>
-                                    <option value="VA">Virginia</option>
-                                    <option value="WA">Washington</option>
-                                    <option value="WV">West Virginia</option>
-                                    <option value="WI">Wisconsin</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <!-- <h4>Email</h4> -->
-                                    <input type="number" placeholder="Zip Code" name="zip" ng-model="camp_data.zip_code" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.zip.$touched && campagin_first.zip.$invalid">Zip code is required.</p>
-                <!--  <div class="row padding_remove">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin discount">
-                                <img src="images/ic_discount_amount@x.png">
-                                <select ng-model="camp_data.discount_type">
-                                    <option disabled value="default">Discount Type</option>
-                                    <option value="quantity">Quantity</option>
-                                    <option value="cash">Cash</option>
-                                    <option value="other">Other</option>
-                                </select>
+                                <input type="number" placeholder="Discount Amount" name="dis_amount" min="1" ng-model="camp_data.discount_amount" required>
                             </div>
                         </div>
                     </div>
                 </div>
                 <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.required">Discount amount is required</p>
-                <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && camp_data.discount_amount <1">Discount amount should not be less than 1%</p>
-                <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.max">Discount amount should not be greater than 100%</p>-->
-                <!--  <div class="row padding_remove">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin">
-                                    <img src="images/ic_email@x.png">
-                                    <input type="email" placeholder="Email" name="cp_email" ng-model="camp_data.cp_email" required>
+                <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.min">Discount amount should not be less than 1%</p>
+               <!--  <p class="new_camp_val " ng-show="campagin_first.dis_amount.$touched && camp_data.discount_amount> 100 && camp_data.discount_type =='percent'">Discount amount should not be greater than 100%</p> -->
+                <!-- Business Details part -->
+                <!--   <div>
+                    <div class="row">
+                        <div class="col disscount">
+                            <p>Redeemable At</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <ion-radio name="redeemable_at" ng-model="camp_data.redeemable_at" ng-value="'online'">Online</ion-radio>
+                        </div>
+                        <div class="col">
+                            <ion-radio name="redeemable_at" ng-model="camp_data.redeemable_at" ng-value="'location'">At a location</ion-radio>
+                        </div>
+                    </div>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="text" placeholder="Contact Person" name="contact_person" ng-model="camp_data.contact_person" required>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <p class="new_camp_val" ng-if="campagin_first.cp_email.$touched && campagin_first.cp_email.$invalid">Email is invalid or required.</p> -->
-            </form>
+                    <p class="new_camp_val" ng-if="campagin_first.contact_person.$touched && campagin_first.contact_person.$invalid">Contact person is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="text" placeholder="Contact Number" name="contact" ng-model="camp_data.contact" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.contact.$touched && campagin_first.contact.$invalid">Contact number is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='online'">
+                        <div class="col padding_remove">
+                            <div class="card margin_top">
+                                <div class="campagin">
+                                    <img src="images/ic_business@x.png">
+                                    <input type="text" placeholder="Web Address" name="web_address" ng-model="camp_data.web_address" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.web_address.$touched && campagin_first.web_address.$invalid">Web address is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="col padding_remove">
+                            <div class="card margin_top">
+                                <div class="campagin">
+                                    <img src="images/ic_business@x.png">
+                                    <input type="text" placeholder="Business Name" name="business_name" ng-model="camp_data.business_name" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.business_name.$touched && campagin_first.business_name.$invalid">Business name is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="col padding_remove">
+                            <div class="card margin_top">
+                                <div class="campagin discount">
+                                    <img src="images/ic_business@x.png">
+                                    <select ng-model="camp_data.business_type">
+                                        <option disabled value="default">Business type</option>
+                                        <option value="clothes">Clothes</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="hardware">Hardware</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="text" placeholder="Business Address 1" name="business_address" ng-model="camp_data.business_address" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.business_address.$touched && campagin_first.business_address.$invalid">Business address is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="text" placeholder="Business Address 2 (opt)" name="business_address2" ng-model="camp_data.business_address_opt">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="text" placeholder="City" name="city" ng-model="camp_data.city" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.city.$touched && campagin_first.city.$invalid">City name is required.</p>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="col padding_remove">
+                            <div class="card margin_top">
+                                <div class="campagin discount">
+                                    <img src="images/ic_email@x.png">
+                                    <select ng-model="camp_data.state">
+                                        <option disabled value="default">Select State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row padding_remove" ng-if="camp_data.redeemable_at=='location' || is_first_camp">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin">
+                                        <img src="images/ic_email@x.png">
+                                        <input type="number" placeholder="Zip Code" name="zip" ng-model="camp_data.zip_code" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="new_camp_val" ng-if="campagin_first.zip.$touched && campagin_first.zip.$invalid">Zip code is required.</p>
+                </div> -->
+                <!--    </form>
             <div class="row padding_remove">
                 <div class="col  new_back_create padding_remove">
                     <button class="button" ng-click="camp_data.end_date && campagin_first.$valid && goToNext()">
@@ -346,61 +310,50 @@
             </div>
         </section>
         <section ng-show="cp_screen_second">
-            <!-- <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <div class="card">
-                        <div class="item item-text-wrap">
-                            <div class="item range pink_bar">
-                                <input type="range" name="volume">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <form name="campagin_second">
+            <form name="campagin_second"> -->
                 <div class="row padding_remove">
                     <div class="col padding_remove">
                         <div class="campagin_INFO_HEIGHT margin_top">
-                            <div class="campagin_INFO">
-                                <!-- <h2>Campaign Info</h2> -->
-                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Additional Text" ng-model="camp_data.cp_additional_text" name="camp_info" required></textarea>
+                            <div class="campagin_INFO TEXT_ARARARA">
+                                <p>Additional Text</p>
+                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_additional_text" name="camp_info" required></textarea>
                                 <!-- <input type="text area" name="cp_info" ng-model="camp_data.cp_info"> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="padding">
-                    <p class="new_camp_val" ng-if="campagin_second.camp_info.$touched && campagin_second.camp_info.$invalid">Additional text is required.</p>
+                    <p class="new_camp_val" ng-if="campagin_first.camp_info.$touched && campagin_first.camp_info.$invalid">Additional text is required.</p>
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
                         <div class="campagin_INFO_HEIGHT margin_top">
-                            <div class="campagin_INFO">
-                                <!-- <h2>Terms& Condition</h2> -->
-                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Disclaimer" ng-model="camp_data.cp_disclaimer" name="camp_terms" required></textarea>
+                            <div class="campagin_INFO TEXT_ARARARA">
+                                <p>Disclaimer</p>
+                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_disclaimer" name="camp_terms" required></textarea>
                                 <!-- <input type="text area" name="cp_terms" ng-model="camp_data.cp_terms"> -->
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="padding">
-                    <p class="new_camp_val" ng-if="campagin_second.camp_terms.$touched && campagin_second.camp_terms.$invalid">Disclaimer is required.</p>
+                    <p class="new_camp_val" ng-if="campagin_first.camp_terms.$touched && campagin_first.camp_terms.$invalid">Disclaimer is required.</p>
                 </div>
             </form>
             <div class="row padding_remove">
-                <div class="col text-center new_back padding_remove">
+                <!-- <div class="col text-center new_back padding_remove">
                     <button class="button" ng-click="goBack()">
                         Back
                     </button>
-                </div>
+                </div> -->
                 <div class="col  new_back_create padding_remove">
-                    <button class="button" ng-click="campagin_second.$valid && createCampaign()">
+                    <button class="button" ng-click="campagin_first.$valid && camp_data.discount_type && createCampaign()">
                         Create Campaign
                     </button>
                 </div>
             </div>
             <div class="padding text-center">
-                <p class="new_camp_val" ng-if="campagin_second.$invalid">Please fill all required fields.</p>
+                <p class="new_camp_val" ng-if="campagin_first.$invalid || !camp_data.discount_type">Please fill all required fields.</p>
             </div>
         </section>
     </ion-content>

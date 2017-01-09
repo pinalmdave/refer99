@@ -3,8 +3,10 @@
   width: 100%;
   padding: 20px 0;
 }
-[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]{ background: #FFF!important;}
 
+
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"]{ background: #FFF!important;}
 .title{color:#2b3b4e!important; font-size:21px!important; text-align:center!important; margin:0px; padding:0px; right:0px!important; left:0px!important;}
 .redapp_bg{ /*background: url(../images/bg_white@3x.png);*/ background-size: cover; background-position: center top; background-repeat: no-repeat; height: 100%; padding: 0px 32px!important; }
 .logo_frist{ width: 100%; text-align: center; padding:170px 0px 0px 0px;}
@@ -102,7 +104,7 @@
 
 .piza_coupon h5 {padding: 1px 21px 0px 21px; font-size: 11px; color: #A0A0A0; font-weight: normal; margin: 0px; line-height: 21px; letter-spacing: 1px; }
 
-.eleps_icon img{ padding: 0px; width: 51%;}
+.eleps_icon img{ padding: 0px; width: 66%;}
 .edit{ width: 114px!important; float: left; background: #2A3B4D; text-align: center; padding: 23px 0px 0px 0px!important; height: 69px!important; }
 .edit a{color: #FFF; font-size: 18px; padding: 0px; margin: 0px; text-decoration: none; font-weight: 400; letter-spacing: 1px; font-family: 'Roboto', sans-serif;}
 .gernate{ width: 300px; background: #FF3B69; text-align: center; padding: 23px 0px 0px 0px !important; height: 69px !important; font-family: 'Roboto', sans-serif;}
@@ -171,7 +173,19 @@
 
 .full_width{width:100%; float:left;}
 .ng-invalid {border-color: red; border-width: 2px; }
-.make button{ background-color: #FF3B69; color: #FFF; font-size: 18px; border:1px solid #FF3B69; text-align: center;padding: 7px 32px;  margin:100px 0px 0px 0px;}
+/*.make button{ background-color: #FF3B69; color: #FFF; font-size: 18px; border:1px solid #FF3B69; text-align: center;padding: 7px 25px; text-transform: uppercase;  margin:60px 0px 0px 0px;}*/
+
+.make button {
+    background-color: #FF3B69;
+    color: #FFF; width: 92%;
+    font-size: 20px;
+    border: 1px solid #FF3B69;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px 0px;
+    text-transform: uppercase;
+    margin: 60px 0px 0px 0px;
+}
 
 .Settings_text input{ padding: 25px 0px 6px 12px !important; font-family: "Roboto", sans-serif !important; font-size: 18px !important; color: #2b3b4e !important; font-weight: normal !important; margin: 0px !important; line-height: 24px !important; float:left; width:77%!important; letter-spacing: 1px !important;}
 
@@ -224,3 +238,40 @@
     padding: 8px 0px 8px 12px !important;}
 .blank{ height: 90px!important; width: 100%!important; }
   .margin_bottom{ margin-bottom: 40px;}
+
+/*4jan2017 css*/
+.make button > span {
+    color: #f2f2f2; font-weight: lighter;
+    font-size: 16px; width: 100%;
+    display: inline-block;
+}
+
+p.center.due_payment_penal.ng-binding {
+    padding: 10px 14px;
+    background: #f3f3f3;
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #ff3b69;
+    border: 4px double #ff3b69;
+    margin-top: 50%;
+    line-height: 34px;
+}
+
+.SHARE_SOciaL_ICon {
+    padding: 0 0;
+    margin-top: 23px !important;
+}
+.Discription textarea{ padding: 10px 0px 0px 10px!important;}
+
+
+.TEXT_ARARARA textarea {
+    padding: 13px 0px 0px 0 !important;
+    font-size: 14px !important;
+    width: 100% !important; margin: 0px;
+    color: #444 !important;
+}
+
+.TEXT_ARARARA p {
+	color: #b2b2b2 !important; margin: 0px !important;
+}

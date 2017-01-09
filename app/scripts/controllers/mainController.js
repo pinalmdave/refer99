@@ -21,18 +21,14 @@ angular.module('viralDL')
       $ionicLoading.show({
         template: 'Loading...'
       });
-      var data = {
-
-      };
-
-      User.clearToken(data, function(err, data) {
+      User.clearToken($scope.user.userId, function(err, data) {
         $ionicLoading.hide();
         if (err) {
           console.log('err', err);
         } else {
           console.log('success', data);
           Storage.removeUser();
-          Storage.clearAll();
+          // Storage.clearAll();
           $scope.user = undefined;
           $ionicHistory.nextViewOptions({
             disableBack: true

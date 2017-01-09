@@ -85,7 +85,20 @@ angular.module('viralDL')
                   $ionicHistory.nextViewOptions({
                     disableBack: true
                   });
-                  $state.go('app.dashboard');
+                  if (!res.user.last_payment) {
+                    $state.go('app.payment');
+                  } else if (res.user.last_payment) {
+                    var monthDiff = moment(moment()).diff(moment(res.user.last_payment), 'months', true);
+                    // console.log('monthDiff', monthDiff);
+                    if (monthDiff >= 1) {
+                      alert('Your monthly subscribtion is expired.Please make payment.');
+                      $state.go('app.payment');
+                    } else {
+                      $state.go('app.dashboard');
+                    }
+                  } else {
+                    $state.go('app.dashboard');
+                  }
                 }
               });
             }, function(error) {

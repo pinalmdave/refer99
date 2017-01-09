@@ -37,6 +37,8 @@ angular.module('viralDL')
         business_type: $scope.user_data.business_type,
         contact: $scope.user_data.contact,
         contact_person: $scope.user_data.contact_person,
+        web_address: $scope.user_data.web_address,
+        work_through: $scope.user_data.work_through,
         business_address: $scope.user_data.business_address,
         business_address_opt: $scope.user_data.business_address_opt,
         city: $scope.user_data.city,
@@ -66,7 +68,7 @@ angular.module('viralDL')
                   if (err) {
                     console.log('err', err);
                   } else {
-
+                    alert('User updated successfully');
                   }
                 });
                 // console.log('resp', resp);
@@ -80,6 +82,7 @@ angular.module('viralDL')
               });
           } else {
             $ionicLoading.hide();
+            alert('User updated successfully')
           }
         }
       });

@@ -15,32 +15,40 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
 
   document.addEventListener('deviceready', function() {
     console.log('--------------- CORDOVA READY -----------------');
-    Notification.setAppState(true);
-    Notification.registerDevice(function() {
-      User.addDeviceToken(function(err, user) {
-        if (err) {
-          console.log('err', err);
-        } else {
-          console.log('user', user);
+    /*  Notification.registerDevice(function() {
+        User.addDeviceToken(function(err, user) {
+          if (err) {
+            console.log('err', err);
+          } else {
+            console.log('user', user);
+          }
+        });
+      });*/
+    $ionicPlatform.ready(function() {
+      // save to use plugins here
+      FCMPlugin.subscribeToTopic('Viral99');
+      FCMPlugin.onNotification(
+        function(data) {
+          if (data.wasTapped) {
+            //Notification was received on device tray and tapped by the user.
+            console.log(JSON.stringify(data));
+          } else {
+            //Notification was received in foreground. Maybe the user needs to be notified.
+            console.log(JSON.stringify(data));
+          }
+        },
+        function(msg) {
+          console.log('onNotification callback successfully registered: ' + msg);
+        },
+        function(err) {
+          console.log('Error registering onNotification callback: ' + err);
         }
-      });
+      );
+
     });
-    Notification.changeState();
 
   });
 
-  document.addEventListener('resume', function() {
-    Notification.changeState();
-  }, false);
-
-  document.addEventListener('pause', function() {
-    Notification.setAppState(false);
-  }, false);
-  $ionicPlatform.ready(function() {
-    // save to use plugins here
-  });
-
-  // add possible global event handlers here
 
 })
 
@@ -173,7 +181,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         views: {
           'viewContent': {
             templateUrl: 'templates/views/coupon.html',
-             controller: 'ViewCouponController',
+            controller: 'ViewCouponController',
             controllerAs: 'viewCoupon'
           }
         }
@@ -217,18 +225,42 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         views: {
           'viewContent': {
             templateUrl: 'templates/views/business_profile.html',
-            controller:'BusinessProfileController',
-            controllerAs:'profile'
+            controller: 'BusinessProfileController',
+            controllerAs: 'profile'
+          }
+        }
+      })
+      .state('app.contact_us', {
+        url: '/contact_us',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/contact_us.html',
+            controller: 'ContactUsController',
+            controllerAs: 'contactUs'
           }
         }
       });
+
 
 
     // redirects to default route for undefined routes
     if (!didTutorial) {
       $urlRouterProvider.otherwise('/');
     } else if (user) {
-      $urlRouterProvider.otherwise('/app/dashboard');
+      // $urlRouterProvider.otherwise('/app/dashboard');
+      if (!user.user.last_payment) {
+        $urlRouterProvider.otherwise('/app/payment');
+      } else if (user.user.last_payment) {
+        var monthDiff = moment(moment()).diff(moment(user.user.last_payment), 'months', true);
+        if (monthDiff >= 1) {
+          $urlRouterProvider.otherwise('/app/payment');
+        } else {
+          $urlRouterProvider.otherwise('/app/dashboard');
+        }
+      } else {
+        $urlRouterProvider.otherwise('/app/dashboard');
+      }
     } else {
       $urlRouterProvider.otherwise('/app/home');
     }

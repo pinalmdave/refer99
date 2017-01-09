@@ -30,6 +30,8 @@ angular.module('viralDL')
         $scope.contact = {};
         if (contactPicked.displayName) {
           $scope.contact.cust_name = contactPicked.displayName;
+        }else if (!_.isEmpty(contactPicked.name)) {
+          $scope.contact.cust_name = contactPicked.name.formatted;
         }
         if (contactPicked.phoneNumbers && contactPicked.phoneNumbers.length) {
           $scope.contact.cust_contact = contactPicked.phoneNumbers[0].value;

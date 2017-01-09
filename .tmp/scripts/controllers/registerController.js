@@ -50,7 +50,7 @@ angular.module('viralDL')
                 $ionicHistory.nextViewOptions({
                   disableBack: true
                 });
-                $state.go('app.dashboard');
+                $state.go('app.payment');
               }
             });
           }
@@ -104,7 +104,7 @@ angular.module('viralDL')
                         $ionicHistory.nextViewOptions({
                           disableBack: true
                         });
-                        $state.go('app.dashboard');
+                        $state.go('app.payment');
                       }
                     });
                   }

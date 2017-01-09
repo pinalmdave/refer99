@@ -7,22 +7,23 @@
         <div ng-show="!isloading && !isPaidUser">
             <div class="row">
                 <div class="col text-center make">
-                    <button type="button " ng-click="makePayment('Silver',9.99)"> Silver</button>
+                    <button type="button " ng-click="makePayment('Silver',9.99)"> Silver<span>$9.99 USD - monthly</span> </button>
                 </div>
             </div>
             <div class="row">
                 <div class="col text-center make">
-                    <button type="button " ng-click="makePayment('Gold',19.99)"> Gold</button>
+                    <button type="button " ng-click="makePayment('Gold',19.99)"> Gold<span>$19.99 USD - monthly</span></button>
                 </div>
             </div>
             <div class="row">
                 <div class="col text-center make">
-                    <button type="button " ng-click="makePayment('Platinum',29.99)">Platinum</button>
+                    <button type="button " ng-click="makePayment('Platinum',29.99)">Platinum<span>$29.99 USD - monthly</span></button>
                 </div>
             </div>
         </div>
         <div ng-show="!isloading && isPaidUser" class="padding">
-            <p class="center">Your payment due date is {{dueDate}}</p>
+            <p class="center due_payment_penal">Your payment due date is {{dueDate}}</p>
         </div>
+
     </ion-content>
 </ion-view>
