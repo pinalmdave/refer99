@@ -7,9 +7,9 @@
  * # SettingsController
  */
 angular.module('viralDL')
-  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService) {
+  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     if ($scope.user.user_type == "fb") {
@@ -70,7 +70,10 @@ angular.module('viralDL')
               message: ""
             };
             console.log('data', data);
-            alert("Password changed successfully");
+            $ionicPopup.alert({
+            title: 'refer99',
+            template: "Password changed successfully"
+          });
           }
         });
       }

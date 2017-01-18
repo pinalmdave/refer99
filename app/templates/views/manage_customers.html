@@ -6,18 +6,30 @@
 <ion-content class="redapp_bg margin_bottom">
 <div class="row padding_remove row_custom" ng-repeat="user in user_cust_data.customers">
     <div class="col padding_remove">
-        <div class="name_last margin_top delete">
+        <div class="name_last margin_top delete_customer">
             <div class="customer_list_NAME ">
                 <h2> Name:<span>{{user.cust_name ? user.cust_name : "N/A"}}</span></h2>
                 <h2> Contact:<span>{{user.cust_contact ? user.cust_contact : "N/A"}}</span></h2>
                 <h2> Email:<span>{{user.cust_email ? user.cust_email : "N/A"}}</span></h2>
             </div>
+<div class="row padding_remove">
+<div class="col">
+            <button type="button" ng-click="updateCustomer(user.id)">
+                Edit
+            </button>
+</div>
+<div class="col delete_customer_red">
+
             <button type="button" ng-click="deleteCustomer($index,user.id)">
                 Delete
             </button>
+</div> 
+</div>
         </div>
     </div>
 </div>
+
+
 <div class="row">
 <div class="col blank">
 </div>

@@ -136,7 +136,7 @@ angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
   payPalSandboxId: 'ARa-9ko0g5tj4i999OfEYPtuL-40BT8aKBBSrvYMn672ItmQNfi164Rfg_G50kFeHWpF1N46NiaIcRTj',
   payPalProductionId: 'Ae3JDtHYBK8PAF5q_jkF-ukpoCpLSh3PS1fXIg6k6WNyBHsQXY_5HGwBnTmSJKtQdcUSpjDxxq-FHd_E',
   payPalEnv: 'PayPalEnvironmentSandbox', // for testing  production for production
-  payPalShopName: 'Viral99',
+  payPalShopName: 'refer99',
   payPalMerchantPrivacyPolicyURL: 'url to policy',
   payPalMerchantUserAgreementURL: ' url to user agreement '
 

@@ -7,18 +7,26 @@
  * # ValidateCouponController
  */
 angular.module('viralDL')
-  .controller('ContactUsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign) {
+  .controller('ContactUsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.category = "default";
     $scope.user = Storage.getUser();
     $scope.send_query = function() {
       if ($scope.category == "default") {
-        alert('Please select category!');
+        // alert('Please select category!');
+        $ionicPopup.alert({
+            title: 'refer99',
+            template: 'Please select category!'
+          });   
         return;
       }
       if (!$scope.description) {
-        alert('Please enter description!');
+        // alert('Please enter description!');
+        $ionicPopup.alert({
+            title: 'refer99',
+            template: 'Please enter description!'
+          });   
         return;
       }
       var data = {
@@ -37,7 +45,11 @@ angular.module('viralDL')
           console.log('err', err);
         } else {
           console.log('user_data', data);
-          alert('We will contact you soon.');
+          // alert('We will contact you soon.');
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: 'We will contact you soon.'
+          });   
         }
       });
 

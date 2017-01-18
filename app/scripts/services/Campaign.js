@@ -46,6 +46,19 @@
           return next(error, null);
         });
     };
+    this.destroy_campaign = function(id, next) {
+      Restangular
+        .one('campaigns')
+        .one(id)
+        .remove()
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.validate_coupon = function(data, next) {
       Restangular
         .one('coupons')

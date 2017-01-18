@@ -9,6 +9,9 @@
 angular.module('viralDL')
   .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook) {
     var register = this;
+    $scope.$on('$ionicView.enter', function() {
+      $ionicSideMenuDelegate.canDragContent(false);
+    });
     $scope.register_user = function(username, userEmail, password) {
       console.log('register', userEmail, password);
       if (username && userEmail && password) {
@@ -37,7 +40,7 @@ angular.module('viralDL')
               email: signupData.email,
               password: signupData.password
             };
-            User.login(loginData,"sys", function(err, res) {
+            User.login(loginData, "sys", function(err, res) {
               $ionicLoading.hide();
               if (err) {
                 if (err.data && err.data.error && err.data.error.message) {
@@ -91,7 +94,7 @@ angular.module('viralDL')
                       email: signupData.email,
                       password: "fb"
                     };
-                    User.login(loginData,"fb", function(err, res) {
+                    User.login(loginData, "fb", function(err, res) {
                       $ionicLoading.hide();
                       if (err) {
                         if (err.data && err.data.error && err.data.error.message) {
@@ -111,7 +114,11 @@ angular.module('viralDL')
                 });
               } else {
                 $ionicLoading.hide();
-                alert("Unable get your email and name please change your facebook privay settings.")
+                // alert("Unable get your email and name please change your facebook privay settings.")
+                $ionicPopup.alert({
+                  title: 'refer99',
+                  template: "Unable get your email and name please change your facebook privay settings."
+                });
               }
             }, function(error) {
               // error

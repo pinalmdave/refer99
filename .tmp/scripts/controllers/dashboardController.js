@@ -1,7 +1,7 @@
 angular.module('viralDL')
   .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $cordovaActionSheet, ionicDatePicker) {
     var userDash = this;
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
       template: 'Loading...'
@@ -15,15 +15,28 @@ angular.module('viralDL')
         } else {
           $scope.user_camp_data = data.result;
           if (!$scope.user_camp_data.last_payment) {
-            alert('Please make payment to start campaigns.');
+            // alert('Please make payment to start campaigns.');
+            $ionicPopup.alert({
+            title: 'refer99',
+            template: 'Please make payment to start campaigns.'
+          }).then(function(res) {
+     // console.log('Thank you for not eating my delicious ice cream cone');
             $state.go('app.payment');
+   });
           } else if ($scope.user_camp_data.last_payment) {
             var monthDiff = moment(moment()).diff(moment($scope.user_camp_data.last_payment), 'months', true);
             // console.log('monthDiff', monthDiff);
             if (monthDiff >= 1) {
-              alert('Your monthly subscribtion is expired.Please make payment.');
-              $state.go('app.payment');
-            } 
+              // alert('Your monthly subscribtion is expired.Please make payment.');
+              // $state.go('app.payment');
+              $ionicPopup.alert({
+            title: 'refer99',
+            template: 'Your monthly subscribtion is expired.Please make payment.'
+          }).then(function(res) {
+     // console.log('Thank you for not eating my delicious ice cream cone');
+            $state.go('app.payment');
+   });
+            }
           }
           $scope.user_camp_data.campaigns.forEach(function(item, i) {
             $scope.user_camp_data.campaigns[i].coupons_activated = _.filter(item.coupons, function(o) {
@@ -102,7 +115,7 @@ angular.module('viralDL')
     $scope.showCampActions = function(objIndex, id) {
       var options = {
         'title': 'What do you want with this campaign?',
-        'buttonLabels': ['Send Coupon', 'Extend Campaign'],
+        'buttonLabels': ['Send Coupon', 'Extend Campaign', 'Edit Campaign'],
         'androidEnableCancelButton': true, // default false
         'addCancelButtonWithLabel': 'Cancel'
       };
@@ -118,6 +131,10 @@ angular.module('viralDL')
               return el.id;
             }).indexOf(id);
             $scope.openDatePicker($scope.user_camp_data.campaigns[intIndex].end_date, intIndex, id);
+          } else if (index == 3) {
+            $state.go('app.edit_campaign', {
+              camp_id: id
+            });
           }
 
         });

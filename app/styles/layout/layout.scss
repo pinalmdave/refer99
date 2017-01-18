@@ -166,7 +166,7 @@
 .ENTER h2{color: #2b3b4e; font-size: 20px; font-family: 'Roboto', sans-serif; text-align: center; font-weight: 800; margin: 0px; padding: 156px 0px 10px 0px;}
 .ENTER_code{width: 170px!important;height: 66px!important;  margin: 0px auto; padding: 16px 0px 0px 0px; box-shadow:4px 18px 48px #E8E8E8; text-align: center; background: #FFF;  }
 .ENTER_code h3{font-weight: bold;  font-family: 'Open Sans', sans-serif;font-size: 26px; padding: 8px 0px 0px 0px;}
-.customer_list_NAME h2{color: #2b3b4e; font-size: 17px;  font-weight: 400; font-family: 'Roboto', sans-serif; margin: 0px; padding:0px; line-height: 28px; height: 40px; overflow: hidden; width: 100%;}
+.customer_list_NAME h2{color: #2b3b4e; font-size: 17px;  font-weight: 400; font-family: 'Roboto', sans-serif; margin: 0px; padding:0px; line-height: 28px; height: 38px; overflow: hidden;  width : 100%;    display:inline-block;   text-overflow: ellipsis;   white-space: nowrap;  }
 .customer_list_NAME span{ color: #ff3b69; padding: 0px 0px 0px 10px; font-size: 15px;}
 
 .name_last{width: 100%!important; height: auto!important; border: 1px solid #E8E8E8; margin: 30px auto; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 20px;}
@@ -275,3 +275,122 @@ p.center.due_payment_penal.ng-binding {
 .TEXT_ARARARA p {
 	color: #b2b2b2 !important; margin: 0px !important;
 }
+
+.Delete_Campaign button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 17px 0px 0px 0px; width: 100%;  border-radius: 0px;}
+ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior{
+ background: #00CC87; color: #FFF!important; }
+ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!important;}
+
+ .delete_customer button{background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 35px; width:100%!important; margin: 0px 0px 0px 0px; font-family: 'Open Sans', sans-serif; }
+
+.delete_customer_red button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 0px 0px 0px 0px; width: 100%;  border-radius: 0px;}
+.popup {
+    border: 1px solid #b2b2b2;
+    padding: 0px;
+    text-align: center;
+    border-radius: 4px!important;
+
+}
+.popup-body input {
+    border: 1px solid #b2b2b2!important;
+    padding: 4px 0px 4px 10px!important;
+ }
+
+ .popup .button.button-positive{
+ 	background: #00CC87!important;
+ 	font-size: 15px;
+ 	text-align: center;
+ 	padding: 5px 0px;
+ 	border:1px solid #00CC87;
+ }
+
+
+
+ .logo img {
+    max-width: 57%;
+}
+
+.heading_top h1 {
+    color: #434343;
+    font-family: serif;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 16px;
+    margin: 0;
+    padding: 0px 0 0px;
+    text-align: center;
+}
+.heading_top span{
+	color: #FF3B69;
+}
+.heading_top p {
+    color: #747373;
+    font-size: 14px;
+    text-align: center;
+    line-height: 23px;
+    margin: 0px;
+    letter-spacing: 1px;
+    padding: 15px 8px 0px 8px;
+}
+
+.card.custom_crd {
+    margin: 8px 15px 8px 15px!important;
+    height: auto!important;
+    padding: 0px!important;
+}
+.card.custom_crd {
+    font-size: 13px!important;
+    line-height: 20px!important;
+    color: #747373!important;
+    padding: 10px!important;
+    height: 75px!important;
+    overflow: hidden!important;
+}
+
+.card.custom_crd span {
+    color: #333!important;
+    font-size: 15px!important;
+    padding: 0px 5px 0px 0px!important;
+}	
+
+.Facebook_login button {
+    background: #3A5999;
+    border: 1px solid #3A5999;
+    color: #FFF;
+    font-size: 15px;
+    text-align: center;
+    padding: 0px 0px;
+    height: 20px;
+    width: 100%!important;
+    margin: 0px 0px 0px 0px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Facebook_login button span img {
+    position: relative;
+    top: 8px;
+    right: 10px;
+}
+.Facebook_login {
+    margin: 8px 17px 8px 17px;
+}
+
+.card.custom_crd p {
+    float: left;
+     font-size: 14px;
+
+
+}
+
+.space_city p{
+    color: #747373!important;
+    padding: 0px 0px 0px 6px;
+
+}
+
+.of_space{
+  color: #333!important;
+    font-size: 14px!important;
+    padding: 0px 5px 0px 0px!important;}

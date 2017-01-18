@@ -7,14 +7,17 @@
  * # ValidateCouponController
  */
 angular.module('viralDL')
-  .controller('ValidateCouponController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign) {
+  .controller('ValidateCouponController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     $scope.validate_coupon = function(c_code) {
       if (!c_code) {
-        alert("Please enter coupon code!");
+        $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please enter coupon code"
+          });
         $scope.couponMessage = "Please enter coupon code!";
         return;
       }

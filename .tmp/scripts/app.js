@@ -91,7 +91,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.home', {
         url: '/home',
-        cache: false,
+        cache: true,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/home.html',
@@ -102,7 +102,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.dashboard', {
         url: '/dashboard',
-        cache: false,
+        cache: true,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/dashboard.html',
@@ -157,7 +157,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.payment', {
         url: '/payment',
-        cache: false,
+        cache: true,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/payment.html',
@@ -221,7 +221,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.business_profile', {
         url: '/business_profile',
-        cache: false,
+        cache: true,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/business_profile.html',
@@ -237,6 +237,17 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           'viewContent': {
             templateUrl: 'templates/views/contact_us.html',
             controller: 'ContactUsController',
+            controllerAs: 'contactUs'
+          }
+        }
+      })
+      .state('app.edit_campaign', {
+        url: '/campaign/:camp_id',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/edit_campaign.html',
+            controller: 'EditCampaignController',
             controllerAs: 'contactUs'
           }
         }

@@ -7,7 +7,7 @@
  * # PaymentsController
  */
 angular.module('viralDL')
-  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state) {
+  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state,$ionicPopup) {
 
     $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -67,14 +67,21 @@ angular.module('viralDL')
               $scope.user.user.last_payment = res.created;
               Storage.setUser($scope.user);
               $scope.dueDate = moment(res.created).add(1, 'M').format('LL');
-              alert("Thanks for the payment.");
+              $ionicPopup.alert({
+            title: 'refer99',
+            template: "Thanks for the payment."
+          }).then(function(){
               $state.go("app.business_profile");
+          });
             }
           });
 
         }, function(error) {
 
-          alert("Transaction cancelled");
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Transaction cancelled"
+          });
 
         });
 

@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('HomeController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook, Storage) {
     var home = this;
-    $ionicSideMenuDelegate.canDragContent(false)
+    $ionicSideMenuDelegate.canDragContent(false);
     var user = Storage.getUser();
     (function init() {
       if (user) {
@@ -47,8 +47,13 @@ angular.module('viralDL')
               var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
               // console.log('monthDiff', monthDiff);
               if (monthDiff >= 1) {
-                alert('Your monthly subscribtion is expired.Please make payment.');
+                // alert('Your monthly subscribtion is expired.Please make payment.');
+                $ionicPopup.alert({
+            title: 'refer99',
+            template: "Your monthly subscribtion is expired.Please make payment."
+          }).then(function(res){
                 $state.go('app.payment');
+          });
               } else {
                 $state.go('app.dashboard');
               }
@@ -91,8 +96,12 @@ angular.module('viralDL')
                     var monthDiff = moment(moment()).diff(moment(res.user.last_payment), 'months', true);
                     // console.log('monthDiff', monthDiff);
                     if (monthDiff >= 1) {
-                      alert('Your monthly subscribtion is expired.Please make payment.');
-                      $state.go('app.payment');
+                     $ionicPopup.alert({
+            title: 'refer99',
+            template: "Your monthly subscribtion is expired.Please make payment."
+          }).then(function(res){
+                $state.go('app.payment');
+          });
                     } else {
                       $state.go('app.dashboard');
                     }
@@ -105,12 +114,20 @@ angular.module('viralDL')
               // error
               $ionicLoading.hide();
               console.log('error', error);
-              alert("Please try again letter.")
+              // alert("Please try again letter.")
+              $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please try again letter."
+          });
             });
         }, function(error) {
           // error
           console.log('error', error);
-          alert("Please try again letter.")
+          // alert("Please try again letter.")
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please try again letter."
+          });
         });
 
     };

@@ -11,9 +11,9 @@ angular.module('viralDL')
     var forgot = this;
     $scope.user = Storage.getUser();
     $scope.res_forget = false;
-    (function init() {
+    $scope.$on('$ionicView.enter', function() {
       $ionicSideMenuDelegate.canDragContent(false);
-    })();
+    });
 
     $scope.send_forgot_email = function(forgetEmail) {
       // console.log('email', forgetEmail);
@@ -34,11 +34,19 @@ angular.module('viralDL')
             } else {
               $scope.forgetMessage = "Please try after some time."
             }
-            alert($scope.forgetMessage);
+            // alert($scope.forgetMessage);
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: $scope.forgetMessage
+            });
           } else {
             console.log('login', data);
             $scope.forgetMessage = data.result.message;
-            alert("Success! Reset password link send to your email address.");
+            // alert("Success! Reset password link send to your email address.");
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Success! Reset password link send to your email address."
+            });
           }
         });
       }

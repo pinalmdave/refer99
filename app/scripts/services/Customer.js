@@ -33,6 +33,19 @@
           return next(error, null);
         });
     };
+    this.update_customer = function(id, data, next) {
+      Restangular
+        .one('customers')
+        .one(id)
+        .customPUT(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
   }
 
 })();

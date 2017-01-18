@@ -7,9 +7,9 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     if ($scope.user.user_type == "fb") {
@@ -68,7 +68,11 @@ angular.module('viralDL')
                   if (err) {
                     console.log('err', err);
                   } else {
-                    alert('User updated successfully');
+                    // alert('User updated successfully');
+                    $ionicPopup.alert({
+                      title: 'refer99',
+                      template: 'User updated successfully'
+                    });
                   }
                 });
                 // console.log('resp', resp);
@@ -82,7 +86,10 @@ angular.module('viralDL')
               });
           } else {
             $ionicLoading.hide();
-            alert('User updated successfully')
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: 'User updated successfully'
+            });
           }
         }
       });

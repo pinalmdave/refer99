@@ -1,6 +1,6 @@
 angular.module('viralDL')
   .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate) {
-    $ionicSideMenuDelegate.canDragContent(true)
+    $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
     $scope.today = new Date();
@@ -18,8 +18,13 @@ angular.module('viralDL')
           console.log('user_data', user_data);
           $scope.user_data = user_data;
           if (!user_data.work_through) {
-            alert('Please provide your business details to start new campaign');
+            // alert('Please provide your business details to start new campaign');
+             $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please provide your business details to start new campaign"
+          }).then(function(res){
             $state.go("app.business_profile");
+          });
           }
           $scope.camp_data.business_type = user_data.business_type ? user_data.business_type : "default";
           $scope.camp_data.business_name = user_data.business_name;
@@ -65,9 +70,11 @@ angular.module('viralDL')
         // console.log($scope.camp_data.start_date.getFullYear(), $scope.camp_data.start_date.getMonth(), $scope.camp_data.start_date.getDate());
         if (new Date(val) < $scope.camp_data.start_date) {
           $ionicPopup.alert({
-            title: 'Message!',
+            title: 'refer99',
             template: 'Please Select Date Greater than ' + moment($scope.camp_data.start_date).format('DD-MMMM-YYYY')
-          });
+          }).then(function(res) {
+     console.log('Thank you for not eating my delicious ice cream cone');
+   });
         } else {
           $scope.camp_data.end_date = new Date(val);
         }
@@ -120,15 +127,19 @@ angular.module('viralDL')
         if (err) {
           $ionicLoading.hide();
           console.log('err', err);
-          alert("Invalid data");
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Invalid data"
+          });
         } else {
           console.log('data', data);
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-          $state.go("app.view_coupon", {
+        /*  $state.go("app.view_coupon", {
             camp_id: data.id
-          });
+          });*/
+          $state.go("app.dashboard");
           /* if ($scope.is_first_camp) {
              var update = {
                business_name: $scope.user_data.business_name ? $scope.user_data.business_name : $scope.camp_data.business_name,
