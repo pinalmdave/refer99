@@ -3,15 +3,15 @@
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Create Campaign</h1>
     </ion-header-bar>
-    <ion-content>
+    <ion-content class="redapp_bg CAMPAIN">
         <section ng-show="cp_screen_first">
             <form name="campagin_first">
                 <div class="row padding_remove">
                     <div class="col padding_remove">
+                        <p>Campaign Name</p>
                         <div class="card margin_top">
                             <div class="campagin">
                                 <img src="images/ic_coupon@x.png">
-                                <!-- <h4>Campaign Name</h4> -->
                                 <input type="text" placeholder="Campaign Name" name="cp_name" ng-model="camp_data.cp_name" required>
                             </div>
                         </div>
@@ -20,10 +20,10 @@
                 <p class="new_camp_val" ng-if="campagin_first.cp_name.$touched && campagin_first.cp_name.$invalid">Campaign name is required.</p>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
+                        <p>Start Date</p>
                         <div class="card margin_top">
                             <div class="campagin">
                                 <img src="images/ic_date@x.png">
-                                <!-- <h4>Start Date</h4> -->
                                 <ionic-datepicker idate="camp_data.start_date" disablepreviousdates="true">
                                     <button ng-click="openFromDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{camp_data.start_date | date:'dd-MMMM-yyyy' }}{{!camp_data.start_date?'From':''}} </button>
                                 </ionic-datepicker>
@@ -33,10 +33,10 @@
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
+                        <p>End date</p>
                         <div class="card margin_top">
                             <div class="campagin">
                                 <img src="images/ic_date@x.png">
-                                <!-- <h4>End date</h4> -->
                                 <ionic-datepicker idate="camp_data.end_date" disablepreviousdates="true">
                                     <button ng-click="openToDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{ camp_data.end_date | date:'dd-MMMM-yyyy' }}{{!camp_data.end_date?'To':''}} </button>
                                 </ionic-datepicker>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
                 <p class="new_camp_val" ng-show="campagin_first.buy.$touched && campagin_first.buy.$error.required">Buy is required</p>
-                <p class="new_camp_val" ng-show="campagin_first.buy.$touched && campagin_first.buy.$error.min" ">Buy should not be less than 1%</p>
+                <p class="new_camp_val" ng-show="campagin_first.buy.$touched && campagin_first.buy.$error.min" >Buy should not be less than 1%</p>
                 <p class="new_camp_val " ng-show="campagin_first.get.$touched && campagin_first.get.$error.required ">Get is required</p>
                 <p class="new_camp_val " ng-show="campagin_first.get.$touched && campagin_first.get.$error.min ">Get should not be less than 1%</p>
                 <div class="row padding_remove " ng-if="camp_data.discount_type=='price' || camp_data.discount_type=='percent' ">
@@ -313,9 +313,10 @@
             <form name="campagin_second"> -->
                 <div class="row padding_remove">
                     <div class="col padding_remove">
+                        <p>Additional Text</p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
-                                <p>Additional Text</p>
+                                
                                 <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_additional_text" name="camp_info" required></textarea>
                                 <!-- <input type="text area" name="cp_info" ng-model="camp_data.cp_info"> -->
                             </div>
@@ -327,9 +328,10 @@
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
+                        <p>Disclaimer</p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
-                                <p>Disclaimer</p>
+                                
                                 <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_disclaimer" name="camp_terms" required></textarea>
                                 <!-- <input type="text area" name="cp_terms" ng-model="camp_data.cp_terms"> -->
                             </div>
@@ -352,8 +354,11 @@
                     </button>
                 </div>
             </div>
-            <div class="padding text-center">
-                <p class="new_camp_val" ng-if="campagin_first.$invalid || !camp_data.discount_type">Please fill all required fields.</p>
+
+            <div class="row padding_remove">
+                <div class="col  new_back_create padding_remove">
+                    <p class="new_camp_val" ng-if="campagin_first.$invalid || !camp_data.discount_type">Please fill all required fields.</p>
+                </div>
             </div>
         </section>
     </ion-content>
