@@ -33,6 +33,7 @@ angular.module('viralDL')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
+          $ionicHistory.clearCache();
           $state.go('app.home');
           $ionicSideMenuDelegate.toggleLeft(false);
         }
@@ -43,6 +44,7 @@ angular.module('viralDL')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
+          $ionicHistory.clearCache();
           $state.go('app.home');
           $ionicSideMenuDelegate.toggleLeft(false);
     };

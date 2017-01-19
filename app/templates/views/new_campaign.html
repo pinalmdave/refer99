@@ -93,9 +93,9 @@
                     <div class="col padding_remove ">
                         <div class="card margin_top ">
                             <div class="campagin ">
-                                <img src="images/ic_discount_type@x.png ">
+                                <img ng-src="images/{{camp_data.discount_type=='price'?'ic_discount_amount@x.png':'ic_discount_type@x.png'}} ">
                                 <!-- <h4>Discount Amount</h4> -->
-                                <input type="number" placeholder="Discount Amount" name="dis_amount" min="1" ng-model="camp_data.discount_amount" required>
+                                <input type="number" placeholder="Discount" name="dis_amount" min="1" ng-model="camp_data.discount_amount" required>
                             </div>
                         </div>
                     </div>

@@ -11,6 +11,8 @@ angular.module('viralDL')
     var home = this;
     $ionicSideMenuDelegate.canDragContent(false);
     var user = Storage.getUser();
+    $scope.showErrMessages = false;
+    $scope.showSignInErrMessages = false;
     (function init() {
       if (user) {
         $ionicHistory.nextViewOptions({
@@ -49,11 +51,11 @@ angular.module('viralDL')
               if (monthDiff >= 1) {
                 // alert('Your monthly subscribtion is expired.Please make payment.');
                 $ionicPopup.alert({
-            title: 'refer99',
-            template: "Your monthly subscribtion is expired.Please make payment."
-          }).then(function(res){
-                $state.go('app.payment');
-          });
+                  title: 'refer99',
+                  template: "Your monthly subscribtion is expired.Please make payment."
+                }).then(function(res) {
+                  $state.go('app.payment');
+                });
               } else {
                 $state.go('app.dashboard');
               }
@@ -96,12 +98,12 @@ angular.module('viralDL')
                     var monthDiff = moment(moment()).diff(moment(res.user.last_payment), 'months', true);
                     // console.log('monthDiff', monthDiff);
                     if (monthDiff >= 1) {
-                     $ionicPopup.alert({
-            title: 'refer99',
-            template: "Your monthly subscribtion is expired.Please make payment."
-          }).then(function(res){
-                $state.go('app.payment');
-          });
+                      $ionicPopup.alert({
+                        title: 'refer99',
+                        template: "Your monthly subscribtion is expired.Please make payment."
+                      }).then(function(res) {
+                        $state.go('app.payment');
+                      });
                     } else {
                       $state.go('app.dashboard');
                     }
@@ -116,9 +118,9 @@ angular.module('viralDL')
               console.log('error', error);
               // alert("Please try again letter.")
               $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please try again letter."
-          });
+                title: 'refer99',
+                template: "Please try again letter."
+              });
             });
         }, function(error) {
           // error

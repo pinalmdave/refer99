@@ -12,6 +12,8 @@ angular.module('viralDL')
     $scope.$on('$ionicView.enter', function() {
       $ionicSideMenuDelegate.canDragContent(false);
     });
+    $scope.showErrMessages = false;
+    $scope.showSignInErrMessages = false;
     $scope.register_user = function(username, userEmail, password) {
       console.log('register', userEmail, password);
       if (username && userEmail && password) {
@@ -123,6 +125,7 @@ angular.module('viralDL')
             }, function(error) {
               // error
               $ionicLoading.hide();
+              $scope.res_signup = true;
               $scope.signupMessage = "Please try after some time."
             });
         }, function(error) {

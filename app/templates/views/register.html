@@ -25,16 +25,16 @@
                     </div>
                 </div>
             </div>
-            <div class="padding">
-                <p ng-show="signupForm.username.$error.required">* full name is required</p>
-                <p ng-show="signupForm.userEmail.$error.required">* Email is required</p>
-                <p ng-show="signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
-                <p ng-show="signupForm.password.$error.required">* Password is required</p>
+            <div class="padding" ng-if="(showErrMessages && showSignInErrMessages) || res_signup">
+                <p ng-show="showSignInErrMessages && signupForm.username.$error.required">* full name is required</p>
+                <p ng-show="showSignInErrMessages && signupForm.userEmail.$error.required">* Email is required</p>
+                <p ng-show="showSignInErrMessages && signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
+                <p ng-show="showSignInErrMessages && signupForm.password.$error.required">* Password is required</p>
                 <p ng-show="res_signup">* {{signupMessage}}</p>
             </div>
             <div class="row">
                 <div class=" col Sign_in text-center padding_remove">
-                    <button class="button" ng-click="signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
+                    <button class="button" ng-click="(showSignInErrMessages=true) && (showErrMessages=true) && signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
                 </div>
             </div>
         </form>
