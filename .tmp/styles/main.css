@@ -10032,7 +10032,7 @@ p.center.due_payment_penal.ng-binding {
   font-size: 14px !important;
   width: 100% !important;
   margin: 0px;
-  color: #444 !important; }
+  color: #A0A0A0 !important; }
 
 .TEXT_ARARARA p {
   color: #b2b2b2 !important;
@@ -10184,7 +10184,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
 .item-radio {
   padding: 0 !important;
   width: 100% !important;
-  font-size: 10px !important; }
+  font-size: 12px !important; }
 
 .WANT_SHARE {
   width: 100%; }
@@ -10221,7 +10221,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
   padding: 0px 20px; }
 
 .campagin input {
-  padding: 14px 0px 0px 31px !important;
+  padding: 14px 0px 0px 13px !important;
   font-family: "Roboto", sans-serif !important;
   font-size: 14px !important;
   color: #2b3b4e !important;
@@ -10593,6 +10593,17 @@ form.new_LOGIN_PENAL {
   height: 1px;
   margin-top: 0px !important;
   margin-bottom: 0px !important; }
+
+.campagin ionic-datepicker button {
+  background: transparent !important;
+  color: #A0A0A0 !important;
+  border: 0px solid #E8E8E8 !important;
+  position: relative;
+  top: -7px !important;
+  margin: 0;
+  text-align: left !important;
+  padding: 0 10px;
+  font-size: 14px; }
 
 /*puneet_css_18jan*/
 /**
