@@ -9876,7 +9876,7 @@ a.button {
 
 .new_camp_val {
   margin: -9px 15px -4px;
-  color: red; }
+  color: red !important; }
 
 .lock input {
   float: left;
@@ -9905,7 +9905,7 @@ a.button {
 
 .campagin img {
   float: left;
-  padding: 13px 0px 0px 26px; }
+  padding: 13px 0px 0px 10px; }
 
 .send_option button {
   background: #00CC87;
@@ -10183,7 +10183,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
 
 .item-radio {
   padding: 0 !important;
-  width: 100%;
+  width: 100% !important;
   font-size: 10px !important; }
 
 .WANT_SHARE {
@@ -10205,7 +10205,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3) !important; }
 
 .CAMPAIN p {
-  color: #b2b2b2 !important;
+  color: #b2b2b2;
   font-size: 15px !important;
   margin: 0px !important;
   padding: 0px !important; }
@@ -10273,6 +10273,326 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
   padding: 0px;
   text-align: center;
   border-radius: 4px !important; }
+
+.topmargin {
+  margin-top: 20%; }
+
+.membership_plan_box_penal {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 4px;
+  margin-bottom: 25px; }
+
+.membership_plan_box_penal > h2 {
+  background: #F8E71C none repeat scroll 0 0;
+  border-radius: 4px 4px 0 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 6px;
+  text-align: center; }
+
+.para_membr_text {
+  border-radius: 4px 4px 0 0;
+  color: #939393;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 0 20px 13px 20px;
+  text-align: center; }
+
+.padd_twt {
+  padding: 0 12px; }
+
+.membership_hding {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  text-align: center;
+  text-transform: uppercase; }
+
+.images_upload > img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%; }
+
+.images_upload.BIG_IMG {
+  height: 212px;
+  /*border: 1px solid #f00;*/ }
+
+.images_upload.SmAIILLL_IMG {
+  height: 100px;
+  margin-bottom: 10px;
+  /*  border: 1px solid #f00;*/ }
+
+.images_upload.SmAIILLL_sINGLE_IMG {
+  height: 106px;
+  /*  border: 1px solid #f00;*/ }
+
+button.button.button-icon.icon.ion-navicon.setting_dror.hide {
+  display: block; }
+
+img.img-responsive {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  right: 0;
+  width: 60px;
+  margin: auto; }
+
+.loading-container .loading {
+  padding: 0;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 100%;
+  margin: 0px;
+  position: absolute;
+  text-align: center;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  top: 0;
+  bottom: 0; }
+
+iframe.giphy-embed {
+  width: 80px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  left: 0; }
+
+.loading-container {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 0;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.2s linear 0s;
+          transition: opacity 0.2s linear 0s;
+  visibility: hidden;
+  z-index: 13; }
+
+.red_background {
+  background: transparent url("../images/bg_coloured@3x.png") repeat fixed center center/cover;
+  height: 100%; }
+
+.hdr_more_button > img {
+  max-width: 100%; }
+
+.hdr_more_button {
+  width: 25px; }
+
+.newcampain_PENAL {
+  margin-bottom: 50px;
+  padding-top: 10px; }
+
+.item-complex .item-content, .item-radio .item-content {
+  position: relative;
+  z-index: 2;
+  padding: 15px !important;
+  border: none;
+  background-color: white; }
+
+input:invalid {
+  box-shadow: none; }
+
+.button.active, .button.activated {
+  border-color: #9bcf51 !important;
+  background-color: #9bcf51 !important;
+  box-shadow: none; }
+
+.loader {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0; }
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+  background-color: transparent !important; }
+
+.side_slider_bar .item.active, .side_slider_bar .item.activated, .side_slider_bar .item-complex.active .item-content, .side_slider_bar .item-complex.activated .item-content, .side_slider_bar .item .item-content.active, .side_slider_bar .item .item-content.activated {
+  background: #a01225 url(.jhjhj.png) repeat scroll 0 0 !important;
+  border-color: #a01225 !important;
+  color: #fff !important; }
+
+.paaDDD_SLECt {
+  padding: 5px 15px; }
+
+.marging_space {
+  padding: 50px 0 12px !important; }
+
+.grid_padd {
+  padding: 6% 8% !important; }
+
+.magjen_nun {
+  margin: 0 !important;
+  padding: 2px 0px !important; }
+
+.pad_none {
+  padding: 0px !important; }
+
+.marjen_top {
+  margin-top: 25px; }
+
+.grid_padd_logo {
+  padding: 6% 25% 0% !important; }
+
+.banner_img_penal {
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: block;
+  padding: 0px;
+  width: 100%; }
+
+.banner_img_penal img {
+  max-width: 100%; }
+
+.logo_account img {
+  max-width: 100%; }
+
+.Sign_in button {
+  background: #fff;
+  border: 1px solid #2780e4;
+  color: #2780e4;
+  font-size: 14px;
+  text-align: center;
+  padding: 0px 0px;
+  height: 20px;
+  width: 100% !important;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100; }
+
+.Sign_UP button {
+  background: #2780e4;
+  border: 1px solid #2780e4;
+  color: #FFF;
+  font-size: 14px;
+  text-align: center;
+  padding: 0px 0px;
+  height: 20px;
+  width: 100% !important;
+  margin: 0px 0px 0px 0px;
+  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100; }
+
+.logo_account {
+  /* width: 250px; */
+  text-align: center;
+  padding: 76% 0px;
+  /* position: absolute; */
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* height: 286px; */
+  margin: auto; }
+
+.dont_have h2 {
+  color: #484848;
+  font-size: 14px; }
+
+.dont_have h2 span {
+  font-weight: 600; }
+
+.Select_gender_text {
+  text-align: center;
+  color: #f03929;
+  display: inline-block;
+  font-size: 14px;
+  padding: 20px 0px 15px 0px;
+  width: 100%;
+  text-align: center; }
+
+.gender_select_male > img {
+  max-width: 100%; }
+
+.new_LOGIN_PENAL_MAIN {
+  width: 100%;
+  float: left;
+  position: fixed; }
+
+form.new_LOGIN_PENAL {
+  position: relative;
+  width: 100%;
+  bottom: 0; }
+
+.login-or {
+  position: relative;
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  margin-left: -25px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center; }
+
+.hr-or {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
+
+.grid_padd_NEWOR {
+  padding: 0 8% !important; }
+
+.newCAPNAIN_BOXX {
+  padding: 10px 10px;
+  margin: 20px 0;
+  background: #f2f2f2;
+  box-shadow: 0 1px 8px 0 rgba(120, 120, 120, 0.4); }
+
+.NEWCOPUEN-or {
+  position: relative;
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  margin-left: -25px;
+  background-color: #f2f2f2;
+  width: 50px;
+  text-align: center; }
+
+.hr-or {
+  background-color: #cdcdcd;
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important; }
 
 /*puneet_css_18jan*/
 /**

@@ -63,17 +63,17 @@ angular.module('viralDL')
           .then(function(result) {
             // alert("Thanks for sharing");
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Thanks for sharing"
-          });
+              title: 'refer99',
+              template: "Thanks for sharing"
+            });
             // Success!
             console.log('result', result);
           }, function(err) {
             // alert("Please install whatsapp to share coupon link!");
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please install whatsapp to share coupon link!"
-          });
+              title: 'refer99',
+              template: "Please install whatsapp to share coupon link!"
+            });
             // An error occurred. Show a message to the user
             console.log('err', err);
           });
@@ -82,17 +82,17 @@ angular.module('viralDL')
         $cordovaSocialSharing
           .shareViaSMS(message, $scope.cust_contacts)
           .then(function(result) {
-             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Thanks for sharing"
-          });
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Thanks for sharing"
+            });
             // Success!
             console.log('result', result);
           }, function(err) {
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please try after some time"
-          });
+              title: 'refer99',
+              template: "Please try after some time"
+            });
             // An error occurred. Show a message to the user
             console.log('err', err);
           });
@@ -104,16 +104,16 @@ angular.module('viralDL')
           .shareViaEmail(message, subject, $scope.cust_emails, [], [], null)
           .then(function(result) {
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Thanks for sharing"
-          });
+              title: 'refer99',
+              template: "Thanks for sharing"
+            });
             // Success!
             console.log('result', result);
           }, function(err) {
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please try after some time"
-          });
+              title: 'refer99',
+              template: "Please try after some time"
+            });
             // An error occurred. Show a message to the user
             console.log('err', err);
           });
@@ -132,15 +132,15 @@ angular.module('viralDL')
         if (err) {
           console.log('err', err);
           if (err.data && err.data.error && err.data.error.message) {
-             $ionicPopup.alert({
-            title: 'refer99',
-            template: err.data.error.message
-          });
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: err.data.error.message
+            });
           } else {
             $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please try after some time"
-          });
+              title: 'refer99',
+              template: "Please try after some time"
+            });
           }
         } else {
           // console.log('customers', data);
@@ -149,18 +149,18 @@ angular.module('viralDL')
             .shareViaSMS(message, $scope.contact.cust_contact)
             .then(function(result) {
               // Success!
-               $ionicPopup.alert({
-            title: 'refer99',
-            template: "Thanks for sharing"
-          });
+              $ionicPopup.alert({
+                title: 'refer99',
+                template: "Thanks for sharing"
+              });
               console.log('result', result);
               $scope.contact = {};
             }, function(err) {
               $scope.contact = {};
-               $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please try after some time"
-          });
+              $ionicPopup.alert({
+                title: 'refer99',
+                template: "Please try after some time"
+              });
               // An error occurred. Show a message to the user
               console.log('err', err);
             });

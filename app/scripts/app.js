@@ -251,7 +251,30 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
             controllerAs: 'contactUs'
           }
         }
-      });
+      })
+
+      .state('app.membership', {
+        url: '/membership',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/membership.html'
+          }
+        }
+      })
+
+
+      .state('app.newlogin', {
+        url: '/newlogin',
+        cache: false,
+        views: {
+          'viewContent': {
+            templateUrl: 'templates/views/newlogin.html'
+          }
+        }
+      })
+
+      ;
 
 
 
