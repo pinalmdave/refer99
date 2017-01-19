@@ -203,11 +203,11 @@
 
 .new_back button{ background-color: #FF3B69; color: #FFF; font-size: 16px; border: 1px solid #FF3B69; text-align: center; padding: 3px 10px; margin: 17px 0px 0px 0px; width: 100%; border-radius: 0px;}
 .new_back_create button{ background-color: #00CC87; color: #FFF; font-size: 16px; border: 1px solid #00CC87; text-align: center; padding: 3px 10px; margin: 0px 0px 0px 0px; width: 100%;  border-radius: 0px;}
-.new_camp_val {margin: -9px 15px -4px; color: red;}
+.new_camp_val {margin: -9px 15px -4px; color: red !important;}
 .lock input {float: left;margin: 2px 0px 0px 0px !important;color: #2b3b4e;font-size: 14px !important;}
 .lock img{padding: 10px 0px 0px 30px;}
 .margin_top select {background: transparent!important; z-index: 9999; float: right; width: 75%; height: 50px; position: absolute; border: 0px; font-size: 14px!important; padding: 0px 0px 0px 27px; margin: 0px 0px 0px 0px; font-size: 18px; color: #2b3b4e; font-weight: normal;  font-family: 'Roboto', sans-serif;}
-.campagin img{float: left; padding: 13px 0px 0px 26px;}
+.campagin img{float: left; padding: 13px 0px 0px 10px;}
 
 .send_option button {background: #00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 21px; text-align: center; padding: 0px 0px; height: 50px; width: 100%!important; margin: 0px 0px 40px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif; font-weight: 600; }
 .margin_top{ margin: 15px 0px 0px 0px;}
@@ -227,269 +227,111 @@
 
 .disscount p{ color: #b2b2b2!important; font-size: 15px!important; margin: 0px!important; padding: 0px!important;  }
 .flot_pera p{ float: left!important; color: #444!important; margin: 0px!important; padding: 7px 0px 0px 0px!important; font-size: 15px!important; }
-.flot_pera input {
-    border: 1px solid #E8E8E8 !important;
-    margin: 0px 0px 0px 9px !important;
-    float: left;
-    width: 62px!important;}
-
- .flot_pera{margin: 6px 0px 3px 0px!important;
-    padding: 8px 0px 8px 12px !important;}
-.blank{ height: 90px!important; width: 100%!important; }
-  .margin_bottom{ margin-bottom: 40px;}
-
+.flot_pera input {border: 1px solid #E8E8E8 !important; margin: 0px 0px 0px 9px !important; float: left; width: 62px!important;}
+.flot_pera{margin: 6px 0px 3px 0px!important; padding: 8px 0px 8px 12px !important;} .blank{ height: 90px!important; width: 100%!important; }
+.margin_bottom{ margin-bottom: 40px;}
 /*4jan2017 css*/
-.make button > span {
-    color: #f2f2f2; font-weight: lighter;
-    font-size: 16px; width: 100%;
-    display: inline-block;
-}
-
-p.center.due_payment_penal.ng-binding {
-    padding: 10px 14px;
-    background: #f3f3f3;
-    margin: 0;
-    text-align: center;
-    font-size: 18px;
-    color: #ff3b69;
-    border: 4px double #ff3b69;
-    margin-top: 50%;
-    line-height: 34px;
-}
-
-.SHARE_SOciaL_ICon {
-    padding: 0 0;
-    margin-top: 23px !important;
-}
+.make button > span {color: #f2f2f2; font-weight: lighter; font-size: 16px; width: 100%; display: inline-block; }
+p.center.due_payment_penal.ng-binding {padding: 10px 14px; background: #f3f3f3; margin: 0; text-align: center; font-size: 18px; color: #ff3b69; border: 4px double #ff3b69; margin-top: 50%; line-height: 34px; }
+.SHARE_SOciaL_ICon {padding: 0 0; margin-top: 23px !important; }
 .Discription textarea{ padding: 10px 0px 0px 10px!important;}
-
-
-.TEXT_ARARARA textarea {
-    padding: 13px 0px 0px 0 !important;
-    font-size: 14px !important;
-    width: 100% !important; margin: 0px;
-    color: #444 !important;
-}
-
-.TEXT_ARARARA p {
-	color: #b2b2b2 !important; margin: 0px !important;
-}
-
+.TEXT_ARARARA textarea {padding: 13px 0px 0px 0 !important; font-size: 14px !important; width: 100% !important; margin: 0px; color: #444 !important; }
+.TEXT_ARARARA p {color: #b2b2b2 !important; margin: 0px !important; }
 .Delete_Campaign button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 17px 0px 0px 0px; width: 100%;  border-radius: 0px;}
 ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior{
  background: #00CC87; color: #FFF!important; }
 ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!important;}
-
- .delete_customer button{background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 35px; width:100%!important; margin: 0px 0px 0px 0px; font-family: 'Open Sans', sans-serif; }
-
+.delete_customer button{background:#00CC87; border: 1px solid #00CC87; color: #FFF; font-size: 17px; text-align: center; padding:0px 0px; height: 35px; width:100%!important; margin: 0px 0px 0px 0px; font-family: 'Open Sans', sans-serif; }
 .delete_customer_red button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 0px 0px 0px 0px; width: 100%;  border-radius: 0px;}
-.popup {
-    border: 1px solid #b2b2b2;
-    padding: 0px;
-    text-align: center;
-    border-radius: 4px!important;
-
-}
-.popup-body input {
-    border: 1px solid #b2b2b2!important;
-    padding: 4px 0px 4px 10px!important;
- }
-
- .popup .button.button-positive{
- 	background: #00CC87!important;
- 	font-size: 15px;
- 	text-align: center;
- 	padding: 5px 0px;
- 	border:1px solid #00CC87;
- }
-
-
-
- .logo img {
-    max-width: 57%;
-}
-
-.heading_top h1 {
-    color: #434343;
-    font-family: serif;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 16px;
-    margin: 0;
-    padding: 0px 0 0px;
-    text-align: center;
-}
-.heading_top span{
-	color: #FF3B69;
-}
-.heading_top p {
-    color: #747373;
-    font-size: 14px;
-    text-align: center;
-    line-height: 23px;
-    margin: 0px;
-    letter-spacing: 1px;
-    padding: 15px 8px 0px 8px;
-}
-
-.card.custom_crd {
-    margin: 8px 15px 8px 15px!important;
-    height: auto!important;
-    padding: 0px!important;
-}
-.card.custom_crd {
-    font-size: 13px!important;
-    line-height: 20px!important;
-    color: #747373!important;
-    padding: 10px!important;
-    height: 75px!important;
-    overflow: hidden!important;
-}
-
-.card.custom_crd span {
-    color: #333!important;
-    font-size: 15px!important;
-    padding: 0px 5px 0px 0px!important;
-}	
-
-.Facebook_login button {
-    background: #3A5999;
-    border: 1px solid #3A5999;
-    color: #FFF;
-    font-size: 15px;
-    text-align: center;
-    padding: 0px 0px;
-    height: 20px;
-    width: 100%!important;
-    margin: 0px 0px 0px 0px;
-    letter-spacing: 1px;
-    font-weight: 300;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.Facebook_login button span img {
-    position: relative;
-    top: 8px;
-    right: 10px;
-}
-.Facebook_login {
-    margin: 8px 17px 8px 17px;
-}
-
-.card.custom_crd p {
-    float: left;
-     font-size: 14px;
-
-
-}
-
-.space_city p{
-    color: #747373!important;
-    padding: 0px 0px 0px 6px;
-
-}
-
-.of_space{
-  color: #333!important;
-    font-size: 14px!important;
-    padding: 0px 5px 0px 0px!important;}
-
-
+.popup {border: 1px solid #b2b2b2; padding: 0px; text-align: center; border-radius: 4px!important;}
+.popup-body input {border: 1px solid #b2b2b2!important; padding: 4px 0px 4px 10px!important; }
+.popup .button.button-positive{background: #00CC87!important; font-size: 15px; text-align: center; padding: 5px 0px; border:1px solid #00CC87; }
+.logo img {max-width: 57%; }
+.heading_top h1 {color: #434343; font-family: serif; font-size: 22px; font-weight: bold; line-height: 16px; margin: 0; padding: 0px 0 0px; text-align: center; }
+.heading_top span{color: #FF3B69; }
+.heading_top p {color: #747373; font-size: 14px; text-align: center; line-height: 23px; margin: 0px; letter-spacing: 1px; padding: 15px 8px 0px 8px; }
+.card.custom_crd {margin: 8px 15px 8px 15px!important; height: auto!important; padding: 0px!important; }
+.card.custom_crd {font-size: 13px!important; line-height: 20px!important; color: #747373!important; padding: 10px!important; height: 75px!important; overflow: hidden!important; }
+.card.custom_crd span {color: #333!important; font-size: 15px!important; padding: 0px 5px 0px 0px!important; }
+.Facebook_login button {background: #3A5999; border: 1px solid #3A5999; color: #FFF; font-size: 15px; text-align: center; padding: 0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 1px; font-weight: 300; font-family: 'Open Sans', sans-serif; }
+.Facebook_login button span img {position: relative; top: 8px; right: 10px; }
+.Facebook_login {margin: 8px 17px 8px 17px; }
+.card.custom_crd p {float: left; font-size: 14px;}
+.space_city p{color: #747373!important; padding: 0px 0px 0px 6px;}
+.of_space{color: #333!important; font-size: 14px!important; padding: 0px 5px 0px 0px!important;}
 /*puneet_css_18jan*/
 .ACTION_BUTNNN{width: 100% !important;}
 .padd_NUN{padding: 0px !important}
-.item-radio {
-    padding: 0 !important;
-    width: 100%; 
-    font-size: 10px !important;
-}
+.item-radio {padding: 0 !important; width: 100% !important; font-size: 10px !important; }
 .WANT_SHARE{width: 100%;}
 .share{text-align: center;}
-.share > img {
-    max-width: 63%;
-}
-.BOTH_SAHRE > img {
-    max-width: 43%;
-}
+.share > img {max-width: 63%; }
+.BOTH_SAHRE > img {max-width: 43%; }
 .SENDCOPEN{height: auto !important;}
+.card {box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3) !important; } 
+.CAMPAIN p {color: #b2b2b2; font-size: 15px !important; margin: 0px !important; padding: 0px !important; }
+.campagin_INFO_HEIGHT {width: 100% !important; height: 130px !important; border: 1px solid #E8E8E8; margin: 0px 0px 0px 0px; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 0px 20px; }
+.campagin input {padding: 14px 0px 0px 31px !important; font-family: "Roboto", sans-serif !important; font-size: 14px !important; color: #2b3b4e !important; font-weight: normal !important; margin: 0px !important; line-height: 24px !important; letter-spacing: 1px !important; }
+.raDION {width: 100% !important; font-size: 14px !important; }
+.ionic_datepicker_popup .popup-body .selected_date_full {background-color: #ff3b69 !important; margin: -10px -10px 0 -10px; height: 45px; text-align: center; font-weight: bold; color: #fff; line-height: 45px; font-size: 18px;}
+.ionic_datepicker_popup .popup-buttons button {background-color: #ff3b69 !important; border-radius: 0; margin-right: 1px; color: #ffffff; }
+.ionic_datepicker_popup .today {border: 1px solid #ff3b69 !important; border-radius: 50%; }
+.ionic_datepicker_popup .selected_date {background-color: #ff3b69 !important; border-radius: 50%; color: #fff; font-weight: bold; }
+.ionic_datepicker_popup .popup-body .button-clear {color: #ff3b69 !important; }
+.ionic_datepicker_popup .popup-body .month_select, .ionic_datepicker_popup .popup-body .year_select {border: none; border-bottom: 1px solid #ff3b69 !important; padding: 0; }
+.popup {border: 1px solid #ff3b69 !important; padding: 0px; text-align: center; border-radius: 4px !important; }
+.topmargin {margin-top: 20%; }
+.membership_plan_box_penal {background: #fff none repeat scroll 0 0; border-radius: 4px; margin-bottom: 25px; }
+.membership_plan_box_penal > h2 {background: #F8E71C none repeat scroll 0 0; border-radius: 4px 4px 0 0; color: #000; font-size: 20px; font-weight: 600; padding: 8px 6px; text-align: center; }
+.para_membr_text {border-radius: 4px 4px 0 0; color: #939393; font-size: 14px; font-weight: normal; padding: 0 20px 13px 20px; text-align: center; }
+.padd_twt {padding: 0 12px; }
+.membership_hding {color: #fff; font-size: 16px; font-weight: 600; line-height: 30px; margin-bottom: 30px; padding: 0 10px; text-align: center; text-transform: uppercase; }
+.images_upload > img {max-width: 100%; width: 100%; height: 100%; }
+.images_upload.BIG_IMG {height: 212px; /*border: 1px solid #f00;*/ }
+.images_upload.SmAIILLL_IMG {height: 100px; margin-bottom:10px; /*  border: 1px solid #f00;*/ }
+.images_upload.SmAIILLL_sINGLE_IMG {height: 106px; /*  border: 1px solid #f00;*/ }
+button.button.button-icon.icon.ion-navicon.setting_dror.hide {display: block; }
+img.img-responsive {position: absolute; top: 0; bottom: 0; left: 0; border-radius: 10px; right: 0; width: 60px; margin: auto; }
+.loading-container .loading {padding: 0; border-radius: 5px; background-color: rgba(0, 0, 0, 0.5); color: #fff; width: 100%; margin: 0px; position: absolute; text-align: center; text-overflow: ellipsis; font-size: 12px; top: 0; bottom: 0; }
+iframe.giphy-embed {width: 80px; background: transparent; position: absolute; top: 0; bottom: 0; margin: auto; right: 0; left: 0; }
+.loading-container {-moz-box-align: center; -moz-box-pack: center; align-items: center; bottom: 0; display: block; justify-content: center; left: 0; opacity: 0; position: absolute; right: 0; top: 0; transition: opacity 0.2s linear 0s; visibility: hidden; z-index: 13; }
+.red_background{ background: rgba(0, 0, 0, 0) url("../images/bg_coloured@3x.png") repeat fixed center center / cover ; height: 100%;}
+.hdr_more_button > img {max-width: 100%; }
+.hdr_more_button{width: 25px; }
+.newcampain_PENAL{margin-bottom: 50px; padding-top: 10px}
+.item-complex .item-content, .item-radio .item-content {position: relative; z-index: 2; padding: 15px !important; border: none; background-color: white; }
+input:invalid {box-shadow: none; }
+.button.active, .button.activated{border-color:#9bcf51 !important; background-color:#9bcf51 !important; box-shadow:none;}
+.loader {text-align: center; width: 100%; padding: 20px 0; }
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {background-color: transparent !important; }
+.side_slider_bar .item.active, .side_slider_bar .item.activated, .side_slider_bar .item-complex.active .item-content, .side_slider_bar .item-complex.activated .item-content, .side_slider_bar .item .item-content.active, .side_slider_bar .item .item-content.activated {background: rgba(160, 18, 37, 1) url(.jhjhj.png) repeat scroll 0 0 !important; border-color: #a01225 !important; color: #fff !important; }
+.paaDDD_SLECt{padding: 5px 15px;}
+.marging_space {padding: 50px 0 12px !important; }
+.grid_padd{padding:6% 8% !important}
+.magjen_nun {margin: 0 !important; padding: 2px 0px !important; }
+.pad_none{padding: 0px !important;}
+.marjen_top{margin-top: 25px;}
+.grid_padd_logo{padding: 6% 25% 0% !important}
+.banner_img_penal {display: -webkit-box; display: -moz-flex; display: -ms-flexbox; display: block; padding: 0px; width: 100%; }
+.banner_img_penal img {max-width: 100%; }
+.logo_account img {max-width: 100%; }
+.Sign_in button{ background:#fff; border: 1px solid #2780e4; color: #2780e4; font-size: 14px; text-align: center; padding:0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif;  font-weight: 100;}
+.Sign_UP button{ background:#2780e4; border: 1px solid #2780e4; color: #FFF; font-size: 14px; text-align: center; padding:0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif;  font-weight: 100;}
+.logo_account {/* width: 250px; */ text-align: center; padding: 76% 0px; /* position: absolute; */ right: 0; left: 0; top: 0; bottom: 0; /* height: 286px; */ margin: auto; }
+.dont_have h2 {color: #484848; font-size: 14px; }
+.dont_have h2 span {font-weight: 600; }
+.Select_gender_text{text-align: center; color: #f03929; display: inline-block; font-size: 14px; padding: 20px 0px 15px 0px; width: 100%; text-align: center;}
+.gender_select_male > img {max-width: 100%; }
+.new_LOGIN_PENAL_MAIN{width: 100%; float: left; position: fixed;}
+form.new_LOGIN_PENAL{position: relative; width: 100%; bottom: 0;}
 
+.login-or {position: relative; font-size: 18px; color: #aaa; margin-top: 10px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; }
+.span-or {display: block; position: absolute; left: 50%; top: -2px; margin-left: -25px; background-color: #fff; width: 50px; text-align: center; }
+.hr-or {background-color: #cdcdcd; height: 1px; margin-top: 0px !important; margin-bottom: 0px !important; }
+.grid_padd_NEWOR {padding: 0 8% !important; }
+.newCAPNAIN_BOXX {padding: 10px 10px; margin: 20px 0; background: #f2f2f2; box-shadow: 0 1px 8px 0 rgba(120, 120, 120, 0.4); }
+.NEWCOPUEN-or {position: relative; font-size: 18px; color: #aaa; margin-top: 10px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; }
+.span-or {display: block; position: absolute; left: 50%; top: -2px; margin-left: -25px; background-color: #f2f2f2; width: 50px; text-align: center; }
+.hr-or {background-color: #cdcdcd; height: 1px; margin-top: 0px !important; margin-bottom: 0px !important; }
 
-.card {
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3) !important;
-}
-.CAMPAIN p {
-    color: #b2b2b2 !important;
-    font-size: 15px !important;
-    margin: 0px !important;
-    padding: 0px !important;
-}
-.campagin_INFO_HEIGHT {
-    width: 100% !important;
-    height: 130px !important;
-    border: 1px solid #E8E8E8;
-    margin: 0px 0px 0px 0px;
-    padding: 0px;
-    box-shadow: 2px 2px 13px #E8E8E8;
-    background: #FFF;
-    padding: 0px 20px;
-}
-
-.campagin input {
-    padding: 14px 0px 0px 31px !important;
-    font-family: "Roboto", sans-serif !important;
-    font-size: 14px !important;
-    color: #2b3b4e !important;
-    font-weight: normal !important;
-    margin: 0px !important;
-    line-height: 24px !important;
-    letter-spacing: 1px !important;
-}
-
-.raDION {
-  width: 100% !important; font-size: 14px !important;
-}
-
-.ionic_datepicker_popup .popup-body .selected_date_full {
-    background-color: #ff3b69 !important;
-    margin: -10px -10px 0 -10px;
-    height: 45px;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-    line-height: 45px;
-    font-size: 18px;
-}
-
-.ionic_datepicker_popup .popup-buttons button {
-    background-color: #ff3b69 !important;
-    border-radius: 0;
-    margin-right: 1px;
-    color: #ffffff;
-}
-.ionic_datepicker_popup .today {
-    border: 1px solid #ff3b69 !important;
-    border-radius: 50%;
-}
-.ionic_datepicker_popup .selected_date {
-    background-color: #ff3b69 !important;
-    border-radius: 50%;
-    color: #fff;
-    font-weight: bold;
-}
-.ionic_datepicker_popup .popup-body .button-clear {
-    color: #ff3b69 !important;
-}
-
-.ionic_datepicker_popup .popup-body .month_select, .ionic_datepicker_popup .popup-body .year_select {
-    border: none;
-    border-bottom: 1px solid #ff3b69 !important;
-    padding: 0;
-}
-
-.popup {
-    border: 1px solid #ff3b69 !important;
-    padding: 0px;
-    text-align: center;
-    border-radius: 4px !important;
-}
 /*puneet_css_18jan*/
