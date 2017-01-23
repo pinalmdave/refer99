@@ -10511,7 +10511,7 @@ form.new_LOGIN_PENAL {
 
 .login-or {
   position: relative;
-  font-size: 18px;
+  font-size: 15px;
   color: #aaa;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -10521,11 +10521,11 @@ form.new_LOGIN_PENAL {
 .span-or {
   display: block;
   position: absolute;
-  left: 50%;
+  left: 34%;
   top: -2px;
   margin-left: -25px;
   background-color: #fff;
-  width: 50px;
+  width: 150px;
   text-align: center; }
 
 .hr-or {
@@ -10641,6 +10641,15 @@ p.Discount_type_TEXT {
 
 .EDIT_BUSINEW button {
   font-size: 14px !important; }
+
+ul.PAYMENT_PAGE_LIST li {
+  background: transparent url(../images/tick-inside-circle.png) no-repeat scroll 10px 5px;
+  display: inline-block;
+  line-height: 26px;
+  color: #ff3b69;
+  padding: 0 0 0 40px;
+  text-align: left;
+  width: 100%; }
 
 /*puneet_css_18jan*/
 /**
