@@ -25,7 +25,7 @@
                 <div class="col">
                     <div class="plus" ui-sref="app.manage_customers">
                         <img src="images/ic_managecustomer@2x.png">
-                        <h2>MANAGE</br>CUSTOMER</h2>
+                        <h2>MANAGE</br>CUSTOMERS</h2>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
         </div>
         <div class="row" ng-if="user_camp_data.campaigns.length">
             <div class="col active_coupon_view">
-                <h1>ACTIVE CAMPAIGN</h1>
+                <!-- <h1>ACTIVE CAMPAIGN</h1> -->
             </div>
         </div>
         <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns | orderBy:'-created'">
@@ -51,14 +51,15 @@
                     <h4>End Date:{{getDateFormally(campaign.end_date)}}</h4>
                     <h4>Coupons Activated:{{campaign.coupons_activated.length}}</h4>
                     <h4>Coupons Redeemed:{{campaign.coupons_redeemed.length}}</h4>
+                    <h4>Status:{{getCampStatus(campaign.end_date)}}</h4>
                     <!-- <h4>Coupons Redemptions:</h4> -->
                 </div>
             </div>
             <div class="row main_active_width">
-                <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
+<!--                 <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
                     <h3>VIEW COUPON</h3>
-                </div>
-                <div class="active_coupon_view_box_grre " ng-click="showCampActions($index,campaign.id)">
+                </div> -->
+                <div class="active_coupon_view_box_grre ACTION_BUTNNN" ng-click="showCampActions($index,campaign.id)">
                     <h3>ACTIONS</h3>
                 </div>
             </div>

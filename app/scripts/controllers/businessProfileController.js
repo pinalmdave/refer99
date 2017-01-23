@@ -7,7 +7,7 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state,$ionicScrollDelegate) {
 
     $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -15,6 +15,7 @@ angular.module('viralDL')
     if ($scope.user.user_type == "fb") {
       $scope.is_fb_user = true;
     }
+    $scope.is_disabled = true;
     (function init() {
       $ionicLoading.show({
         template: 'Loading...'
@@ -89,6 +90,8 @@ angular.module('viralDL')
             $ionicPopup.alert({
               title: 'refer99',
               template: 'User updated successfully'
+            }).then(function() {
+              $state.go("app.dashboard");
             });
           }
         }
@@ -111,6 +114,26 @@ angular.module('viralDL')
           // error getting photos
           console.log('error', error);
         });
+    }
+    $scope.changeIsDisabled = function() {
+      $scope.is_disabled = !$scope.is_disabled;
+      if ($scope.is_disabled == true) {
+        $ionicLoading.show({
+          template: 'Loading...'
+        });
+        User.get_user($scope.user.userId, function(err, data) {
+          $ionicLoading.hide();
+          if (err) {
+            console.log('err', err);
+          } else {
+            console.log('user_data', data);
+            $ionicScrollDelegate.scrollTop(true);
+            $scope.user_data = data;
+            $scope.user_data.business_type = $scope.user_data.business_type ? $scope.user_data.business_type : "default";
+            $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
+          }
+        });
+      }
     }
 
 

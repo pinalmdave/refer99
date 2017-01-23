@@ -18,7 +18,7 @@ angular.module('viralDL')
     });
     // do something with $scope
     $scope.logout = function() {
-     /* $ionicLoading.show({
+      $ionicLoading.show({
         template: 'Loading...'
       });
       User.clearToken($scope.user.userId, function(err, data) {
@@ -33,19 +33,11 @@ angular.module('viralDL')
           $ionicHistory.nextViewOptions({
             disableBack: true
           });
-          $ionicHistory.clearCache();
-          $state.go('app.home');
+          // $ionicHistory.clearCache();
+          $state.go('app.start');
           $ionicSideMenuDelegate.toggleLeft(false);
         }
-      });*/
-   Storage.removeUser();
-          // Storage.clearAll();
-          $scope.user = undefined;
-          $ionicHistory.nextViewOptions({
-            disableBack: true
-          });
-          $ionicHistory.clearCache();
-          $state.go('app.home');
-          $ionicSideMenuDelegate.toggleLeft(false);
+      });
+ 
     };
   });

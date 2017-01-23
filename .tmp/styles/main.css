@@ -8942,10 +8942,14 @@ a.button {
 .login {
   padding: 50px 0px 0px 0px; }
 
-.logo_account {
+.logo_accountold_home {
   width: 100%;
   text-align: center;
-  padding: 15px 0px 0px 0px; }
+  padding: 30px 0px 60px 0px; }
+
+.logo_accountold_home img {
+  max-width: 100%;
+  display: block; }
 
 .login label {
   margin: 0px auto;
@@ -9111,7 +9115,7 @@ a.button {
   font-weight: 300;
   padding: 1px;
   line-height: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
   font-family: 'Open Sans', sans-serif; }
 
 .blank_body {
@@ -9474,7 +9478,7 @@ a.button {
 
 .SAVE_CHANGES {
   background: #00CC87;
-  height: 60px;
+  height: 50px;
   border: 1px solid #00CC87;
   color: #FFF;
   font-size: 18px;
@@ -9875,7 +9879,7 @@ a.button {
   border-radius: 0px; }
 
 .new_camp_val {
-  margin: -9px 15px -4px;
+  margin: -9px 15px -2px;
   color: red !important; }
 
 .lock input {
@@ -9988,7 +9992,8 @@ a.button {
   border: 1px solid #E8E8E8 !important;
   margin: 0px 0px 0px 9px !important;
   float: left;
-  width: 62px !important; }
+  width: 62px !important;
+  text-align: center; }
 
 .flot_pera {
   margin: 6px 0px 3px 0px !important;
@@ -10184,10 +10189,11 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
 .item-radio {
   padding: 0 !important;
   width: 100% !important;
-  font-size: 10px !important; }
+  font-size: 12px !important; }
 
 .WANT_SHARE {
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
 
 .share {
   text-align: center; }
@@ -10208,7 +10214,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
   color: #b2b2b2;
   font-size: 15px !important;
   margin: 0px !important;
-  padding: 0px !important; }
+  padding: 0px; }
 
 .campagin_INFO_HEIGHT {
   width: 100% !important;
@@ -10221,7 +10227,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
   padding: 0px 20px; }
 
 .campagin input {
-  padding: 14px 0px 0px 31px !important;
+  padding: 14px 0px 0px 13px !important;
   font-family: "Roboto", sans-serif !important;
   font-size: 14px !important;
   color: #2b3b4e !important;
@@ -10343,20 +10349,7 @@ img.img-responsive {
   width: 60px;
   margin: auto; }
 
-.loading-container .loading {
-  padding: 0;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  width: 100%;
-  margin: 0px;
-  position: absolute;
-  text-align: center;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  top: 0;
-  bottom: 0; }
-
+/*.loading-container .loading {padding: 0; border-radius: 5px; background-color: rgba(0, 0, 0, 0.5); color: #fff; width: 100%; margin: 0px; position: absolute; text-align: center; text-overflow: ellipsis; font-size: 12px; top: 0; bottom: 0; }*/
 iframe.giphy-embed {
   width: 80px;
   background: transparent;
@@ -10367,27 +10360,7 @@ iframe.giphy-embed {
   right: 0;
   left: 0; }
 
-.loading-container {
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  bottom: 0;
-  display: block;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  -webkit-transition: opacity 0.2s linear 0s;
-          transition: opacity 0.2s linear 0s;
-  visibility: hidden;
-  z-index: 13; }
-
+/*.loading-container {-moz-box-align: center; -moz-box-pack: center; align-items: center; bottom: 0; display: block; justify-content: center; left: 0; opacity: 0; position: absolute; right: 0; top: 0; transition: opacity 0.2s linear 0s; visibility: hidden; z-index: 13; }*/
 .red_background {
   background: transparent url("../images/bg_coloured@3x.png") repeat fixed center center/cover;
   height: 100%; }
@@ -10399,8 +10372,8 @@ iframe.giphy-embed {
   width: 25px; }
 
 .newcampain_PENAL {
-  margin-bottom: 50px;
-  padding-top: 10px; }
+  margin-bottom: 50px !important;
+  padding-top: 10px !important; }
 
 .item-complex .item-content, .item-radio .item-content {
   position: relative;
@@ -10450,7 +10423,7 @@ input:invalid {
   margin-top: 25px; }
 
 .grid_padd_logo {
-  padding: 6% 25% 0% !important; }
+  padding: 6% 15% 0% !important; }
 
 .banner_img_penal {
   display: -webkit-box;
@@ -10497,7 +10470,7 @@ input:invalid {
 .logo_account {
   /* width: 250px; */
   text-align: center;
-  padding: 76% 0px;
+  padding: 44% 0 0 0px;
   /* position: absolute; */
   right: 0;
   left: 0;
@@ -10511,7 +10484,8 @@ input:invalid {
   font-size: 14px; }
 
 .dont_have h2 span {
-  font-weight: 600; }
+  font-weight: 600;
+  text-decoration: underline; }
 
 .Select_gender_text {
   text-align: center;
@@ -10578,7 +10552,7 @@ form.new_LOGIN_PENAL {
   padding-top: 10px;
   padding-bottom: 10px; }
 
-.span-or {
+.span-or_new {
   display: block;
   position: absolute;
   left: 50%;
@@ -10593,6 +10567,80 @@ form.new_LOGIN_PENAL {
   height: 1px;
   margin-top: 0px !important;
   margin-bottom: 0px !important; }
+
+.campagin ionic-datepicker button {
+  background: transparent !important;
+  color: #A0A0A0 !important;
+  border: 0px solid #E8E8E8 !important;
+  position: relative;
+  top: -7px !important;
+  margin: 0;
+  text-align: left !important;
+  padding: 0 10px;
+  font-size: 14px; }
+
+.item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
+  overflow: inherit !important;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+p.Discount_type_TEXT {
+  margin-bottom: 15px !important; }
+
+.botom_mgn {
+  margin-bottom: 15px; }
+
+.first_SCRREn {
+  margin-bottom: 20px;
+  height: 250px; }
+
+.new_LOGIN_PENAL_MAIN {
+  width: 100%;
+  float: left;
+  margin-top: 20%;
+  position: fixed; }
+
+.padd_noo {
+  padding: 0% 8% !important; }
+
+.padd_ENDCPN {
+  padding: 0 15px 50px 15px !important; }
+
+.margin_BOTOM {
+  margin-bottom: 80px !important; }
+
+.item-input input {
+  margin: -1px 0 0 0 !important; }
+
+.custom-icon {
+  font-size: 36px;
+  color: #ff3b69; }
+
+.popover {
+  width: 90% !important;
+  height: 90% !important;
+  top: 15% !important;
+  left: 5% !important; }
+
+.setting_screen.pane.tab-content {
+  position: relative;
+  top: 50px;
+  padding: 0 16px; }
+
+.tabs-positive > .tabs, .tabs.tabs-positive {
+  border-color: #FF3B69 !important;
+  background-color: #FF3B69 !important;
+  background-image: none !important;
+  background-image: none !important;
+  color: #fff; }
+
+.PINK_COR_BTN button {
+  background-color: #FF3B69 !important;
+  margin: 0px;
+  border: 1px solid #FF3B69; }
+
+.EDIT_BUSINEW button {
+  font-size: 14px !important; }
 
 /*puneet_css_18jan*/
 /**

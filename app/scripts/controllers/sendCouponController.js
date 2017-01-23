@@ -10,6 +10,8 @@ angular.module('viralDL')
     $scope.contact = {};
     $scope.cust_contacts = [];
     $scope.cust_emails = [];
+    $scope.showEmailErr=false;
+    $scope.showContactErr=false;
     (function init() {
       User.get_user_customers(function(err, data) {
         $ionicLoading.hide();
@@ -61,10 +63,10 @@ angular.module('viralDL')
         $cordovaSocialSharing
           .shareViaWhatsApp(message, null, link)
           .then(function(result) {
-            // alert("Thanks for sharing");
+            // alert("Coupon has been distributed to selected customer(s)");
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Thanks for sharing"
+              template: "Coupon has been distributed to selected customer(s)"
             });
             // Success!
             console.log('result', result);
@@ -84,7 +86,7 @@ angular.module('viralDL')
           .then(function(result) {
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Thanks for sharing"
+              template: "Coupon has been distributed to selected customer(s)"
             });
             // Success!
             console.log('result', result);
@@ -105,7 +107,7 @@ angular.module('viralDL')
           .then(function(result) {
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Thanks for sharing"
+              template: "Coupon has been distributed to selected customer(s)"
             });
             // Success!
             console.log('result', result);
@@ -151,7 +153,7 @@ angular.module('viralDL')
               // Success!
               $ionicPopup.alert({
                 title: 'refer99',
-                template: "Thanks for sharing"
+                template: "Coupon has been distributed to selected customer(s)"
               });
               console.log('result', result);
               $scope.contact = {};
@@ -167,6 +169,54 @@ angular.module('viralDL')
 
         }
       });
+    }
+
+    $scope.send_message = function(user_contact) {
+      console.log(user_contact);
+      var message = "http://viraldl.tk/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
+      $cordovaSocialSharing
+        .shareViaSMS(message, user_contact)
+        .then(function(result) {
+          // Success!
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Coupon has been distributed to selected customer(s)"
+          });
+          console.log('result', result);
+        }, function(err) {
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please try after some time"
+          });
+          // An error occurred. Show a message to the user
+          console.log('err', err);
+        });
+
+
+    }
+    $scope.send_email = function(user_name, user_email) {
+      console.log(user_name, user_email);
+      var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+      var subject = "refer99 coupon shared";
+      $cordovaSocialSharing
+        .shareViaEmail(message, subject, user_email, [], [], null)
+        .then(function(result) {
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Coupon has been distributed to selected customer(s)"
+          });
+          // Success!
+          console.log('result', result);
+        }, function(err) {
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: "Please try after some time"
+          });
+          // An error occurred. Show a message to the user
+          console.log('err', err);
+        });
+
+
     }
 
   });

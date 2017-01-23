@@ -1,14 +1,15 @@
 <ion-view>
-    <ion-header-bar id="head" align-title="center">
+    <!--     <ion-header-bar id="head" align-title="center">
         <button class="button button-icon icon ion-navicon" style="display: block;color:#fff;" menu-toggle="left"></button>
         <h1 class="title" style="color:#fff;">Registration</h1>
-    </ion-header-bar>
+    </ion-header-bar> -->
     <ion-content class="padding redapp_bg">
         <div class="row">
-            <div class="logo_account">
+            <div class="logo_accountold_home">
                 <a><img src="images/redlogo@x.png"></a>
             </div>
         </div>
+
         <form name="signupForm">
             <div class="row">
                 <div class="col text-center login">
@@ -25,19 +26,21 @@
                     </div>
                 </div>
             </div>
-            <div class="padding">
-                <p ng-show="signupForm.username.$error.required">* full name is required</p>
-                <p ng-show="signupForm.userEmail.$error.required">* Email is required</p>
-                <p ng-show="signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
-                <p ng-show="signupForm.password.$error.required">* Password is required</p>
+            <div class="padding" ng-if="(showErrMessages && showSignInErrMessages) || res_signup">
+                <p ng-show="showSignInErrMessages && signupForm.username.$error.required">* Full name is required</p>
+                <p ng-show="showSignInErrMessages && signupForm.userEmail.$error.required">* Email is required</p>
+                <p ng-show="showSignInErrMessages && signupForm.userEmail.$invalid && !signupForm.userEmail.$pristine">* Invalid email address</p>
+                <p ng-show="showSignInErrMessages && signupForm.password.$error.required">* Password is required</p>
                 <p ng-show="res_signup">* {{signupMessage}}</p>
             </div>
             <div class="row">
                 <div class=" col Sign_in text-center padding_remove">
-                    <button class="button" ng-click="signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
+                    <button class="button" ng-click="(showSignInErrMessages=true) && (showErrMessages=true) && signupForm.$valid && register_user(username,userEmail,password)"> SIGN UP </button>
                 </div>
             </div>
         </form>
+
+
         <div class="row">
             <div class=" col or_option text-center">
                 <p><span></span>or<span></span></p>
@@ -45,7 +48,7 @@
         </div>
         <div class="row">
             <div class=" col Facebook text-center padding_remove">
-                <button class="button" ng-click="facebookSignup()"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+                <button class="button" ng-click="facebookSignup()"><span><img src="images/ic_facebooKk@x.png"></span>Sign Up with <span>Facebook </span></button>
             </div>
         </div>
         <div class="row">

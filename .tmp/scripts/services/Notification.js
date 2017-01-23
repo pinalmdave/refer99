@@ -10,7 +10,7 @@
   function Notification($cordovaDevice, $rootScope, Storage, $state, Restangular) {
 
     this.registerDevice = function(id, next) {
-      /*var devicePlatform = $cordovaDevice.getPlatform();
+      var devicePlatform = $cordovaDevice.getPlatform();
       console.log('devicePlatform', devicePlatform);
       var deviceConfig = {};
       if (devicePlatform === 'Android') {
@@ -53,7 +53,7 @@
             console.log('error retrieving token: ' + err);
           }
         );
-      }*/
+      }
     };
     
 

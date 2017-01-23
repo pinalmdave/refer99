@@ -17,7 +17,12 @@
 .frist_time p{ color: #C6C6C6; font-size: 12px; padding:0px; margin: 0px; font-weight: 400; padding:10px 0px; font-family: 'Open Sans', sans-serif;}
 .frist_time p a{ text-decoration: underline; color: #C6C6C6;}
 .login{ padding:50px 0px 0px 0px;}
-.logo_account{ width: 100%; text-align: center; padding:15px 0px 0px 0px;}
+.logo_accountold_home{ width: 100%; text-align: center; padding:30px 0px 60px 0px;}
+.logo_accountold_home img {
+    max-width: 100%;
+    display: block;
+}
+
 .login label{ margin: 0px auto; padding:0px; width: 100%; border-style: inherit;}
 
 .user_name input{border-top: 1px solid #B5B5B5!important; border-left: 1px solid #B5B5B5 !important; border-right: 1px solid #B5B5B5 !important; border-bottom: 1px solid #B5B5B5 !important; border-top-right-radius: 3px!important; border-top-left-radius: 3px!important; padding:0px 0px 0px 10px!important; height: 40px!important; font-family: 'Open Sans', sans-serif!important;}
@@ -48,7 +53,7 @@
 
 .custom_header{ height: 130px!important; position: fixed!important; z-index: 9999!important; }
 .plus{ text-align: center; cursor: pointer;}
-.plus h2{color: #5B5A63; font-size: 11px; margin: 0px; font-weight: 300; padding: 1px; line-height: 16px; letter-spacing: 1px; font-family: 'Open Sans', sans-serif;}
+.plus h2{color: #5B5A63; font-size: 11px; margin: 0px; font-weight: 300; padding: 1px; line-height: 16px; letter-spacing: 0px; font-family: 'Open Sans', sans-serif;}
 
 .blank_body{ padding:370px 0px 370px 0px!important;}
 .blank_body h6{ color: #363636; font-size: 18px; margin: 0px; padding:0px; font-weight: 300; line-height: 28px; font-family: 'Open Sans', sans-serif;}
@@ -114,7 +119,7 @@
  .logout button{ background: #ff3b69; margin: 30px 0px 0px 0px; border: 1px solid #ff3b69; width: 100%; color: #FFF; font-size: 18px; height: 65px; text-align: center; padding: 2px 0px 0px 0px; font-family: 'Roboto', sans-serif; font-weight: 300; text-transform: uppercase;}
 .foter_main_disable{text-align: center;position: relative; top: -51px; left: 2px; background: #d5d5d5; border-radius: 100px; width: 65px; height: 65px;  }
 .foter_main_disable img{ padding: 21px 0px 0px 1px;}
-.SAVE_CHANGES{ background: #00CC87; height: 60px; border: 1px solid #00CC87; color: #FFF; font-size: 18px; margin: 0px; padding: 0px;}
+.SAVE_CHANGES{ background: #00CC87; height: 50px; border: 1px solid #00CC87; color: #FFF; font-size: 18px; margin: 0px; padding: 0px;}
 .SAVE_CHANGES button{ background: #00CC87;  width: 100%; letter-spacing: 1px; border: 1px solid #00CC87; color: #FFF; font-size: 21px; margin: 0px; padding: 14px 0px 0px 0px;  font-family: 'Roboto', sans-serif;}
 .active_coupon_view{padding: 20px 0px 0px 0px; margin:140px 0px 0px 0px;}
 .active_coupon_view h1{ color: #4e4d57; font-size: 20px; margin:0px; padding: 0px 0px 14px 18px; font-family: 'Open Sans', sans-serif;}
@@ -203,7 +208,7 @@
 
 .new_back button{ background-color: #FF3B69; color: #FFF; font-size: 16px; border: 1px solid #FF3B69; text-align: center; padding: 3px 10px; margin: 17px 0px 0px 0px; width: 100%; border-radius: 0px;}
 .new_back_create button{ background-color: #00CC87; color: #FFF; font-size: 16px; border: 1px solid #00CC87; text-align: center; padding: 3px 10px; margin: 0px 0px 0px 0px; width: 100%;  border-radius: 0px;}
-.new_camp_val {margin: -9px 15px -4px; color: red !important;}
+.new_camp_val {margin: -9px 15px -2px; color: red !important;}
 .lock input {float: left;margin: 2px 0px 0px 0px !important;color: #2b3b4e;font-size: 14px !important;}
 .lock img{padding: 10px 0px 0px 30px;}
 .margin_top select {background: transparent!important; z-index: 9999; float: right; width: 75%; height: 50px; position: absolute; border: 0px; font-size: 14px!important; padding: 0px 0px 0px 27px; margin: 0px 0px 0px 0px; font-size: 18px; color: #2b3b4e; font-weight: normal;  font-family: 'Roboto', sans-serif;}
@@ -227,7 +232,7 @@
 
 .disscount p{ color: #b2b2b2!important; font-size: 15px!important; margin: 0px!important; padding: 0px!important;  }
 .flot_pera p{ float: left!important; color: #444!important; margin: 0px!important; padding: 7px 0px 0px 0px!important; font-size: 15px!important; }
-.flot_pera input {border: 1px solid #E8E8E8 !important; margin: 0px 0px 0px 9px !important; float: left; width: 62px!important;}
+.flot_pera input {border: 1px solid #E8E8E8 !important; margin: 0px 0px 0px 9px !important; float: left; width: 62px!important; text-align: center;}
 .flot_pera{margin: 6px 0px 3px 0px!important; padding: 8px 0px 8px 12px !important;} .blank{ height: 90px!important; width: 100%!important; }
 .margin_bottom{ margin-bottom: 40px;}
 /*4jan2017 css*/
@@ -267,6 +272,7 @@ p.center.due_payment_penal.ng-binding {
 	color: #b2b2b2 !important; margin: 0px !important;
 }
 
+
 .Delete_Campaign button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 17px 0px 0px 0px; width: 100%;  border-radius: 0px;}
 ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior{
  background: #00CC87; color: #FFF!important; }
@@ -292,16 +298,16 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!
 /*puneet_css_18jan*/
 .ACTION_BUTNNN{width: 100% !important;}
 .padd_NUN{padding: 0px !important}
-.item-radio {padding: 0 !important; width: 100% !important; font-size: 10px !important; }
-.WANT_SHARE{width: 100%;}
+.item-radio {padding: 0 !important; width: 100% !important; font-size: 12px !important; }
+.WANT_SHARE{width: 100%; text-align: center;}
 .share{text-align: center;}
 .share > img {max-width: 63%; }
 .BOTH_SAHRE > img {max-width: 43%; }
 .SENDCOPEN{height: auto !important;}
 .card {box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3) !important; } 
-.CAMPAIN p {color: #b2b2b2; font-size: 15px !important; margin: 0px !important; padding: 0px !important; }
+.CAMPAIN p {color: #b2b2b2; font-size: 15px !important; margin: 0px !important; padding: 0px  }
 .campagin_INFO_HEIGHT {width: 100% !important; height: 130px !important; border: 1px solid #E8E8E8; margin: 0px 0px 0px 0px; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 0px 20px; }
-.campagin input {padding: 14px 0px 0px 31px !important; font-family: "Roboto", sans-serif !important; font-size: 14px !important; color: #2b3b4e !important; font-weight: normal !important; margin: 0px !important; line-height: 24px !important; letter-spacing: 1px !important; }
+.campagin input {padding: 14px 0px 0px 13px !important; font-family: "Roboto", sans-serif !important; font-size: 14px !important; color: #2b3b4e !important; font-weight: normal !important; margin: 0px !important; line-height: 24px !important; letter-spacing: 1px !important; }
 .raDION {width: 100% !important; font-size: 14px !important; }
 .ionic_datepicker_popup .popup-body .selected_date_full {background-color: #ff3b69 !important; margin: -10px -10px 0 -10px; height: 45px; text-align: center; font-weight: bold; color: #fff; line-height: 45px; font-size: 18px;}
 .ionic_datepicker_popup .popup-buttons button {background-color: #ff3b69 !important; border-radius: 0; margin-right: 1px; color: #ffffff; }
@@ -322,13 +328,13 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!
 .images_upload.SmAIILLL_sINGLE_IMG {height: 106px; /*  border: 1px solid #f00;*/ }
 button.button.button-icon.icon.ion-navicon.setting_dror.hide {display: block; }
 img.img-responsive {position: absolute; top: 0; bottom: 0; left: 0; border-radius: 10px; right: 0; width: 60px; margin: auto; }
-.loading-container .loading {padding: 0; border-radius: 5px; background-color: rgba(0, 0, 0, 0.5); color: #fff; width: 100%; margin: 0px; position: absolute; text-align: center; text-overflow: ellipsis; font-size: 12px; top: 0; bottom: 0; }
+/*.loading-container .loading {padding: 0; border-radius: 5px; background-color: rgba(0, 0, 0, 0.5); color: #fff; width: 100%; margin: 0px; position: absolute; text-align: center; text-overflow: ellipsis; font-size: 12px; top: 0; bottom: 0; }*/
 iframe.giphy-embed {width: 80px; background: transparent; position: absolute; top: 0; bottom: 0; margin: auto; right: 0; left: 0; }
-.loading-container {-moz-box-align: center; -moz-box-pack: center; align-items: center; bottom: 0; display: block; justify-content: center; left: 0; opacity: 0; position: absolute; right: 0; top: 0; transition: opacity 0.2s linear 0s; visibility: hidden; z-index: 13; }
+/*.loading-container {-moz-box-align: center; -moz-box-pack: center; align-items: center; bottom: 0; display: block; justify-content: center; left: 0; opacity: 0; position: absolute; right: 0; top: 0; transition: opacity 0.2s linear 0s; visibility: hidden; z-index: 13; }*/
 .red_background{ background: rgba(0, 0, 0, 0) url("../images/bg_coloured@3x.png") repeat fixed center center / cover ; height: 100%;}
 .hdr_more_button > img {max-width: 100%; }
 .hdr_more_button{width: 25px; }
-.newcampain_PENAL{margin-bottom: 50px; padding-top: 10px}
+.newcampain_PENAL{margin-bottom: 50px !important; padding-top: 10px !important}
 .item-complex .item-content, .item-radio .item-content {position: relative; z-index: 2; padding: 15px !important; border: none; background-color: white; }
 input:invalid {box-shadow: none; }
 .button.active, .button.activated{border-color:#9bcf51 !important; background-color:#9bcf51 !important; box-shadow:none;}
@@ -341,15 +347,18 @@ input:invalid {box-shadow: none; }
 .magjen_nun {margin: 0 !important; padding: 2px 0px !important; }
 .pad_none{padding: 0px !important;}
 .marjen_top{margin-top: 25px;}
-.grid_padd_logo{padding: 6% 25% 0% !important}
+.grid_padd_logo{padding: 6% 15% 0% !important}
 .banner_img_penal {display: -webkit-box; display: -moz-flex; display: -ms-flexbox; display: block; padding: 0px; width: 100%; }
 .banner_img_penal img {max-width: 100%; }
 .logo_account img {max-width: 100%; }
 .Sign_in button{ background:#fff; border: 1px solid #2780e4; color: #2780e4; font-size: 14px; text-align: center; padding:0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif;  font-weight: 100;}
 .Sign_UP button{ background:#2780e4; border: 1px solid #2780e4; color: #FFF; font-size: 14px; text-align: center; padding:0px 0px; height: 20px; width: 100%!important; margin: 0px 0px 0px 0px; letter-spacing: 2px; font-family: 'Open Sans', sans-serif;  font-weight: 100;}
-.logo_account {/* width: 250px; */ text-align: center; padding: 76% 0px; /* position: absolute; */ right: 0; left: 0; top: 0; bottom: 0; /* height: 286px; */ margin: auto; }
+.logo_account {/* width: 250px; */ text-align: center; padding: 44% 0 0 0px; /* position: absolute; */ right: 0; left: 0; top: 0; bottom: 0; /* height: 286px; */ margin: auto; }
 .dont_have h2 {color: #484848; font-size: 14px; }
-.dont_have h2 span {font-weight: 600; }
+.dont_have h2 span {
+    font-weight: 600;
+    text-decoration: underline;
+}
 .Select_gender_text{text-align: center; color: #f03929; display: inline-block; font-size: 14px; padding: 20px 0px 15px 0px; width: 100%; text-align: center;}
 .gender_select_male > img {max-width: 100%; }
 .new_LOGIN_PENAL_MAIN{width: 100%; float: left; position: fixed;}
@@ -361,7 +370,70 @@ form.new_LOGIN_PENAL{position: relative; width: 100%; bottom: 0;}
 .grid_padd_NEWOR {padding: 0 8% !important; }
 .newCAPNAIN_BOXX {padding: 10px 10px; margin: 20px 0; background: #f2f2f2; box-shadow: 0 1px 8px 0 rgba(120, 120, 120, 0.4); }
 .NEWCOPUEN-or {position: relative; font-size: 18px; color: #aaa; margin-top: 10px; margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px; }
-.span-or {display: block; position: absolute; left: 50%; top: -2px; margin-left: -25px; background-color: #f2f2f2; width: 50px; text-align: center; }
+.span-or_new {display: block; position: absolute; left: 50%; top: -2px; margin-left: -25px; background-color: #f2f2f2; width: 50px; text-align: center; }
 .hr-or {background-color: #cdcdcd; height: 1px; margin-top: 0px !important; margin-bottom: 0px !important; }
+.campagin ionic-datepicker button {background: transparent !important; color: #A0A0A0 !important; border: 0px solid #E8E8E8 !important; position: relative; top: -7px !important; margin: 0; text-align: left !important; padding: 0 10px; font-size: 14px; }
 
+
+
+
+
+
+.item, .item h1, .item h2, .item h3, .item h4, .item h5, .item h6, .item p, .item-content, .item-content h1, .item-content h2, .item-content h3, .item-content h4, .item-content h5, .item-content h6, .item-content p {
+     overflow: inherit !important; 
+     text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+p.Discount_type_TEXT {
+    margin-bottom: 15px !important;
+}
+.botom_mgn {
+    margin-bottom: 15px;
+}
+
+.first_SCRREn {
+    margin-bottom: 20px;
+    height: 250px;
+}
+.new_LOGIN_PENAL_MAIN {
+    width: 100%;
+    float: left;
+    margin-top: 20%;
+    position: fixed;
+}
+.padd_noo{padding:0% 8% !important }
+.padd_ENDCPN{padding: 0 15px 50px 15px !important;}
+.margin_BOTOM {
+    margin-bottom: 80px !important;
+}
+.item-input input {
+    margin: -1px 0 0 0 !important;
+}
+.custom-icon {
+  font-size: 36px;
+  color : #ff3b69;
+}
+.popover {width: 90% !important;
+    height: 90% !important;
+    top: 15% !important;
+    left: 5% !important;}
+
+    .setting_screen.pane.tab-content {
+    position: relative;
+    top: 50px;
+    padding: 0 16px;
+}
+.tabs-positive > .tabs, .tabs.tabs-positive {
+    border-color: #FF3B69 !important;
+    background-color: #FF3B69 !important;
+    background-image: none !important;
+    background-image: none !important;
+    color: #fff;
+}
+
+.PINK_COR_BTN button{background-color: #FF3B69 !important; margin: 0px; border: 1px solid #FF3B69}
+.EDIT_BUSINEW button {
+    font-size: 14px !important;
+}
 /*puneet_css_18jan*/

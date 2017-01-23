@@ -13,6 +13,9 @@ angular.module('viralDL')
     var user = Storage.getUser();
     $scope.showErrMessages = false;
     $scope.showSignInErrMessages = false;
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      $ionicHistory.clearCache();
+    });
     (function init() {
       if (user) {
         $ionicHistory.nextViewOptions({

@@ -31,7 +31,7 @@
                     <img ng-hide="imageFile" ng-if="user_data.business_logo" ng-src="http://35.162.137.242:3001/storage/business_logo/{{user_data.business_logo}}">
                 </div>
                 <div class="edit_option">
-                    <img src="images/edit.png" ng-click="onFileSelect()">
+                    <img src="images/edit.png" ng-disabled="is_disabled" ng-click="onFileSelect()">
                 </div>
                 <div class="bussness">
                     <h3>Upload Your business logo </h3>
@@ -44,7 +44,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_business@x.png">
-                            <input type="text" placeholder="Business Name" required ng-model="user_data.business_name">
+                            <input type="text" ng-disabled="is_disabled" placeholder="Business Name" required ng-model="user_data.business_name">
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_mobile@x.png">
-                            <input type="text" placeholder="Contact Number" required ng-model="user_data.contact">
+                            <input type="text" ng-disabled="is_disabled" placeholder="Contact Number" required ng-model="user_data.contact">
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_person@x.png">
-                            <input type="text" placeholder="Contact Person" required ng-model="user_data.contact_person">
+                            <input type="text" ng-disabled="is_disabled" placeholder="Contact Person" required ng-model="user_data.contact_person">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="card margin_top">
                         <div class="campagin">
                             <img src="images/ic_business@x.png">
-                            <select ng-model="user_data.business_type">
+                            <select ng-model="user_data.business_type" ng-disabled="is_disabled">
                                 <option disabled value="default">Business type</option>
                                 <option value="Restaurants">Restaurants</option>
                                 <option value="Food & Beverages">Food & Beverages</option>
@@ -92,7 +92,7 @@
                                 <option value="Children's">Children's</option>
                                 <option value="Department Stores">Department Stores</option>
                                 <option value="Wine & Liquors">Wine & Liquors</option>
-                                <option value="Sports & Fitness ">Sports & Fitness </option>
+                                <option value="Sports & Fitness">Sports & Fitness</option>
                                 <option value="Other SmallBusinesses">Other SmallBusinesses</option>
                             </select>
                         </div>
@@ -106,10 +106,10 @@
             </div>
             <div class="row">
                 <div class="col padd_NUN">
-                    <ion-radio class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'online'">Online</ion-radio>
+                    <ion-radio ng-disabled="is_disabled" class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'online'">Online</ion-radio>
                 </div>
                 <div class="col padd_NUN">
-                    <ion-radio class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'location'">At a location</ion-radio>
+                    <ion-radio ng-disabled="is_disabled" class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'location'">At a location</ion-radio>
                 </div>
             </div>
             <div class="row padding_remove" ng-if="user_data.work_through=='online'">
@@ -117,7 +117,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_business_active@x.png">
-                            <input type="text" placeholder="Web Address" name="web_address" ng-model="user_data.web_address" required>
+                            <input type="text" ng-disabled="is_disabled" placeholder="Web Address" name="web_address" ng-model="user_data.web_address" required>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_location@x.png">
-                            <input type="text" placeholder="Business Address 1" required ng-model="user_data.business_address">
+                            <input type="text" ng-disabled="is_disabled" placeholder="Business Address 1" required ng-model="user_data.business_address">
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_location@x.png">
-                            <input type="text" placeholder="Business Address 2(Opt)" ng-model="user_data.business_address_opt">
+                            <input type="text" ng-disabled="is_disabled" placeholder="Business Address 2(Opt)" ng-model="user_data.business_address_opt">
                         </div>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_city@x.png">
-                            <input type="text" placeholder="City" required ng-model="user_data.city">
+                            <input type="text" ng-disabled="is_disabled" placeholder="City" required ng-model="user_data.city">
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_state@x.png">
-                            <select ng-model="user_data.state">
+                            <select ng-model="user_data.state" ng-disabled="is_disabled">
                                 <option disabled value="default">Select State</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -221,7 +221,7 @@
                     <div class="card margin_top">
                         <div class="campagin lock">
                             <img src="images/ic_zipcode@x.png">
-                            <input type="number" placeholder="Zip Code" required ng-model="user_data.zip_code">
+                            <input type="number" ng-disabled="is_disabled" placeholder="Zip Code" required ng-model="user_data.zip_code">
                         </div>
                     </div>
                 </div>
@@ -229,9 +229,17 @@
             <div class=" text-center eror">
                 <p class="new_camp_val" ng-if="busines_details.$invalid || !user_data.work_through">Please fill all required fields.</p>
             </div>
-            <div class="row padding_remove">
-                <div class="col padding_remove send_option">
-                    <button type="button" ng-click="busines_details.$valid && user_data.work_through && update_user()"> SAVE</button>
+            <div class="row padding_remove" ng-if="!is_disabled">
+                <div class="col send_option EDIT_BUSINEW PINK_COR_BTN">
+                    <button type="button" ng-click="busines_details.$valid && user_data.work_through && update_user()"> Update</button>
+                </div>
+                <div class="col send_option EDIT_BUSINEW">
+                    <button type="button" ng-click="changeIsDisabled()"> Cancel</button>
+                </div>
+            </div>
+            <div class="row padding_remove" ng-if="is_disabled"> 
+                <div class="col send_option EDIT_BUSINEW">
+                    <button type="button" ng-click="changeIsDisabled()">Edit Business Information</button>
                 </div>
             </div>
         </form>

@@ -12,7 +12,7 @@ angular.module('viralDL')
 
     // Called to navigate to the main app
     $scope.startApp = function() {
-      $state.go('app.home');
+      $state.go('app.start');
 
       // Set a flag that we finished the tutorial
       Storage.setDidTutorial();

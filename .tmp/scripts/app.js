@@ -253,28 +253,27 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         }
       })
 
-      .state('app.membership', {
-        url: '/membership',
+      .state('app.help', {
+        url: '/help',
         cache: false,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/membership.html'
+            templateUrl: 'templates/views/help.html'
           }
         }
       })
 
 
-      .state('app.newlogin', {
-        url: '/newlogin',
-        cache: false,
+      .state('app.start', {
+        url: '/start',
+        cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/newlogin.html'
+            templateUrl: 'templates/views/start.html',
+            controller: 'HomeController'
           }
         }
-      })
-
-      ;
+      });
 
 
 
@@ -296,7 +295,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         $urlRouterProvider.otherwise('/app/dashboard');
       }
     } else {
-      $urlRouterProvider.otherwise('/app/home');
+      $urlRouterProvider.otherwise('/app/start');
     }
   }).constant('api', 'http://35.162.137.242:3001/api')
   // }).constant('api', 'http://localhost:3000/api')

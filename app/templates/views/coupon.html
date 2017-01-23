@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col text-center">
                 <div class="logo">
-                    <img src="images/logo_blue.png">
+                    <img src="images/redlogo@x.png">
                 </div>
             </div>
         </div>
@@ -24,25 +24,19 @@
             <div class="card custom_crd">
                 <div class="item-text-wrap">
                     <p><span>How to Activate</span><br>
-                     1.Open The Code in browser<br>
-                     2.Click on "Share on Facebook to activate</p>
+                     Click on "Share on Facebook" button</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class=" col Facebook_login text-center padding_remove">
-                <button class="button" ui-sref="app.screen25" href="#/app/screen25"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+                <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
             </div>
         </div>
         <div class="row">
             <div class="card custom_crd">
                 <div class="item-text-wrap">
-                    <p><span>Offers</span></p> <p ng-if="camp_data.discount_type=='price'">${{camp_data.discount_amount}} <span class="of_space">OFF</span></p>
-                <p ng-if="camp_data.discount_type=='percent'">{{camp_data.discount_amount}}% <span class="of_space">OFF</span></p>
-                    <p ng-if="camp_data.discount_type=='buy_1_get_1'">Buy {{camp_data.buy_value}} Get {{camp_data.get_value}}</p>
-                    <p ng-if="camp_data.discount_type=='free_item'">Free Item</p>
-                    <p ng-if="camp_data.business_type == 'default'">ON PURCHASE</p>
-                    <p ng-if="camp_data.business_type != 'default'">ON {{camp_data.business_type}}</p>
+                    <p><span>Offers</span></p><p>{{camp_data.cp_offer}}</p>
                 </div>
             </div>
         </div>
@@ -75,14 +69,7 @@
         <div class="row">
             <div class="card custom_crd">
                 <div class="item-text-wrap">
-                    <p><span>Disclaimer</span> {{camp_data.cp_disclaimer}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Additional Text</span> {{camp_data.cp_additional_text}}</p>
+                    <p><span>Terms & Conditions</span> {{camp_data.cp_terms}}</p>
                 </div>
             </div>
         </div>
