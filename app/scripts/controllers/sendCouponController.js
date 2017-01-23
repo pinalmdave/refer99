@@ -10,8 +10,8 @@ angular.module('viralDL')
     $scope.contact = {};
     $scope.cust_contacts = [];
     $scope.cust_emails = [];
-    $scope.showEmailErr=false;
-    $scope.showContactErr=false;
+    $scope.showEmailErr = false;
+    $scope.showContactErr = false;
     (function init() {
       User.get_user_customers(function(err, data) {
         $ionicLoading.hide();
@@ -101,7 +101,7 @@ angular.module('viralDL')
 
       } else if (shareType == "email") {
         var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
-        var subject = "refer99 coupon shared";
+        var subject = "Exclusive offer from " + $scope.user_camp_data.business_name + ", "+$scope.selectedCamp.cp_offer;
         $cordovaSocialSharing
           .shareViaEmail(message, subject, $scope.cust_emails, [], [], null)
           .then(function(result) {
@@ -197,7 +197,7 @@ angular.module('viralDL')
     $scope.send_email = function(user_name, user_email) {
       console.log(user_name, user_email);
       var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
-      var subject = "refer99 coupon shared";
+      var subject = "Exclusive offer from " + $scope.user_camp_data.business_name + ", "+$scope.selectedCamp.cp_offer;
       $cordovaSocialSharing
         .shareViaEmail(message, subject, user_email, [], [], null)
         .then(function(result) {

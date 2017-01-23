@@ -11,7 +11,7 @@
                     <div class="card margin_top">
                         <div class="campagin">
                             <img src="images/ic_coupon_active@x.png">
-                            <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="selectedCamp"></select>
+                            <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select>
                         </div>
                     </div>
                 </div>

@@ -69,7 +69,7 @@ angular.module('viralDL')
               $scope.dueDate = moment(res.created).add(1, 'M').format('LL');
               $ionicPopup.alert({
             title: 'refer99',
-            template: "Thanks for the payment."
+            template: "Payment Processed Successfully"
           }).then(function(){
               $state.go("app.business_profile");
           });

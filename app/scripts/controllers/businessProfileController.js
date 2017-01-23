@@ -7,7 +7,7 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state,$ionicScrollDelegate) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate) {
 
     $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -69,10 +69,12 @@ angular.module('viralDL')
                   if (err) {
                     console.log('err', err);
                   } else {
-                    // alert('User updated successfully');
+                    // alert('Your Business Information is saved successfully');
                     $ionicPopup.alert({
                       title: 'refer99',
-                      template: 'User updated successfully'
+                      template: 'Your Business Information is saved successfully'
+                    }).then(function() {
+                      $state.go("app.dashboard");
                     });
                   }
                 });
@@ -89,7 +91,7 @@ angular.module('viralDL')
             $ionicLoading.hide();
             $ionicPopup.alert({
               title: 'refer99',
-              template: 'User updated successfully'
+              template: 'Your Business Information is saved successfully'
             }).then(function() {
               $state.go("app.dashboard");
             });
