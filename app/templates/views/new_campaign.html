@@ -2,9 +2,6 @@
     <ion-header-bar align-title="center">
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Create Campaign</h1>
-        <div class="buttons">
-    <i class="icon ion-image custom-icon" ng-click="popover.show($event)"></i>
-  </div>
     </ion-header-bar>
     <ion-content class="redapp_bg CAMPAIN">
         <div class="newcampain_PENAL" ng-show="cp_screen_first">
@@ -99,7 +96,7 @@
                         <p class="Discount_type_TEXT">Offer</p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
-                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Example: 20% OFF on oil change" ng-model="camp_data.cp_offer" name="camp_offer" required></textarea>
+                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Example: 20% OFF on oil change (max 100 characters)" ng-model="camp_data.cp_offer" name="camp_offer" maxlength="100" required></textarea>
                                 <!-- <input type="text area" name="cp_info" ng-model="camp_data.cp_info"> -->
                             </div>
                         </div>
@@ -133,85 +130,4 @@
             </div>
         </div>
     </ion-content>
-    <script id="templates/popover.html" type="text/ng-template">
-      <ion-popover-view>
-     <ion-content>
-        <div class="row">
-            <div class="col text-center">
-                <div class="logo">
-                    <img src="images/redlogo@x.png">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="heading_top">
-                    <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
-                    <p>Valid date: {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>How to Activate</span><br>
-                     Click on "Share on Facebook" button</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class=" col Facebook_login text-center padding_remove">
-                <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Offer</span></p> <p>{{camp_data.cp_offer}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Redeemable At</span>
-                    <div ng-if="camp_data.redeemable_at=='location'">
-                        <p>{{camp_data.business_address}}</p>
-                        <div class="space_city"><p>City:{{camp_data.city}},{{camp_data.state}}</p></div>
-                        <p>Phone:{{camp_data.contact ?camp_data.contact:'N/A'}}</p>
-                        <p ng-if="camp_data.city"></p>
-                    </div>
-                    <div ng-if="camp_data.redeemable_at=='online'">
-                        <p>{{camp_data.web_address}}</p>
-                    </div>
-                </div></p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>CODE</span> XXXXXX </p>
-                    <p><span>STATUS</span> Not Activated</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Terms & Conditions</span> {{camp_data.cp_terms}}</p>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Additional Text</span> {{camp_data.cp_offer}}</p>
-                </div>
-            </div>
-        </div> -->
-        </ion-contant>
-      </ion-popover-view>
-    </script>
 </ion-view>

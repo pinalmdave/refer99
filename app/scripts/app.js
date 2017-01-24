@@ -171,7 +171,9 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         cache: true,
         views: {
           'viewContent': {
-            templateUrl: 'templates/views/notification.html'
+            templateUrl: 'templates/views/notification.html',
+            controller: 'NotificationController',
+            controllerAs: 'notification'
           }
         }
       })
@@ -262,7 +264,6 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           }
         }
       })
-
 
       .state('app.start', {
         url: '/start',
