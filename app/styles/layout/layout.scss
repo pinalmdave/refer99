@@ -283,9 +283,9 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!
 .popup-body input {border: 1px solid #b2b2b2!important; padding: 4px 0px 4px 10px!important; }
 .popup .button.button-positive{background: #00CC87!important; font-size: 15px; text-align: center; padding: 5px 0px; border:1px solid #00CC87; }
 .logo img {max-width: 57%; }
-.heading_top h1 {color: #434343; font-family: serif; font-size: 22px; font-weight: bold; line-height: 16px; margin: 0; padding: 0px 0 0px; text-align: center; }
+.heading_top h1 {color: #ff3b69; font-family: serif; font-size: 30px; font-weight: bold; line-height: 16px; margin: 0; padding: 0px 0 0px; text-align: center; text-transform: uppercase; }
 .heading_top span{color: #FF3B69; }
-.heading_top p {color: #747373; font-size: 14px; text-align: center; line-height: 23px; margin: 0px; letter-spacing: 1px; padding: 15px 8px 0px 8px; }
+.heading_top p {color: #000; font-size: 14px; text-align: center; line-height: 23px; margin: 0px; letter-spacing: 1px; padding: 15px 8px 0px 8px; }
 .card.custom_crd {margin: 8px 15px 8px 15px!important; height: auto!important; padding: 0px!important; }
 .card.custom_crd {font-size: 13px!important; line-height: 20px!important; color: #747373!important; padding: 10px!important; height: 75px!important; overflow: hidden!important; }
 .card.custom_crd span {color: #333!important; font-size: 15px!important; padding: 0px 5px 0px 0px!important; }
@@ -447,3 +447,74 @@ ul.PAYMENT_PAGE_LIST li {
     width: 100%;
 }
 /*puneet_css_18jan*/
+
+/*puneet_css_24jan*/
+.bg_FOr_cupn {
+    background: #f1f1f1;
+    margin: 20px; padding-top: 10px;
+    border-radius: 4px;
+}
+
+.bg_FOr_cupn_red{
+    background: #ff3b69;
+    margin: 20px; padding-top: 10px;
+    border-radius: 4px;
+}
+p.CUPEEN_hding_TEXT {
+    text-align: center;
+    font-size: 24px;
+    padding: 13px 0;
+}
+
+.custom_crd{width: 100%; padding: 0 10px;}
+
+.CUPEEN_TEXT {
+  color: #ff3b69;
+  font-size: 16px;
+  text-align: center;
+}
+
+.CUPEEN_hding_TEXT {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.CUPEN_OFR_FILD {
+  background: #ff3b69 none repeat scroll 0 0;
+  color: #fff; border-radius: 4px;
+  display: inline-block;
+  padding: 4px 6px; margin: 0px;
+}
+
+.CUPEN_OFR_FILD_right{
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 0 10px;
+}
+
+.CUPEN_OFR_FILD_right_tow {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 0 6px;
+}
+.BDRS {
+  border: 1px solid #e9e9e9;
+  border-radius: 5px;
+  margin: 0 0 18px;
+}
+.MAGNN_NO {
+  margin: 0;
+}
+
+.TERM_CDTN {
+  color: #fff;
+  font-size: 14px;
+}
+.TERM_CDTN.ng-binding > span {
+  color: #fff;
+  font-size: 20px;
+  padding: 0 9px 0 0;
+}
+/*puneet_css_24jan*/

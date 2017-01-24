@@ -5,71 +5,94 @@
         <h1 class="title">Coupon Preview</h1>
     </ion-header-bar>
     <ion-content>
-        <div class="row">
-            <div class="col text-center">
-                <div class="logo">
-                    <img src="images/redlogo@x.png">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="heading_top">
-                    <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
-                    <p>Valid date: {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>How to Activate</span><br>
-                     Click on "Share on Facebook" button</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class=" col Facebook_login text-center padding_remove">
-                <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Offers</span></p><p>{{camp_data.cp_offer}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Redeemable At</span>
-                    <div ng-if="camp_data.redeemable_at=='location'">
-                        <p>{{camp_data.business_address}}</p>
-                        <div class="space_city"><p>City:{{camp_data.city}},{{camp_data.state}}</p></div>
-                        <p>Phone:{{camp_data.contact ?camp_data.contact:'N/A'}}</p>
-                        <p ng-if="camp_data.city"></p>
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="logo">
+                        <img src="images/redlogo@x.png">
                     </div>
-                    <div ng-if="camp_data.redeemable_at=='online'">
-                        <p>{{camp_data.web_address}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="heading_top">
+                        <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
+                        <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
                     </div>
-                </div></p>
                 </div>
             </div>
         </div>
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap">
+                        <p class="CUPEEN_hding_TEXT"><span>How to Activate</span></p>
+                            <p class="CUPEEN_TEXT">Click on "Share on Facebook" button</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col Facebook_login text-center padding_remove">
+                    <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+                </div>
+            </div>
+        </div>
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Offers</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Redeemable At</span>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='location'">
+                                <p class="MAGNN_NO">{{camp_data.business_address}}</p>
+                                <div class="space_city">
+                                    <p class="MAGNN_NO">City:{{camp_data.city}},{{camp_data.state}}</p>
+                                </div>
+                                <p>Phone:{{camp_data.contact ?camp_data.contact:'N/A'}}</p>
+                                <p class="MAGNN_NO" ng-if="camp_data.city"></p>
+                            </div>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='online'">
+                                <p class="MAGNN_NO"><!-- {{camp_data.web_address}} --> 75 N. Bohemia Drive 
+Yorktown, VA 23693</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
         <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>CODE</span> V99VVmH </p>
-                    <p><span>STATUS</span> Not Activated</p>
+            <div class="custom_crd">
+                <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>CODE</span></p>
+                        <p class="CUPEN_OFR_FILD_right">V99VVmH</p>
+                </div>
+            </div>
+        </div>
 
+
+        <div class="row">
+            <div class="custom_crd">
+                <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>STATUS</span></p>
+                        <p class="CUPEN_OFR_FILD_right">Not Activated</p>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="card custom_crd">
-                <div class="item-text-wrap">
-                    <p><span>Terms & Conditions</span> {{camp_data.cp_terms}}</p>
+
+        </div>
+
+        </div>
+        <div class="bg_FOr_cupn_red">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap">
+                        <p class="TERM_CDTN"><span>Terms & Conditions : </span> {{camp_data.cp_terms}}</p>
+                    </div>
                 </div>
             </div>
         </div>
