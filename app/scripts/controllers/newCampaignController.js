@@ -193,12 +193,12 @@ angular.module('viralDL')
     $scope.goToNext = function() {
       $scope.cp_screen_first = false;
       $scope.cp_screen_second = true;
-      $ionicScrollDelegate.scrollTop();
+      $ionicScrollDelegate.scrollTop(true);
     }
     $scope.goBack = function() {
       $scope.cp_screen_first = true;
       $scope.cp_screen_second = false;
-      $ionicScrollDelegate.scrollTop();
+      $ionicScrollDelegate.scrollTop(true);
     }
     $scope.getDateFormally = function(date) {
       return moment.utc(date).format('LL');

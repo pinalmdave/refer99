@@ -3,8 +3,8 @@
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Create Campaign</h1>
     </ion-header-bar>
-    <ion-content class="redapp_bg CAMPAIN">
-        <div class="newcampain_PENAL" ng-show="cp_screen_first">
+    <ion-content>
+        <div class="redapp_bg CAMPAIN newcampain_PENAL" ng-show="cp_screen_first">
             <form name="campagin_first">
                 <div class="row padding_remove">
                     <div class="col padding_remove">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <div class="padding">
-                    <p class="new_camp_val" ng-if="campagin_first.camp_offer.$touched && campagin_first.camp_offer.$invalid">Offer is required.</p>
+                    <p class="new_camp_val" ng-if="campagin_first.camp_offer.$touched && campagin_first.camp_offer.$invalid">Offer is required/invalid.</p>
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
@@ -122,12 +122,103 @@
             </form>
             <div class="row padding_remove">
                 <div class="col  new_back_create padding_remove">
-                    <button class="button" ng-click="campagin_first.$valid && camp_data.end_date && createCampaign()">Create Campaign</button>
+                    <button class="button" ng-click="campagin_first.$valid && camp_data.end_date && goToNext()">Coupon Preview</button>
                     <center>
                     <p class="new_camp_val" ng-if="campagin_first.$invalid || !camp_data.end_date">Please fill all required fields.</p>
                     </center>
                 </div>
             </div>
         </div>
+    <section ng-show="cp_screen_second">
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="logo">
+                        <img src="images/redlogo@x.png">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="heading_top">
+                        <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
+                        <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap">
+                        <p class="CUPEEN_hding_TEXT"><span>How to Activate</span></p>
+                        <p class="CUPEEN_TEXT">Click on "Share on Facebook" button</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col Facebook_login text-center padding_remove">
+                    <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+                </div>
+            </div>
+        </div>
+        <div class="bg_FOr_cupn">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Offers</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Redeemable At</span>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='location'">
+                                <p class="MAGNN_NO">{{camp_data.business_address}},{{camp_data.city}},{{camp_data.state}}</p>
+                            </div>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='online'">
+                                <p class="MAGNN_NO">{{camp_data.web_address}}
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>CODE</span></p>
+                        <p class="CUPEN_OFR_FILD_right">XXXXXX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>STATUS</span></p>
+                        <p class="CUPEN_OFR_FILD_right">Not Activated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="bg_FOr_cupn_red">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap">
+                        <p class="TERM_CDTN"><span>Terms & Conditions : </span> {{camp_data.cp_terms}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="row padding_remove">
+                <div class="col send_option EDIT_camp PINK_COR_BTN">
+                    <button type="button" ng-click="createCampaign()"> Create Campaign</button>
+                </div>
+                <div class="col send_option EDIT_camp">
+                    <button type="button" ng-click="goBack()"> Edit</button>
+                </div>
+            </div>
+    </section>
     </ion-content>
 </ion-view>

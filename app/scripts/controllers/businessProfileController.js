@@ -7,9 +7,12 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory) {
 
     $ionicSideMenuDelegate.canDragContent(true);
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      $ionicHistory.clearHistory();
+    });
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     if ($scope.user.user_type == "fb") {
@@ -27,6 +30,11 @@ angular.module('viralDL')
         } else {
           console.log('user_data', data);
           $scope.user_data = data;
+          if($scope.user_data.business_name){
+            $scope.is_disabled = true;
+          }else{
+            $scope.is_disabled = false;
+          }
           $scope.user_data.business_type = $scope.user_data.business_type ? $scope.user_data.business_type : "default";
           $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
         }
@@ -74,7 +82,22 @@ angular.module('viralDL')
                       title: 'refer99',
                       template: 'Your Business Information is saved successfully'
                     }).then(function() {
-                      $state.go("app.dashboard");
+                      $scope.user = Storage.getUser();
+                      if (!$scope.user.user.last_payment) {
+                        $state.go("app.payment");
+                      } else if ($scope.user.user.last_payment) {
+                        var monthDiff = moment(moment()).diff(moment($scope.user.user.last_payment), 'months', true);
+                        // console.log('monthDiff', monthDiff);
+                        if (monthDiff >= 1) {
+                          $state.go("app.payment");
+                          // alert('Your monthly subscribtion is expired.Please make payment.');
+                        } else {
+                          $state.go("app.dashboard");
+                        }
+                      } else {
+                        $state.go("app.payment");
+                      }
+
                     });
                   }
                 });
@@ -93,7 +116,22 @@ angular.module('viralDL')
               title: 'refer99',
               template: 'Your Business Information is saved successfully'
             }).then(function() {
-              $state.go("app.dashboard");
+              $scope.user = Storage.getUser();
+              if (!$scope.user.user.last_payment) {
+                $state.go("app.payment");
+              } else if ($scope.user.user.last_payment) {
+                var monthDiff = moment(moment()).diff(moment($scope.user.user.last_payment), 'months', true);
+                console.log('monthDiff', monthDiff);
+                if (monthDiff >= 1) {
+                  $state.go("app.payment");
+                  // alert('Your monthly subscribtion is expired.Please make payment.');
+                } else {
+                  $state.go("app.dashboard");
+                }
+              } else {
+                $state.go("app.payment");
+              }
+
             });
           }
         }

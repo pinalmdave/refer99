@@ -38,5 +38,6 @@ angular.module('viralDL')
           $ionicSideMenuDelegate.toggleLeft(false);
         }
       });
+      
     };
   });
