@@ -5,7 +5,7 @@
     </ion-header-bar>
     <ion-content>
         <div class="redapp_bg CAMPAIN newcampain_PENAL" ng-show="cp_screen_first">
-            <form name="campagin_first">
+            <form name="campagin_first" novalidate>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
                         <p>Campaign Name</p>
@@ -134,7 +134,8 @@
             <div class="row">
                 <div class="col text-center">
                     <div class="logo">
-                        <img src="images/redlogo@x.png">
+                        <img ng-if="!user_data.business_logo" ng-src="images/redlogo@x.png">
+                        <img ng-if="user_data.business_logo" ng-src="{{base}}/storage/business_logo/{{user_data.business_logo}}">
                     </div>
                 </div>
             </div>

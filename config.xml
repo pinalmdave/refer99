@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="de.tmaximini.viralDi" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<?xml version="1.1" encoding="UTF-8" standalone="yes"?>
+<widget id="de.tmaximini.viralDi" version="1.4.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>refer99</name>
   <description>
         A blank seed project for rapid development of Ionic projects through gulp workflows
@@ -19,6 +19,7 @@
   <preference name="SplashScreenDelay" value="3000"/>
   <preference name="AutoHideSplashScreen" value="true"/>
   <preference name="android-targetSdkVersion" value="20"/>
+  <preference name="ShowSplashScreenSpinner" value="false" />
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
   </feature>

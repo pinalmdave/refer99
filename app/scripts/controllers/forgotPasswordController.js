@@ -11,9 +11,9 @@ angular.module('viralDL')
     var forgot = this;
     $scope.user = Storage.getUser();
     $scope.res_forget = false;
-    $scope.$on('$ionicView.enter', function() {
+   /* $scope.$on('$ionicView.enter', function() {
       $ionicSideMenuDelegate.canDragContent(false);
-    });
+    });*/
 
     $scope.send_forgot_email = function(forgetEmail) {
       // console.log('email', forgetEmail);

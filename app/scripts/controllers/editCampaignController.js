@@ -1,7 +1,7 @@
 angular.module('viralDL')
   .controller('EditCampaignController', function($scope, $rootScope, $ionicLoading, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, ionicDatePicker,$ionicHistory) {
     var coupon = this;
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
       template: 'Loading...'

@@ -28,7 +28,7 @@
             <div class="col padding_remove text-center">
                 <div class="upload">
                     <img ng-if="imageFile" ng-src="{{imageFile}}">
-                    <img ng-hide="imageFile" ng-if="user_data.business_logo" ng-src="http://35.162.137.242:3001/storage/business_logo/{{user_data.business_logo}}">
+                    <img ng-hide="imageFile" ng-if="user_data.business_logo" ng-src="{{base}}/storage/business_logo/{{user_data.business_logo}}">
                 </div>
                 <div class="edit_option">
                     <img src="images/edit.png" ng-disabled="is_disabled" ng-click="onFileSelect()">
@@ -230,11 +230,14 @@
                 <p class="new_camp_val" ng-if="busines_details.$invalid || !user_data.work_through">Please fill all required fields.</p>
             </div>
             <div class="row padding_remove" ng-if="!is_disabled">
-                <div class="col send_option EDIT_BUSINEW PINK_COR_BTN">
+                <div class="col send_option EDIT_BUSINEW PINK_COR_BTN" ng-if="!isNewUser">
                     <button type="button" ng-click="busines_details.$valid && user_data.work_through && update_user()"> Update</button>
                 </div>
-                <div class="col send_option EDIT_BUSINEW">
+                <div class="col send_option EDIT_BUSINEW" ng-if="!isNewUser">
                     <button type="button" ng-click="changeIsDisabled()"> Cancel</button>
+                </div>
+                <div class="col send_option EDIT_BUSINEW PINK_COR_BTN_update" ng-if="isNewUser">
+                    <button type="button" ng-click="busines_details.$valid && user_data.work_through && update_user()">Update Information</button>
                 </div>
             </div>
             <div class="row padding_remove" ng-if="is_disabled"> 

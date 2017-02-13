@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('ContactUsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.category = "default";
     $scope.user = Storage.getUser();
     $scope.send_query = function() {

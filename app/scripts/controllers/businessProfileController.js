@@ -7,12 +7,13 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory,base) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    //    $ionicSideMenuDelegate.canDragContent(true);
     $scope.$on('$ionicView.enter', function(event, viewData) {
       $ionicHistory.clearHistory();
     });
+    $scope.base=base;
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     if ($scope.user.user_type == "fb") {
@@ -30,10 +31,12 @@ angular.module('viralDL')
         } else {
           console.log('user_data', data);
           $scope.user_data = data;
-          if($scope.user_data.business_name){
+          if ($scope.user_data.business_name) {
             $scope.is_disabled = true;
-          }else{
+            $scope.isNewUser = false;
+          } else {
             $scope.is_disabled = false;
+            $scope.isNewUser = true;
           }
           $scope.user_data.business_type = $scope.user_data.business_type ? $scope.user_data.business_type : "default";
           $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
@@ -82,6 +85,8 @@ angular.module('viralDL')
                       title: 'refer99',
                       template: 'Your Business Information is saved successfully'
                     }).then(function() {
+                      $scope.is_disabled = true;
+                      $scope.isNewUser = false;
                       $scope.user = Storage.getUser();
                       if (!$scope.user.user.last_payment) {
                         $state.go("app.payment");
@@ -116,6 +121,8 @@ angular.module('viralDL')
               title: 'refer99',
               template: 'Your Business Information is saved successfully'
             }).then(function() {
+              $scope.is_disabled = true;
+              $scope.isNewUser = false;
               $scope.user = Storage.getUser();
               if (!$scope.user.user.last_payment) {
                 $state.go("app.payment");

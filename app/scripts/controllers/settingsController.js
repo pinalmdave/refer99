@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     if ($scope.user.user_type == "fb") {

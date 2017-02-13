@@ -21,10 +21,15 @@
         });
     };
     this.get_campaign = function(campId, next) {
+      var options = {
+        filter: {
+          "include": "members"
+        }
+      };
       Restangular
         .one('campaigns')
         .one(campId)
-        .get()
+        .get(options)
         .then(function(data) {
           // do on success
           return next(null, data.plain());

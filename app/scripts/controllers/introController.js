@@ -8,14 +8,18 @@
  * This controller handles the Intro
  */
 angular.module('viralDL')
-  .controller('IntroController', function($scope, $state, Storage) {
+  .controller('IntroController', function($scope, $state, Storage,$ionicHistory) {
 
     // Called to navigate to the main app
     $scope.startApp = function() {
+      $ionicHistory.nextViewOptions({
+        disableBack: true,
+        historyRoot: true
+      });
+      Storage.setDidTutorial();
       $state.go('app.start');
 
       // Set a flag that we finished the tutorial
-      Storage.setDidTutorial();
     };
 
     //No this is silly
@@ -23,7 +27,7 @@ angular.module('viralDL')
 
     if (Storage.getDidTutorial()) {
       console.log('Skip intro');
-      $scope.startApp();
+      // $scope.startApp();
     }
 
 

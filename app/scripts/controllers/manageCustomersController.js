@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('ManageCustomersController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, $cordovaContacts, Customer, $ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
       template: 'Loading...'

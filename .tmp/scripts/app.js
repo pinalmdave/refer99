@@ -135,7 +135,7 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       })
       .state('app.register', {
         url: '/register',
-        cache: false,
+        cache: true,
         views: {
           'viewContent': {
             templateUrl: 'templates/views/register.html',
@@ -298,8 +298,8 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
     } else {
       $urlRouterProvider.otherwise('/app/start');
     }
-  }).constant('api', 'http://35.162.137.242:3001/api')
-  // }).constant('api', 'http://localhost:3000/api')
+  }).constant('api', 'http://refer99.com:3001/api')
+  .constant('base', 'http://refer99.com:3001')
   .constant('GCM', {
     senderId: ''
   }).constant('facebook', {

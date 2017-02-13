@@ -9,17 +9,21 @@
 angular.module('viralDL')
   .controller('HomeController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook, Storage) {
     var home = this;
-    $ionicSideMenuDelegate.canDragContent(false);
+    // $ionicSideMenuDelegate.canDragContent(false);
     var user = Storage.getUser();
     $scope.showErrMessages = false;
     $scope.showSignInErrMessages = false;
     $scope.$on('$ionicView.enter', function(event, viewData) {
-      $ionicHistory.clearCache();
+      if (!$ionicHistory.viewHistory().backView) {
+        $ionicSideMenuDelegate.canDragContent(false);
+        $ionicSideMenuDelegate.toggleLeft(false);
+      }
     });
     (function init() {
       if (user) {
         $ionicHistory.nextViewOptions({
-          disableBack: true
+          disableBack: true,
+          historyRoot: true
         });
         $state.go('app.dashboard');
       }
@@ -44,7 +48,8 @@ angular.module('viralDL')
             console.log('login', data);
             $scope.invalidUserPass = false;
             $ionicHistory.nextViewOptions({
-              disableBack: true
+              disableBack: true,
+              historyRoot: true
             });
             if (!data.user.last_payment) {
               $state.go('app.payment');
@@ -93,7 +98,8 @@ angular.module('viralDL')
                   console.log('login', res);
                   $scope.invalidUserPass = false;
                   $ionicHistory.nextViewOptions({
-                    disableBack: true
+                    disableBack: true,
+                    historyRoot: true
                   });
                   if (!res.user.last_payment) {
                     $state.go('app.payment');

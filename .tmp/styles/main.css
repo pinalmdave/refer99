@@ -10640,6 +10640,10 @@ p.Discount_type_TEXT {
   margin: 0px;
   border: 1px solid #FF3B69; }
 
+.PINK_COR_BTN_update button {
+  background-color: #FF3B69 !important;
+  border: 1px solid #FF3B69; }
+
 .EDIT_BUSINEW button {
   font-size: 14px !important; }
 

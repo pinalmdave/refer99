@@ -1,10 +1,11 @@
 angular.module('viralDL')
-  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate) {
-    $ionicSideMenuDelegate.canDragContent(true);
+  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate,base) {
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
     $scope.today = new Date();
     $scope.isToTouched = false;
+    $scope.base=base;
     (function init() {
       $scope.camp_data = {};
       $ionicLoading.show({

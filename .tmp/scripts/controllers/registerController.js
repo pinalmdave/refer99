@@ -9,9 +9,9 @@
 angular.module('viralDL')
   .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook) {
     var register = this;
-    $scope.$on('$ionicView.enter', function() {
+    /*$scope.$on('$ionicView.enter', function() {
       $ionicSideMenuDelegate.canDragContent(false);
-    });
+    });*/
     $scope.showErrMessages = false;
     $scope.showSignInErrMessages = false;
     $scope.register_user = function(username, userEmail, password) {
@@ -53,7 +53,8 @@ angular.module('viralDL')
               } else {
                 console.log('res', res);
                 $ionicHistory.nextViewOptions({
-                  disableBack: true
+                  disableBack: true,
+                  historyRoot: true
                 });
                 $state.go('app.payment');
               }
@@ -107,7 +108,8 @@ angular.module('viralDL')
                       } else {
                         console.log('res', res);
                         $ionicHistory.nextViewOptions({
-                          disableBack: true
+                          disableBack: true,
+                          historyRoot: true
                         });
                         $state.go('app.payment');
                       }

@@ -1,36 +1,36 @@
-<ion-view>
+<ion-view animation="slide-left-right-ios7">
     <ion-slide-box on-slide-changed="slideChanged(index)">
         <ion-slide>
-            <h3>Thank you for choosing the Awesome App!</h3>
-            <div id="logo">
-                <img src="http://code.ionicframework.com/assets/img/app_icon.png">
+            <div class="intro">
+                <img src="images/start.png">
             </div>
-            <p>
-                We've worked super hard to make you happy.
-            </p>
-            <p>
-                But if you are angry, too bad.
-            </p>
         </ion-slide>
+
         <ion-slide>
-            <h3>Using Awesome</h3>
-            <div id="list">
-                <h5>Just three steps:</h5>
-                <ol>
-                    <li>Be awesome</li>
-                    <li>Stay awesome</li>
-                    <li>There is no step 3</li>
-                </ol>
+            <div class="intro">
+                <img src="images/step1.png">
             </div>
         </ion-slide>
         <ion-slide>
-            <h3>Any questions?</h3>
-            <p>
-                Too bad!
-            </p>
-            <button class="button button-outline button-positive" ng-click="startApp()">
-                Start App
-            </button>
+            <div class="intro">
+                <img src="images/step2.png">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="intro">
+                <img src="images/step3.png">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="intro">
+                <img src="images/step4.png">
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="intro text-center">
+                <img src="images/step5.png">
+                <button type="button" ng-click="startApp()">Start App</button>
+            </div>
         </ion-slide>
     </ion-slide-box>
 </ion-view>
@@ -44,7 +44,8 @@ body {
 }
 
 .slider-slide {
-    padding-top: 80px;
+    /*    padding-top: 80px;
+*/
     color: #000;
     background-color: #fff;
     text-align: center;
@@ -71,4 +72,44 @@ body {
     list-style: decimal;
     margin: 10px 0px;
 }
+
+.slider-pager-page {
+    color: white;
+    fill: #f90;
+    stroke: red;
+    background-color: blue;
+}
+
+.slider-pager-page.active {
+    fill: #f90;
+    stroke: red;
+    color: blue;
+    background-color: red;
+}
+
+.intro{
+    width: 100%;
+    height: 100%;
+}
+
+.intro img {
+    width: 100%;
+    height: 100%;
+}
+
+.intro button {
+    position: absolute;
+    background: #257fe0!important;
+    bottom: 30px;
+    z-index: 9999!important;
+    width: 107px;
+    height: 34px;
+    border: 1px solid #FFF;
+    color: #FFF;
+    margin: 0px auto;
+    left: 0px;
+    right: 0px;
+}
+
+
 </style>

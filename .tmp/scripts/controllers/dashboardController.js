@@ -1,7 +1,7 @@
 angular.module('viralDL')
   .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $cordovaActionSheet, ionicDatePicker) {
     var userDash = this;
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
       template: 'Loading...'

@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('ValidateCouponController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     console.log('user', $scope.user);
     $scope.validate_coupon = function(c_code) {

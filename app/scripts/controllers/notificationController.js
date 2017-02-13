@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('NotificationController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign, $ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     var limit = 10;
     var skip = 0;

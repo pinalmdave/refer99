@@ -13,9 +13,19 @@ angular.module('viralDL')
     $scope.user = Storage.getUser();
     $rootScope.$on('$stateChangeStart', function(event, toState, toStateParams, fromState, fromStateParams) {
       console.log("Changing state to :");
-      console.log(toState);
+      console.log(toState, fromState);
+      console.log('ionicHistory', $ionicHistory.viewHistory());
+      if (!$ionicHistory.viewHistory().backView) {
+        $ionicSideMenuDelegate.canDragContent(false);
+        $ionicSideMenuDelegate.toggleLeft(false);
+      }
       $scope.user = Storage.getUser();
     });
+    console.log('ionicHistory', $ionicHistory.viewHistory());
+    if (!$ionicHistory.viewHistory().backView) {
+      $ionicSideMenuDelegate.canDragContent(false);
+      $ionicSideMenuDelegate.toggleLeft(false);
+    }
     // do something with $scope
     $scope.logout = function() {
       $ionicLoading.show({
@@ -31,13 +41,14 @@ angular.module('viralDL')
           // Storage.clearAll();
           $scope.user = undefined;
           $ionicHistory.nextViewOptions({
-            disableBack: true
+            disableBack: true,
+            historyRoot: true
           });
           // $ionicHistory.clearCache();
           $state.go('app.start');
           $ionicSideMenuDelegate.toggleLeft(false);
         }
       });
-      
+
     };
   });

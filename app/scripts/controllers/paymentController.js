@@ -9,7 +9,7 @@
 angular.module('viralDL')
   .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state,$ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     (function init() {
       $ionicLoading.show({

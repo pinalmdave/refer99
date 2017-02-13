@@ -1,7 +1,7 @@
 angular.module('viralDL')
   .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet) {
     var coupon = this;
-    $ionicSideMenuDelegate.canDragContent(true);
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
       template: 'Loading...'
@@ -59,10 +59,10 @@ angular.module('viralDL')
     }
     $scope.shareCoupon = function(shareType) {
       var whatsappBody = "Hello,Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase();
-      var smsBody = "Hello,Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase() + ". Check this link to get the coupon. http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+      var smsBody = "Hello,Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase() + ". Check this link to get the coupon. http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
       if (shareType == "whatsapp") {
         var message = "Shared Coupon";
-        var link = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
         $cordovaSocialSharing
           .shareViaWhatsApp(whatsappBody, null, link)
           .then(function(result) {
@@ -83,9 +83,10 @@ angular.module('viralDL')
             console.log('err', err);
           });
       } else if (shareType == "sms") {
-        var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        var message = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        // console.log('$scope.cust_contacts',$scope.cust_contacts.toString());
         $cordovaSocialSharing
-          .shareViaSMS(smsBody, $scope.cust_contacts)
+          .shareViaSMS(smsBody, $scope.cust_contacts.toString())
           .then(function(result) {
             $ionicPopup.alert({
               title: 'refer99',
@@ -103,7 +104,7 @@ angular.module('viralDL')
           });
 
       } else if (shareType == "email") {
-        var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        var message = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
         var subject = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
         $templateRequest(templateUrl).then(function(template) {
           var emailBody = $interpolate(template)($scope);
@@ -159,7 +160,7 @@ angular.module('viralDL')
           }
         } else {
           // console.log('customers', data);
-          var message = "http://viraldl.tk/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
+          var message = "http://refer99.com/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
           $cordovaSocialSharing
             .shareViaSMS(message, $scope.contact.cust_contact)
             .then(function(result) {
@@ -186,7 +187,7 @@ angular.module('viralDL')
 
     $scope.send_message = function(user_contact) {
       console.log(user_contact);
-      var message = "http://viraldl.tk/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
+      var message = "http://refer99.com/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
       $cordovaSocialSharing
         .shareViaSMS(message, user_contact)
         .then(function(result) {
@@ -209,7 +210,7 @@ angular.module('viralDL')
     }
     $scope.send_email = function(user_name, user_email) {
       console.log(user_name, user_email);
-      var message = "http://viraldl.tk/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+      var message = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
       var subject = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
       $cordovaSocialSharing
         .shareViaEmail(message, subject, user_email, [], [], null)
