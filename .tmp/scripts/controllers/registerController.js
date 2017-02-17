@@ -7,13 +7,67 @@
  * # RegisterController
  */
 angular.module('viralDL')
-  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook) {
+  .controller('RegisterController', function($scope, $ionicPopup, $ionicModal, User, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, $cordovaFacebook, $cordovaGeolocation) {
     var register = this;
     /*$scope.$on('$ionicView.enter', function() {
       $ionicSideMenuDelegate.canDragContent(false);
     });*/
     $scope.showErrMessages = false;
     $scope.showSignInErrMessages = false;
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      geoLocate();
+    });
+
+    function geoLocate() {
+      var posOptions = { timeout: 10000, enableHighAccuracy: false };
+      $scope.country_data;
+      $cordovaGeolocation
+        .getCurrentPosition(posOptions)
+        .then(function(position) {
+          var lat = position.coords.latitude
+          var long = position.coords.longitude
+          console.log('latlng', lat, long);
+          var geocoder = new google.maps.Geocoder();
+          var latlng = new google.maps.LatLng(lat, long);
+          geocoder.geocode({
+            latLng: latlng
+          }, function(responses) {
+            if (responses && responses.length > 0) {
+              // fn(responses[0].formatted_address);
+              // console.log('responses[0]', responses[0]);
+              var itemsProcessed = 0;
+              // console.log(_.isEmpty($scope.country_data));
+              responses[0].address_components.forEach(function(item, i, array) {
+                if (!_.isEmpty(item.types)) {
+                  item.types.forEach(function(i_item, j) {
+                    if (i_item == "country") {
+                      $scope.country_data = item;
+                    }
+                  });
+                }
+                itemsProcessed++;
+                if (itemsProcessed === array.length) {
+                  // console.log(_.isEmpty($scope.country_data));
+                  if (_.isEmpty($scope.country_data)) {
+                    $scope.country_data = {};
+                    $scope.country_data.short_name = "N/A";
+                  }
+                  console.log('$scope.country_data', $scope.country_data);
+                }
+              });
+            } else {
+              $scope.country_data = {};
+              $scope.country_data.short_name = "N/A";
+              // alert('Error while trying to find the location');
+            }
+          });
+        }, function(err) {
+          // error
+          $scope.country_data = {};
+          $scope.country_data.short_name = "N/A";
+          console.log('err', err);
+        });
+    };
     $scope.register_user = function(username, userEmail, password) {
       console.log('register', userEmail, password);
       if (username && userEmail && password) {
@@ -23,7 +77,8 @@ angular.module('viralDL')
         var signupData = {
           username: username,
           email: userEmail,
-          password: password
+          password: password,
+          origin:$scope.country_data.short_name
         };
         User.registerUser(signupData, function(err, data) {
           $scope.res_signup = true;
@@ -78,7 +133,8 @@ angular.module('viralDL')
               if (success.email && success.name) {
                 var signupData = {
                   username: success.name,
-                  email: success.email
+                  email: success.email,
+                  origin:$scope.country_data.short_name
                 };
                 User.registerUser(signupData, function(err, data) {
                   $scope.res_signup = true;

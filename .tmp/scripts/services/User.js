@@ -24,6 +24,26 @@
           }
           if (!data.user.last_payment) {
             data.is_paid_user = false;
+            if (!data.user.origin) {
+              data.is_trail_user = true;
+              data.trail_type = "campaigner";
+            } else if (data.user.origin == "IN") {
+              if (data.user.camp_trial) {
+                data.is_trail_user = false;
+                data.trail_type = "campaigner";
+              } else {
+                data.is_trail_user = true;
+                data.trail_type = "campaigner";
+              }
+            } else {
+              var dayDiff = moment(moment()).diff(moment(data.user.created), 'days', true);
+              if (dayDiff >= 14) {
+                data.is_trail_user = false;
+              } else {
+                data.is_trail_user = true;
+                data.trail_type = "weeker";
+              }
+            }
           } else if (data.user.last_payment) {
             var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
             if (monthDiff >= 1) {

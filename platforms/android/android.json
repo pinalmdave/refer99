@@ -91,6 +91,10 @@
                         {
                             "xml": "<feature name=\"FCMPlugin\"><param name=\"android-package\" value=\"com.gae.scaffolder.plugin.FCMPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -147,6 +151,18 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.location.gps\" />",
+                            "count": 1
                         }
                     ]
                 }
@@ -216,6 +232,9 @@
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
         "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
@@ -575,6 +594,20 @@
             "clobbers": [
                 "FCMPlugin"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
+            "id": "cordova-plugin-geolocation.geolocation",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "id": "cordova-plugin-geolocation.PositionError",
+            "pluginId": "cordova-plugin-geolocation",
+            "runs": true
         }
     ],
     "plugin_metadata": {
@@ -593,6 +626,7 @@
         "cordova-plugin-image-picker": "1.1.1",
         "cordova-plugin-file": "4.3.1",
         "cordova-plugin-file-transfer": "1.6.1",
-        "cordova-plugin-fcm": "1.1.5"
+        "cordova-plugin-fcm": "1.1.5",
+        "cordova-plugin-geolocation": "2.4.1"
     }
 }

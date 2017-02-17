@@ -74,7 +74,8 @@
     "com.paypal.cordova.mobilesdk",
     "cordova-plugin-contacts",
     "cordova-plugin-file-transfer",
-    "cordova-plugin-fcm"
+    "cordova-plugin-fcm",
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": [
     "android"

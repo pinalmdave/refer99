@@ -47,6 +47,9 @@
         },
         "cordova-plugin-fcm": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
     "dependent_plugins": {

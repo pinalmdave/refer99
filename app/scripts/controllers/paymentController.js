@@ -7,11 +7,11 @@
  * # PaymentsController
  */
 angular.module('viralDL')
-  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state,$ionicPopup) {
+  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state, $ionicPopup) {
 
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
-    (function init() {
+    $scope.$on('$ionicView.enter', function(event, viewData) {
       $ionicLoading.show({
         template: 'Loading...'
       });
@@ -25,6 +25,26 @@ angular.module('viralDL')
           console.log('data', data);
           if (!data.last_payment) {
             $scope.isPaidUser = false;
+            if (!data.origin) {
+              $scope.is_trail_user = true;
+              $scope.trail_type = "campaigner";
+            } else if (data.origin == "IN") {
+              if (data.camp_trial) {
+                $scope.is_trail_user = false;
+                $scope.trail_type = "campaigner";
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "campaigner";
+              }
+            } else {
+              var dayDiff = moment(moment()).diff(moment(data.created), 'days', true);
+              if (dayDiff >= 14) {
+                $scope.is_trail_user = false;
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "weeker";
+              }
+            }
           } else if (data.last_payment) {
             var monthDiff = moment(moment()).diff(moment(data.last_payment), 'months', true);
             // console.log('monthDiff', monthDiff);
@@ -41,7 +61,7 @@ angular.module('viralDL')
           }
         }
       });
-    })();
+    });
     $scope.makePayment = function(type, value) {
       PaypalService.initPaymentUI().then(function() {
 
@@ -68,11 +88,11 @@ angular.module('viralDL')
               Storage.setUser($scope.user);
               $scope.dueDate = moment(res.created).add(1, 'M').format('LL');
               $ionicPopup.alert({
-            title: 'refer99',
-            template: "Payment Processed Successfully"
-          }).then(function(){
-              $state.go("app.business_profile");
-          });
+                title: 'refer99',
+                template: "Payment Processed Successfully"
+              }).then(function() {
+                $state.go("app.business_profile");
+              });
             }
           });
 

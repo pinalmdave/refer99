@@ -44,7 +44,6 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
           console.log('Error registering onNotification callback: ' + err);
         }
       );
-
     });
 
   });
@@ -255,26 +254,26 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         }
       })
 
-      .state('app.help', {
-        url: '/help',
-        cache: false,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/help.html'
-          }
+    .state('app.help', {
+      url: '/help',
+      cache: false,
+      views: {
+        'viewContent': {
+          templateUrl: 'templates/views/help.html'
         }
-      })
+      }
+    })
 
-      .state('app.start', {
-        url: '/start',
-        cache: true,
-        views: {
-          'viewContent': {
-            templateUrl: 'templates/views/start.html',
-            controller: 'HomeController'
-          }
+    .state('app.start', {
+      url: '/start',
+      cache: true,
+      views: {
+        'viewContent': {
+          templateUrl: 'templates/views/start.html',
+          controller: 'HomeController'
         }
-      });
+      }
+    });
 
 
 
@@ -300,6 +299,8 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
     }
   }).constant('api', 'http://refer99.com:3001/api')
   .constant('base', 'http://refer99.com:3001')
+   // }).constant('api', 'http://35.162.137.242:3001/api')
+  // .constant('base', 'http://35.162.137.242:3001')
   .constant('GCM', {
     senderId: ''
   }).constant('facebook', {
