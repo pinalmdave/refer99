@@ -1,5 +1,5 @@
 angular.module('viralDL')
-  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet) {
+  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal,business_logo) {
     var coupon = this;
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -21,6 +21,11 @@ angular.module('viralDL')
         } else {
           console.log('campaigns', data);
           $scope.user_camp_data = data.result;
+          if ($scope.user_camp_data.business_logo) {
+            $scope.business_logo = business_logo + $scope.user_camp_data.business_logo;
+          }else {
+            $scope.business_logo = business_logo + "fb_share.png";
+          }
           data.result.campaigns.forEach(function(elem) {
             if (campId == elem.id) {
               $scope.selectedCamp = elem;
@@ -64,7 +69,7 @@ angular.module('viralDL')
         var message = "Shared Coupon";
         var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
         $cordovaSocialSharing
-          .shareViaWhatsApp(whatsappBody, null, link)
+          .shareViaWhatsApp(whatsappBody, $scope.business_logo, link)
           .then(function(result) {
             // alert("Coupon has been distributed to selected customer(s)");
             $ionicPopup.alert({
@@ -132,6 +137,26 @@ angular.module('viralDL')
           });
           // An error has occurred here
         });
+
+      } else if (shareType == "fb") {
+        var message = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
+        var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        $cordovaSocialSharing
+          .shareViaFacebook(message, $scope.business_logo, link)
+          .then(function(result) {
+            // Success!
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Coupon has been distributed to selected customer(s)"
+            });
+          }, function(err) {
+            // An error occurred. Show a message to the user
+            console.log('err', err);
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Please try after some time"
+            });
+          });
 
       }
       // this is the complete list of currently supported params you can pass to the plugin (all optional)
@@ -229,8 +254,33 @@ angular.module('viralDL')
           // An error occurred. Show a message to the user
           console.log('err', err);
         });
-
-
     }
+
+
+    $ionicModal.fromTemplateUrl('cover_coupon.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
+
 
   });

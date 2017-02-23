@@ -23,11 +23,27 @@ angular.module('viralDL')
           console.log('err', err);
         } else {
           console.log('data', data);
-          if (!data.last_payment) {
+          if (data.last_payment) {
+            var monthDiff = moment(moment()).diff(moment(data.last_payment), 'months', true);
+            // console.log('monthDiff', monthDiff);
+            if (monthDiff >= 1) {
+              $scope.isPaidUser = false;
+              // alert('Your monthly subscribtion is expired.Please make payment.');
+            } else {
+              $scope.isPaidUser = true;
+              $scope.dueDate = moment(data.last_payment).add(1, 'M').format('LL');
+              console.log('dueDate', $scope.dueDate);
+            }
+          } else if (!data.last_payment) {
             $scope.isPaidUser = false;
             if (!data.origin) {
-              $scope.is_trail_user = true;
-              $scope.trail_type = "campaigner";
+              if (data.camp_trial) {
+                $scope.is_trail_user = false;
+                $scope.trail_type = "campaigner";
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "campaigner";
+              }
             } else if (data.origin == "IN") {
               if (data.camp_trial) {
                 $scope.is_trail_user = false;
@@ -44,17 +60,6 @@ angular.module('viralDL')
                 $scope.is_trail_user = true;
                 $scope.trail_type = "weeker";
               }
-            }
-          } else if (data.last_payment) {
-            var monthDiff = moment(moment()).diff(moment(data.last_payment), 'months', true);
-            // console.log('monthDiff', monthDiff);
-            if (monthDiff >= 1) {
-              $scope.isPaidUser = false;
-              // alert('Your monthly subscribtion is expired.Please make payment.');
-            } else {
-              $scope.isPaidUser = true;
-              $scope.dueDate = moment(data.last_payment).add(1, 'M').format('LL');
-              console.log('dueDate', $scope.dueDate);
             }
           } else {
             $scope.isPaidUser = false;

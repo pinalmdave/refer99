@@ -27,7 +27,7 @@ angular.module('viralDL')
 
     if (Storage.getDidTutorial()) {
       console.log('Skip intro');
-      // $scope.startApp();
+      $scope.startApp();
     }
 
 

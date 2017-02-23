@@ -76,7 +76,7 @@ var app = {
    },
    configuration : function () {
      // for more options see `paypal-mobile-js-helper.js`
-     var config = new PayPalConfiguration({merchantName: "My test shop", merchantPrivacyPolicyURL: "https://mytestshop.com/policy", merchantUserAgreementURL: "https://mytestshop.com/agreement"});
+     var config = new PayPalConfiguration({merchantName: "refer99", merchantPrivacyPolicyURL: "https://refer99.com/policy", merchantUserAgreementURL: "https://refer99.com/agreement"});
      return config;
    },
    onPrepareRender : function() {

@@ -529,3 +529,110 @@ p.CUPEEN_hding_TEXT {
   padding: 0 9px 0 0;
 }
 /*puneet_css_24jan*/
+
+.SECOND_SCREEn_fixed {
+    /*position: fixed !important;*/
+    top: 0px !important;
+    bottom: 0;
+    width: 100%;
+}
+.Offer_BG_SCREEN {background: #f2f2f2; }
+.OFFER_CUPEN_img {width: 100%; text-align: center; padding: 0px 0; display: block; }
+.OFFER_CUPEN_img > img {max-width: 100%; }
+.SECOND_SCREEn .OFFER_CUPEN_img > img {max-width: 35%; }
+.Offer_ZONE_CONTr {padding: 0 7%; }
+.OFER_COUPEN {text-align: center; padding: 25px 0; font-size: 22px; font-weight: 100; line-height: 30px; }
+.SECOND_SCREEn .OFER_COUPEN {
+    text-align: center;
+    padding: 13px 0;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 30px;
+}
+
+.SECOND_SCREEn .OFER_COUPEN_normal {text-align: center; padding: 15px 0; font-size: 18px; font-weight: 100; line-height: 28px; }
+.SECOND_SCREEn {
+    margin-bottom: 20px;
+}
+
+.OFER_COUPEN_normal {text-align: center; padding: 25px 0; font-size: 18px; font-weight: 100; line-height: 28px; }
+.OFFER_CUPEN_CODE {text-align: center; background: #fff; border: 1px double #ccc; color: #000 !important; padding: 5px 0; font-size: 18px; font-weight: 600; line-height: 26px; }
+.OFFER_PGE_FOOTER {
+    background: #257fe0 !important;
+    color: #fff !important;
+    width: 100%;
+    min-height: 40px;
+    position: fixed !important;
+    bottom: 0px !important;
+}
+
+.OFFER_PGE_FOOTER_tittle {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 20px !important;
+    line-height: 40px;
+}
+.Offer_ZONE_CONTr .card,
+.list-inset {overflow: hidden; margin: 20px 0px !important; border-radius: 2px; background-color: #fff; }
+.REFERAL_SEND_LISTING_peNAL {background: #fff; float: left; width: 100%; margin-top: 0px; }
+h3.INVIT_FRNDS {background: #939393; color: #fff; padding: 10px 0; text-align: center; float: left; margin: 24px 0 0 0; font-size: 19px; font-weight: 100; width: 100%; }
+a.REFER_SEND_ICON_penal {padding: 10px 12px; display: inline-block; float: left; width: 100%; border-bottom: 1px double #ccc; }
+.REFERAL_SEND_LISTING {margin-bottom: 0px; float: left; width: 100%;     position: fixed !important;
+    bottom: 0px !important; }
+.REFER_SEND_ICON_next {float: right; width: 30px; height: 30px; padding: 7px 0; }
+.REFER_SEND_text {padding: 5px 0; font-size: 14px; color: #000; display: inline-block; }
+.REFER_SEND_ICON {float: left; height: 30px; width: 37px; }
+.Offer_ZONE_CONTr1 .card,
+.list-inset {overflow: hidden; margin: 20px 0px; border-radius: 2px; background-color: #fff; }
+.Offer_ZONE_CONTr1 .card {padding-top: 1px; padding-bottom: 1px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3); }
+.OFER_COUPEN_question {font-size: 14px; border-bottom: 0px solid #ccc; color: #fff; margin: 20px 0; padding: 10px 8px; background: #ff3b69; }
+.Offer_ZONE_CONTr .item {border-color: #ccc; background-color: #fff; color: #535353; position: relative; z-index: 2; display: block; margin: -1px; padding: 9px 8px; border-width: 1px; border-style: solid; font-size: 14px; }
+.Offer_ZONE_CONTr .item-checkbox .checkbox {position: absolute; top: 50%; right: 8px; left: inherit; z-index: 3; margin-top: -21px; width: 13%; }
+.Offer_ZONE_CONTr .checkbox input,
+.checkbox-icon {position: relative; width: 20px; height: 20px; display: block; border: 0; background: transparent; cursor: pointer; -webkit-appearance: none; }
+.Offer_ZONE_CONTr .checkbox input:after,
+.checkbox-icon:after {-webkit-transition: opacity 0.05s ease-in-out; transition: opacity 0.05s ease-in-out; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); position: absolute; top: 33%; left: 25%; display: table; width: 9px; height: 6px; border: 1px solid #fff; border-top: 0; border-right: 0; content: ' '; opacity: 0; }
+.Offer_ZONE_CONTr .item-content.disable-pointer-events {display: block; clear: both; width: 87%; }
+.Discount_TYpe {
+    padding: 1px 8px !important;
+}
+.Offer_ZONE_CONTr .item,
+.item h1,
+.item h2,
+.item h3,
+.item h4,
+.item h5,
+.item h6,
+.item p,
+.item-content,
+.item-content h1,
+.item-content h2,
+.item-content h3,
+.item-content h4,
+.item-content h5,
+.item-content h6,
+.item-content p {overflow: hidden; text-overflow: ellipsis; white-space: normal; }
+.Offer_ZONE_CONTr .checkbox.checkbox-input-hidden.disable-pointer-events.checkbox-circle {float: left; width: 13%; }
+
+.butututu.bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before {
+    vertical-align: top;
+    font-size: 22px !important; font-weight: 600 !important;
+    line-height: 32px;
+}
+
+select.OFFER_CUPEN_CODE_dropdown_content {
+    border: 0px;
+    background: #fff;
+    padding: 5px 0;
+    -webkit-appearance: none;
+    text-align: center !important;
+    font-size: 19px;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    /* letter-spacing: -1px; */
+}
+.OFFER_CUPEN_CODE_dropdown {
+    background: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+}

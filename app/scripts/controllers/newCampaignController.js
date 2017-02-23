@@ -1,12 +1,19 @@
 angular.module('viralDL')
-  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate,base) {
+  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate, base) {
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
     $scope.today = new Date();
     $scope.isToTouched = false;
-    $scope.base=base;
-    (function init() {
+    $scope.base = base;
+    $scope.withShare = true;
+    $scope.withoutShare = false;
+    $scope.withShareAddYes=false;
+    $scope.withShareAddNo=false;
+    $scope.withDiscountTypePer=false;
+    $scope.withDiscountTypeDol=false;
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      console.log('ionicView.enter');
       $scope.camp_data = {};
       $ionicLoading.show({
         template: 'Loading...'
@@ -26,6 +33,71 @@ angular.module('viralDL')
             }).then(function(res) {
               $state.go("app.business_profile");
             });
+          } else {
+            if ($scope.user_data.last_payment) {
+              var monthDiff = moment(moment()).diff(moment($scope.user_data.last_payment), 'months', true);
+              // console.log('monthDiff', monthDiff);
+              if (monthDiff >= 1) {
+                // alert('Your monthly subscribtion is expired.Please make payment.');
+                // $state.go('app.payment');
+                $ionicPopup.alert({
+                  title: 'refer99',
+                  template: 'Your monthly subscribtion is expired.Please make payment.'
+                }).then(function(res) {
+                  // console.log('Thank you for not eating my delicious ice cream cone');
+                  $state.go('app.payment');
+                });
+              }
+            } else if (!$scope.user_data.last_payment) {
+              // alert('Please make payment to start campaigns.');
+              $scope.isPaidUser = false;
+              if (!$scope.user_data.origin) {
+                if ($scope.user_data.camp_trial) {
+                  $scope.is_trail_user = false;
+                  $scope.trail_type = "campaigner";
+                  $ionicPopup.alert({
+                    title: 'refer99',
+                    template: 'Your trial period is expired.Please make payment!'
+                  }).then(function(res) {
+                    // console.log('Thank you for not eating my delicious ice cream cone');
+                    $state.go('app.payment');
+                  });
+                } else {
+                  $scope.is_trail_user = true;
+                  $scope.trail_type = "campaigner";
+                }
+              } else if ($scope.user_data.origin == "IN") {
+                if ($scope.user_data.camp_trial) {
+                  $scope.is_trail_user = false;
+                  $scope.trail_type = "campaigner";
+                  $ionicPopup.alert({
+                    title: 'refer99',
+                    template: 'Your trial period is expired.Please make payment!'
+                  }).then(function(res) {
+                    // console.log('Thank you for not eating my delicious ice cream cone');
+                    // $state.go('app.payment');
+                  });
+                } else {
+                  $scope.is_trail_user = true;
+                  $scope.trail_type = "campaigner";
+                }
+              } else {
+                var dayDiff = moment(moment()).diff(moment($scope.user_data.created), 'days', true);
+                if (dayDiff >= 14) {
+                  $scope.is_trail_user = false;
+                  $ionicPopup.alert({
+                    title: 'refer99',
+                    template: 'Your trial period is expired.Please make payment!'
+                  }).then(function(res) {
+                    // console.log('Thank you for not eating my delicious ice cream cone');
+                    $state.go('app.payment');
+                  });
+                } else {
+                  $scope.is_trail_user = true;
+                  $scope.trail_type = "weeker";
+                }
+              }
+            }
           }
           $scope.camp_data.business_type = user_data.business_type ? user_data.business_type : "default";
           $scope.camp_data.business_name = user_data.business_name;
@@ -47,52 +119,52 @@ angular.module('viralDL')
           $scope.camp_data.get_value = 1;
           // $scope.camp_data.cp_offer = "On your purchase of $100 or more(Some exclusions may apply.See store for more detail).";
           $scope.camp_data.cp_terms = "Must present coupon at time of purchase to redeem.Cannot be combined with any other offer, coupon.";
+          $scope.dateObj1 = {
+            callback: function(val) { //Mandatory
+              // console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+              $scope.camp_data.start_date = new Date(val);
+              $scope.camp_data.end_date = undefined;
+            },
+            disabledDates: [],
+            from: new Date(), //Optional
+            to: new Date(2020, 10, 30), //Optional
+            inputDate: new Date(), //Optional
+            mondayFirst: true, //Optional
+            closeOnSelect: true, //Optional
+            templateType: 'popup' //Optional
+          };
+          $scope.dateObj2 = {
+            callback: function(val) { //Mandatory
+              // console.log('Return value from the datepicker popup is : ' + val, new Date(val));
+              // console.log($scope.camp_data.start_date.getFullYear(), $scope.camp_data.start_date.getMonth(), $scope.camp_data.start_date.getDate());
+              if (new Date(val) < $scope.camp_data.start_date) {
+                $ionicPopup.alert({
+                  title: 'refer99',
+                  template: 'Please Select Date Greater than ' + moment($scope.camp_data.start_date).format('DD-MMMM-YYYY')
+                }).then(function(res) {
+                  console.log('Thank you for not eating my delicious ice cream cone');
+                });
+              } else {
+                $scope.camp_data.end_date = new Date(val);
+              }
+            },
+            disabledDates: [],
+            from: $scope.camp_data.start_date, //Optional
+            to: new Date(2020, 10, 30), //Optional
+            mondayFirst: true, //Optional
+            closeOnSelect: true, //Optional
+            templateType: 'popup' //Optional
+          };
         }
       });
-    })();
-    $scope.camp_data.start_date = new Date();
-    var dateObj1 = {
-      callback: function(val) { //Mandatory
-        // console.log('Return value from the datepicker popup is : ' + val, new Date(val));
-        $scope.camp_data.start_date = new Date(val);
-        $scope.camp_data.end_date = undefined;
-      },
-      disabledDates: [],
-      from: new Date(), //Optional
-      to: new Date(2020, 10, 30), //Optional
-      inputDate: new Date(), //Optional
-      mondayFirst: true, //Optional
-      closeOnSelect: true, //Optional
-      templateType: 'popup' //Optional
-    };
-    var dateObj2 = {
-      callback: function(val) { //Mandatory
-        // console.log('Return value from the datepicker popup is : ' + val, new Date(val));
-        // console.log($scope.camp_data.start_date.getFullYear(), $scope.camp_data.start_date.getMonth(), $scope.camp_data.start_date.getDate());
-        if (new Date(val) < $scope.camp_data.start_date) {
-          $ionicPopup.alert({
-            title: 'refer99',
-            template: 'Please Select Date Greater than ' + moment($scope.camp_data.start_date).format('DD-MMMM-YYYY')
-          }).then(function(res) {
-            console.log('Thank you for not eating my delicious ice cream cone');
-          });
-        } else {
-          $scope.camp_data.end_date = new Date(val);
-        }
-      },
-      disabledDates: [],
-      from: $scope.camp_data.start_date, //Optional
-      to: new Date(2020, 10, 30), //Optional
-      mondayFirst: true, //Optional
-      closeOnSelect: true, //Optional
-      templateType: 'popup' //Optional
-    };
+    });
+    // $scope.camp_data.start_date = new Date();
 
     $scope.openFromDatePicker = function() {
-      ionicDatePicker.openDatePicker(dateObj1);
+      ionicDatePicker.openDatePicker($scope.dateObj1);
     };
     $scope.openToDatePicker = function() {
-      ionicDatePicker.openDatePicker(dateObj2);
+      ionicDatePicker.openDatePicker($scope.dateObj2);
       $scope.isToTouched = true;
     };
     $scope.createCampaign = function() {
@@ -196,9 +268,15 @@ angular.module('viralDL')
       $scope.cp_screen_second = true;
       $ionicScrollDelegate.scrollTop(true);
     }
+    $scope.goToCoupon = function() {
+      $scope.cp_screen_second = false;
+      $scope.cp_screen_third = true;
+      $ionicScrollDelegate.scrollTop(true);
+    }
     $scope.goBack = function() {
       $scope.cp_screen_first = true;
       $scope.cp_screen_second = false;
+      $scope.cp_screen_third = false;
       $ionicScrollDelegate.scrollTop(true);
     }
     $scope.getDateFormally = function(date) {

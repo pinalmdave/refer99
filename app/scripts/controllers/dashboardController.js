@@ -2,28 +2,19 @@ angular.module('viralDL')
   .controller('DashboardController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $cordovaActionSheet, ionicDatePicker) {
     var userDash = this;
     // $ionicSideMenuDelegate.canDragContent(true);
-    $scope.user = Storage.getUser();
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-    var dateToExtend = new Date();
-    (function init() {
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      $scope.user = Storage.getUser();
+      $ionicLoading.show({
+        template: 'Loading...'
+      });
+      var dateToExtend = new Date();
       User.get_user_campaigns(function(err, data) {
         $ionicLoading.hide();
         if (err) {
           console.log('err', err);
         } else {
           $scope.user_camp_data = data.result;
-          if (!$scope.user_camp_data.last_payment) {
-            // alert('Please make payment to start campaigns.');
-            $ionicPopup.alert({
-              title: 'refer99',
-              template: 'Please make payment to start campaigns.'
-            }).then(function(res) {
-              // console.log('Thank you for not eating my delicious ice cream cone');
-              $state.go('app.payment');
-            });
-          } else if ($scope.user_camp_data.last_payment) {
+          if ($scope.user_camp_data.last_payment) {
             var monthDiff = moment(moment()).diff(moment($scope.user_camp_data.last_payment), 'months', true);
             // console.log('monthDiff', monthDiff);
             if (monthDiff >= 1) {
@@ -37,6 +28,43 @@ angular.module('viralDL')
                 $state.go('app.payment');
               });
             }
+          } else if (!$scope.user_camp_data.last_payment) {
+            // alert('Please make payment to start campaigns.');
+            $scope.isPaidUser = false;
+            if (!$scope.user_camp_data.origin) {
+              if ($scope.user_camp_data.camp_trial) {
+                $scope.is_trail_user = false;
+                $scope.trail_type = "campaigner";
+                $scope.disable_camp=true;
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "campaigner";
+              }
+            } else if ($scope.user_camp_data.origin == "IN") {
+              if ($scope.user_camp_data.camp_trial) {
+                $scope.is_trail_user = false;
+                $scope.trail_type = "campaigner";
+                $scope.disable_camp=true;
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "campaigner";
+              }
+            } else {
+              var dayDiff = moment(moment()).diff(moment($scope.user_camp_data.created), 'days', true);
+              if (dayDiff >= 14) {
+                $scope.is_trail_user = false;
+                $ionicPopup.alert({
+                  title: 'refer99',
+                  template: 'Your trial period is expired.Please make payment!'
+                }).then(function(res) {
+                  // console.log('Thank you for not eating my delicious ice cream cone');
+                  $state.go('app.payment');
+                });
+              } else {
+                $scope.is_trail_user = true;
+                $scope.trail_type = "weeker";
+              }
+            }
           }
           $scope.user_camp_data.campaigns.forEach(function(item, i) {
             $scope.user_camp_data.campaigns[i].coupons_activated = _.filter(item.coupons, function(o) {
@@ -49,7 +77,7 @@ angular.module('viralDL')
           console.log('campaigns', $scope.user_camp_data);
         }
       });
-    })();
+    });
 
     var updateCampaign = function(id, data, index) {
       $ionicLoading.show({

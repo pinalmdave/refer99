@@ -22,11 +22,23 @@
           } else {
             data.user_type = "sys";
           }
-          if (!data.user.last_payment) {
+          if (data.user.last_payment) {
+            var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
+            if (monthDiff >= 1) {
+              data.is_paid_user = false;
+            } else {
+              data.is_paid_user = true;
+            }
+          } else if (!data.user.last_payment) {
             data.is_paid_user = false;
             if (!data.user.origin) {
-              data.is_trail_user = true;
-              data.trail_type = "campaigner";
+              if (data.user.camp_trial) {
+                data.is_trail_user = false;
+                data.trail_type = "campaigner";
+              } else {
+                data.is_trail_user = true;
+                data.trail_type = "campaigner";
+              }
             } else if (data.user.origin == "IN") {
               if (data.user.camp_trial) {
                 data.is_trail_user = false;
@@ -43,13 +55,6 @@
                 data.is_trail_user = true;
                 data.trail_type = "weeker";
               }
-            }
-          } else if (data.user.last_payment) {
-            var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
-            if (monthDiff >= 1) {
-              data.is_paid_user = false;
-            } else {
-              data.is_paid_user = true;
             }
           } else {
             data.is_paid_user = false;

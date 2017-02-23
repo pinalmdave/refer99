@@ -133,12 +133,12 @@ angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
 }]).constant('shopSettings', {
 
 
-  payPalSandboxId: 'ARa-9ko0g5tj4i999OfEYPtuL-40BT8aKBBSrvYMn672ItmQNfi164Rfg_G50kFeHWpF1N46NiaIcRTj',
-  payPalProductionId: 'Ae3JDtHYBK8PAF5q_jkF-ukpoCpLSh3PS1fXIg6k6WNyBHsQXY_5HGwBnTmSJKtQdcUSpjDxxq-FHd_E',
+  payPalSandboxId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
+  payPalProductionId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
   payPalEnv: 'PayPalEnvironmentSandbox', // for testing  production for production
   payPalShopName: 'refer99',
-  payPalMerchantPrivacyPolicyURL: 'url to policy',
-  payPalMerchantUserAgreementURL: ' url to user agreement '
+  payPalMerchantPrivacyPolicyURL: "https://refer99.com/policy",
+  payPalMerchantUserAgreementURL: "https://refer99.com/agreement"
 
 
 

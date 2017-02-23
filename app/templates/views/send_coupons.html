@@ -3,166 +3,109 @@
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Distribute Coupon</h1>
     </ion-header-bar>
-    <ion-content class="redapp_bg padd_ENDCPN ">
-        <div class="newCAPNAIN_BOXX">
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <h5 class="WANT_SHARE">Select Campaign</h5>
-                    <div class="card margin_top">
-                        <div class="campagin">
-                            <img src="images/ic_coupon_active@x.png">
-                            <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <h5 class="WANT_SHARE">How do you want to Share Coupon?</h5>
-                </div>
-            </div>
-            <div class="row padding_remove">
-                <div class="col  share" ng-click="shareCoupon('whatsapp')">
-                    <img src="images/ic_whatsapp@2x.png">
-                </div>
-                <div class="col share">
-                    <img src="images/ic_email_icon@2x.png" ng-click="shareCoupon('email')">
-                </div>
-                <div class="col share">
-                    <img src="images/ic_texticon@2x.png" ng-click="shareCoupon('sms')">
-                </div>
-            </div>
-            <!--         <div class="row padding_remove">
-            <div class="col text-center SEND_TO_CALL padding_remove">
-                <button type="button" ng-click="showShareActions()">SEND TO ALL CUSTOMERS</button>
-            </div>
-        </div> -->
-            <!-- <div class="row padding_remove">
-                <div class="col text-center SEND_TO_CALL">
-                    <hr>
-                </div>
-            </div>
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <h5 class="WANT_SHARE">Send coupon to new customer</h5>
-                </div>
-            </div>
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <div class="card margin_top">
-                        <div class="campagin lock">
-                            <img src="images/ic_name_active@x.png">
-                            <input type="text" placeholder="Name (optional)" ng-model="user_name">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    <h5 class="WANT_SHARE">Send coupon to customer Email</h5>
-                </div>
-            </div>
-            <form name="user_email_form">
-                <div class="row padding_remove">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin lock">
-                                <img src="images/ic_email_active@x.png">
-                                <input type="email" placeholder="Email" ng-model="user_email" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="showEmailErr && user_email_form.$invalid">Invalid email address.</p>
-                <div class="ADD_CUSTOMER SENDCOPEN">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <button type="button" ng-click="(showEmailErr = true) && user_email_form.$valid && send_email(user_name,user_email)">SEND COUPON</button>
-                        </div>
-                    </div>
-                </div>
-            </form> -->
+    <ion-content class="Offer_BG_SCREEN">
+        <div class="Offer_ZONE_CONTr">
+            <div class="OFER_COUPEN">Have Friends who're not on refer99?</div>
+            <div class="OFFER_CUPEN_img"><img src="images/ic_validatecoupon@3x.png"></div>
         </div>
-        <!-- <div class="newCAPNAIN_BOXX margin_BOTOM">
-            <form name="user_contact_form">
-                <div class="row padding_remove">
-                    <div class="col padding_remove">
-                        <div class="NEWCOPUEN-or">
-                            <hr class="hr-or">
-                            <span class="span-or_new">or</span>
-                        </div>
-                        <h5 class="WANT_SHARE">Send coupon to customer via whatsapp/text message</h5>
-                    </div>
-                </div>
-                <div class="row padding_remove">
-                    <div class="col padding_remove">
-                        <div class="card margin_top">
-                            <div class="campagin lock">
-                                <img src="images/ic_mobile_active@x.png">
-                                <input type="text" placeholder="+919991299912" ng-model="user_contact" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p class="new_camp_val" ng-if="showContactErr && user_contact_form.$invalid">Invalid contact number.</p>
-                <div class="row">
-                    <div class="col share BOTH_SAHRE" ng-click="(showContactErr = true) && user_contact_form.$valid && shareCoupon('whatsapp')">
-                        <img src="images/ic_whatsapp@2x.png">
-                    </div>
-                    <div class="col share BOTH_SAHRE" ng-click="(showContactErr = true) && user_contact_form.$valid && send_message(user_contact)">
-                        <img src="images/ic_email_icon@2x.png">
-                    </div>
-                </div>
-            </form>
-        
-        </div> -->
+        <div class="Offer_ZONE_CONTr">
+            <div class="OFER_COUPEN_normal">Gift your friends for free coupons Share your referral code now!</div>
+            <!-- <div class="OFFER_CUPEN_CODE">PN089DRF</div> -->
+            <div class="OFFER_CUPEN_CODE_dropdown">
+            <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select>
+            </div>
+        </div>
     </ion-content>
-<script type="text/ng-template" id="email_template.html">
-<table width="60%" bgcolor="#fff" style="border:1px solid #655383">
-    <tbody>
-       <!--  <tr>
+    <div class="OFFER_PGE_FOOTER" ng-click="openModal()">
+        <h1 class="title OFFER_PGE_FOOTER_tittle">Share Campaign With Customers</h1>
+    </div>
+    <script type="text/ng-template" id="email_template.html">
+        <table width="60%" bgcolor="#fff" style="border:1px solid #655383">
+            <tbody>
+                <!--  <tr>
             <th width="20px"></th>
             <th width="20px" style="padding-top:30px;padding-bottom:30px"><img width="250px;height=250px;" src="http://35.162.137.242:3001/storage/business_logo/redlogo@x.png" class="CToWUd"></th>
             <th width="20px"></th>
         </tr> -->
-        <tr>
-            <td width="20px"></td>
-            <td>
-                <table width="100%;">
-                    <tbody>
-                        <tr>
-                            <th style="font-size:46px; color: #FF3B69"> Hello</th>
-                        </tr>
-                        <tr>
-                            <td style="font-size:18px">
-                                <p>Exclusive offer from <strong>{{user_camp_data.business_name.toUpperCase()}}: {{selectedCamp.cp_offer.toUpperCase()}}</strong> </p>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td style="font-size:26px; text-align: center;">
-                                <p><a target="_blank" href="http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share">Click Here</a><strong style=" color: #FF3B69"> to get the coupon.</strong> </p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="text-align:center">
-                                <h2 style="margin-top:20px">Best Regards</h2>
-                                <!-- <h3 style="margin:0">Customer Support</h3> -->
-                            </td>
-                        </tr>
-                        <!-- <tr style="border-top:1px solid #655383;text-align:center">
+                <tr>
+                    <td width="20px"></td>
+                    <td>
+                        <table width="100%;">
+                            <tbody>
+                                <tr>
+                                    <th style="font-size:46px; color: #FF3B69"> Hello</th>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:18px">
+                                        <p>Exclusive offer from <strong>{{user_camp_data.business_name.toUpperCase()}}: {{selectedCamp.cp_offer.toUpperCase()}}</strong> </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:26px; text-align: center;">
+                                        <p><a target="_blank" href="http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share">Click Here</a><strong style=" color: #FF3B69"> to get the coupon.</strong> </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center">
+                                        <h2 style="margin-top:20px">Best Regards</h2>
+                                        <!-- <h3 style="margin:0">Customer Support</h3> -->
+                                    </td>
+                                </tr>
+                                <!-- <tr style="border-top:1px solid #655383;text-align:center">
                             <td>
                                 <h3 style="margin:0;font-weight:100"><img width="80px;height=80px;" src="http://35.162.137.242:3001/storage/business_logo/refer99_logo@3x.png" class="CToWUd"></h3></td>
                         </tr> -->
-                    </tbody>
-                </table>
-            </td>
-            <td width="20px"></td>
-        </tr>
-    </tbody>
-</table>
-</script>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="20px"></td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+    <script id="cover_coupon.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar>
+            <button class="button button-icon icon ion-close-round butututu" style="display: block;color:#000;" ng-click="closeModal()"></button>
+                <h1 class="title">Share & Invite</h1>
+            </ion-header-bar>
+            <ion-content class="Offer_BG_SCREEN">
+                <div class="SECOND_SCREEn_fixed">
+                    <div class="Offer_ZONE_CONTr SECOND_SCREEn">
+                        <div class="OFER_COUPEN">Friend join, Friend earns $10</div>
+                        <div class="OFFER_CUPEN_img"><img src="images/ic_coupon_active@3x.png"></div>
+                    </div>
+                    <div class="Offer_ZONE_CONTr SECOND_SCREEn">
+                        <div class="OFER_COUPEN_normal">Share Your Campaign</div>
+                        <div class="OFFER_CUPEN_CODE">{{$parent.selectedCamp.cp_name}}</div>
+                    </div>
+                </div>
+            </ion-content>
+            <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                <h3 class="INVIT_FRNDS">Start Inviting Customers</h3>
+                <div class="REFERAL_SEND_LISTING_peNAL">
+                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('whatsapp')">
+                        <div class="REFER_SEND_ICON"><img src="images/whatsapp_icon.png"></div>
+                        <div class="REFER_SEND_text">WhatsApp</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a>
+                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                        <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
+                        <div class="REFER_SEND_text">Facebook</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a>
+                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('sms')">
+                        <div class="REFER_SEND_ICON"><img src="images/message_icon.png"></div>
+                        <div class="REFER_SEND_text">SMS</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a>
+                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('email')">
+                        <div class="REFER_SEND_ICON"><img src="images/email_icon.png"></div>
+                        <div class="REFER_SEND_text">Email</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a>
+                </div>
+            </div>
+        </ion-modal-view>
+    </script>
 </ion-view>
-
