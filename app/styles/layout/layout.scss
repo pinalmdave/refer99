@@ -337,7 +337,7 @@ iframe.giphy-embed {width: 80px; background: transparent; position: absolute; to
 .newcampain_PENAL{margin-bottom: 50px !important; padding-top: 10px !important}
 .item-complex .item-content, .item-radio .item-content {position: relative; z-index: 2; padding: 15px !important; border: none; background-color: white; }
 input:invalid {box-shadow: none; }
-.button.active, .button.activated{border-color:#9bcf51 !important; background-color:#9bcf51 !important; box-shadow:none;}
+.button.active, .button.activated{border-color:#f73068 !important; background-color:#f73068 !important; box-shadow:none;}
 .loader {text-align: center; width: 100%; padding: 20px 0; }
 [nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {background-color: transparent !important; }
 .side_slider_bar .item.active, .side_slider_bar .item.activated, .side_slider_bar .item-complex.active .item-content, .side_slider_bar .item-complex.activated .item-content, .side_slider_bar .item .item-content.active, .side_slider_bar .item .item-content.activated {background: rgba(160, 18, 37, 1) url(.jhjhj.png) repeat scroll 0 0 !important; border-color: #a01225 !important; color: #fff !important; }
@@ -635,4 +635,24 @@ select.OFFER_CUPEN_CODE_dropdown_content {
     background: #fff;
     border: 1px solid #ccc;
     text-align: center;
+}
+.liSTS{display: inline-block; text-align: center;width: 100%;}
+.next_slide_show {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+}
+.liactive{background: #fff; border: 1px double #fff; border-radius:50px; width: 15px; height: 15px; }
+.non_active{background: #000; border: 1px double #000; border-radius:50px; width: 15px; height: 15px; }
+.APPSTART_BUTTON_BOTM_text{    position: absolute;
+    bottom: 30px;
+    z-index: 9999!important;
+    width: 100%;
+    height: 34px;
+    border: 0px solid #FFF;
+    color: #FFF;
+    margin: 0px auto;
+    left: 0px;
+    right: 0px;
 }
