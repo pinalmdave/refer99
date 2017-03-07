@@ -8,7 +8,7 @@
             <form name="campagin_first" novalidate>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
-                        <p>Campaign Name</p>
+                        <p>Campaign Name <span class="tooltip_CAMPAIN">?</span></p>
                         <div class="card margin_top">
                             <div class="campagin">
                                 <img src="images/ic_coupon_active@x.png">
@@ -93,7 +93,7 @@
                 <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.min">Discount amount should not be less than 1%</p> -->
                 <div class="row padding_remove">
                     <div class="col padding_remove">
-                        <p class="Discount_type_TEXT">Offer</p>
+                        <p class="Discount_type_TEXT">Offer <span class="tooltip_CAMPAIN">?</span></p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
                                 <textarea class="text_box_area" rows="6" cols="21" placeholder="Example: 20% OFF on oil change (max 100 characters)" ng-model="camp_data.cp_offer" name="camp_offer" maxlength="100" required></textarea>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
-                        <p class="Discount_type_TEXT">Terms & Conditions</p>
+                        <p class="Discount_type_TEXT">Terms & Conditions <span class="tooltip_CAMPAIN">?</span></p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
                                 <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_terms" name="camp_terms" required></textarea>
@@ -133,10 +133,10 @@
         <div class="Offer_ZONE_CONTr">
             <div class="OFER_COUPEN_question">How customer will get coupon code?</div>
             <ion-list>
-                <ion-checkbox ng-model="withShare" ng-click="withShare=true;withoutShare=false;">Only after customer share coupon
+                <ion-checkbox ng-model="withShare" ng-click="withShare=true;withoutShare=false;">Only after customer share coupon <span class="tooltip_CAMPAIN">?</span>
                     <!--  with someone -->
                 </ion-checkbox>
-                <ion-checkbox ng-model="withoutShare" ng-click="withShare=false;withoutShare=true;">Without Sharing</ion-checkbox>
+                <ion-checkbox ng-model="withoutShare" ng-click="withShare=false;withoutShare=true;">Without Sharing <span class="tooltip_CAMPAIN">?</span></ion-checkbox>
             </ion-list>
         </div>
         <div class="Offer_ZONE_CONTr" ng-if="withShare">
