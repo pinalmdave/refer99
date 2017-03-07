@@ -28,15 +28,20 @@
                 <div class="custom_crd">
                     <div class="item-text-wrap">
                         <p class="CUPEEN_hding_TEXT"><span>How to Activate</span></p>
-                            <p class="CUPEEN_TEXT">Click on "Share on Facebook" button</p>
+                            <p class="CUPEEN_TEXT">1.Click on "Get Coupon" button.</p>
+                            <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">2.Share on social media.</p>
+                            <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">3.Your coupon will activate when your friends share it.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class=" col Facebook_login text-center padding_remove">
-                    <button class="button"><span><img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook </span></button>
+                <div class="col Facebook_login text-center padding_remove">
+                    <button class="button"><span>
+                    Get Coupon
+                    <!-- <img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook  --></span></button>
                 </div>
             </div>
+            <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p>
         </div>
         <div class="bg_FOr_cupn">
             <div class="row">
@@ -74,7 +79,7 @@
             <div class="custom_crd">
                 <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>STATUS</span></p>
-                        <p class="CUPEN_OFR_FILD_right">Not Activated</p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</p>
                 </div>
             </div>
         </div>

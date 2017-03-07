@@ -5,11 +5,11 @@
     </ion-header-bar>
     <ion-content class="Offer_BG_SCREEN">
         <div class="Offer_ZONE_CONTr">
-            <div class="OFER_COUPEN">Have Friends who're not on refer99?</div>
+            <div class="OFER_COUPEN">Have customers and friends who does't know about {{user_camp_data.business_name}}?</div>
             <div class="OFFER_CUPEN_img"><img src="images/ic_validatecoupon@3x.png"></div>
         </div>
         <div class="Offer_ZONE_CONTr">
-            <div class="OFER_COUPEN_normal">Gift your friends for free coupons Share your referral code now!</div>
+            <div class="OFER_COUPEN_normal">Select the campaign and share with your customers !</div>
             <!-- <div class="OFFER_CUPEN_CODE">PN089DRF</div> -->
             <div class="OFFER_CUPEN_CODE_dropdown">
             <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select>
@@ -72,15 +72,15 @@
             <ion-content class="Offer_BG_SCREEN">
                 <div class="SECOND_SCREEn_fixed">
                     <div class="Offer_ZONE_CONTr SECOND_SCREEn">
-                        <div class="OFER_COUPEN">Friend join, Friend earns $10</div>
+                        <div class="OFER_COUPEN">{{selectedCamp.cp_offer}}</div>
                         <div class="OFFER_CUPEN_img"><img src="images/ic_coupon_active@3x.png"></div>
                     </div>
                     <div class="Offer_ZONE_CONTr SECOND_SCREEn">
                         <div class="OFER_COUPEN_normal">Share Your Campaign</div>
-                        <div class="OFFER_CUPEN_CODE">{{$parent.selectedCamp.cp_name}}</div>
+                        <div class="OFFER_CUPEN_CODE">{{selectedCamp.cp_name}}</div>
                     </div>
                 </div>
-            </ion-content>
+
             <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
                 <h3 class="INVIT_FRNDS">Start Inviting Customers</h3>
                 <div class="REFERAL_SEND_LISTING_peNAL">
@@ -106,6 +106,25 @@
                     </a>
                 </div>
             </div>
+            <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                <h3 class="INVIT_FRNDS_let">Let the world know</h3>
+                <div class="REFERAL_SEND_LISTING_peNAL">
+                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('twitter')">
+                        <div class="REFER_SEND_ICON"><img src="images/twitter_icon.png"></div>
+                        <div class="REFER_SEND_text">Twitter</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a>
+<!--                     <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                        <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
+                        <div class="REFER_SEND_text">Facebook</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a> -->
+                </div>
+            </div>
+
+
+            </ion-content>
+
         </ion-modal-view>
     </script>
 </ion-view>

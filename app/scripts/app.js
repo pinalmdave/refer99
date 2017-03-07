@@ -282,15 +282,15 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       $urlRouterProvider.otherwise('/');
     } else if (user) {
       // $urlRouterProvider.otherwise('/app/dashboard');
-      if (!user.user.last_payment) {
-        $urlRouterProvider.otherwise('/app/payment');
-      } else if (user.user.last_payment) {
-        var monthDiff = moment(moment()).diff(moment(user.user.last_payment), 'months', true);
+      if (user.user.last_payment) {
+        /*var monthDiff = moment(moment()).diff(moment(user.user.last_payment), 'months', true);
         if (monthDiff >= 1) {
           $urlRouterProvider.otherwise('/app/payment');
-        } else {
-          $urlRouterProvider.otherwise('/app/dashboard');
-        }
+        } else {*/
+        $urlRouterProvider.otherwise('/app/dashboard');
+        // }
+      } else if (!user.user.last_payment) {
+        $urlRouterProvider.otherwise('/app/payment');
       } else {
         $urlRouterProvider.otherwise('/app/dashboard');
       }

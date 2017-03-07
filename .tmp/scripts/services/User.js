@@ -111,6 +111,23 @@
           return next(error, null);
         });
     };
+    this.get_user_payments = function(id, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .get({
+          filter: {
+            "include": 'payments'
+          }
+        })
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.get_user_customers = function(next) {
       Restangular
         .one('members')

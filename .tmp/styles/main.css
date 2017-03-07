@@ -10691,7 +10691,12 @@ p.CUPEEN_hding_TEXT {
 .CUPEEN_TEXT {
   color: #ff3b69;
   font-size: 16px;
-  text-align: center; }
+  text-align: left; }
+
+.note_TEXT {
+  color: #000;
+  font-size: 14px;
+  text-align: left; }
 
 .CUPEEN_hding_TEXT {
   font-size: 26px;
@@ -10742,7 +10747,7 @@ p.CUPEEN_hding_TEXT {
   width: 100%; }
 
 .Offer_BG_SCREEN {
-  background: #f2f2f2; }
+  background: #f2f2f2 !important; }
 
 .OFFER_CUPEN_img {
   width: 100%;
@@ -10830,10 +10835,21 @@ p.CUPEEN_hding_TEXT {
 h3.INVIT_FRNDS {
   background: #939393;
   color: #fff;
-  padding: 10px 0;
-  text-align: center;
+  padding: 10px 15px;
+  text-align: left;
   float: left;
   margin: 24px 0 0 0;
+  font-size: 19px;
+  font-weight: 100;
+  width: 100%; }
+
+h3.INVIT_FRNDS_let {
+  background: #939393;
+  color: #fff;
+  padding: 10px 15px;
+  text-align: left;
+  float: left;
+  margin: 0;
   font-size: 19px;
   font-weight: 100;
   width: 100%; }
@@ -10849,8 +10865,7 @@ a.REFER_SEND_ICON_penal {
   margin-bottom: 0px;
   float: left;
   width: 100%;
-  position: fixed !important;
-  bottom: 0px !important; }
+  /*position: fixed !important;    bottom: 0px !important;*/ }
 
 .REFER_SEND_ICON_next {
   float: right;
@@ -10983,7 +10998,8 @@ select.OFFER_CUPEN_CODE_dropdown_content {
   background: #fff;
   padding: 5px 0;
   -webkit-appearance: none;
-  text-align: center !important;
+  -moz-text-align-last: center !important;
+       text-align-last: center !important;
   font-size: 19px;
   /* text-transform: uppercase; */
   font-weight: 600;
@@ -10993,6 +11009,36 @@ select.OFFER_CUPEN_CODE_dropdown_content {
   background: #fff;
   border: 1px solid #ccc;
   text-align: center; }
+
+.float-button {
+  background-color: #303f9f;
+  opacity: 0.9;
+  color: white;
+  border-radius: 50%;
+  /*border-radius:15% 0 0 0;*/
+  width: 30px;
+  padding: 25px;
+  font-size: 40px;
+  position: fixed;
+  bottom: 5%;
+  /* Adjust height */
+  right: 5%;
+  /* Adjust position */
+  z-index: 1000; }
+
+.float-button .height_fix {
+  margin-top: 100%;
+  border: 1px solid red; }
+
+.float-button .content {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  margin-top: -37px;
+  color: white; }
 
 /**
  * MENU

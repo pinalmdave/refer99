@@ -13,13 +13,13 @@ angular.module('viralDL')
         if (err) {
           console.log('err', err);
         } else {
+          $scope.ngClock = true;
           $scope.user_camp_data = data.result;
           if ($scope.user_camp_data.last_payment) {
-            var monthDiff = moment(moment()).diff(moment($scope.user_camp_data.last_payment), 'months', true);
+            /*var monthDiff = moment(moment()).diff(moment($scope.user_camp_data.last_payment), 'months', true);
             // console.log('monthDiff', monthDiff);
             if (monthDiff >= 1) {
               // alert('Your monthly subscribtion is expired.Please make payment.');
-              // $state.go('app.payment');
               $ionicPopup.alert({
                 title: 'refer99',
                 template: 'Your monthly subscribtion is expired.Please make payment.'
@@ -27,7 +27,10 @@ angular.module('viralDL')
                 // console.log('Thank you for not eating my delicious ice cream cone');
                 $state.go('app.payment');
               });
-            }
+            } else {*/
+            $scope.disable_camp = false;
+            $scope.isPaidUser = true;
+            // }
           } else if (!$scope.user_camp_data.last_payment) {
             // alert('Please make payment to start campaigns.');
             $scope.isPaidUser = false;
@@ -35,7 +38,7 @@ angular.module('viralDL')
               if ($scope.user_camp_data.camp_trial) {
                 $scope.is_trail_user = false;
                 $scope.trail_type = "campaigner";
-                $scope.disable_camp=true;
+                $scope.disable_camp = true;
               } else {
                 $scope.is_trail_user = true;
                 $scope.trail_type = "campaigner";
@@ -44,7 +47,7 @@ angular.module('viralDL')
               if ($scope.user_camp_data.camp_trial) {
                 $scope.is_trail_user = false;
                 $scope.trail_type = "campaigner";
-                $scope.disable_camp=true;
+                $scope.disable_camp = true;
               } else {
                 $scope.is_trail_user = true;
                 $scope.trail_type = "campaigner";

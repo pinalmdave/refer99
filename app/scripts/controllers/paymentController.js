@@ -16,13 +16,14 @@ angular.module('viralDL')
         template: 'Loading...'
       });
       $scope.isloading = true;
-      User.get_user($scope.user.userId, function(err, data) {
+      User.get_user_payments($scope.user.userId, function(err, data) {
         $ionicLoading.hide();
         $scope.isloading = false;
         if (err) {
           console.log('err', err);
         } else {
           console.log('data', data);
+          $scope.user_payments=data.payments;
           if (data.last_payment) {
             var monthDiff = moment(moment()).diff(moment(data.last_payment), 'months', true);
             // console.log('monthDiff', monthDiff);

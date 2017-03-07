@@ -154,7 +154,27 @@ angular.module('viralDL')
             console.log('err', err);
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Please try after some time"
+              template: "Please install facebook app or try after some time"
+            });
+          });
+
+      }else if (shareType == "twitter") {
+        var message = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
+        var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
+        $cordovaSocialSharing
+          .shareViaTwitter(message, $scope.business_logo, link)
+          .then(function(result) {
+            // Success!
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Campaign may shared on twitter"
+            });
+          }, function(err) {
+            // An error occurred. Show a message to the user
+            console.log('err', err);
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Please install twitter app or try after some time"
             });
           });
 
