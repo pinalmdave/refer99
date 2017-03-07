@@ -54,19 +54,7 @@ angular.module('viralDL')
             if (!data.user.last_payment) {
               $state.go('app.payment');
             } else if (data.user.last_payment) {
-              var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
-              // console.log('monthDiff', monthDiff);
-              if (monthDiff >= 1) {
-                // alert('Your monthly subscribtion is expired.Please make payment.');
-                $ionicPopup.alert({
-                  title: 'refer99',
-                  template: "Your monthly subscribtion is expired.Please make payment."
-                }).then(function(res) {
-                  $state.go('app.payment');
-                });
-              } else {
-                $state.go('app.dashboard');
-              }
+              $state.go('app.dashboard');
             } else {
               $state.go('app.dashboard');
             }
@@ -104,18 +92,7 @@ angular.module('viralDL')
                   if (!res.user.last_payment) {
                     $state.go('app.payment');
                   } else if (res.user.last_payment) {
-                    var monthDiff = moment(moment()).diff(moment(res.user.last_payment), 'months', true);
-                    // console.log('monthDiff', monthDiff);
-                    if (monthDiff >= 1) {
-                      $ionicPopup.alert({
-                        title: 'refer99',
-                        template: "Your monthly subscribtion is expired.Please make payment."
-                      }).then(function(res) {
-                        $state.go('app.payment');
-                      });
-                    } else {
-                      $state.go('app.dashboard');
-                    }
+                    $state.go('app.dashboard');
                   } else {
                     $state.go('app.dashboard');
                   }

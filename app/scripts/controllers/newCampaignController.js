@@ -37,71 +37,12 @@ angular.module('viralDL')
             });
           } else {
             if ($scope.user_data.last_payment) {
-              var monthDiff = moment(moment()).diff(moment($scope.user_data.last_payment), 'months', true);
-              /*var monthDiff = moment(moment()).diff(moment($scope.user_camp_data.last_payment), 'months', true);
-            // console.log('monthDiff', monthDiff);
-            if (monthDiff >= 1) {
-              // alert('Your monthly subscribtion is expired.Please make payment.');
-              $ionicPopup.alert({
-                title: 'refer99',
-                template: 'Your monthly subscribtion is expired.Please make payment.'
-              }).then(function(res) {
-                // console.log('Thank you for not eating my delicious ice cream cone');
-                $state.go('app.payment');
-              });
-            } else {*/
               $scope.disable_camp = false;
               $scope.isPaidUser = true;
-              // }
             } else if (!$scope.user_data.last_payment) {
               // alert('Please make payment to start campaigns.');
               $scope.isPaidUser = false;
-              if (!$scope.user_data.origin) {
-                if ($scope.user_data.camp_trial) {
-                  $scope.is_trail_user = false;
-                  $scope.trail_type = "campaigner";
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "campaigner";
-                }
-              } else if ($scope.user_data.origin == "IN") {
-                if ($scope.user_data.camp_trial) {
-                  $scope.is_trail_user = false;
-                  $scope.trail_type = "campaigner";
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "campaigner";
-                }
-              } else {
-                var dayDiff = moment(moment()).diff(moment($scope.user_data.created), 'days', true);
-                if (dayDiff >= 14) {
-                  $scope.is_trail_user = false;
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "weeker";
-                }
-              }
+              $state.go('app.payment');
             }
           }
           $scope.camp_data.business_type = user_data.business_type ? user_data.business_type : "default";
