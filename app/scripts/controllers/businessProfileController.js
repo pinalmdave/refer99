@@ -7,20 +7,18 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory,base) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory, base) {
 
     //    $ionicSideMenuDelegate.canDragContent(true);
     $scope.$on('$ionicView.enter', function(event, viewData) {
-      $ionicHistory.clearHistory();
-    });
-    $scope.base=base;
-    $scope.user = Storage.getUser();
-    console.log('user', $scope.user);
-    if ($scope.user.user_type == "fb") {
-      $scope.is_fb_user = true;
-    }
-    $scope.is_disabled = true;
-    (function init() {
+      // $ionicHistory.clearHistory();
+      $scope.base = base;
+      $scope.user = Storage.getUser();
+      console.log('user', $scope.user);
+      if ($scope.user.user_type == "fb") {
+        $scope.is_fb_user = true;
+      }
+      $scope.is_disabled = true;
       $ionicLoading.show({
         template: 'Loading...'
       });
@@ -42,7 +40,7 @@ angular.module('viralDL')
           $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
         }
       });
-    })();
+    });
     $scope.update_user = function() {
       var data = {
         business_name: $scope.user_data.business_name,

@@ -23,39 +23,7 @@
             data.user_type = "sys";
           }
           if (data.user.last_payment) {
-            var monthDiff = moment(moment()).diff(moment(data.user.last_payment), 'months', true);
-            if (monthDiff >= 1) {
-              data.is_paid_user = false;
-            } else {
-              data.is_paid_user = true;
-            }
-          } else if (!data.user.last_payment) {
-            data.is_paid_user = false;
-            if (!data.user.origin) {
-              if (data.user.camp_trial) {
-                data.is_trail_user = false;
-                data.trail_type = "campaigner";
-              } else {
-                data.is_trail_user = true;
-                data.trail_type = "campaigner";
-              }
-            } else if (data.user.origin == "IN") {
-              if (data.user.camp_trial) {
-                data.is_trail_user = false;
-                data.trail_type = "campaigner";
-              } else {
-                data.is_trail_user = true;
-                data.trail_type = "campaigner";
-              }
-            } else {
-              var dayDiff = moment(moment()).diff(moment(data.user.created), 'days', true);
-              if (dayDiff >= 14) {
-                data.is_trail_user = false;
-              } else {
-                data.is_trail_user = true;
-                data.trail_type = "weeker";
-              }
-            }
+            data.is_paid_user = true;
           } else {
             data.is_paid_user = false;
           }
@@ -103,6 +71,23 @@
         .one('members')
         .one(id)
         .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.get_user_payments = function(id, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .get({
+          filter: {
+            "include": 'payments'
+          }
+        })
         .then(function(data) {
           // do on success
           return next(null, data.plain());

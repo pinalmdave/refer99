@@ -6,12 +6,14 @@ angular.module('viralDL')
     $scope.today = new Date();
     $scope.isToTouched = false;
     $scope.base = base;
-    $scope.withShare = true;
-    $scope.withoutShare = false;
-    $scope.withShareAddYes=false;
-    $scope.withShareAddNo=false;
-    $scope.withDiscountTypePer=false;
-    $scope.withDiscountTypeDol=false;
+    $scope.add_options = {
+      withShare: true,
+      withoutShare: false,
+      withShareAddYes: false,
+      withShareAddNo: false,
+      withDiscountTypePer: false,
+      withDiscountTypeDol: false
+    };
     $scope.$on('$ionicView.enter', function(event, viewData) {
       console.log('ionicView.enter');
       $scope.camp_data = {};
@@ -35,68 +37,12 @@ angular.module('viralDL')
             });
           } else {
             if ($scope.user_data.last_payment) {
-              var monthDiff = moment(moment()).diff(moment($scope.user_data.last_payment), 'months', true);
-              // console.log('monthDiff', monthDiff);
-              if (monthDiff >= 1) {
-                // alert('Your monthly subscribtion is expired.Please make payment.');
-                // $state.go('app.payment');
-                $ionicPopup.alert({
-                  title: 'refer99',
-                  template: 'Your monthly subscribtion is expired.Please make payment.'
-                }).then(function(res) {
-                  // console.log('Thank you for not eating my delicious ice cream cone');
-                  $state.go('app.payment');
-                });
-              }
+              $scope.disable_camp = false;
+              $scope.isPaidUser = true;
             } else if (!$scope.user_data.last_payment) {
               // alert('Please make payment to start campaigns.');
               $scope.isPaidUser = false;
-              if (!$scope.user_data.origin) {
-                if ($scope.user_data.camp_trial) {
-                  $scope.is_trail_user = false;
-                  $scope.trail_type = "campaigner";
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "campaigner";
-                }
-              } else if ($scope.user_data.origin == "IN") {
-                if ($scope.user_data.camp_trial) {
-                  $scope.is_trail_user = false;
-                  $scope.trail_type = "campaigner";
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    // $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "campaigner";
-                }
-              } else {
-                var dayDiff = moment(moment()).diff(moment($scope.user_data.created), 'days', true);
-                if (dayDiff >= 14) {
-                  $scope.is_trail_user = false;
-                  $ionicPopup.alert({
-                    title: 'refer99',
-                    template: 'Your trial period is expired.Please make payment!'
-                  }).then(function(res) {
-                    // console.log('Thank you for not eating my delicious ice cream cone');
-                    $state.go('app.payment');
-                  });
-                } else {
-                  $scope.is_trail_user = true;
-                  $scope.trail_type = "weeker";
-                }
-              }
+              $state.go('app.payment');
             }
           }
           $scope.camp_data.business_type = user_data.business_type ? user_data.business_type : "default";
@@ -170,7 +116,9 @@ angular.module('viralDL')
     $scope.createCampaign = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: 'refer99',
-        template: "Campaign cannot be edited after create, except extend end date only.Please make sure before creating a campaign."
+        template: "“Campaign cannot be edited after create, except extend end date only. Please make sure before creating a campaign” to “Please verify all details. Campaign cannot be edited once created”.",
+        cancelText: "<div class='but_c'>Verify</div>",
+        okText: "Create Campaign"
       });
 
       confirmPopup.then(function(res) {
@@ -197,6 +145,9 @@ angular.module('viralDL')
             web_address: $scope.camp_data.web_address,
             // max_coupons: $scope.camp_data.max_coupons,
             state: $scope.camp_data.state,
+            cp_share: $scope.camp_data.cp_share,
+            add_discount: $scope.camp_data.add_discount ? $scope.camp_data.add_discount : false,
+            add_discount_value: $scope.camp_data.add_discount ? $scope.camp_data.add_discount_value : "N/A",
             zip_code: $scope.camp_data.zip_code
           };
           console.log(data, $scope.camp_data);
@@ -269,9 +220,57 @@ angular.module('viralDL')
       $ionicScrollDelegate.scrollTop(true);
     }
     $scope.goToCoupon = function() {
-      $scope.cp_screen_second = false;
-      $scope.cp_screen_third = true;
-      $ionicScrollDelegate.scrollTop(true);
+      console.log('add_options', $scope.add_options);
+      if ($scope.add_options.withShare) {
+        $scope.camp_data.cp_share = true;
+        $scope.camp_data.add_discount = false;
+        change_state();
+      } else {
+        $scope.camp_data.cp_share = false;
+        if ($scope.add_options.withShareAddYes) {
+          $scope.camp_data.add_discount = true;
+          if ($scope.add_options.withDiscountTypePer) {
+            if ($scope.add_options.withDiscountVal) {
+              $scope.camp_data.add_discount_value = $scope.add_options.withDiscountVal.toString() + "%";
+              change_state();
+            } else {
+              $ionicPopup.alert({
+                title: 'refer99',
+                template: 'Please enter additional discount.'
+              });
+            }
+          } else if ($scope.add_options.withDiscountTypeDol) {
+            if ($scope.add_options.withDiscountVal) {
+              $scope.camp_data.add_discount_value = $scope.add_options.withDiscountVal.toString() + "$";
+              change_state();
+            } else {
+              $ionicPopup.alert({
+                title: 'refer99',
+                template: 'Please enter additional discount.'
+              });
+            }
+          } else {
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: 'Please select additional discount type.'
+            });
+          }
+        } else if ($scope.add_options.withShareAddNo) {
+          $scope.camp_data.add_discount = false;
+          change_state();
+        } else {
+          $ionicPopup.alert({
+            title: 'refer99',
+            template: 'Do you want to give additional discount to customer for coupon sharing ? Please select one option.'
+          });
+        }
+      }
+
+      function change_state() {
+        $scope.cp_screen_second = false;
+        $scope.cp_screen_third = true;
+        $ionicScrollDelegate.scrollTop(true);
+      }
     }
     $scope.goBack = function() {
       $scope.cp_screen_first = true;

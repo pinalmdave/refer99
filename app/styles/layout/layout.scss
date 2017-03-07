@@ -281,7 +281,7 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1{color: #FFF!
 .delete_customer_red button{ background-color: #FFF; color: red; font-size: 16px; border: 1px solid red; text-align: center; padding: 3px 10px; margin: 0px 0px 0px 0px; width: 100%;  border-radius: 0px;}
 .popup {border: 1px solid #b2b2b2; padding: 0px; text-align: center; border-radius: 4px!important;}
 .popup-body input {border: 1px solid #b2b2b2!important; padding: 4px 0px 4px 10px!important; }
-.popup .button.button-positive{background: #00CC87!important; font-size: 15px; text-align: center; padding: 5px 0px; border:1px solid #00CC87; }
+/*.popup .button.button-positive{background: #00CC87!important; font-size: 15px; text-align: center; padding: 5px 0px; border:1px solid #00CC87; }*/
 .logo img {max-width: 57%; }
 .heading_top h1 {color: #ff3b69; font-family: serif; font-size: 30px; font-weight: bold; line-height: 16px; margin: 0; padding: 0px 0 0px; text-align: center; text-transform: uppercase; }
 .heading_top span{color: #FF3B69; }
@@ -473,7 +473,7 @@ ul.PAYMENT_PAGE_LIST li {
 /*puneet_css_24jan*/
 .bg_FOr_cupn {
     background: #f1f1f1;
-    margin: 20px; padding-top: 10px;
+    margin: 15px 20px; padding-top: 0px;
     border-radius: 4px;
 }
 
@@ -493,7 +493,12 @@ p.CUPEEN_hding_TEXT {
 .CUPEEN_TEXT {
   color: #ff3b69;
   font-size: 16px;
-  text-align: center;
+  text-align: left;
+}
+.note_TEXT {
+  color: #000;
+  font-size: 14px;
+  text-align: left;
 }
 
 .CUPEEN_hding_TEXT {
@@ -547,7 +552,7 @@ p.CUPEEN_hding_TEXT {
     bottom: 0;
     width: 100%;
 }
-.Offer_BG_SCREEN {background: #f2f2f2; }
+.Offer_BG_SCREEN {background: #f2f2f2 !important; }
 .OFFER_CUPEN_img {width: 100%; text-align: center; padding: 0px 0; display: block; }
 .OFFER_CUPEN_img > img {max-width: 100%; }
 .SECOND_SCREEn .OFFER_CUPEN_img > img {max-width: 35%; }
@@ -586,10 +591,10 @@ p.CUPEEN_hding_TEXT {
 .Offer_ZONE_CONTr .card,
 .list-inset {overflow: hidden; margin: 20px 0px !important; border-radius: 2px; background-color: #fff; }
 .REFERAL_SEND_LISTING_peNAL {background: #fff; float: left; width: 100%; margin-top: 0px; }
-h3.INVIT_FRNDS {background: #939393; color: #fff; padding: 10px 0; text-align: center; float: left; margin: 24px 0 0 0; font-size: 19px; font-weight: 100; width: 100%; }
+h3.INVIT_FRNDS {background: #939393; color: #fff; padding: 10px 15px; text-align: left; float: left; margin: 24px 0 0 0; font-size: 19px; font-weight: 100; width: 100%; }
+h3.INVIT_FRNDS_let {background: #939393; color: #fff; padding: 10px 15px; text-align: left; float: left; margin: 0; font-size: 19px; font-weight: 100; width: 100%; }
 a.REFER_SEND_ICON_penal {padding: 10px 12px; display: inline-block; float: left; width: 100%; border-bottom: 1px double #ccc; }
-.REFERAL_SEND_LISTING {margin-bottom: 0px; float: left; width: 100%;     position: fixed !important;
-    bottom: 0px !important; }
+.REFERAL_SEND_LISTING {margin-bottom: 0px; float: left; width: 100%;     /*position: fixed !important;    bottom: 0px !important;*/ }
 .REFER_SEND_ICON_next {float: right; width: 30px; height: 30px; padding: 7px 0; }
 .REFER_SEND_text {padding: 5px 0; font-size: 14px; color: #000; display: inline-block; }
 .REFER_SEND_ICON {float: left; height: 30px; width: 37px; }
@@ -597,7 +602,45 @@ a.REFER_SEND_ICON_penal {padding: 10px 12px; display: inline-block; float: left;
 .list-inset {overflow: hidden; margin: 20px 0px; border-radius: 2px; background-color: #fff; }
 .Offer_ZONE_CONTr1 .card {padding-top: 1px; padding-bottom: 1px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3); }
 .OFER_COUPEN_question {font-size: 14px; border-bottom: 0px solid #ccc; color: #fff; margin: 20px 0; padding: 10px 8px; background: #ff3b69; }
-.Offer_ZONE_CONTr .item {border-color: #ccc; background-color: #fff; color: #535353; position: relative; z-index: 2; display: block; margin: -1px; padding: 9px 8px; border-width: 1px; border-style: solid; font-size: 14px; }
+/*.Offer_ZONE_CONTr .item {border-color: #ccc; background-color: #fff; color: #535353; position: relative; z-index: 2; display: block; margin: -1px; padding: 9px 8px; border-width: 1px; border-style: solid; font-size: 14px; }*/
+.Offer_ZONE_CONTr .item {
+    border-color: #ccc;
+    background-color: transparent;
+    color: #535353;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: -1px;
+    min-height: 43px;
+    padding: 9px 8px;
+    border-width: 0;
+    border-style: solid;
+    font-size: 14px;
+}
+
+.Offer_ZONE_CONTr_list .item-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    padding: 5px 6px;
+    max-width: 100%;
+    border: none;
+    background: transparent;
+    width: 100%;
+    left: 0;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 28px; direction:ltr !important;
+}
+
+
+
 .Offer_ZONE_CONTr .item-checkbox .checkbox {position: absolute; top: 50%; right: 8px; left: inherit; z-index: 3; margin-top: -21px; width: 13%; }
 .Offer_ZONE_CONTr .checkbox input,
 .checkbox-icon {position: relative; width: 20px; height: 20px; display: block; border: 0; background: transparent; cursor: pointer; -webkit-appearance: none; }
@@ -636,7 +679,7 @@ select.OFFER_CUPEN_CODE_dropdown_content {
     background: #fff;
     padding: 5px 0;
     -webkit-appearance: none;
-    text-align: center !important;
+    text-align-last:center !important;
     font-size: 19px;
     /* text-transform: uppercase; */
     font-weight: 600;
@@ -646,6 +689,40 @@ select.OFFER_CUPEN_CODE_dropdown_content {
     background: #fff;
     border: 1px solid #ccc;
     text-align: center;
+}
+
+.float-button {
+    background-color: #303f9f;
+    opacity: 0.9;
+    color: white;
+    border-radius: 50%;
+    /*border-radius:15% 0 0 0;*/
+    width: 30px;
+    padding: 25px;
+    font-size: 40px;
+    position: fixed;
+    bottom: 5%;
+    /* Adjust height */
+    right: 5%;
+    /* Adjust position */
+    z-index: 1000;
+}
+
+.float-button .height_fix {
+    margin-top: 100%;
+    border: 1px solid red;
+}
+
+.float-button .content {
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: -37px;
+    color: white;
+
 }
 .liSTS{display: inline-block; text-align: center;width: 100%;}
 .next_slide_show {
@@ -704,4 +781,25 @@ span.tooltip_CAMPAIN {
     border-radius: 34px;
     border: 1px solid #ccc;
     font-size: 11px;
+}
+
+.popup .button.button-positive {
+    background: #00CC87 !important;
+    font-size: 13px !important;
+    text-align: center;
+    padding: 0px 0px;
+    border: 1px solid #00CC87;
+}
+.popup-buttons .button {
+    -webkit-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: block;
+    min-height: 0;
+    border-radius: 2px;
+    line-height: 12px;
+    font-size: 13px !important;
+    margin-right: 5px;
+    padding: 0;
 }

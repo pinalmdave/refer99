@@ -15,7 +15,7 @@
 
             <div class="row padd_twt">
                 <div class="col">
-                    <div class="membership_plan_box_penal" ng-click="makePayment('Silver',9.99)">
+                    <div class="membership_plan_box_penal">
                         <h2>Free $0/month</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
@@ -27,7 +27,7 @@
                                 <li>Cancel Anytime</li>
                                 <li>In-depth Analytics</li>
                                 <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="">Sign Up</button>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Free',0.00)">Choose Plan</button>
                             </ul>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
 
             <div class="row padd_twt">
                 <div class="col">
-                    <div class="membership_plan_box_penal" ng-click="makePayment('Silver',9.99)">
+                    <div class="membership_plan_box_penal">
                         <h2>Silver $29.99/month</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
@@ -50,7 +50,7 @@
                                 <li>Cancel Anytime</li>
                                 <li>In-depth Analytics</li>
                                 <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="">Sign Up</button>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Silver',29.99)">Make Payment</button>
                             </ul>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="row padd_twt">
                 <div class="col">
-                    <div class="membership_plan_box_penal" ng-click="makePayment('Gold',19.99)">
+                    <div class="membership_plan_box_penal">
                         <h2>Golden $49.99/month</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
@@ -70,7 +70,7 @@
                                 <li>Cancel Anytime</li>
                                 <li>In-depth Analytics</li>
                                 <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="">Sign Up</button>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Gold',49.99)">Make Payment</button>
                             </ul>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="row padd_twt">
                 <div class="col">
-                    <div class="membership_plan_box_penal" ng-click="makePayment('Platinum',29.99)">
+                    <div class="membership_plan_box_penal">
                         <h2>Platinum $79.99/month</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
@@ -90,7 +90,7 @@
                                 <li>Cancel Anytime</li>
                                 <li>In-depth Analytics</li>
                                 <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="">Sign Up</button>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Platinum',79.99)">Make Payment</button>
                             </ul>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
 
             <div class="row padd_twt">
                 <div class="col">
-                    <div class="membership_plan_box_penal" ng-click="makePayment('Gold',19.99)">
+                    <div class="membership_plan_box_penal">
                         <h2>Custom <span class="COUPON_GENRATIon_contectUS"></span></h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
@@ -112,7 +112,7 @@
                                 <li>Cancel Anytime</li>
                                 <li>In-depth Analytics</li>
                                 <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="">Contact Us</button>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Custom',0.00)">Contact Us</button>
                             </ul>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
         </div>
         <div class="row">
             <div ng-show="!isloading && isPaidUser" class="padding">
-                <p class="center due_payment_penal">Your payment due date is {{dueDate}}</p>
+                <p class="center due_payment_penal">Thanks for chosing refer99 {{user_payments[0].type}} membership plan</p>
             </div>
         </div>
     </ion-content>
