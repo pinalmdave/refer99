@@ -93,7 +93,7 @@ angular.module('viralDL')
                 // $scope.dueDate = moment(res.created).add(1, 'M').format('LL');
                 $ionicPopup.alert({
                   title: 'refer99',
-                  template: "Payment Processed Successfully"
+                  template: "Your payment has been processed successfully"
                 }).then(function() {
                   $state.go("app.business_profile");
                 });
@@ -104,7 +104,7 @@ angular.module('viralDL')
 
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Transaction cancelled"
+              template: "Payment could not process. Please try again"
             });
 
           });

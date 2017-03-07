@@ -10772,14 +10772,14 @@ p.CUPEEN_hding_TEXT {
   text-align: center;
   padding: 13px 0;
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 30px; }
 
 .SECOND_SCREEn .OFER_COUPEN_normal {
   text-align: center;
   padding: 15px 0;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 28px; }
 
 .SECOND_SCREEn {
@@ -10787,9 +10787,9 @@ p.CUPEEN_hding_TEXT {
 
 .OFER_COUPEN_normal {
   text-align: center;
-  padding: 25px 0;
+  padding: 13px 0;
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 500;
   line-height: 28px; }
 
 .OFFER_CUPEN_CODE {
@@ -10860,6 +10860,7 @@ a.REFER_SEND_ICON_penal {
 
 .REFERAL_SEND_LISTING {
   margin-bottom: 0px;
+  margin-top: 24px;
   float: left;
   width: 100%;
   /*position: fixed !important;    bottom: 0px !important;*/ }

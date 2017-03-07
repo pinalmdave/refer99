@@ -13,15 +13,9 @@
             <!-- <div class="OFFER_CUPEN_CODE">PN089DRF</div> -->
             <div class="OFFER_CUPEN_CODE_dropdown">
 <!--             <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select> -->
-
-
             <div class="list Offer_ZONE_CONTr_list">
-
               <label class="item item-input item-select">
                 <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp">
-                  <option>Blue</option>
-                  <option selected>Green</option>
-                  <option>Red</option>
                 </select>
               </label>
 
@@ -31,10 +25,74 @@
 
             </div>
         </div>
+    </ion-content> -->
+    <ion-content class="Offer_BG_SCREEN">
+        <div class="SECOND_SCREEn_fixed">
+            <div class="Offer_ZONE_CONTr SECOND_SCREEn">
+                <div class="OFER_COUPEN">{{selectedCamp.cp_offer}}</div>
+                <div class="OFFER_CUPEN_img"><img src="images/ic_coupon_active@3x.png"></div>
+            </div>
+            <div class="Offer_ZONE_CONTr">
+                <div class="OFER_COUPEN_normal">Select Campaign</div>
+                <div class="OFFER_CUPEN_CODE_dropdown">
+<!--                     <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select> -->
+
+
+            <div class="list Offer_ZONE_CONTr_list">
+              <label class="item item-input item-select">
+                <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp">
+                </select>
+              </label>
+
+            </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+            <h3 class="INVIT_FRNDS">Start Inviting Customers</h3>
+            <div class="REFERAL_SEND_LISTING_peNAL">
+                <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('whatsapp')">
+                    <div class="REFER_SEND_ICON"><img src="images/whatsapp_icon.png"></div>
+                    <div class="REFER_SEND_text">WhatsApp</div>
+                    <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                </a>
+                <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                    <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
+                    <div class="REFER_SEND_text">Facebook</div>
+                    <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                </a>
+                <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('sms')">
+                    <div class="REFER_SEND_ICON"><img src="images/message_icon.png"></div>
+                    <div class="REFER_SEND_text">SMS</div>
+                    <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                </a>
+                <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('email')">
+                    <div class="REFER_SEND_ICON"><img src="images/email_icon.png"></div>
+                    <div class="REFER_SEND_text">Email</div>
+                    <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                </a>
+            </div>
+        </div>
+        <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+            <h3 class="INVIT_FRNDS_let">Let the world know</h3>
+            <div class="REFERAL_SEND_LISTING_peNAL">
+                <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('twitter')">
+                    <div class="REFER_SEND_ICON"><img src="images/twitter_icon.png"></div>
+                    <div class="REFER_SEND_text">Twitter</div>
+                    <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                </a>
+                <!--                     <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                        <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
+                        <div class="REFER_SEND_text">Facebook</div>
+                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                    </a> -->
+            </div>
+        </div>
     </ion-content>
-    <div class="OFFER_PGE_FOOTER" ng-click="openModal()">
+    <!--   <div class="OFFER_PGE_FOOTER" ng-click="openModal()">
         <h1 class="title OFFER_PGE_FOOTER_tittle">Share Campaign With Customers</h1>
-    </div>
+    </div> -->
     <script type="text/ng-template" id="email_template.html">
         <table width="60%" bgcolor="#fff" style="border:1px solid #655383">
             <tbody>
@@ -82,7 +140,7 @@
     <script id="cover_coupon.html" type="text/ng-template">
         <ion-modal-view>
             <ion-header-bar>
-            <button class="button button-icon icon ion-close-round butututu" style="display: block;color:#000;" ng-click="closeModal()"></button>
+                <button class="button button-icon icon ion-close-round butututu" style="display: block;color:#000;" ng-click="closeModal()"></button>
                 <h1 class="title">Share & Invite</h1>
             </ion-header-bar>
             <ion-content class="Offer_BG_SCREEN">
@@ -96,51 +154,47 @@
                         <div class="OFFER_CUPEN_CODE">{{selectedCamp.cp_name}}</div>
                     </div>
                 </div>
-
-            <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
-                <h3 class="INVIT_FRNDS">Start Inviting Customers</h3>
-                <div class="REFERAL_SEND_LISTING_peNAL">
-                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('whatsapp')">
-                        <div class="REFER_SEND_ICON"><img src="images/whatsapp_icon.png"></div>
-                        <div class="REFER_SEND_text">WhatsApp</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a>
-                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
-                        <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
-                        <div class="REFER_SEND_text">Facebook</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a>
-                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('sms')">
-                        <div class="REFER_SEND_ICON"><img src="images/message_icon.png"></div>
-                        <div class="REFER_SEND_text">SMS</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a>
-                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('email')">
-                        <div class="REFER_SEND_ICON"><img src="images/email_icon.png"></div>
-                        <div class="REFER_SEND_text">Email</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a>
+                <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                    <h3 class="INVIT_FRNDS">Start Inviting Customers</h3>
+                    <div class="REFERAL_SEND_LISTING_peNAL">
+                        <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('whatsapp')">
+                            <div class="REFER_SEND_ICON"><img src="images/whatsapp_icon.png"></div>
+                            <div class="REFER_SEND_text">WhatsApp</div>
+                            <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                            <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
+                            <div class="REFER_SEND_text">Facebook</div>
+                            <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('sms')">
+                            <div class="REFER_SEND_ICON"><img src="images/message_icon.png"></div>
+                            <div class="REFER_SEND_text">SMS</div>
+                            <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('email')">
+                            <div class="REFER_SEND_ICON"><img src="images/email_icon.png"></div>
+                            <div class="REFER_SEND_text">Email</div>
+                            <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
-                <h3 class="INVIT_FRNDS_let">Let the world know</h3>
-                <div class="REFERAL_SEND_LISTING_peNAL">
-                    <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('twitter')">
-                        <div class="REFER_SEND_ICON"><img src="images/twitter_icon.png"></div>
-                        <div class="REFER_SEND_text">Twitter</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a>
-<!--                     <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
+                <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                    <h3 class="INVIT_FRNDS_let">Let the world know</h3>
+                    <div class="REFERAL_SEND_LISTING_peNAL">
+                        <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('twitter')">
+                            <div class="REFER_SEND_ICON"><img src="images/twitter_icon.png"></div>
+                            <div class="REFER_SEND_text">Twitter</div>
+                            <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
+                        </a>
+                        <!--                     <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
                         <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
                         <div class="REFER_SEND_text">Facebook</div>
                         <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
                     </a> -->
+                    </div>
                 </div>
-            </div>
-
-
             </ion-content>
-
         </ion-modal-view>
     </script>
 </ion-view>
