@@ -9520,7 +9520,7 @@ a.button {
 .active_coupon_view_box h4 {
   color: #2b3b4e;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   margin: 0px;
   padding: 0px;
@@ -10706,6 +10706,7 @@ p.CUPEEN_hding_TEXT {
   color: #fff;
   border-radius: 4px;
   display: inline-block;
+  font-size: 11px;
   padding: 4px 6px;
   margin: 0px; }
 
@@ -10716,7 +10717,7 @@ p.CUPEEN_hding_TEXT {
 
 .CUPEN_OFR_FILD_right_tow {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   margin: 0 0 0 6px; }
 
 .BDRS {
@@ -11160,17 +11161,22 @@ span.tooltip_CAMPAIN {
 .business_DETALS {
   float: left;
   width: 100%;
+  margin-top: 10px;
   background: #f2f2f2;
-  border-radius: 5px;
-  padding: 3px 5px;
-  margin: 15px 0 0 0; }
+  /* font-size: 0; */ }
 
 .business_DETALS h3 {
-  font-size: 16px;
-  margin: 0;
-  padding: 3px 0;
-  color: #FF3B69;
-  text-align: center; }
+  font-size: 14px;
+  margin: 0 0 0 0;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #f73068;
+  padding: 7px 0; }
+
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+  background-color: transparent !important;
+  cursor: not-allowed; }
 
 /**
  * MENU
