@@ -5,15 +5,18 @@
     </ion-header-bar>
    
     <ion-content class="redapp_bg">
-        <div class="row">
-            <div class="col send_coupon text-center">
+        <div class="row padding_remove">
+            <div class="col send_coupon text-center padding_remove">
                 <h1>Contact Us</h1>
                 <select ng-model="$parent.category" name="cat">
                 <option disabled value="default">Select a category</option>
                     <option value="login">Login</option>
-                    <option value="transactions">Transactions</option>
-                    <option value="payments">Payments</option>
-                    <option value="other_issues">Other Issues</option>
+                    <option value="transactions">Payment / Transactions</option>
+                    <option value="payments">Membership</option>
+                    <option value="other_issues">Technical Issues</option>
+                    <option value="transactions">Suggestions for improvement</option>
+                    <option value="payments">Suggestions for new features</option>
+                    <option value="other_issues">Any other Issue</option>  
                 </select>
             </div>
         </div>
