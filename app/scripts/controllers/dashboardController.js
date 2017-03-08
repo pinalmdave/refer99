@@ -108,7 +108,7 @@ angular.module('viralDL')
     $scope.showCampActions = function(objIndex, id) {
       var options = {
         'title': 'What do you want with this campaign?',
-        'buttonLabels': ['Distribute Coupon', 'Extend End Date', 'Coupon Preview'],
+        'buttonLabels': ['Distribute Coupon', 'Extend End Date', 'View Campaign'],
         'androidEnableCancelButton': true, // default false
         'addCancelButtonWithLabel': 'Cancel'
       };

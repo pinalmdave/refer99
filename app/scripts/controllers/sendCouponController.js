@@ -63,7 +63,7 @@ angular.module('viralDL')
         });
     }
     $scope.shareCoupon = function(shareType) {
-      var whatsappBody = "Hello,Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase();
+      var whatsappBody = "Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase();
       var smsBody = "Hello,Exclusive offer from " + $scope.user_camp_data.business_name.toUpperCase() + ": " + $scope.selectedCamp.cp_offer.toUpperCase() + ". Check this link to get the coupon. http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
       if (shareType == "whatsapp") {
         var message = "Shared Coupon";

@@ -596,6 +596,7 @@ h3.INVIT_FRNDS_let {background: #939393; color: #fff; padding: 10px 15px; text-a
 a.REFER_SEND_ICON_penal {padding: 10px 12px; display: inline-block; float: left; width: 100%; border-bottom: 1px double #ccc; }
 .REFERAL_SEND_LISTING {margin-bottom: 0px; margin-top: 24px; float: left; width: 100%;     /*position: fixed !important;    bottom: 0px !important;*/ }
 .REFER_SEND_ICON_next {float: right; width: 30px; height: 30px; padding: 7px 0; }
+.mGNBH{margin: 0 !important;}
 .REFER_SEND_text {padding: 5px 0; font-size: 14px; color: #000; display: inline-block; }
 .REFER_SEND_ICON {float: left; height: 30px; width: 37px; }
 .Offer_ZONE_CONTr1 .card,
@@ -802,4 +803,19 @@ span.tooltip_CAMPAIN {
     font-size: 13px !important;
     margin-right: 5px;
     padding: 0;
+}
+.business_DETALS {
+    float: left;
+    width: 100%;
+    background: #f2f2f2; border-radius: 5px;
+    padding: 3px 5px;
+    margin: 15px 0 0 0;
+}
+
+.business_DETALS h3 {
+    font-size: 16px;
+    margin: 0;
+    padding: 3px 0;
+    color: #FF3B69;
+    text-align: center;
 }

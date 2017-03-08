@@ -368,6 +368,19 @@ module.exports = [
         "id": "cordova-plugin-geolocation.PositionError",
         "pluginId": "cordova-plugin-geolocation",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/www/Toast.js",
+        "id": "cordova-plugin-x-toast.Toast",
+        "pluginId": "cordova-plugin-x-toast",
+        "clobbers": [
+            "window.plugins.toast"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-toast/test/tests.js",
+        "id": "cordova-plugin-x-toast.tests",
+        "pluginId": "cordova-plugin-x-toast"
     }
 ];
 module.exports.metadata = 
@@ -389,7 +402,8 @@ module.exports.metadata =
     "cordova-plugin-file": "4.3.1",
     "cordova-plugin-file-transfer": "1.6.1",
     "cordova-plugin-fcm": "1.1.5",
-    "cordova-plugin-geolocation": "2.4.1"
+    "cordova-plugin-geolocation": "2.4.1",
+    "cordova-plugin-x-toast": "2.6.0"
 }
 // BOTTOM OF METADATA
 });

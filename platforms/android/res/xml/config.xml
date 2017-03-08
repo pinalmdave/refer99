@@ -58,6 +58,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="Toast">
+        <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
     <name>refer99</name>
     <description>
         A blank seed project for rapid development of Ionic projects through gulp workflows

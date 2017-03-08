@@ -1,5 +1,5 @@
 angular.module('viralDL')
-  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate, base) {
+  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate, base, $cordovaToast) {
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
@@ -281,7 +281,13 @@ angular.module('viralDL')
     $scope.getDateFormally = function(date) {
       return moment.utc(date).format('LL');
     };
-
+    $scope.showToast = function(data) {
+      $cordovaToast.showLongBottom(data).then(function(success) {
+        // success
+      }, function(error) {
+        // error
+      });
+    };
   });
 Date.prototype.yyyymmdd = function() {
   var yyyy = this.getFullYear().toString();

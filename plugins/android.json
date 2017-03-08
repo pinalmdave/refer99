@@ -50,6 +50,9 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
     "dependent_plugins": {
