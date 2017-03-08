@@ -826,3 +826,17 @@ input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.clon
     background-color: transparent !important;
     cursor: not-allowed;
 }
+
+h3.myprofile_heading {
+    float: left;
+    width: 100%; color: #484848;
+    text-align: left; font-weight: 500;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 6px 0;
+}
+
+span {
+    float: right; color: #000;
+    font-size: 12px !important;
+}
