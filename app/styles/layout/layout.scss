@@ -126,7 +126,7 @@
 
 .active_coupon_view_box{width: 100%!important; height: 300px!important; border: 1px solid #E8E8E8; margin:0px auto; padding: 0px; box-shadow: 2px 2px 13px #E8E8E8; background: #FFF; padding: 20px!important;}
 
-.active_coupon_view_box h4{color: #2b3b4e; font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: normal; margin: 0px; padding:0px; line-height: 41px;}
+.active_coupon_view_box h4{color: #2b3b4e; font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: normal; margin: 0px; padding:0px; line-height: 41px;}
 
 .active_coupon_view_box_pink{ width: 314px!important; float: left; background: #2A3B4D; text-align: center; padding: 23px 0px 0px 0px!important; height: 62px!important;  color: #FFF;}
 .active_coupon_view_box_grre{ width: 200px; background: #FF3B69; text-align: center; padding: 23px 0px 0px 0px !important; height: 62px !important
@@ -511,7 +511,7 @@ p.CUPEEN_hding_TEXT {
 .CUPEN_OFR_FILD {
   background: #ff3b69 none repeat scroll 0 0;
   color: #fff; border-radius: 4px;
-  display: inline-block;
+  display: inline-block; font-size: 11px;
   padding: 4px 6px; margin: 0px;
 }
 
@@ -523,7 +523,7 @@ p.CUPEEN_hding_TEXT {
 
 .CUPEN_OFR_FILD_right_tow {
     display: inline-block;
-    font-size: 14px;
+    font-size: 12px;
     margin: 0 0 0 6px;
 }
 .BDRS {
@@ -802,4 +802,27 @@ span.tooltip_CAMPAIN {
     font-size: 13px !important;
     margin-right: 5px;
     padding: 0;
+}
+
+.business_DETALS {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    background: #f2f2f2;
+    /* font-size: 0; */
+}
+
+.business_DETALS h3 {
+    font-size: 14px;
+    margin: 0 0 0 0;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    color: #f73068;
+    padding: 7px 0;
+}
+
+input[disabled], select[disabled], textarea[disabled], input[readonly]:not(.cloned-text-input), textarea[readonly]:not(.cloned-text-input), select[readonly] {
+    background-color: transparent !important;
+    cursor: not-allowed;
 }

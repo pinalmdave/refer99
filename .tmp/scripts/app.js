@@ -264,6 +264,17 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       }
     })
 
+    .state('app.myprofile', {
+      url: '/myprofile',
+      cache: false,
+      views: {
+        'viewContent': {
+          templateUrl: 'templates/views/myprofile.html'
+        }
+      }
+    })
+
+
     .state('app.start', {
       url: '/start',
       cache: true,
