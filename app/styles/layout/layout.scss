@@ -2055,7 +2055,7 @@ p.Discount_type_TEXT {
 
 .setting_screen.pane.tab-content {
     position: relative;
-    top: 50px;
+    top: 50px !important;
     padding: 0 16px;
 }
 
@@ -2168,13 +2168,13 @@ p.CUPEEN_hding_TEXT {
 
 .CUPEN_OFR_FILD_right {
     display: inline-block;
-    font-size: 14px;
+    font-size: 11px;
     margin: 0 0 0 10px;
 }
 
 .CUPEN_OFR_FILD_right_tow {
     display: inline-block;
-    font-size: 12px;
+    font-size: 11px;
     margin: 0 0 0 6px;
 }
 
@@ -2623,7 +2623,7 @@ span.COUPON_GENRATIon {
     color: #000;
     border: 1px solid #00cc87;
     line-height: 18px;
-/*    background: #00cc87;*/
+    /*    background: #00cc87;*/
     margin-top: 3px;
     padding: 0 7px;
     border-radius: 5px;
@@ -2738,10 +2738,13 @@ h3.myprofile_heading {
     font-weight: bold;
 }
 
-
-img.most_popular_img{
+img.most_popular_img {
     width: 50px;
     float: left;
     height: 50px;
     margin: -9px 0 0 -7px;
+}
+
+.margn_no {
+    margin: 0 !important;
 }

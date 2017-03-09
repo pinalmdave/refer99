@@ -7,7 +7,7 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory, base) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory, base, $cordovaToast) {
 
     //    $ionicSideMenuDelegate.canDragContent(true);
     $scope.$on('$ionicView.enter', function(event, viewData) {
@@ -180,6 +180,13 @@ angular.module('viralDL')
         });
       }
     }
+    $scope.showToast = function(data) {
+      $cordovaToast.showLongBottom(data).then(function(success) {
+        // success
+      }, function(error) {
+        // error
+      });
+    };
 
 
   });

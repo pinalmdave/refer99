@@ -28,7 +28,7 @@ angular.module('viralDL')
     }
     // do something with $scope
     $scope.logout = function() {
-      $ionicLoading.show({
+     /* $ionicLoading.show({
         template: 'Loading...'
       });
       User.clearToken($scope.user.userId, function(err, data) {
@@ -36,7 +36,7 @@ angular.module('viralDL')
         if (err) {
           console.log('err', err);
         } else {
-          console.log('success', data);
+          console.log('success', data);*/
           Storage.removeUser();
           // Storage.clearAll();
           $scope.user = undefined;
@@ -47,7 +47,7 @@ angular.module('viralDL')
           // $ionicHistory.clearHistory();
           $state.go('app.start');
           $ionicSideMenuDelegate.toggleLeft(false);
-        }
-      });
+      /*  }
+      });*/
     };
   });

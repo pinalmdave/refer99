@@ -46,12 +46,12 @@
         <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns | orderBy:'-created'">
             <div clas="row">
                 <div class="col active_coupon_view_box margin_top">
-                    <h4><strong>Campagin Name</strong> <span>:{{campaign.cp_name}}</span></h4>
-                    <h4><strong>Start Date</strong> <span>:{{getDateFormally(campaign.start_date)}}</span></h4>
-                    <h4><strong>End Date</strong> <span>:{{getDateFormally(campaign.end_date)}}</span></h4>
-                    <h4><strong>Coupons Generated</strong> <span>:{{campaign.coupons.length}}</span></h4>
-                    <h4><strong>Coupons Redeemed</strong> <span>:{{campaign.coupons_redeemed.length}}</span></h4>
-                    <h4><strong>Status</strong> <span>:{{getCampStatus(campaign.end_date)}}</span></h4>
+                    <h4><strong>Campagin Name</strong> <span> : {{campaign.cp_name}}</span></h4>
+                    <h4><strong>Start Date</strong> <span> : {{getDateFormally(campaign.start_date)}}</span></h4>
+                    <h4><strong>End Date</strong> <span> : {{getDateFormally(campaign.end_date)}}</span></h4>
+                    <h4><strong>Coupons Generated</strong> <span> : {{campaign.coupons.length}}</span></h4>
+                    <h4><strong>Coupons Redeemed</strong> <span> : {{campaign.coupons_redeemed.length}}</span></h4>
+                    <h4><strong>Status</strong> <span> : {{getCampStatus(campaign.end_date)}}</span></h4>
                     <!-- <h4>Coupons Redemptions:</h4> -->
                 </div>
             </div>

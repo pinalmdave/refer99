@@ -44,11 +44,13 @@
             <div class="row padding_remove margin_top">
                 <div class="col padding_remove">
                     <div class="card margin_top">
-                        <div class="campagin lock">
+                        <div class="campagin lock" style="width:90%;">
                             <img src="images/ic_business@x.png">
                             <input type="text" ng-disabled="is_disabled" placeholder="Business Name" required ng-model="user_data.business_name">
                         </div>
+                        <span class="tooltip_CAMPAIN" style="margin:  0 0 0;display: inline;line-height: 46px;" ng-click="showToast('Business name will shown top of the campaign coupons.')">?</span>
                     </div>
+
                 </div>
             </div>
             <div class="row padding_remove">
@@ -103,7 +105,7 @@
             </div>
             <div class="row">
                 <div class="col disscount">
-                    <p>Work through:</p>
+                    <p>Redeemable At:  <span class="tooltip_CAMPAIN" ng-click="showToast('Website url or location from customers can redeem their coupons.')">?</span></p>
                 </div>
             </div>
             <div class="row">

@@ -10647,7 +10647,7 @@ p.Discount_type_TEXT {
 
 .setting_screen.pane.tab-content {
   position: relative;
-  top: 50px;
+  top: 50px !important;
   padding: 0 16px; }
 
 .tabs-positive > .tabs,
@@ -10739,12 +10739,12 @@ p.CUPEEN_hding_TEXT {
 
 .CUPEN_OFR_FILD_right {
   display: inline-block;
-  font-size: 14px;
+  font-size: 11px;
   margin: 0 0 0 10px; }
 
 .CUPEN_OFR_FILD_right_tow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   margin: 0 0 0 6px; }
 
 .BDRS {
@@ -11244,6 +11244,9 @@ img.most_popular_img {
   float: left;
   height: 50px;
   margin: -9px 0 0 -7px; }
+
+.margn_no {
+  margin: 0 !important; }
 
 /**
  * MENU

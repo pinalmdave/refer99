@@ -44,6 +44,14 @@
             <!--  <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p> -->
         </div>
         <div class="bg_FOr_cupn">
+              <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Campaign Name</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_name}}</p>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
@@ -89,6 +97,15 @@
                     </div>
                 </div>
             </div>
+             <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Additional Discount</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
         </div>
         <div class="bg_FOr_cupn_red">
