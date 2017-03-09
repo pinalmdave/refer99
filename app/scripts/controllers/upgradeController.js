@@ -7,7 +7,7 @@
  * # PaymentsController
  */
 angular.module('viralDL')
-  .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state, $ionicPopup) {
+  .controller('UpgradeController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state, $ionicPopup) {
 
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.$on('$ionicView.enter', function(event, viewData) {
@@ -23,8 +23,9 @@ angular.module('viralDL')
           console.log('err', err);
         } else {
           console.log('data', data);
+          $scope.user_data = data;
           $scope.user_payments = data.payments;
-          var query = { filter: { order: "p_value" } };
+          var query = { filter: { where: { p_name: { neq: $scope.user_data.m_type } }, order: "p_value" } };
           User.get_plans(query, function(err, plans) {
             $ionicLoading.hide();
             $scope.isloading = false;
@@ -72,7 +73,7 @@ angular.module('viralDL')
               title: 'refer99',
               template: "Thanks for choosing free plan"
             }).then(function() {
-              $state.go("app.business_profile");
+              $state.go("app.dashboard");
             });
           }
         });
@@ -106,7 +107,7 @@ angular.module('viralDL')
                   title: 'refer99',
                   template: "Your payment has been processed successfully"
                 }).then(function() {
-                  $state.go("app.business_profile");
+                  $state.go("app.dashboard");
                 });
               }
             });

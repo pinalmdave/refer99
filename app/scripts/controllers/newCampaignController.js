@@ -116,7 +116,7 @@ angular.module('viralDL')
     $scope.createCampaign = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: 'refer99',
-        template: "“Campaign cannot be edited after create, except extend end date only. Please make sure before creating a campaign” to “Please verify all details. Campaign cannot be edited once created”.",
+        template: "Please verify all details. Campaign cannot be edited once created.",
         cancelText: "<div class='but_c'>Verify</div>",
         okText: "Create Campaign"
       });

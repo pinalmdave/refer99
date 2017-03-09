@@ -1,0 +1,37 @@
+<ion-view>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Change Membership</h1>
+    </ion-header-bar>
+    <ion-content class="red_background_two">
+        <div ng-show="!isloading && isPaidUser">
+            <div class="row">
+                <div class="col">
+                    <div class="membership_plan_box">
+                        <div class="membership_hding">Select Your Membership Plan</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padd_twt" ng-repeat="plan in plans | orderBy:'p_value'">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+
+                        <h2>{{plan.p_name}} 
+                        {{plan.currency}}{{plan.amount}}{{plan.recurrence?"/"+plan.recurrence:""}}
+                        <img ng-if="plan.p_name=='Platinum'" class="most_popular_img" src="images/most_popular.png">
+                        </h2>
+
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon">{{plan.p_name == 'Custom'?">"+plan.coupons_count:plan.coupons_count}}</span></li>
+                                <li ng-repeat="feature in plan.features">{{feature}}</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment(plan.p_name,plan.amount)">{{plan.p_name == 'Free'?"Choose Plan":plan.p_name == 'Custom'?"Contact Us":"Make Payment"}}</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -6,49 +6,49 @@
     </ion-header-bar>
     <ion-content>
         <div class="bg_FOr_cupn">
-            <div class="row">
+            <div class="row" ng-if="camp_data.members.business_logo">
                 <div class="col text-center">
                     <div class="logo">
-                        <img ng-if="!camp_data.members.business_logo" ng-src="images/redlogo@x.png">
+                        <!-- <img ng-if="!camp_data.members.business_logo" ng-src="images/redlogo@x.png"> -->
                         <img ng-if="camp_data.members.business_logo" ng-src="{{base}}/storage/business_logo/{{camp_data.members.business_logo}}">
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col">
-                    <div class="heading_top">
-                        <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
-                        <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
+                    <div class="col">
+                        <div class="heading_top">
+                            <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
+                            <!-- <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p> -->
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
         <div class="bg_FOr_cupn">
-            <div class="row">
-                <div class="custom_crd">
-                    <div class="item-text-wrap">
-                        <p class="CUPEEN_hding_TEXT"><span>How to Activate</span></p>
+            <!--                 <div class="row">
+                    <div class="custom_crd">
+                        <div class="item-text-wrap">
+                            <p class="CUPEEN_hding_TEXT"><span>How to Activate Coupon</span></p>
                             <p class="CUPEEN_TEXT">1.Click on "Get Coupon" button.</p>
                             <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">2.Share on social media.</p>
                             <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">3.Your coupon will activate when your friends share it.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
             <div class="row">
                 <div class="col Facebook_login text-center padding_remove">
                     <button class="button"><span>
-                    Get Coupon
+                    Get Your Offer
                     <!-- <img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook  --></span></button>
                 </div>
             </div>
-            <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p>
+            <!--  <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p> -->
         </div>
         <div class="bg_FOr_cupn">
             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Offers</span></p>
-                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}}</p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}} {{camp_data.add_discount ? " + "+camp_data.add_discount_value+" addl discount for sharing coupon":""}}</p>
                     </div>
                 </div>
             </div>
@@ -65,27 +65,31 @@
                     </div>
                 </div>
             </div>
-        <div class="row">
-            <div class="custom_crd">
-                <div class="item-text-wrap BDRS">
-                        <p class="CUPEN_OFR_FILD"><span>CODE</span></p>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Code</span></p>
                         <p class="CUPEN_OFR_FILD_right">XXXXXX</p>
+                    </div>
                 </div>
             </div>
-        </div>
-
-
-        <div class="row">
-            <div class="custom_crd">
-                <div class="item-text-wrap BDRS">
-                        <p class="CUPEN_OFR_FILD"><span>STATUS</span></p>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Status</span></p>
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Valid Date</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        </div>
-
         </div>
         <div class="bg_FOr_cupn_red">
             <div class="row">

@@ -79,6 +79,18 @@
           return next(error, null);
         });
     };
+     this.get_plans = function(filter, next) {
+      Restangular
+        .one('plans')
+        .get(filter)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.get_user_payments = function(id, next) {
       Restangular
         .one('members')
