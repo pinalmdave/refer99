@@ -3,62 +3,63 @@
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Settings</h1>
     </ion-header-bar>
-    <ion-tabs class="tabs-positive tabs-icon-top ">
-        <ion-tab title="Change Password" icon-on="ion-ios-locked" icon-off="ion-ios-locked-outline">
-            <div class="setting_screen">
-                <form name="form_change_pass">
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin Settings_text">
-                                    <img src="images/ic_pas@2x (3).png">
-                                    <!-- <h4>Old Password</h4> -->
-                                    <input type="Password" placeholder="Old Password" name="old_pass" ng-model="old_pass">
+        <ion-tabs class="tabs-positive tabs-icon-top border">
+            <ion-tab title="Change Password" icon-on="ion-ios-locked" icon-off="ion-ios-locked-outline">
+                <div class="setting_screen">
+                    <form name="form_change_pass">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin Settings_text">
+                                        <img src="images/ic_pas@2x (3).png">
+                                        <!-- <h4>Old Password</h4> -->
+                                        <input type="Password" placeholder="Old Password" name="old_pass" ng-model="old_pass">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin Settings_text">
-                                    <img src="images/ic_pas@2x (3).png">
-                                    <!-- <h4>New Password</h4> -->
-                                    <input type="Password" placeholder="New Password" name="new_pass" ng-model="new_pass">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin Settings_text">
+                                        <img src="images/ic_pas@2x (3).png">
+                                        <!-- <h4>New Password</h4> -->
+                                        <input type="Password" placeholder="New Password" name="new_pass" ng-model="new_pass">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row padding_remove">
-                        <div class="col padding_remove">
-                            <div class="card margin_top">
-                                <div class="campagin Settings_text">
-                                    <img src="images/ic_pas@2x (3).png">
-                                    <!-- <h4>Confirm Password</h4> -->
-                                    <input type="Password" placeholder="Confirm Password" name="confirm_pass" ng-model="confirm_pass">
+                        <div class="row padding_remove">
+                            <div class="col padding_remove">
+                                <div class="card margin_top">
+                                    <div class="campagin Settings_text">
+                                        <img src="images/ic_pas@2x (3).png">
+                                        <!-- <h4>Confirm Password</h4> -->
+                                        <input type="Password" placeholder="Confirm Password" name="confirm_pass" ng-model="confirm_pass">
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </form>
+                    <div class="padding">
+                        <p ng-show="change_pass.isErr">* {{change_pass.message}}</p>
                     </div>
-                </form>
-                <div class="padding">
-                    <p ng-show="change_pass.isErr">* {{change_pass.message}}</p>
+                    <div class="padding">
+                        <p ng-show="is_fb_user">*Change password not applicable for facebook user.</p>
+                    </div>
+                    <!--         <div class="bar bar-footer SAVE_CHANGES SAVSGFS">
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        
+                    </div>
                 </div>
-                <div class="padding">
-                    <p ng-show="is_fb_user">*Change password not applicable for facebook user.</p>
+            </div> -->
+                    <button ng-show="!is_fb_user" class="SAVE_CHANGES full_width" type="button" ng-click="change_password(old_pass, new_pass, confirm_pass)">SAVE CHANGES</button>
                 </div>
-                <!--         <div class="bar bar-footer SAVE_CHANGES SAVSGFS">
-            <div class="row padding_remove">
-                <div class="col padding_remove">
-                    
-                </div>
-            </div>
-        </div> -->
-                <button ng-show="!is_fb_user" class="SAVE_CHANGES full_width" type="button" ng-click="change_password(old_pass, new_pass, confirm_pass)">SAVE CHANGES</button>
-            </div>
-        </ion-tab>
-        <ion-tab title="Change Plan" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
-            <!-- Tab 2 content -->
-        </ion-tab>
-    </ion-tabs>
+            </ion-tab>
+            <ion-tab title="Change Plan" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+                <!-- Tab 2 content -->
+            </ion-tab>
+        </ion-tabs>
+
 </ion-view>
