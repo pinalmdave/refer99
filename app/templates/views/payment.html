@@ -13,29 +13,21 @@
                 </div>
             </div>
 
-            <div class="row padd_twt">
+            <div class="row padd_twt" ng-repeat="plan in plans | orderBy:'p_value'">
                 <div class="col">
                     <div class="membership_plan_box_penal">
-                        <h2>Free $0/month</h2>
+                        <h2>{{plan.p_name}} {{plan.currency}}{{plan.amount}}{{plan.recurrence?"/"+plan.recurrence:""}}</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
-                                <li>Coupon Generation  <span class="COUPON_GENRATIon">25</span></li>
-                                <li>Multi Channel Distribution</li>
-                                <li>Unlimited Campaign Creation</li>
-                                <li>Activate Coupon On Share Feature</li>
-                                <li>Additional Discount On Share Feature</li>
-                                <li>Cancel Anytime</li>
-                                <li>In-depth Analytics</li>
-                                <li>Email Support</li>
-                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Free',0.00)">Choose Plan</button>
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon">{{plan.p_name == 'Custom'?">"+plan.coupons_count:plan.coupons_count}}</span></li>
+                                <li ng-repeat="feature in plan.features">{{feature}}</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment(plan.p_name,plan.amount)">{{plan.p_name == 'Free'?"Choose Plan":plan.p_name == 'Custom'?"Contact Us":"Make Payment"}}</button>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
+<!-- 
             <div class="row padd_twt">
                 <div class="col">
                     <div class="membership_plan_box_penal">
@@ -59,7 +51,7 @@
             <div class="row padd_twt">
                 <div class="col">
                     <div class="membership_plan_box_penal">
-                        <h2>Golden $49.99/month</h2>
+                        <h2>Gold $49.99/month</h2>
                         <div class="para_membr_text">
                             <ul class="PAYMENT_PAGE_LIST">
                                 <li>Coupon Generation  <span class="COUPON_GENRATIon">1000</span></li>
@@ -117,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
         </div>

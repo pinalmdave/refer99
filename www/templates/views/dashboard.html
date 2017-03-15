@@ -7,7 +7,7 @@
                 <div class="col" ui-sref="app.new_campaign" ng-if="!disable_camp">
                     <div class="plus">
                         <img src="images/ic_newcampaign@2x.png">
-                        <h2>NEW</br>CAMPAIGN</h2>
+                        <h2>NEW</br>OFFER</h2>
                     </div>
                 </div>
                 <div class="col" ng-click="goToSendCoupons()" ng-if="user_camp_data.campaigns.length">
@@ -46,17 +46,17 @@
         <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns | orderBy:'-created'">
             <div clas="row">
                 <div class="col active_coupon_view_box margin_top">
-                    <h4>Campagin:Name:{{campaign.cp_name}}</h4>
-                    <h4>Start Date: {{getDateFormally(campaign.start_date)}}</h4>
-                    <h4>End Date:{{getDateFormally(campaign.end_date)}}</h4>
-                    <h4>Coupons Activated:{{campaign.coupons_activated.length}}</h4>
-                    <h4>Coupons Redeemed:{{campaign.coupons_redeemed.length}}</h4>
-                    <h4>Status:{{getCampStatus(campaign.end_date)}}</h4>
+                    <h4><strong>Offer Name</strong> <span> : {{campaign.cp_name}}</span></h4>
+                    <h4><strong>Start Date</strong> <span> : {{getDateFormally(campaign.start_date)}}</span></h4>
+                    <h4><strong>End Date</strong> <span> : {{getDateFormally(campaign.end_date)}}</span></h4>
+                    <h4><strong>Coupons Generated</strong> <span> : {{campaign.coupons.length}}</span></h4>
+                    <h4><strong>Coupons Redeemed</strong> <span> : {{campaign.coupons_redeemed.length}}</span></h4>
+                    <h4><strong>Status</strong> <span> : {{getCampStatus(campaign.end_date)}}</span></h4>
                     <!-- <h4>Coupons Redemptions:</h4> -->
                 </div>
             </div>
             <div class="row main_active_width">
-<!--                 <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
+                <!--                 <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
                     <h3>VIEW COUPON</h3>
                 </div> -->
                 <div class="active_coupon_view_box_grre ACTION_BUTNNN" ng-click="showCampActions($index,campaign.id)">
@@ -65,4 +65,11 @@
             </div>
         </div>
     </ion-content>
+    <!-- <div class="float-button" ng-if="isPaidUser && ngClock" ui-sref="app.upgrade">
+        <span class="height-fix">
+            <a ui-sref="add-trip" class="content">
+                <i class="ion-arrow-graph-up-right"></i>
+            </a>
+        </span>
+    </div> -->
 </ion-view>

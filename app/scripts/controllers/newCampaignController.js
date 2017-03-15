@@ -1,5 +1,5 @@
 angular.module('viralDL')
-  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate, base) {
+  .controller('NewCampaignController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, $window, $interval, Campaign, $ionicHistory, ionicDatePicker, $ionicScrollDelegate, base, $cordovaToast) {
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     // console.log('user',$scope.user);
@@ -28,10 +28,10 @@ angular.module('viralDL')
           console.log('user_data', user_data);
           $scope.user_data = user_data;
           if (!user_data.work_through) {
-            // alert('Please provide your business details to start new campaign');
+            // alert('Please provide your business details to start new offer');
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Please provide your business details to start new campaign"
+              template: "Please provide your business details to start new offer"
             }).then(function(res) {
               $state.go("app.business_profile");
             });
@@ -116,9 +116,9 @@ angular.module('viralDL')
     $scope.createCampaign = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: 'refer99',
-        template: "“Campaign cannot be edited after create, except extend end date only. Please make sure before creating a campaign” to “Please verify all details. Campaign cannot be edited once created”.",
+        template: "Please verify all details.Offer cannot be edited once created.",
         cancelText: "<div class='but_c'>Verify</div>",
-        okText: "Create Campaign"
+        okText: "Create Offer"
       });
 
       confirmPopup.then(function(res) {
@@ -241,7 +241,7 @@ angular.module('viralDL')
             }
           } else if ($scope.add_options.withDiscountTypeDol) {
             if ($scope.add_options.withDiscountVal) {
-              $scope.camp_data.add_discount_value = $scope.add_options.withDiscountVal.toString() + "$";
+              $scope.camp_data.add_discount_value = "$" + $scope.add_options.withDiscountVal.toString();
               change_state();
             } else {
               $ionicPopup.alert({
@@ -281,7 +281,13 @@ angular.module('viralDL')
     $scope.getDateFormally = function(date) {
       return moment.utc(date).format('LL');
     };
-
+    $scope.showToast = function(data) {
+      $cordovaToast.showLongBottom(data).then(function(success) {
+        // success
+      }, function(error) {
+        // error
+      });
+    };
   });
 Date.prototype.yyyymmdd = function() {
   var yyyy = this.getFullYear().toString();

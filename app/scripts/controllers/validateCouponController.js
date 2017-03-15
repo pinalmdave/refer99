@@ -7,7 +7,7 @@
  * # ValidateCouponController
  */
 angular.module('viralDL')
-  .controller('ValidateCouponController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign,$ionicPopup) {
+  .controller('ValidateCouponController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, Campaign, $ionicPopup, $ionicModal) {
 
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -15,9 +15,9 @@ angular.module('viralDL')
     $scope.validate_coupon = function(c_code) {
       if (!c_code) {
         $ionicPopup.alert({
-            title: 'refer99',
-            template: "Please enter coupon code"
-          });
+          title: 'refer99',
+          template: "Please enter coupon code"
+        });
         $scope.couponMessage = "Please enter coupon code!";
         return;
       }
@@ -39,10 +39,36 @@ angular.module('viralDL')
         } else {
           $scope.couponMessage = "Success! Coupon redeemed";
           // $scope.c_code = "";
+          $scope.c_data=success.result;
+          $scope.openModal();
           console.log('success', success);
         }
       });
     }
 
+    $ionicModal.fromTemplateUrl('cover_details.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+    $scope.openModal = function() {
+      $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+      $scope.modal.hide();
+    };
+    // Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function() {
+      $scope.modal.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function() {
+      // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function() {
+      // Execute action
+    });
 
   });

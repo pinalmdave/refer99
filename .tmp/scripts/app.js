@@ -263,18 +263,26 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
         }
       }
     })
-
-    .state('app.myprofile', {
-      url: '/myprofile',
-      cache: false,
+    .state('app.my_profile', {
+      url: '/my_profile',
+      cache: true,
       views: {
         'viewContent': {
-          templateUrl: 'templates/views/myprofile.html'
+          templateUrl: 'templates/views/my_profile.html',
+          controller: 'MyProfileController'
         }
       }
     })
-
-
+    .state('app.upgrade', {
+      url: '/upgrade',
+      cache: true,
+      views: {
+        'viewContent': {
+          templateUrl: 'templates/views/upgrade.html',
+          controller: 'UpgradeController'
+        }
+      }
+    })
     .state('app.start', {
       url: '/start',
       cache: true,

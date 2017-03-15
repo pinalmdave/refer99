@@ -10,20 +10,31 @@ angular.module('viralDL')
   .controller('PaymentController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $state, $ionicPopup) {
 
     // $ionicSideMenuDelegate.canDragContent(true);
-    $scope.user = Storage.getUser();
     $scope.$on('$ionicView.enter', function(event, viewData) {
+      $scope.user = Storage.getUser();
       $ionicLoading.show({
         template: 'Loading...'
       });
       $scope.isloading = true;
       User.get_user_payments($scope.user.userId, function(err, data) {
-        $ionicLoading.hide();
-        $scope.isloading = false;
         if (err) {
+          $ionicLoading.hide();
+          $scope.isloading = false;
           console.log('err', err);
         } else {
           console.log('data', data);
           $scope.user_payments = data.payments;
+          var query = { filter: { order: "p_value" } };
+          User.get_plans(query, function(err, plans) {
+            $ionicLoading.hide();
+            $scope.isloading = false;
+            if (err) {
+              console.log('err', err);
+            } else {
+              console.log('plans', plans);
+              $scope.plans = plans;
+            }
+          });
           if (data.last_payment) {
             $scope.isPaidUser = true;
             $scope.dueDate = moment(data.last_payment).add(1, 'M').format('LL');

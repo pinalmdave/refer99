@@ -4,48 +4,16 @@
         <h1 class="title">Distribute Coupon</h1>
     </ion-header-bar>
     <ion-content class="Offer_BG_SCREEN">
-<!--         <div class="Offer_ZONE_CONTr">
-            <div class="OFER_COUPEN">Have customers and friends who does't know about {{user_camp_data.business_name}}?</div>
-            <div class="OFFER_CUPEN_img"><img src="images/ic_validatecoupon@3x.png"></div>
-        </div> -->
-        <div class="Offer_ZONE_CONTr">
-            <div class="OFER_COUPEN_normal">Select Campaign</div>
-            <!-- <div class="OFFER_CUPEN_CODE">PN089DRF</div> -->
-            <div class="OFFER_CUPEN_CODE_dropdown">
-<!--             <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select> -->
-            <div class="list Offer_ZONE_CONTr_list">
-              <label class="item item-input item-select">
-                <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp">
-                </select>
-              </label>
-
-            </div>
-
-
-
-            </div>
-        </div>
-    </ion-content> -->
-    <ion-content class="Offer_BG_SCREEN">
         <div class="SECOND_SCREEn_fixed">
-<!--             <div class="Offer_ZONE_CONTr SECOND_SCREEn">
-                <div class="OFER_COUPEN">{{selectedCamp.cp_offer}}</div>
-                <div class="OFFER_CUPEN_img"><img src="images/ic_coupon_active@3x.png"></div>
-            </div> -->
             <div class="Offer_ZONE_CONTr">
-                <div class="OFER_COUPEN_normal">Select Campaign</div>
+                <div class="OFER_COUPEN_normal">Select Offer</div>
                 <div class="OFFER_CUPEN_CODE_dropdown">
-<!--                     <select class="OFFER_CUPEN_CODE_dropdown_content" ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp"></select> -->
-
-
-            <div class="list Offer_ZONE_CONTr_list">
-              <label class="item item-input item-select">
-                <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp">
-                </select>
-              </label>
-
-            </div>
-
+                    <div class="list Offer_ZONE_CONTr_list">
+                        <label class="item item-input item-select">
+                            <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="$parent.selectedCamp">
+                            </select>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,11 +50,6 @@
                     <div class="REFER_SEND_text">Twitter</div>
                     <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
                 </a>
-                <!--                     <a class="REFER_SEND_ICON_penal" ng-click="shareCoupon('fb')">
-                        <div class="REFER_SEND_ICON"><img src="images/fb_share.png"></div>
-                        <div class="REFER_SEND_text">Facebook</div>
-                        <div class="REFER_SEND_ICON_next"><img src="images/next_icon.png"></div>
-                    </a> -->
             </div>
         </div>
     </ion-content>
@@ -94,7 +57,7 @@
         <h1 class="title OFFER_PGE_FOOTER_tittle">Share Campaign With Customers</h1>
     </div> -->
     <script type="text/ng-template" id="email_template.html">
-        <table width="60%" bgcolor="#fff" style="border:1px solid #655383">
+        <table width="60%" style="border:1px solid #655383;background-color: white;">
             <tbody>
                 <!--  <tr>
             <th width="20px"></th>
@@ -107,22 +70,26 @@
                         <table width="100%;">
                             <tbody>
                                 <tr>
-                                    <th style="font-size:46px; color: #FF3B69"> Hello</th>
+                                    <th style="font-size:20px;text-align: left;">Hello,</th>
                                 </tr>
                                 <tr>
                                     <td style="font-size:18px">
-                                        <p>Exclusive offer from <strong>{{user_camp_data.business_name.toUpperCase()}}: {{selectedCamp.cp_offer.toUpperCase()}}</strong> </p>
+                                        <p>Thanks for being our loyal customer. We have an exciting offer for you.</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size:18px">
+                                        <strong><p>{{user_camp_data.business_name.toUpperCase()}}: {{selectedCamp.cp_offer.toUpperCase()}}</p></strong>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="font-size:26px; text-align: center;">
-                                        <p><a target="_blank" href="http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share">Click Here</a><strong style=" color: #FF3B69"> to get the coupon.</strong> </p>
+                                        <a target="_blank" href="http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share">Click Here</a><strong style=" color: #FF3B69"> to get the offer.</strong>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align:center">
-                                        <h2 style="margin-top:20px">Best Regards</h2>
-                                        <!-- <h3 style="margin:0">Customer Support</h3> -->
+                                    <td style="font-size:26px; text-align: center;">
+                                        <p>Or go to this link : </a><strong>http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share.</strong> </p>
                                     </td>
                                 </tr>
                                 <!-- <tr style="border-top:1px solid #655383;text-align:center">
@@ -150,7 +117,7 @@
                         <div class="OFFER_CUPEN_img"><img src="images/ic_coupon_active@3x.png"></div>
                     </div>
                     <div class="Offer_ZONE_CONTr SECOND_SCREEn">
-                        <div class="OFER_COUPEN_normal">Share Your Campaign</div>
+                        <div class="OFER_COUPEN_normal">Share Your Offer</div>
                         <div class="OFFER_CUPEN_CODE">{{selectedCamp.cp_name}}</div>
                     </div>
                 </div>

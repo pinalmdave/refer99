@@ -7,7 +7,7 @@
  * # BusinessProfileController
  */
 angular.module('viralDL')
-  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory, base) {
+  .controller('BusinessProfileController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, api, $cordovaImagePicker, $cordovaFileTransfer, $ionicPopup, $state, $ionicScrollDelegate, $ionicHistory, base, $cordovaToast) {
 
     //    $ionicSideMenuDelegate.canDragContent(true);
     $scope.$on('$ionicView.enter', function(event, viewData) {
@@ -38,6 +38,7 @@ angular.module('viralDL')
           }
           $scope.user_data.business_type = $scope.user_data.business_type ? $scope.user_data.business_type : "default";
           $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
+          $scope.user_data.work_through = $scope.user_data.work_through ? $scope.user_data.work_through : "location";
         }
       });
     });
@@ -180,6 +181,13 @@ angular.module('viralDL')
         });
       }
     }
+    $scope.showToast = function(data) {
+      $cordovaToast.showLongBottom(data).then(function(success) {
+        // success
+      }, function(error) {
+        // error
+      });
+    };
 
 
   });
