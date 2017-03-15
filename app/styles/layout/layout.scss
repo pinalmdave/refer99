@@ -2055,7 +2055,7 @@ p.Discount_type_TEXT {
 
 .setting_screen.pane.tab-content {
     position: relative;
-    top: 50px !important;
+    top: 75px !important;
     padding: 0 16px;
 }
 
@@ -2168,7 +2168,7 @@ p.CUPEEN_hding_TEXT {
 
 .CUPEN_OFR_FILD_right {
     display: inline-block;
-    font-size: 11px;
+    font-size: 10px;
     margin: 0 0 0 10px;
 }
 
@@ -2747,4 +2747,8 @@ img.most_popular_img {
 
 .margn_no {
     margin: 0 !important;
+}
+
+.bar {
+    border-bottom: 1px solid #ddd !important;
 }

@@ -28,10 +28,10 @@ angular.module('viralDL')
           console.log('user_data', user_data);
           $scope.user_data = user_data;
           if (!user_data.work_through) {
-            // alert('Please provide your business details to start new campaign');
+            // alert('Please provide your business details to start new offer');
             $ionicPopup.alert({
               title: 'refer99',
-              template: "Please provide your business details to start new campaign"
+              template: "Please provide your business details to start new offer"
             }).then(function(res) {
               $state.go("app.business_profile");
             });
@@ -116,9 +116,9 @@ angular.module('viralDL')
     $scope.createCampaign = function() {
       var confirmPopup = $ionicPopup.confirm({
         title: 'refer99',
-        template: "Please verify all details. Campaign cannot be edited once created.",
+        template: "Please verify all details.Offer cannot be edited once created.",
         cancelText: "<div class='but_c'>Verify</div>",
-        okText: "Create Campaign"
+        okText: "Create Offer"
       });
 
       confirmPopup.then(function(res) {
@@ -241,7 +241,7 @@ angular.module('viralDL')
             }
           } else if ($scope.add_options.withDiscountTypeDol) {
             if ($scope.add_options.withDiscountVal) {
-              $scope.camp_data.add_discount_value = $scope.add_options.withDiscountVal.toString() + "$";
+              $scope.camp_data.add_discount_value = "$" + $scope.add_options.withDiscountVal.toString();
               change_state();
             } else {
               $ionicPopup.alert({

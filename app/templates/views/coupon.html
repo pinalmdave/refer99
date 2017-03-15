@@ -2,7 +2,7 @@
     <ion-header-bar align-title="center">
         <button ui-sref="app.dashboard" class="button button-clear button-light icon-left ion-chevron-left"></button>
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
-        <h1 class="title">View Campaign</h1>
+        <h1 class="title">View Offer</h1>
     </ion-header-bar>
     <ion-content>
         <div class="bg_FOr_cupn">
@@ -47,7 +47,7 @@
               <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
-                        <p class="CUPEN_OFR_FILD"><span>Campaign Name</span></p>
+                        <p class="CUPEN_OFR_FILD"><span>Offer Name</span></p>
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_name}}</p>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
-                        <p class="CUPEN_OFR_FILD"><span>Offers</span></p>
+                        <p class="CUPEN_OFR_FILD"><span>Offer Title</span></p>
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}} {{camp_data.add_discount ? " + "+camp_data.add_discount_value+" addl discount for sharing coupon":""}}</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+      <!--       <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Code</span></p>
@@ -88,7 +88,7 @@
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">

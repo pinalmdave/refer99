@@ -6,7 +6,7 @@
     <!-- <ion-content class="redapp_bg">
 <div class="row">
 <div class="col send_coupon text-center">
-<label>Select Campaign</label>
+<label>Select Offer</label>
 <select ng-options="item as item.cp_name for item in user_camp_data.campaigns track by item.id" ng-model="selectedCamp"></select>
 </div>
 </div>
@@ -48,7 +48,7 @@
                             <img src="images/ic_business@x.png">
                             <input type="text" ng-disabled="is_disabled" placeholder="Business Name" required ng-model="user_data.business_name">
                         </div>
-                        <span class="tooltip_CAMPAIN" style="margin:  0 0 0;display: inline;line-height: 46px;" ng-click="showToast('Business name will shown top of the campaign coupons.')">?</span>
+                        <span class="tooltip_CAMPAIN" style="margin:  0 0 0;display: inline;line-height: 46px;" ng-click="showToast('Business name will shown top of the offer coupons.')">?</span>
                     </div>
 
                 </div>
@@ -105,17 +105,17 @@
             </div>
             <div class="row">
                 <div class="col disscount">
-                    <p>Redeemable At:  <span class="tooltip_CAMPAIN" ng-click="showToast('Website url or location from customers can redeem their coupons.')">?</span></p>
+                    <p>Redeemable At:  <!-- <span class="tooltip_CAMPAIN" ng-click="showToast('Website url or location from customers can redeem their coupons.')">?</span> --></p>
                 </div>
             </div>
-            <div class="row">
+       <!--      <div class="row">
                 <div class="col padd_NUN">
                     <ion-radio ng-disabled="is_disabled" class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'online'">Online</ion-radio>
                 </div>
                 <div class="col padd_NUN">
                     <ion-radio ng-disabled="is_disabled" class="raDION" name="work_through" ng-model="user_data.work_through" ng-value="'location'">At a location</ion-radio>
                 </div>
-            </div>
+            </div> -->
             <div class="row padding_remove" ng-if="user_data.work_through=='online'">
                 <div class="col padding_remove">
                     <div class="card margin_top">

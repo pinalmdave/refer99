@@ -1,5 +1,5 @@
 angular.module('viralDL')
-  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal,business_logo) {
+  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal, business_logo,$cordovaFacebook) {
     var coupon = this;
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
@@ -23,7 +23,7 @@ angular.module('viralDL')
           $scope.user_camp_data = data.result;
           if ($scope.user_camp_data.business_logo) {
             $scope.business_logo = business_logo + $scope.user_camp_data.business_logo;
-          }else {
+          } else {
             $scope.business_logo = business_logo + "fb_share.png";
           }
           data.result.campaigns.forEach(function(elem) {
@@ -88,8 +88,7 @@ angular.module('viralDL')
             console.log('err', err);
           });
       } else if (shareType == "sms") {
-        var message = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
-        // console.log('$scope.cust_contacts',$scope.cust_contacts.toString());
+        var message = "Hello,Thanks for being our loyal customer.We have an exciting offer for you, " + $scope.selectedCamp.cp_offer + ".Click the link to get the offer. http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
         $cordovaSocialSharing
           .shareViaSMS(smsBody, $scope.cust_contacts.toString())
           .then(function(result) {
@@ -141,24 +140,47 @@ angular.module('viralDL')
       } else if (shareType == "fb") {
         var message = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
         var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
-        $cordovaSocialSharing
-          .shareViaFacebook(message, $scope.business_logo, link)
-          .then(function(result) {
-            // Success!
+        /* $cordovaSocialSharing
+           .shareViaFacebook(message, null, link)
+           .then(function(result) {
+             // Success!
+             $ionicPopup.alert({
+               title: 'refer99',
+               template: "Coupon has been distributed to selected customer(s)"
+             });
+           }, function(err) {
+             // An error occurred. Show a message to the user
+             console.log('err', err);
+             $ionicPopup.alert({
+               title: 'refer99',
+               template: "Please install facebook app or try after some time"
+             });
+           });*/
+        var options = {
+          method: "share",
+          href: link,
+          caption: message,
+          name:$scope.user_camp_data.business_name,
+          description:message,
+          picture:$scope.business_logo
+        };
+        $cordovaFacebook.showDialog(options)
+          .then(function(success) {
+            // success
             $ionicPopup.alert({
-              title: 'refer99',
-              template: "Coupon has been distributed to selected customer(s)"
-            });
-          }, function(err) {
-            // An error occurred. Show a message to the user
-            console.log('err', err);
+                title: 'refer99',
+                template: "Coupon has been distributed to selected customer(s)"
+              });
+            console.log(success);
+          }, function(error) {
+            // error
+            console.log(error);
             $ionicPopup.alert({
-              title: 'refer99',
-              template: "Please install facebook app or try after some time"
-            });
+               title: 'refer99',
+               template: "Please try after some time"
+             });
           });
-
-      }else if (shareType == "twitter") {
+      } else if (shareType == "twitter") {
         var message = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
         var link = "http://refer99.com/admin/#/app/" + $scope.selectedCamp.id + "/coupon_share";
         $cordovaSocialSharing

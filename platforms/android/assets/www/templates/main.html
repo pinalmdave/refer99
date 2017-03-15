@@ -14,22 +14,25 @@
                 <a menu-close class="item item-icon-left" ui-sref="app.dashboard" ui-sref-active="active" ng-if="user && user.is_paid_user">
                     <i class="icon ion-clipboard"></i> Dashboard
                 </a>
-                <a menu-close class="item item-icon-left" ui-sref="app.payment" ui-sref-active="active" ng-if="user">
+                <a menu-close class="item item-icon-left" ui-sref="app.my_profile" ui-sref-active="active" ng-if="user">
+                    <i class="icon ion-person"></i> My Profile
+                </a>
+               <!--  <a menu-close class="item item-icon-left" ui-sref="app.payment" ui-sref-active="active" ng-if="user">
                     <i class="icon ion-card"></i> Payments
-                </a>
-                 <a menu-close class="item item-icon-left" ui-sref="app.business_profile" ui-sref-active="active" ng-if="user">
+                </a> -->
+                <!-- <a menu-close class="item item-icon-left" ui-sref="app.business_profile" ui-sref-active="active" ng-if="user">
                     <i class="icon ion-paper-airplane"></i> Business Details
-                </a>
-                  <a menu-close class="item item-icon-left" ui-sref="app.notification" ui-sref-active="active" ng-if="user">
+                </a> -->
+                <a menu-close class="item item-icon-left" ui-sref="app.notification" ui-sref-active="active" ng-if="user">
                     <i class="icon ion-ios-bell"></i> Notifications
                 </a>
-                 <a menu-close class="item item-icon-left" ui-sref="app.help" ui-sref-active="active">
+                <a menu-close class="item item-icon-left" ui-sref="app.help" ui-sref-active="active">
                     <i class="icon ion-help-circled"></i> Help
                 </a>
                 <a menu-close class="item item-icon-left" ui-sref="app.settings" ui-sref-active="active" ng-if="user">
                     <i class="icon ion-gear-b"></i> Settings
                 </a>
-                 <a menu-close class="item item-icon-left" ui-sref="app.contact_us" ui-sref-active="active">
+                <a menu-close class="item item-icon-left" ui-sref="app.contact_us" ui-sref-active="active">
                     <i class="icon ion-android-contact"></i> Contact Us
                 </a>
                 <a menu-close class="item item-icon-left" ui-sref-active="active" ng-if="user" ng-click="logout()">

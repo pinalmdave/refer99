@@ -7,7 +7,7 @@ angular.module('viralDL')
       $ionicLoading.show({
         template: 'Loading...'
       });
-      var dateToExtend = new Date();
+      $scope.dateToExtend = new Date();
       User.get_user_campaigns(function(err, data) {
         $ionicLoading.hide();
         if (err) {
@@ -53,7 +53,7 @@ angular.module('viralDL')
 
     $scope.openDatePicker = function(date, index, id) {
       // console.log('date', new Date(), new Date(date));
-      dateToExtend = new Date(date);
+      $scope.dateToExtend = new Date(date);
       var dateObj = {
         callback: function(val) { //Mandatory
           console.log('Return value from the datepicker popup is : ' + val, new Date(val), new Date(moment(val).utc()));
@@ -65,7 +65,7 @@ angular.module('viralDL')
         disabledDates: [],
         from: new Date(date), //Optional
         to: new Date(2020, 10, 30), //Optional
-        inputDate: dateToExtend, //Optional
+        inputDate: $scope.dateToExtend, //Optional
         mondayFirst: true, //Optional
         closeOnSelect: true, //Optional
         templateType: 'popup' //Optional
@@ -107,8 +107,8 @@ angular.module('viralDL')
 
     $scope.showCampActions = function(objIndex, id) {
       var options = {
-        'title': 'What do you want with this campaign?',
-        'buttonLabels': ['Distribute Coupon', 'Extend End Date', 'View Campaign'],
+        'title': 'What do you want with this offer?',
+        'buttonLabels': ['Distribute Coupon', 'Extend End Date', 'View Offer'],
         'androidEnableCancelButton': true, // default false
         'addCancelButtonWithLabel': 'Cancel'
       };

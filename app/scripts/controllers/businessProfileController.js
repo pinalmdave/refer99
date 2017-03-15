@@ -38,6 +38,7 @@ angular.module('viralDL')
           }
           $scope.user_data.business_type = $scope.user_data.business_type ? $scope.user_data.business_type : "default";
           $scope.user_data.state = $scope.user_data.state ? $scope.user_data.state : "default";
+          $scope.user_data.work_through = $scope.user_data.work_through ? $scope.user_data.work_through : "location";
         }
       });
     });

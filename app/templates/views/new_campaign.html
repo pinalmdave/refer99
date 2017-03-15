@@ -1,23 +1,23 @@
 <ion-view>
     <ion-header-bar align-title="center">
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
-        <h1 class="title">Create Campaign</h1>
+        <h1 class="title">Create Offer</h1>
     </ion-header-bar>
     <ion-content>
         <div class="redapp_bg CAMPAIN newcampain_PENAL" ng-show="cp_screen_first">
             <form name="campagin_first" novalidate>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
-                        <p>Campaign Name <span class="tooltip_CAMPAIN" ng-click="showToast('Enter campaign name, this won’t appear in the coupon.(Max 25 characters) Example: Thanksgiving day campaign or Xmas Campaign')">?</span></p>
+                        <p>Offer Name <span class="tooltip_CAMPAIN" ng-click="showToast('Enter offer name, this won’t appear in the coupon.(Max 25 characters) Example: Thanksgiving day offer or Xmas Offer')">?</span></p>
                         <div class="card margin_top">
                             <div class="campagin">
                                 <img src="images/ic_coupon_active@x.png">
-                                <input type="text" placeholder="Campaign Name" name="cp_name" ng-model="camp_data.cp_name" maxlength="25" required>
+                                <input type="text" placeholder="Offer Name" name="cp_name" ng-model="camp_data.cp_name" maxlength="25" required>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="new_camp_val" ng-if="campagin_first.cp_name.$touched && campagin_first.cp_name.$invalid">Campaign name is required.</p>
+                <p class="new_camp_val" ng-if="campagin_first.cp_name.$touched && campagin_first.cp_name.$invalid">Offer name is required.</p>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
                         <p>Start Date</p>
@@ -93,9 +93,7 @@
                 <p class="new_camp_val" ng-show="campagin_first.dis_amount.$touched && campagin_first.dis_amount.$error.min">Discount amount should not be less than 1%</p> -->
                 <div class="row padding_remove">
                     <div class="col padding_remove">
-                        <p class="Discount_type_TEXT">Offer <span class="tooltip_CAMPAIN" ng-click="showToast('Enter promotional offer on your product or services (Max 50 characters) Examples:10% OFF in breakfast combo or $5 OFF on clothing or 
-
-                        Buy 1 Get 2 Free on select Clothing')">?</span></p>
+                        <p class="Discount_type_TEXT">Offer Title<span class="tooltip_CAMPAIN" ng-click="showToast('Enter promotional offer on your product or services (Max 50 characters) Examples:10% OFF in breakfast combo or $5 OFF on clothing or Buy 1 Get 2 Free on select Clothing')">?</span></p>
                         <div class="campagin_INFO_HEIGHT margin_top">
                             <div class="campagin_INFO TEXT_ARARARA">
                                 <textarea class="text_box_area" rows="6" cols="21" placeholder="Example: 20% OFF on oil change (max 100 characters)" ng-model="camp_data.cp_offer" name="camp_offer" maxlength="100" required></textarea>
@@ -105,7 +103,7 @@
                     </div>
                 </div>
                 <div class="padding">
-                    <p class="new_camp_val" ng-if="campagin_first.camp_offer.$touched && campagin_first.camp_offer.$invalid">Offer is required/invalid.</p>
+                    <p class="new_camp_val" ng-if="campagin_first.camp_offer.$touched && campagin_first.camp_offer.$invalid">Offer title is required/invalid.</p>
                 </div>
                 <div class="row padding_remove">
                     <div class="col padding_remove">
@@ -166,7 +164,7 @@
             </div>
             <div class="row padding_remove">
                 <div class="col send_option EDIT_camp PINK_COR_BTN">
-                    <button type="button" ng-click="goToCoupon()">View Campaign</button>
+                    <button type="button" ng-click="goToCoupon()">View Offer</button>
                 </div>
                 <div class="col send_option EDIT_camp">
                     <button type="button" ng-click="goBack()">Back</button>
@@ -187,7 +185,7 @@
                     <div class="col">
                         <div class="heading_top">
                             <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
-                           <!--  <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p> -->
+                            <!--  <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p> -->
                         </div>
                     </div>
                 </div>
@@ -216,7 +214,15 @@
                 <div class="row">
                     <div class="custom_crd">
                         <div class="item-text-wrap BDRS">
-                            <p class="CUPEN_OFR_FILD"><span>Offers</span></p>
+                            <p class="CUPEN_OFR_FILD"><span>Offer Name</span></p>
+                            <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_name}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="custom_crd">
+                        <div class="item-text-wrap BDRS">
+                            <p class="CUPEN_OFR_FILD"><span>Offer Title</span></p>
                             <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}} {{camp_data.add_discount ? " + "+camp_data.add_discount_value+" addl discount for sharing coupon":""}}</p>
                         </div>
                     </div>
@@ -258,6 +264,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="custom_crd">
+                        <div class="item-text-wrap BDRS">
+                            <p class="CUPEN_OFR_FILD"><span>Additional Discount</span></p>
+                            <p class="CUPEN_OFR_FILD_right">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             </div>
             <div class="bg_FOr_cupn_red">
@@ -271,10 +285,10 @@
             </div>
             <div class="row padding_remove">
                 <div class="col send_option EDIT_camp PINK_COR_BTN">
-                    <button type="button" ng-click="createCampaign()"> Create Campaign</button>
+                    <button type="button" ng-click="createCampaign()">Create Offer</button>
                 </div>
                 <div class="col send_option EDIT_camp">
-                    <button type="button" ng-click="goBack()"> Edit</button>
+                    <button type="button" ng-click="goBack()">Edit</button>
                 </div>
             </div>
         </section>
