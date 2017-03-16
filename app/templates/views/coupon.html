@@ -8,7 +8,7 @@
         <div class="bg_FOr_cupn">
             <div class="row" ng-if="camp_data.members.business_logo">
                 <div class="col text-center">
-                    <div class="logo">
+                    <div class="logo logo_viEW_OFER">
                         <!-- <img ng-if="!camp_data.members.business_logo" ng-src="images/redlogo@x.png"> -->
                         <img ng-if="camp_data.members.business_logo" ng-src="{{base}}/storage/business_logo/{{camp_data.members.business_logo}}">
                     </div>
@@ -16,14 +16,14 @@
             </div>
             <div class="row">
                     <div class="col">
-                        <div class="heading_top">
-                            <h1>{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
+                        <div class="heading_top logo_viEW_OFER_tittle_penLA">
+                            <h1 class="logo_viEW_OFER_tittle">{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}}</h1>
                             <!-- <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p> -->
                         </div>
                     </div>
                 </div>
         </div>
-        <div class="bg_FOr_cupn">
+        <div class="bg_FOr_cupn1">
             <!--                 <div class="row">
                     <div class="custom_crd">
                         <div class="item-text-wrap">
@@ -44,23 +44,23 @@
             <!--  <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p> -->
         </div>
         <div class="bg_FOr_cupn">
-              <div class="row">
+<!--               <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Offer Name</span></p>
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_name}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </div> -->
+<!--             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Offer Title</span></p>
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}} {{camp_data.add_discount ? " + "+camp_data.add_discount_value+" addl discount for sharing coupon":""}}</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
+            </div> -->
+<!--             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Redeemable At</span>
@@ -72,7 +72,83 @@
                             </div>
                     </div>
                 </div>
+            </div> -->
+
+<!--             <div class="LIKE_table">
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Redeemable At</strong></li>
+                    <li class="LIKE_table_UL_li">Mansa Devi Complex, Panchkula, Haryana - From your Internet address</li>
+                </ul> -->
+
+
+
+
+
+<!--                 <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Coupon Code</strong></li>
+                <li class="LIKE_table_UL_li">XXXXXXX</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Status</strong></li>
+                <li class="LIKE_table_UL_li">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Additional Discount</strong></li>
+                <li class="LIKE_table_UL_li">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Redeemable At</strong></li>
+                <li class="LIKE_table_UL_li">Mansa Devi Complex, Panchkula, Haryana - From your Internet address</li>
+ -->
+
+
+                <table class="TABLE_PENAL">
+                  <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ccc;">Valid Till</td>
+                            <td style="border: 1px solid #ccc;">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc;">Coupon Code</td>
+                            <td style="border: 1px solid #ccc;">XXXXXXX</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc;">Status</td>
+                            <td style="border: 1px solid #ccc;">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc;">Additional Discount</td>
+                            <td style="border: 1px solid #ccc;">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc;" rowspan="2">Redeemable At</td>
+                            <td style="border: 1px solid #ccc;">{{camp_data.web_address}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+              </ul>
             </div>
+
+
+
+
+
       <!--       <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
@@ -89,7 +165,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="row">
+<!--             <div class="row">
                 <div class="custom_crd">
                     <div class="item-text-wrap BDRS">
                         <p class="CUPEN_OFR_FILD"><span>Valid Date</span></p>
@@ -104,7 +180,7 @@
                         <p class="CUPEN_OFR_FILD_right">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
         </div>
