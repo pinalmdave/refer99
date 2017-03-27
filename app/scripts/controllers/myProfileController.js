@@ -35,6 +35,6 @@ angular.module('viralDL')
     });
 
     $scope.getDateFormally = function(date) {
-      return moment(date).format('LL');
+      return moment.utc(date).format('LL');
     };
   });

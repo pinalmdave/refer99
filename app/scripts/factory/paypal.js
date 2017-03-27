@@ -1,7 +1,4 @@
 angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'shopSettings', '$filter', '$timeout', function($q, $ionicPlatform, shopSettings, $filter, $timeout) {
-
-
-
   var init_defer;
   /**
    * Service object
@@ -139,9 +136,6 @@ angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
   payPalShopName: 'refer99',
   payPalMerchantPrivacyPolicyURL: "https://refer99.com/policy",
   payPalMerchantUserAgreementURL: "https://refer99.com/agreement"
-
-
-
 
 });
 

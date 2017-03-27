@@ -12,7 +12,7 @@
                         <div class="card margin_top">
                             <div class="campagin Settings_text">
                                 <!-- <h3>R25SAR</h3> -->
-                                <input type="text" ng-model="c_code" name="c_code" required placeholder="R99S4AR">
+                                <input type="text" ng-model="c_code" name="c_code" required placeholder="R99S4AR (Case sensitive)">
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                                 Coupon Status
                             </div>
                             <div class="col cpm">
-                                {{c_data.status}}
+                                {{c_data.status == "redeemed" ? "Active" : c_data.status}}
                             </div>
                         </div>
                     </div>

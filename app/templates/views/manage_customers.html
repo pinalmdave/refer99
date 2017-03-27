@@ -1,47 +1,42 @@
 <ion-view>
-<ion-header-bar align-title="center">
-<button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
-<h1 class="title">Manage Customers</h1>
-</ion-header-bar>
-<ion-content class="redapp_bg margin_bottom">
-<div class="row padding_remove row_custom" ng-repeat="user in user_cust_data.customers">
-    <div class="col padding_remove">
-        <div class="name_last margin_top delete_customer">
-            <div class="customer_list_NAME ">
-                <h2> Name:<span>{{user.cust_name ? user.cust_name : "N/A"}}</span></h2>
-                <h2> Contact:<span>{{user.cust_contact ? user.cust_contact : "N/A"}}</span></h2>
-                <h2> Email:<span>{{user.cust_email ? user.cust_email : "N/A"}}</span></h2>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Manage Customers</h1>
+    </ion-header-bar>
+    <ion-content class="redapp_bg margin_bottom">
+        <div class="row padding_remove row_custom" ng-repeat="user in user_cust_data.customers">
+            <div class="col padding_remove">
+                <div class="name_last margin_top delete_customer">
+                    <div class="customer_list_NAME ">
+                        <h2> Name:<span>{{user.cust_name ? user.cust_name : "N/A"}}</span></h2>
+                        <h2> Contact:<span>{{user.cust_contact ? user.cust_contact : "N/A"}}</span></h2>
+                        <h2> Email:<span>{{user.cust_email ? user.cust_email : "N/A"}}</span></h2>
+                    </div>
+                    <div class="row padding_remove">
+                        <div class="col">
+                            <button type="button" ng-click="updateCustomer(user.id)">
+                                Edit
+                            </button>
+                        </div>
+                        <div class="col delete_customer_red">
+                            <button type="button" ng-click="deleteCustomer($index,user.id)">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-<div class="row padding_remove">
-<div class="col">
-            <button type="button" ng-click="updateCustomer(user.id)">
-                Edit
+        </div>
+        <div class="row">
+            <div class="col blank">
+            </div>
+        </div>
+    </ion-content>
+    <div class="row fixx padding_remove footer">
+        <div class="col text-center padding_remove Customer_Froms">
+            <button type="button" ng-click="pickContactUsingNativeUI()">
+                Add Customer From Contacts
             </button>
-</div>
-<div class="col delete_customer_red">
-
-            <button type="button" ng-click="deleteCustomer($index,user.id)">
-                Delete
-            </button>
-</div> 
-</div>
         </div>
     </div>
-</div>
-
-
-<div class="row">
-<div class="col blank">
-</div>
-</div>
-
-</ion-content>
-<div class="row fixx padding_remove footer">
-    <div class="col text-center padding_remove Customer_Froms">
-        <button type="button" ng-click="pickContactUsingNativeUI()">
-            Add Customer From Contacts
-        </button>
-    </div>
-</div>
-
 </ion-view>
