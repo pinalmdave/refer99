@@ -10102,13 +10102,12 @@ ion-header-bar.bar-positive.bar.bar-header.disable-user-behavior h1 {
 .heading_top h1 {
   color: #ff3b69;
   font-family: serif;
-  font-size: 30px;
+  font-size: 23px;
   font-weight: bold;
   line-height: 16px;
   margin: 0;
   padding: 0px 0 0px;
-  text-align: center;
-  text-transform: uppercase; }
+  text-align: center; }
 
 .heading_top span {
   color: #FF3B69; }
@@ -11260,7 +11259,8 @@ img.most_popular_img {
   display: inline-block; }
 
 .logo_viEW_OFER img {
-  max-width: 100%; }
+  max-width: 100%;
+  height: 100%; }
 
 .heading_top.logo_viEW_OFER_tittle_penLA {
   float: left;
@@ -11336,6 +11336,24 @@ td {
 
 table.TABLE_PENAL {
   margin: 10px 0; }
+
+.span_mar {
+  margin: 10px 0 0 0px; }
+
+.spinner svg {
+  width: 30px;
+  height: 30px;
+  stroke: #fff;
+  fill: #fff;
+  margin-top: -11px;
+  margin-bottom: -9px; }
+
+.l_title {
+  text-align: center;
+  font-weight: bold; }
+
+.l_item {
+  font-size: 14px !important; }
 
 /*new_campiagn_changes*/
 /**

@@ -4,5 +4,56 @@
         <h1 class="title">Help</h1>
     </ion-header-bar>
     <ion-content>
+        <ion-list>
+            <ion-item class="l_title">Questions</ion-item>
+            <ion-item class="l_item" ng-click="openModal('answer_1')">1.How to create new Offer?</ion-item>
+            <ion-item class="l_item" ng-click="openModal('answer_2')">2.How to distribute coupon to my customers?</ion-item>
+            <ion-item class="l_item" ng-click="openModal('answer_3')">3.How customers will redeem the coupon?</ion-item>
+            <ion-item class="l_item" ng-click="openModal('answer_4')">4.How do I validate the coupon?</ion-item>
+        </ion-list>
     </ion-content>
+    <script id="answer.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar>
+                <button class="button button-icon icon ion-close-round butututu" style="display: block;color:#000;" ng-click="closeModal('answer')"></button>
+                <h1 class="title">Answer</h1>
+            </ion-header-bar>
+            <ion-content delegate-handle="mainScroll">
+                <div class="card">
+                    <div class="item item-body" ng-if="ques=='answer_1'">
+                        <p> a. Click Create Offer button on Dashboard
+                            <br> b. Enter offer details in Create New Offer screen
+                            <br> i. Offer Name (Example: Memorial Day offer). Offer name won’t appear in coupon
+                            <br> ii. Start Date
+                            <br> iii. End Date
+                            <br> iv. Offer Title (Example: 20% OFF on All Items or $5 OFF on breakfast combo or Buy 1 Get 2 Free)
+                            <br> v. Terms & Conditions: Pre filled text for you. You can modify it
+                            <br> vi. How customers will activate coupon: There are two options
+                            <br> 1. After sharing coupon with someone: Select this option if you want customer’s to share your offer coupon with their friends or family via social media, SMS (Text Message), WhatsApp or email. Coupon will be activated and coupon code will be generated only after customer share the coupon with at least one person and that person view the offer.
+                            <br> The Activated coupon with coupon code is sent to customer via SMS or Email.
+                            <br> 2. Without sharing: Select this option if you want the offer coupon to be activated as soon as customer receives it. Customer will still have the option to share the coupon with friends/family
+                            <br> vii. Do you want to give additional discount to customer for coupon sharing? : Select Yes / No
+                            <br> viii. Additional Discount Type : select % or $ value
+                            <br> ix. Additional Discount : Enter Discount Amount in digits</p>
+                    </div>
+                    <div class="item item-body" ng-if="ques=='answer_2'">
+                        <p> 1. Click Distribute Coupon icon on Dashboard
+                            <br> 2. You can distribute coupon to one or many customers via SMS, Email or WhatsApp. You can also share the coupon on Facebook or WhatsApp</p>
+                    </div>
+                    <div class="item item-body" ng-if="ques=='answer_3'">
+                        <p>Customer will visit your business (business address mentioned in coupon) and show activated mobile coupon.</p>
+                    </div>
+                    <div class="item item-body" ng-if="ques=='answer_4'">
+                        <p>
+                             a. Enter coupon code displayed on coupon in Validate Coupon screen and click Validate Coupon.App will display below information:
+                            <br> i. Campaign Name: Name of the offer coupon is associated with
+                            <br> ii. Coupon Status : Weather coupon is valid
+                            <br> iii. Offer Title : Offer title of the offer
+                            <br> iv. Additional Discount : If customer is entitled any additional discount.<br>
+                            b. If coupon is not activated or already redeemed you will get message.</p>
+                    </div>
+                </div>
+            </ion-content>
+        </ion-modal-view>
+    </script>
 </ion-view>

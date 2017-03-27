@@ -33,7 +33,7 @@ angular.module('viralDL')
       $scope.invalidUserPass = false;
       if (userEmail && password) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var data = {
           email: userEmail,
@@ -67,7 +67,7 @@ angular.module('viralDL')
         .then(function(success) {
           console.log('success', success);
           $ionicLoading.show({
-            template: 'Loading...'
+            template: '<ion-spinner icon="lines"></ion-spinner> Loading'
           });
           $cordovaFacebook.api("me?fields=name,id,email")
             .then(function(success) {

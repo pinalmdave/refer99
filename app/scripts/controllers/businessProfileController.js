@@ -20,7 +20,7 @@ angular.module('viralDL')
       }
       $scope.is_disabled = true;
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       User.get_user($scope.user.userId, function(err, data) {
         $ionicLoading.hide();
@@ -57,7 +57,7 @@ angular.module('viralDL')
         zip_code: $scope.user_data.zip_code
       };
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       User.update_user($scope.user.userId, data, function(err, res) {
         if (err) {
@@ -165,7 +165,7 @@ angular.module('viralDL')
       $scope.is_disabled = !$scope.is_disabled;
       if ($scope.is_disabled == true) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         User.get_user($scope.user.userId, function(err, data) {
           $ionicLoading.hide();

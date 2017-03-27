@@ -5,7 +5,7 @@ angular.module('viralDL')
     $scope.$on('$ionicView.enter', function(event, viewData) {
       $scope.user = Storage.getUser();
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       $scope.dateToExtend = new Date();
       User.get_user_campaigns(function(err, data) {
@@ -38,7 +38,7 @@ angular.module('viralDL')
 
     var updateCampaign = function(id, data, index) {
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       Campaign.update_campaign(id, data, function(err, res) {
         $ionicLoading.hide();
@@ -73,7 +73,7 @@ angular.module('viralDL')
       ionicDatePicker.openDatePicker(dateObj);
     };
     $scope.getDateFormally = function(date) {
-      return moment.utc(date).format('LL');
+      return moment(date).format('LL');
     };
     $scope.getCampStatus = function(date) {
       var daysDiff = moment(moment(date)).diff(moment(), 'days', true);

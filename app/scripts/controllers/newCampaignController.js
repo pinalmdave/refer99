@@ -18,7 +18,7 @@ angular.module('viralDL')
       console.log('ionicView.enter');
       $scope.camp_data = {};
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       User.get_user($scope.user.userId, function(err, user_data) {
         $ionicLoading.hide();
@@ -152,7 +152,7 @@ angular.module('viralDL')
           };
           console.log(data, $scope.camp_data);
           $ionicLoading.show({
-            template: 'Loading...'
+            template: '<ion-spinner icon="lines"></ion-spinner> Loading'
           });
           Campaign.create_new_campaign(data, function(err, data) {
             if (err) {
@@ -279,7 +279,7 @@ angular.module('viralDL')
       $ionicScrollDelegate.scrollTop(true);
     }
     $scope.getDateFormally = function(date) {
-      return moment.utc(date).format('LL');
+      return moment(date).format('LL');
     };
     $scope.showToast = function(data) {
       $cordovaToast.showLongBottom(data).then(function(success) {

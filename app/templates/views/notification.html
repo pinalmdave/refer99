@@ -7,7 +7,7 @@
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefreshNotifications()">
         </ion-refresher>
         <ion-list>
-            <ion-item ng-repeat="item in user_notifications | orderBy:'-n_time_created'" class="itemNote">
+            <ion-item ng-repeat="item in user_notifications | orderBy:'-n_time_created'" class="itemNote" ng-if="item.n_data.cp_name">
                 <strong>{{item.n_data.cp_name}}</strong>: coupon generated {{get_date_diff(item.n_time_created)}}
             </ion-item>
         </ion-list>

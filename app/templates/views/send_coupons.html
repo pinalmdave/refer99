@@ -59,11 +59,6 @@
     <script type="text/ng-template" id="email_template.html">
         <table width="60%" style="border:1px solid #655383;background-color: white;">
             <tbody>
-                <!--  <tr>
-            <th width="20px"></th>
-            <th width="20px" style="padding-top:30px;padding-bottom:30px"><img width="250px;height=250px;" src="http://35.162.137.242:3001/storage/business_logo/redlogo@x.png" class="CToWUd"></th>
-            <th width="20px"></th>
-        </tr> -->
                 <tr>
                     <td width="20px"></td>
                     <td>
@@ -83,6 +78,13 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <div ng-if="selectedCamp.add_discount">
+                                        <td style="font-size:18px">
+                                            <p>Want more discounts? Share your coupon link with friends and get {{selectedCamp.add_discount_value}} additional discount.</p>
+                                        </td>
+                                    </div>
+                                </tr>
+                                <tr>
                                     <td style="font-size:26px; text-align: center;">
                                         <a target="_blank" href="http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share">Click Here</a><strong style=" color: #FF3B69"> to get the offer.</strong>
                                     </td>
@@ -92,10 +94,6 @@
                                         <p>Or go to this link : </a><strong>http://refer99.com/admin/#/app/{{selectedCamp.id}}/coupon_share.</strong> </p>
                                     </td>
                                 </tr>
-                                <!-- <tr style="border-top:1px solid #655383;text-align:center">
-                            <td>
-                                <h3 style="margin:0;font-weight:100"><img width="80px;height=80px;" src="http://35.162.137.242:3001/storage/business_logo/refer99_logo@3x.png" class="CToWUd"></h3></td>
-                        </tr> -->
                             </tbody>
                         </table>
                     </td>

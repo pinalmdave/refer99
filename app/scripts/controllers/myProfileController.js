@@ -12,7 +12,7 @@ angular.module('viralDL')
     $scope.$on('$ionicView.enter', function(event, viewData) {
       $scope.user = Storage.getUser();
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       $scope.isloading = true;
       User.get_user($scope.user.userId, function(err, data) {
@@ -35,6 +35,6 @@ angular.module('viralDL')
     });
 
     $scope.getDateFormally = function(date) {
-      return moment.utc(date).format('LL');
+      return moment(date).format('LL');
     };
   });

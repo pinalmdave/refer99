@@ -22,7 +22,7 @@ angular.module('viralDL')
         return;
       }
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       var data = {
         c_code: c_code

@@ -44,7 +44,7 @@ angular.module('viralDL')
         };
       } else {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var data = {
           old_password: old_pass,

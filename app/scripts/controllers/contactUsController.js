@@ -37,7 +37,7 @@ angular.module('viralDL')
         data.m_id = $scope.user.userId;
       }
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       User.send_contact_us_query(data, function(err, data) {
         $ionicLoading.hide();

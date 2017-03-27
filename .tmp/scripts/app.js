@@ -259,7 +259,8 @@ angular.module('viralDL', ['ionic', 'ngCordova', 'ngResource', 'ngSanitize', 're
       cache: false,
       views: {
         'viewContent': {
-          templateUrl: 'templates/views/help.html'
+          templateUrl: 'templates/views/help.html',
+          controller: 'HelpController'
         }
       }
     })

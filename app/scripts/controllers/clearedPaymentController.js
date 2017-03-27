@@ -17,7 +17,7 @@ angular.module('viralDL')
                 authToken: $scope.user.authToken
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.defaultCleared(data, function(err, data) {
                 $ionicLoading.hide();
@@ -95,7 +95,7 @@ angular.module('viralDL')
                 toDate: moment($scope.toDate).format('YYYY/MM/DD')
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.getClearedData(data, function(err, data) {
                 $ionicLoading.hide();

@@ -4,7 +4,7 @@ angular.module('viralDL')
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
-      template: 'Loading...'
+      template: '<ion-spinner icon="lines"></ion-spinner> Loading'
     });
     var campId = $stateParams.camp_id;
     (function init() {
@@ -64,7 +64,7 @@ angular.module('viralDL')
     $scope.updateCampaign = function() {
       console.log('data', $scope.camp_data)
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       Campaign.update_campaign(campId, $scope.camp_data, function(err, data) {
         $ionicLoading.hide();
@@ -87,7 +87,7 @@ angular.module('viralDL')
         if (res) {
           console.log('You are sure');
           $ionicLoading.show({
-            template: 'Loading...'
+            template: '<ion-spinner icon="lines"></ion-spinner> Loading'
           });
           Campaign.destroy_campaign(campId, function(err, data) {
             $ionicLoading.hide();

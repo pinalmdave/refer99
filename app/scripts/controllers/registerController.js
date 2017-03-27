@@ -72,7 +72,7 @@ angular.module('viralDL')
       console.log('register', userEmail, password);
       if (username && userEmail && password) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var signupData = {
           username: username,
@@ -124,7 +124,7 @@ angular.module('viralDL')
         .then(function(success) {
           console.log('success', success);
           $ionicLoading.show({
-            template: 'Loading...'
+            template: '<ion-spinner icon="lines"></ion-spinner> Loading'
           });
           $cordovaFacebook.api("me?fields=name,id,email")
             .then(function(success) {

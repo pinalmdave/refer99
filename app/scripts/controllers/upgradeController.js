@@ -13,7 +13,7 @@ angular.module('viralDL')
     $scope.$on('$ionicView.enter', function(event, viewData) {
       $scope.user = Storage.getUser();
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       $scope.isloading = true;
       User.get_user_payments($scope.user.userId, function(err, data) {
@@ -56,7 +56,7 @@ angular.module('viralDL')
           m_id: $scope.user.userId
         };
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         User.create_payment(data, function(err, res) {
           $ionicLoading.hide();
@@ -84,7 +84,7 @@ angular.module('viralDL')
           PaypalService.makePayment(value, type).then(function(response) {
             console.log('response', response);
             $ionicLoading.show({
-              template: 'Loading...'
+              template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             var data = {
               type: type,

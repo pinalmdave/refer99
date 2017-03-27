@@ -1,10 +1,10 @@
 angular.module('viralDL')
-  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal, business_logo,$cordovaFacebook) {
+  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal, business_logo, $cordovaFacebook) {
     var coupon = this;
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
-      template: 'Loading...'
+      template: '<ion-spinner icon="lines"></ion-spinner> Loading'
     });
     var campId = $stateParams.camp_id;
     $scope.contact = {};
@@ -42,6 +42,23 @@ angular.module('viralDL')
         }
       });
     })();
+    $scope.$on('$ionicView.enter', function(event, viewData) {
+      User.get_max_status(function(err, data) {
+        if (err) {
+
+        } else {
+          // console.log("max", data.result);
+          if (!data.result.can_execute) {
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Max coupons limit exceeds for this month.Please change your membership plan!"
+            }).then(function(res) {
+              $state.go("app.upgrade");
+            });
+          }
+        }
+      });
+    });
     $scope.showShareActions = function() {
       var options = {
         'title': 'How do you want to share coupons?',
@@ -160,25 +177,25 @@ angular.module('viralDL')
           method: "share",
           href: link,
           caption: message,
-          name:$scope.user_camp_data.business_name,
-          description:message,
-          picture:$scope.business_logo
+          name: $scope.user_camp_data.business_name,
+          description: message,
+          picture: $scope.business_logo
         };
         $cordovaFacebook.showDialog(options)
           .then(function(success) {
             // success
             $ionicPopup.alert({
-                title: 'refer99',
-                template: "Coupon has been distributed to selected customer(s)"
-              });
+              title: 'refer99',
+              template: "Coupon has been distributed to selected customer(s)"
+            });
             console.log(success);
           }, function(error) {
             // error
             console.log(error);
             $ionicPopup.alert({
-               title: 'refer99',
-               template: "Please try after some time"
-             });
+              title: 'refer99',
+              template: "Please try after some time"
+            });
           });
       } else if (shareType == "twitter") {
         var message = "Exclusive offer from " + $scope.user_camp_data.business_name + ", " + $scope.selectedCamp.cp_offer;
@@ -207,7 +224,7 @@ angular.module('viralDL')
     $scope.addCustomerSendCoupon = function() {
       console.log('customer', $scope.contact);
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       $scope.contact.m_id = $scope.user.userId;
       Customer.add_customer($scope.contact, function(err, data) {
@@ -323,6 +340,8 @@ angular.module('viralDL')
     $scope.$on('modal.removed', function() {
       // Execute action
     });
-
+    $scope.getDateFormally = function(date) {
+      return moment(date).format('LL');
+    };
 
   });

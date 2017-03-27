@@ -29,7 +29,7 @@ angular.module('viralDL')
     // do something with $scope
     $scope.logout = function() {
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       User.clearToken($scope.user.userId, function(err, data) {
         $ionicLoading.hide();

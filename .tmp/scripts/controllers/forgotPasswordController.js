@@ -19,7 +19,7 @@ angular.module('viralDL')
       // console.log('email', forgetEmail);
       if (forgetEmail) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var data = {
           email: forgetEmail

@@ -12,7 +12,7 @@ angular.module('viralDL')
     // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
     $ionicLoading.show({
-      template: 'Loading...'
+      template: '<ion-spinner icon="lines"></ion-spinner> Loading'
     });
     (function init() {
       User.get_user_customers(function(err, data) {
@@ -41,7 +41,7 @@ angular.module('viralDL')
         }
         $scope.contact.m_id = $scope.user.userId;
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         Customer.add_customer($scope.contact, function(err, data) {
           $ionicLoading.hide();
@@ -70,7 +70,7 @@ angular.module('viralDL')
     }
     $scope.deleteCustomer = function(index, id) {
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       var intIndex = $scope.user_cust_data.customers.map(function(el) {
         return el.id;
@@ -119,7 +119,7 @@ angular.module('viralDL')
               return;
             }
             $ionicLoading.show({
-              template: 'Loading...'
+              template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             Customer.update_customer(id, $scope.custData, function(err, data) {
               $ionicLoading.hide();

@@ -16,7 +16,7 @@ angular.module('viralDL')
     $scope.canSeeMore = true;
     (function init() {
       $ionicLoading.show({
-        template: 'Loading...'
+        template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       var query = {
         filter: {
@@ -64,6 +64,9 @@ angular.module('viralDL')
             _.forEach(data, function(elem) {
               $scope.user_notifications.push(elem);
             });
+            if (data.length < 10) {
+              $scope.canSeeMore = false;
+            }
           } else {
             $scope.canSeeMore = false;
           }
@@ -89,6 +92,7 @@ angular.module('viralDL')
           console.log('err', err);
         } else {
           $scope.user_notifications = data;
+          $scope.canSeeMore = true;
           $scope.$broadcast('scroll.refreshComplete');
           // console.log('data', data);
         }

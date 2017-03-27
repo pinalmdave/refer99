@@ -134,8 +134,8 @@ angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
 
 
   payPalSandboxId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
-  payPalProductionId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
-  payPalEnv: 'PayPalEnvironmentSandbox', // for testing  production for production
+  payPalProductionId: 'AT2caV_hPMEPiHszwqC3VZP4Hqy_eXW-EZf8tlhvZgWukZr5DRUg_3ebDA6rvs_hkidam18gY_VKIdQH',
+  payPalEnv: 'PayPalEnvironmentProduction', // for testing  production for production
   payPalShopName: 'refer99',
   payPalMerchantPrivacyPolicyURL: "https://refer99.com/policy",
   payPalMerchantUserAgreementURL: "https://refer99.com/agreement"

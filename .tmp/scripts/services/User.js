@@ -121,6 +121,19 @@
           return next(error, null);
         });
     };
+     this.get_max_status = function(next) {
+      Restangular
+        .one('members')
+        .one('get_max_status')
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.change_password = function(data, next) {
       Restangular
         .one('members')

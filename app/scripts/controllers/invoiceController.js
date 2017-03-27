@@ -17,7 +17,7 @@ angular.module('viralDL')
                 authToken: $scope.user.authToken
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.defaultInvoices(data, function(err, data) {
                 $ionicLoading.hide();
@@ -95,7 +95,7 @@ angular.module('viralDL')
                 toDate: moment($scope.toDate).format('YYYY/MM/DD')
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.getInvoiceData(data, function(err, data) {
                 $ionicLoading.hide();
@@ -138,7 +138,7 @@ angular.module('viralDL')
                                 authToken: $scope.user.authToken
                             };
                             $ionicLoading.show({
-                                template: 'Loading...'
+                                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
                             });
                             User.raiseQuery(data, function(err, data) {
                                 $ionicLoading.hide();
