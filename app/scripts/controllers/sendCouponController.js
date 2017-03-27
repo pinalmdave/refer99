@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-angular.module('viralDi')
-  .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $ionicModal, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer) {
-    var coupon = this;
-    $ionicSideMenuDelegate.canDragContent(true)
-    $scope.user = Storage.getUser();
-    $ionicLoading.show({
-      template: 'Loading...'
-    });
-    var campId = $stateParams.camp_id;
-    $scope.contact = {};
-    (function init() {
-      User.get_user_campaigns(function(err, data) {
-=======
 angular.module('viralDL')
   .controller('SendCouponController', function($scope, $rootScope, $ionicLoading, $interpolate, $sce, $templateRequest, $state, Storage, User, $ionicPopup, $ionicSideMenuDelegate, $stateParams, Campaign, Customer, $cordovaSocialSharing, $cordovaActionSheet, $ionicModal, business_logo, $cordovaFacebook) {
     var coupon = this;
@@ -29,25 +15,12 @@ angular.module('viralDL')
     var templateUrl = $sce.getTrustedResourceUrl('email_template.html');
     (function init() {
       User.get_user_customers(function(err, data) {
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
         $ionicLoading.hide();
         if (err) {
           console.log('err', err);
         } else {
           console.log('campaigns', data);
           $scope.user_camp_data = data.result;
-<<<<<<< HEAD
-          $scope.selectedCamp = data.result.campaigns[0];
-        }
-      });
-    })();
-
-    $scope.shareCoupon = function(shareType) {
-      /* if (shareType == "whatsapp") {
-       } else if (shareType == "sms") {
-       } else if (shareType == "email") {
-       }*/
-=======
           if ($scope.user_camp_data.business_logo) {
             $scope.business_logo = business_logo + $scope.user_camp_data.business_logo;
           } else {
@@ -245,27 +218,19 @@ angular.module('viralDL')
           });
 
       }
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
       // this is the complete list of currently supported params you can pass to the plugin (all optional)
 
     }
     $scope.addCustomerSendCoupon = function() {
-<<<<<<< HEAD
-=======
       console.log('customer', $scope.contact);
       $ionicLoading.show({
         template: '<ion-spinner icon="lines"></ion-spinner> Loading'
       });
       $scope.contact.m_id = $scope.user.userId;
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
       Customer.add_customer($scope.contact, function(err, data) {
         $ionicLoading.hide();
         if (err) {
           console.log('err', err);
-<<<<<<< HEAD
-        } else {
-          // console.log('customers', data);
-=======
           if (err.data && err.data.error && err.data.error.message) {
             $ionicPopup.alert({
               title: 'refer99',
@@ -300,14 +265,10 @@ angular.module('viralDL')
               console.log('err', err);
             });
 
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
         }
       });
     }
 
-<<<<<<< HEAD
-  });
-=======
     $scope.send_message = function(user_contact) {
       console.log(user_contact);
       var message = "http://refer99.com/admin/app/#/" + $scope.selectedCamp.id + "/coupon_share";
@@ -384,4 +345,3 @@ angular.module('viralDL')
     };
 
   });
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e

@@ -121,15 +121,6 @@ function PayPalConfiguration(options) {
     defaultUserPhoneNumber: null,
     /// Your company name, as it should be displayed to the user
     /// when requesting consent via a PayPalFuturePaymentViewController.
-<<<<<<< HEAD
-    merchantName: null,
-    /// URL of your company's privacy policy, which will be offered to the user
-    /// when requesting consent via a PayPalFuturePaymentViewController.
-    merchantPrivacyPolicyURL: null,
-    /// URL of your company's user agreement, which will be offered to the user
-    /// when requesting consent via a PayPalFuturePaymentViewController.
-    merchantUserAgreementURL: null,
-=======
     merchantName: "refer99",
     /// URL of your company's privacy policy, which will be offered to the user
     /// when requesting consent via a PayPalFuturePaymentViewController.
@@ -137,7 +128,6 @@ function PayPalConfiguration(options) {
     /// URL of your company's user agreement, which will be offered to the user
     /// when requesting consent via a PayPalFuturePaymentViewController.
     merchantUserAgreementURL: "https://refer99.com/agreement",
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
     /// If set to NO, the SDK will only support paying with PayPal, not with credit cards.
     /// This applies only to single payments (via PayPalPaymentViewController).
     /// Future payments (via PayPalFuturePaymentViewController) always use PayPal.

@@ -51,11 +51,7 @@ var app = {
    },
    initPaymentUI : function () {
      var clientIDs = {
-<<<<<<< HEAD
-       "PayPalEnvironmentProduction": "YOUR_PRODUCTION_CLIENT_ID",
-=======
        "PayPalEnvironmentProduction": "AT2caV_hPMEPiHszwqC3VZP4Hqy_eXW-EZf8tlhvZgWukZr5DRUg_3ebDA6rvs_hkidam18gY_VKIdQH",
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
        "PayPalEnvironmentSandbox": "AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid"
      };
      PayPalMobile.init(clientIDs, app.onPayPalMobileInit);
@@ -80,11 +76,7 @@ var app = {
    },
    configuration : function () {
      // for more options see `paypal-mobile-js-helper.js`
-<<<<<<< HEAD
-     var config = new PayPalConfiguration({merchantName: "My test shop", merchantPrivacyPolicyURL: "https://mytestshop.com/policy", merchantUserAgreementURL: "https://mytestshop.com/agreement"});
-=======
      var config = new PayPalConfiguration({merchantName: "refer99", merchantPrivacyPolicyURL: "https://refer99.com/policy", merchantUserAgreementURL: "https://refer99.com/agreement"});
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
      return config;
    },
    onPrepareRender : function() {
@@ -130,11 +122,7 @@ var app = {
    onPayPalMobileInit : function() {
      // must be called
      // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow
-<<<<<<< HEAD
-     PayPalMobile.prepareToRender("PayPalEnvironmentSandbox", app.configuration(), app.onPrepareRender);
-=======
      PayPalMobile.prepareToRender("PayPalEnvironmentProduction", app.configuration(), app.onPrepareRender);
->>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
    },
    onUserCanceled : function(result) {
      console.log(result);
