@@ -70,7 +70,12 @@
     "cordova-plugin-device@~1.1.1",
     "com.lampa.startapp",
     "com.lampa.startapp@~0.1.4",
-    "cordova-plugin-splashscreen"
+    "cordova-plugin-splashscreen",
+    "com.paypal.cordova.mobilesdk",
+    "cordova-plugin-contacts",
+    "cordova-plugin-file-transfer",
+    "cordova-plugin-fcm",
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": [
     "android"

@@ -3448,7 +3448,7 @@ a.subdued {
   padding: 0; }
 
 .bar-subheader {
-  top: 44px;
+  top: 44px!important;
   display: block;
   height: 44px; }
 

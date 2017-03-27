@@ -1,22 +1,61 @@
 <!doctype html>
 <html class="no-js">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>viralDi</title>
+    <title>viralDL</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
     <meta name="format-detection" content="telephone=no">
-    <!-- inject:app-styles:css --><link rel="stylesheet" href="styles/main.css"><!-- endinject -->
+    <!-- inject:app-styles:css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endinject -->
 </head>
-<body ng-app="viralDi">
 
-<ion-nav-view></ion-nav-view>
-
-<!-- inject:vendor:js --><script src="vendor.js"></script><!-- endinject -->
-<!-- inject:app:js --><script src="scripts/app.js"></script><script src="scripts/config/apiEndpoint.js"></script><script src="scripts/controllers/clearedPaymentController.js"></script><script src="scripts/controllers/dashboardController.js"></script><script src="scripts/controllers/forgotPasswordController.js"></script><script src="scripts/controllers/homeController.js"></script><script src="scripts/controllers/invoiceController.js"></script><script src="scripts/controllers/mainController.js"></script><script src="scripts/controllers/newCampaignController.js"></script><script src="scripts/controllers/registerController.js"></script><script src="scripts/controllers/settingsController.js"></script><script src="scripts/services/Campaign.js"></script><script src="scripts/services/Notification.js"></script><script src="scripts/services/Storage.js"></script><script src="scripts/services/User.js"></script><script src="scripts/utils/ionic-rating.js"></script><script src="scripts/utils/lodash.js"></script><script src="scripts/templates.js"></script><!-- endinject -->
-
-<script src="cordova.js"></script>
-
+<body ng-app="viralDL">
+    <ion-nav-view></ion-nav-view>
+    <!-- inject:vendor:js -->
+    <script src="vendor.js"></script>
+    <!-- endinject -->
+    <!-- inject:app:js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config/apiEndpoint.js"></script>
+    <script src="scripts/controllers/businessProfileController.js"></script>
+    <script src="scripts/controllers/clearedPaymentController.js"></script>
+    <script src="scripts/controllers/contactUsController.js"></script>
+    <script src="scripts/controllers/dashboardController.js"></script>
+    <script src="scripts/controllers/editCampaignController.js"></script>
+    <script src="scripts/controllers/forgotPasswordController.js"></script>
+    <script src="scripts/controllers/helpController.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/introController.js"></script>
+    <script src="scripts/controllers/invoiceController.js"></script>
+    <script src="scripts/controllers/mainController.js"></script>
+    <script src="scripts/controllers/manageCustomersController.js"></script>
+    <script src="scripts/controllers/myProfileController.js"></script>
+    <script src="scripts/controllers/newCampaignController.js"></script>
+    <script src="scripts/controllers/notificationController.js"></script>
+    <script src="scripts/controllers/paymentController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
+    <script src="scripts/controllers/sendCouponController.js"></script>
+    <script src="scripts/controllers/settingsController.js"></script>
+    <script src="scripts/controllers/upgradeController.js"></script>
+    <script src="scripts/controllers/validateCouponController.js"></script>
+    <script src="scripts/controllers/viewCouponController.js"></script>
+    <script src="scripts/factory/paypal.js"></script>
+    <script src="scripts/services/Campaign.js"></script>
+    <script src="scripts/services/Customer.js"></script>
+    <script src="scripts/services/Notification.js"></script>
+    <script src="scripts/services/Storage.js"></script>
+    <script src="scripts/services/User.js"></script>
+    <script src="scripts/utils/index.js"></script>
+    <script src="scripts/utils/ionic-rating.js"></script>
+    <script src="scripts/utils/lodash.js"></script>
+    <script src="scripts/utils/paypal-mobile-js-helper.js"></script>
+    <script src="scripts/templates.js"></script>
+    <!-- endinject -->
+    <script src="cordova.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA34Ut3n-z78yFVE7S9K8fk_8DM_ja70kA"></script>
 </body>
+
 </html>

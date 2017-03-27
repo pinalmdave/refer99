@@ -3,10 +3,126 @@
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Payment</h1>
     </ion-header-bar>
+<<<<<<< HEAD
     <ion-content class="redapp_bg">
         <div class="row">
             <div class="col text-center make">
                 <button type="button " ng-click="makePayment()"> Make Payment</button>
+=======
+    <ion-content class="red_background_two">
+        <div ng-show="!isloading && !isPaidUser">
+            <div class="row">
+                <div class="col">
+                    <div class="membership_plan_box">
+                        <div class="membership_hding">Select Your Membership Plan</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row padd_twt" ng-repeat="plan in plans | orderBy:'p_value'">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+                        <h2>{{plan.p_name}} {{plan.currency}}{{plan.amount}}{{plan.recurrence?"/"+plan.recurrence:""}}</h2>
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon">{{plan.p_name == 'Custom'?">"+plan.coupons_count:plan.coupons_count}}</span></li>
+                                <li ng-repeat="feature in plan.features">{{feature}}</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment(plan.p_name,plan.amount)">{{plan.p_name == 'Free'?"Choose Plan":plan.p_name == 'Custom'?"Contact Us":"Make Payment"}}</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- 
+            <div class="row padd_twt">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+                        <h2>Silver $29.99/month</h2>
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon">500</span></li>
+                                <li>Multi Channel Distribution</li>
+                                <li>Unlimited Campaign Creation</li>
+                                <li>Activate Coupon On Share Feature</li>
+                                <li>Additional Discount On Share Feature</li>
+                                <li>Cancel Anytime</li>
+                                <li>In-depth Analytics</li>
+                                <li>Email Support</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Silver',29.99)">Make Payment</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padd_twt">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+                        <h2>Gold $49.99/month</h2>
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon">1000</span></li>
+                                <li>Multi Channel Distribution</li>
+                                <li>Unlimited Campaign Creation</li>
+                                <li>Activate Coupon On Share Feature</li>
+                                <li>Additional Discount On Share Feature</li>
+                                <li>Cancel Anytime</li>
+                                <li>In-depth Analytics</li>
+                                <li>Email Support</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Gold',49.99)">Make Payment</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row padd_twt">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+                        <h2>Platinum $79.99/month</h2>
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon"> 2000</span></li>
+                                <li>Multi Channel Distribution</li>
+                                <li>Unlimited Campaign Creation</li>
+                                <li>Activate Coupon On Share Feature</li>
+                                <li>Additional Discount On Share Feature</li>
+                                <li>Cancel Anytime</li>
+                                <li>In-depth Analytics</li>
+                                <li>Email Support</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Platinum',79.99)">Make Payment</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row padd_twt">
+                <div class="col">
+                    <div class="membership_plan_box_penal">
+                        <h2>Custom <span class="COUPON_GENRATIon_contectUS"></span></h2>
+                        <div class="para_membr_text">
+                            <ul class="PAYMENT_PAGE_LIST">
+                                <li>Coupon Generation  <span class="COUPON_GENRATIon"> > 2000</span></li>
+                                <li>Multi Channel Distribution</li>
+                                <li>Unlimited Campaign Creation</li>
+                                <li>Activate Coupon On Share Feature</li>
+                                <li>Additional Discount On Share Feature</li>
+                                <li>Cancel Anytime</li>
+                                <li>In-depth Analytics</li>
+                                <li>Email Support</li>
+                                <button class="MemBERHIp_BUton" type="button" ng-click="makePayment('Custom',0.00)">Contact Us</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+        <div class="row">
+            <div ng-show="!isloading && isPaidUser" class="padding">
+                <p class="center due_payment_penal">Thanks for chosing refer99 {{user_payments[0].type}} membership plan</p>
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
             </div>
         </div>
     </ion-content>

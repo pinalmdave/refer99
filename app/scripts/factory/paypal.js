@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'shopSettings', '$filter', '$timeout', function($q, $ionicPlatform, shopSettings, $filter, $timeout) {
+=======
+angular.module('viralDL').factory('PaypalService', ['$q', '$ionicPlatform', 'shopSettings', '$filter', '$timeout', function($q, $ionicPlatform, shopSettings, $filter, $timeout) {
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
 
 
 
@@ -60,7 +64,11 @@ angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
     // "Sale  == >  immediate payment
     // "Auth" for payment authorization only, to be captured separately at a later time.
     // "Order" for taking an order, with authorization and capture to be done separately at a later time.
+<<<<<<< HEAD
     var payment = new PayPalPayment("" + total, "EUR", "" + name, "Sale");
+=======
+    var payment = new PayPalPayment(""+total, "USD", ""+name, "Sale");
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
     return payment;
   }
   /**
@@ -134,11 +142,19 @@ angular.module('viralDi').factory('PaypalService', ['$q', '$ionicPlatform', 'sho
 
 
   payPalSandboxId: 'AUTqFADMxI5_4MZ2ow-nKh2ooiKO5nMBgbAhpMZZ0VaWYkDSMyr1isEnXi4ts_M7feZbYvdJYfBP4oid',
+<<<<<<< HEAD
   payPalProductionId: 'production id here',
   payPalEnv: 'PayPalEnvironmentSandbox', // for testing  production for production
   payPalShopName: 'MyShopName',
   payPalMerchantPrivacyPolicyURL: 'url to policy',
   payPalMerchantUserAgreementURL: ' url to user agreement '
+=======
+  payPalProductionId: 'AT2caV_hPMEPiHszwqC3VZP4Hqy_eXW-EZf8tlhvZgWukZr5DRUg_3ebDA6rvs_hkidam18gY_VKIdQH',
+  payPalEnv: 'PayPalEnvironmentProduction', // for testing  production for production
+  payPalShopName: 'refer99',
+  payPalMerchantPrivacyPolicyURL: "https://refer99.com/policy",
+  payPalMerchantUserAgreementURL: "https://refer99.com/agreement"
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
 
 
 

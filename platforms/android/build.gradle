@@ -96,6 +96,9 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
+apply from: "card.io.cordova.mobilesdk/viralDi-build.gradle"
+apply from: "com.paypal.cordova.mobilesdk/viralDi-build.gradle"
+apply from: "cordova-plugin-fcm/viralDi-FCMPlugin.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
@@ -187,6 +190,7 @@ android {
         }
         targetSdkVersion 21        
         multiDexEnabled true
+        applicationId "de.tmaximini.viralDi"
     }
 
     compileSdkVersion cdvCompileSdkVersion
@@ -248,6 +252,7 @@ android {
     if (cdvDebugSigningPropertiesFile) {
         addSigningProps(cdvDebugSigningPropertiesFile, signingConfigs.debug)
     }
+    lintOptions { checkReleaseBuilds false }
 }
 
 dependencies {
@@ -257,7 +262,6 @@ dependencies {
     releaseCompile project(path: "CordovaLib", configuration: "release")
     debugCompile project(path: "phonegap-facebook-plugin:FacebookLib", configuration: "debug")
     releaseCompile project(path: "phonegap-facebook-plugin:FacebookLib", configuration: "release")
-    compile "com.android.support:support-v4:+"
     // SUB-PROJECT DEPENDENCIES END
 }
 

@@ -1,0 +1,139 @@
+<ion-view>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Edit Campaign</h1>
+    </ion-header-bar>
+    <ion-content>
+        <section>
+            <form name="campagin_edit">
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="card margin_top">
+                            <div class="campagin">
+                                <img src="images/ic_coupon@x.png">
+                                <!-- <h4>Campaign Name</h4> -->
+                                <input type="text" placeholder="Campaign Name" name="cp_name" ng-model="camp_data.cp_name" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="new_camp_val" ng-if="campagin_edit.cp_name.$touched && campagin_edit.cp_name.$invalid">Campaign name is required.</p>
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="card margin_top">
+                            <div class="campagin">
+                                <img src="images/ic_date@x.png">
+                                <!-- <h4>Start Date</h4> -->
+                                <ionic-datepicker idate="camp_data.start_date" disablepreviousdates="true">
+                                    <button ng-click="openFromDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{camp_data.start_date | date:'dd-MMMM-yyyy' }}{{!camp_data.start_date?'From':''}} </button>
+                                </ionic-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="card margin_top">
+                            <div class="campagin">
+                                <img src="images/ic_date@x.png">
+                                <!-- <h4>End date</h4> -->
+                                <ionic-datepicker idate="camp_data.end_date" disablepreviousdates="true">
+                                    <button ng-click="openToDatePicker()" class="button button-block icon-right ion-ios-arrow-down noBackground" style="color:#fff;"> {{ camp_data.end_date | date:'dd-MMMM-yyyy' }}{{!camp_data.end_date?'To':''}} </button>
+                                </ionic-datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="new_camp_val" ng-show="isToTouched && !camp_data.end_date">End date is required</p>
+                <div class="row">
+                    <div class="col disscount">
+                        <p>Discount Type</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col padding_remove">
+                        <ion-radio name="discount_type_option" ng-model="camp_data.discount_type" ng-value="'price'">$</ion-radio>
+                    </div>
+                    <div class="col padding_remove">
+                        <ion-radio name="discount_type_option" ng-model="camp_data.discount_type" ng-value="'percent'">%</ion-radio>
+                    </div>
+                    <div class="col padding_remove">
+                        <ion-radio name="discount_type_option" ng-model="camp_data.discount_type" ng-value="'free_item'">Free item</ion-radio>
+                    </div>
+                    <div class="col padding_remove">
+                        <ion-radio name="discount_type_option" ng-model="camp_data.discount_type" ng-value="'buy_1_get_1'">Buy 1 Get 1</ion-radio>
+                    </div>
+                </div>
+                <div class="row padding_remove card" ng-if="camp_data.discount_type=='buy_1_get_1'">
+                    <div class="col padding_remove flot_pera">
+                        <p>Buy</p>
+                        <input type="text" name="buy" ng-model="camp_data.buy_value" min="1" required>
+                    </div>
+                    <div class="col padding_remove flot_pera">
+                        <p>Get</p>
+                        <input type="text" name="get" ng-model="camp_data.get_value" min="1" required>
+                    </div>
+                </div>
+                <p class="new_camp_val" ng-show="campagin_edit.buy.$touched && campagin_edit.buy.$error.required">Buy is required</p>
+                <p class="new_camp_val" ng-show="campagin_edit.buy.$touched && campagin_edit.buy.$error.min"">Buy should not be less than 1%</p>
+                <p class="new_camp_val" ng-show="campagin_edit.get.$touched && campagin_edit.get.$error.required">Get is required</p>
+                <p class="new_camp_val" ng-show="campagin_edit.get.$touched && campagin_edit.get.$error.min">Get should not be less than 1%</p>
+                <div class="row padding_remove" ng-if="camp_data.discount_type=='price' || camp_data.discount_type=='percent'">
+                    <div class="col padding_remove">
+                        <div class="card margin_top">
+                            <div class="campagin">
+                                <img src="images/ic_discount_type@x.png">
+                                <input type="number" placeholder="Discount Amount" name="dis_amount" min="1" ng-model="camp_data.discount_amount" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="new_camp_val" ng-show="campagin_edit.dis_amount.$touched && campagin_edit.dis_amount.$error.required">Discount amount is required</p>
+                <p class="new_camp_val" ng-show="campagin_edit.dis_amount.$touched && campagin_edit.dis_amount.$error.min">Discount amount should not be less than 1%</p>
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="campagin_INFO_HEIGHT margin_top">
+                            <div class="campagin_INFO TEXT_ARARARA">
+                                <p>Additional Text</p>
+                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_additional_text" name="camp_info" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padding">
+                    <p class="new_camp_val" ng-if="campagin_edit.camp_info.$touched && campagin_edit.camp_info.$invalid">Additional text is required.</p>
+                </div>
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="campagin_INFO_HEIGHT margin_top">
+                            <div class="campagin_INFO TEXT_ARARARA">
+                                <p>Disclaimer</p>
+                                <textarea class="text_box_area" rows="6" cols="21" placeholder="Please Enter Text.." ng-model="camp_data.cp_disclaimer" name="camp_terms" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padding">
+                    <p class="new_camp_val" ng-if="campagin_edit.camp_terms.$touched && campagin_edit.camp_terms.$invalid">Disclaimer is required.</p>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col new_back_create padding_remove">
+                    <button class="button" ng-click="campagin_edit.$valid && camp_data.discount_type && camp_data.end_date && updateCampaign()">
+                        Submit
+                    </button>
+                </div>
+                </div>
+                <div class="row">
+                <div class="col new_back_create Delete_Campaign padding_remove">
+                    <button class="button" ng-click="destroyCampaign()">
+                        Delete Campaign
+                    </button>
+                </div>
+            </div>
+            <div class="padding text-center">
+                <p class="new_camp_val" ng-if="campagin_edit.$invalid || !camp_data.discount_type || !camp_data.end_date">Please fill all required fields.</p>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

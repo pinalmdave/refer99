@@ -2,11 +2,16 @@
 
 /**
  * @ngdoc function
+<<<<<<< HEAD
  * @name viralDi.controller:MainController
+=======
+ * @name viralDL.controller:MainController
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
  * @description
  * # IntroController
  * This controller handles the Intro
  */
+<<<<<<< HEAD
 angular.module('viralDi')
   .controller('IntroController', function($scope, $state, Storage) {
 
@@ -16,6 +21,21 @@ angular.module('viralDi')
 
       // Set a flag that we finished the tutorial
       Storage.setDidTutorial();
+=======
+angular.module('viralDL')
+  .controller('IntroController', function($scope, $state, Storage,$ionicHistory) {
+
+    // Called to navigate to the main app
+    $scope.startApp = function() {
+      $ionicHistory.nextViewOptions({
+        disableBack: true,
+        historyRoot: true
+      });
+      Storage.setDidTutorial();
+      $state.go('app.start');
+
+      // Set a flag that we finished the tutorial
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
     };
 
     //No this is silly
@@ -92,4 +112,8 @@ angular.module('viralDi')
         $scope.rightButtons = rightButtons;
       }
     };
+<<<<<<< HEAD
   });
+=======
+  });
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e

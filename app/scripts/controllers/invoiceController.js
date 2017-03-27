@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # HomeController
  */
-angular.module('viralDi')
+angular.module('viralDL')
     .controller('InvoiceController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
         var invoice = this;
         $scope.user = Storage.getUser();
@@ -17,7 +17,7 @@ angular.module('viralDi')
                 authToken: $scope.user.authToken
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.defaultInvoices(data, function(err, data) {
                 $ionicLoading.hide();
@@ -95,7 +95,7 @@ angular.module('viralDi')
                 toDate: moment($scope.toDate).format('YYYY/MM/DD')
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.getInvoiceData(data, function(err, data) {
                 $ionicLoading.hide();
@@ -138,7 +138,7 @@ angular.module('viralDi')
                                 authToken: $scope.user.authToken
                             };
                             $ionicLoading.show({
-                                template: 'Loading...'
+                                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
                             });
                             User.raiseQuery(data, function(err, data) {
                                 $ionicLoading.hide();

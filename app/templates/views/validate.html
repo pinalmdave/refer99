@@ -1,0 +1,88 @@
+<ion-view>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Validate Coupon</h1>
+    </ion-header-bar>
+    <ion-content class="redapp_bg">
+        <div class="row">
+            <div class="col ENTER">
+                <h2>ENTER COUPON CODE</h2>
+                <div class="row padding_remove">
+                    <div class="col padding_remove">
+                        <div class="card margin_top">
+                            <div class="campagin Settings_text">
+                                <!-- <h3>R25SAR</h3> -->
+                                <input type="text" ng-model="c_code" name="c_code" required placeholder="R99S4AR">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="padding">
+            <p ng-show="couponMessage">* {{couponMessage}}</p>
+        </div>
+        <div class="bar bar-footer VALIDATE">
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <button type="button" ng-click="validate_coupon(c_code)">VALIDATE COUPON</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <script id="cover_details.html" type="text/ng-template">
+        <ion-modal-view>
+            <ion-header-bar>
+                <button class="button button-icon icon ion-close-round butututu" style="display: block;color:#000;" ng-click="closeModal()"></button>
+                <h1 class="title">Coupon Detail</h1>
+            </ion-header-bar>
+            <ion-content>
+                <div class="list">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col cpc">
+                                Coupon Status
+                            </div>
+                            <div class="col cpm">
+                                {{c_data.status}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col cpc">
+                                Offer Name
+                            </div>
+                            <div class="col cpm">
+                                {{c_data.campaign.cp_name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col cpc">
+                                Offer Title
+                            </div>
+                            <div class="col cpm">
+                                {{c_data.campaign.cp_offer}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="row">
+                            <div class="col cpc">
+                                Addl Discount
+                            </div>
+                            <div class="col cpm">
+                                {{c_data.add_discount ? c_data.campaign.add_discount_value:"None"}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="padding cp_message">
+                    <p ng-show="couponMessage">* {{couponMessage}}</p>
+                </div>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+</ion-view>

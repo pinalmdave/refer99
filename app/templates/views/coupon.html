@@ -1,5 +1,6 @@
 <ion-view>
     <ion-header-bar align-title="center">
+<<<<<<< HEAD
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Coupon Design</h1>
     </ion-header-bar>
@@ -54,4 +55,195 @@
             </div>
         </div>
     </ion-content>
+=======
+        <button ui-sref="app.dashboard" class="button button-clear button-light icon-left ion-chevron-left"></button>
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">View Offer</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="bg_FOr_cupn">
+            <div class="row" ng-if="camp_data.members.business_logo">
+                <div class="col text-center">
+                    <div class="logo logo_viEW_OFER">
+                        <!-- <img ng-if="!camp_data.members.business_logo" ng-src="images/redlogo@x.png"> -->
+                        <img ng-if="camp_data.members.business_logo" ng-src="{{base}}/storage/business_logo/{{camp_data.members.business_logo}}">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="heading_top logo_viEW_OFER_tittle_penLA">
+                        <h1 class="logo_viEW_OFER_tittle">{{camp_data.business_name?camp_data.business_name:camp_data.cp_name}} : {{camp_data.cp_offer}}</h1>
+                        <!-- <p><strong>Valid date:</strong> {{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg_FOr_cupn1">
+            <!--                 <div class="row">
+                    <div class="custom_crd">
+                        <div class="item-text-wrap">
+                            <p class="CUPEEN_hding_TEXT"><span>How to Activate Coupon</span></p>
+                            <p class="CUPEEN_TEXT">1.Click on "Get Coupon" button.</p>
+                            <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">2.Share on social media.</p>
+                            <p class="CUPEEN_TEXT" ng-if="camp_data.cp_share">3.Your coupon will activate when your friends share it.</p>
+                        </div>
+                    </div>
+                </div> -->
+            <div class="row">
+                <div class="col Facebook_login text-center padding_remove">
+                    <button class="button"><span>
+                    Get Your Offer
+                    <!-- <img src="images/ic_facebooKk@x.png"></span>Sign In with <span>Facebook  --></span></button>
+                </div>
+            </div>
+            <!--  <p class="note_TEXT" ng-if="camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{camp_data.add_discount_value}}.</p> -->
+        </div>
+        <div class="bg_FOr_cupn">
+            <!--               <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Offer Name</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_name}}</p>
+                    </div>
+                </div>
+            </div> -->
+            <!--             <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Offer Title</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_offer}} {{camp_data.add_discount ? " + "+camp_data.add_discount_value+" addl discount for sharing coupon":""}}</p>
+                    </div>
+                </div>
+            </div> -->
+            <!--             <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Redeemable At</span>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='location'">
+                                <p class="MAGNN_NO">{{camp_data.business_address}},{{camp_data.city}},{{camp_data.state}}</p>
+                            </div>
+                            <div class="CUPEN_OFR_FILD_right_tow" ng-if="camp_data.redeemable_at=='online'">
+                                <p class="MAGNN_NO">{{camp_data.web_address}}
+                            </div>
+                    </div>
+                </div>
+            </div> -->
+            <!--             <div class="LIKE_table">
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Valid Till</strong></li>
+                    <li class="LIKE_table_UL_li">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</li>
+                </ul>
+
+                <ul class="LIKE_table_UL">
+                    <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Redeemable At</strong></li>
+                    <li class="LIKE_table_UL_li">Mansa Devi Complex, Panchkula, Haryana - From your Internet address</li>
+                </ul> -->
+            <!--                 <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Coupon Code</strong></li>
+                <li class="LIKE_table_UL_li">XXXXXXX</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Status</strong></li>
+                <li class="LIKE_table_UL_li">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Additional Discount</strong></li>
+                <li class="LIKE_table_UL_li">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</li>
+                <li class="LIKE_table_UL_li PINK_COLOR_CLS"><strong>Redeemable At</strong></li>
+                <li class="LIKE_table_UL_li">Mansa Devi Complex, Panchkula, Haryana - From your Internet address</li>
+ -->
+            <table class="TABLE_PENAL">
+                <tbody>
+                     <tr>
+                        <td style="border: 1px solid #ccc;">Offer Name</td>
+                        <td style="border: 1px solid #ccc;">{{camp_data.cp_name}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc;">Validity</td>
+                        <td style="border: 1px solid #ccc;">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc;">Coupon Code</td>
+                        <td style="border: 1px solid #ccc;">XXXXXXX</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc;">Status</td>
+                        <td style="border: 1px solid #ccc;">Not Activated</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc;">Additional Discount</td>
+                        <td style="border: 1px solid #ccc;">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc;" rowspan="2">Redeemable At</td>
+                        <td style="border: 1px solid #ccc;">
+                            <div ng-if="camp_data.redeemable_at=='location'">
+                                {{camp_data.business_address}},{{camp_data.city}},{{camp_data.state}}
+                            </div>
+                            <div ng-if="camp_data.redeemable_at=='online'">
+                                {{camp_data.web_address}}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- </ul> -->
+        </div>
+        <!--       <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Code</span></p>
+                        <p class="CUPEN_OFR_FILD_right">XXXXXX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Status</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.cp_share ? 'Not Activated' : 'Activated'}}</p>
+                    </div>
+                </div>
+            </div> -->
+        <!--             <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Valid Date</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{getDateFormally(camp_data.start_date)}} to {{getDateFormally(camp_data.end_date)}}</p>
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap BDRS">
+                        <p class="CUPEN_OFR_FILD"><span>Additional Discount</span></p>
+                        <p class="CUPEN_OFR_FILD_right">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        </div>
+        <div class="bg_FOr_cupn_red">
+            <div class="row">
+                <div class="custom_crd">
+                    <div class="item-text-wrap">
+                        <p class="TERM_CDTN"><span>Terms & Conditions : </span> {{camp_data.cp_terms}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </ion-contant>
+>>>>>>> 5c0dd0ed570e776f4b1337d6a0376e403a27e37e
 </ion-view>

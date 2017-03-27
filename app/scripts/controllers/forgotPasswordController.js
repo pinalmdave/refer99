@@ -2,22 +2,24 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # ForgotPasswordController
  */
-angular.module('viralDi')
+angular.module('viralDL')
   .controller('ForgotPasswordController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
     var forgot = this;
     $scope.user = Storage.getUser();
     $scope.res_forget = false;
-    (function init() {})();
+   /* $scope.$on('$ionicView.enter', function() {
+      $ionicSideMenuDelegate.canDragContent(false);
+    });*/
 
     $scope.send_forgot_email = function(forgetEmail) {
       // console.log('email', forgetEmail);
       if (forgetEmail) {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var data = {
           email: forgetEmail
@@ -29,12 +31,22 @@ angular.module('viralDi')
             console.log('err', err);
             if (err.data && err.data.error && err.data.error.message) {
               $scope.forgetMessage = err.data.error.message;
-            }else{
-                $scope.forgetMessage="Please try after some time."
+            } else {
+              $scope.forgetMessage = "Please try after some time."
             }
+            // alert($scope.forgetMessage);
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: $scope.forgetMessage
+            });
           } else {
             console.log('login', data);
             $scope.forgetMessage = data.result.message;
+            // alert("Success! Reset password link send to your email address.");
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Success! Reset password link send to your email address."
+            });
           }
         });
       }

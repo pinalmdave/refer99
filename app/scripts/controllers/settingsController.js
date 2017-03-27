@@ -2,19 +2,24 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:SettingsController
+ * @name viralDL.controller:SettingsController
  * @description
  * # SettingsController
  */
-angular.module('viralDi')
-  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage) {
+angular.module('viralDL')
+  .controller('SettingsController', function($scope, User, $ionicSideMenuDelegate, $ionicLoading, Storage, PaypalService, $ionicPopup) {
 
-    $ionicSideMenuDelegate.canDragContent(true)
+    // $ionicSideMenuDelegate.canDragContent(true);
     $scope.user = Storage.getUser();
+    console.log('user', $scope.user);
+    if ($scope.user.user_type == "fb") {
+      $scope.is_fb_user = true;
+    }
     $scope.change_pass = {
       isErr: false,
       message: ""
     };
+    $scope.s3OptionsUri = {};
     $scope.change_password = function(old_pass, new_pass, confirm_pass) {
       // console.log(old_pass, new_pass, confirm_pass);
       if (!old_pass) {
@@ -39,7 +44,7 @@ angular.module('viralDi')
         };
       } else {
         $ionicLoading.show({
-          template: 'Loading...'
+          template: '<ion-spinner icon="lines"></ion-spinner> Loading'
         });
         var data = {
           old_password: old_pass,
@@ -65,10 +70,14 @@ angular.module('viralDi')
               message: ""
             };
             console.log('data', data);
-            alert("Password changed successfully");
+            $ionicPopup.alert({
+              title: 'refer99',
+              template: "Password changed successfully"
+            });
           }
         });
       }
     };
+
 
   });

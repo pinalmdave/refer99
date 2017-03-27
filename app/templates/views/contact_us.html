@@ -1,0 +1,41 @@
+<ion-view>
+    <ion-header-bar align-title="center">
+        <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
+        <h1 class="title">Contact Us</h1>
+    </ion-header-bar>
+   
+    <ion-content class="redapp_bg">
+        <div class="row padding_remove">
+            <div class="col send_coupon text-center padding_remove">
+                <h1>Contact Us</h1>
+                <select ng-model="$parent.category" name="cat">
+                    <option disabled value="default">Select a category</option>
+                    <option value="login">Login</option>
+                    <option value="transactions">Payment / Transactions</option>
+                    <option value="payments">Membership</option>
+                    <option value="other_issues">Technical Issues</option>
+                    <option value="transactions">Suggestions for improvement</option>
+                    <option value="payments">Suggestions for new features</option>
+                    <option value="other_issues">Any other Issue</option>  
+                </select>
+            </div>
+        </div>
+        <div class="row padding_remove">
+            <div class="col padding_remove">
+                <div class="card margin_top">
+                    <div class="campagin lock Discription">
+                        <textarea ng-model="$parent.description" rows="8" col="14" placeholder="Please Enter Description"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bar bar-footer ADD_CUSTOMER">
+            <div class="row padding_remove">
+                <div class="col padding_remove">
+                    <button type="button" ng-click="send_query()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+

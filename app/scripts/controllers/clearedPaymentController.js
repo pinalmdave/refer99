@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc function
- * @name viralDi.controller:HomeController
+ * @name viralDL.controller:HomeController
  * @description
  * # HomeController
  */
-angular.module('viralDi')
+angular.module('viralDL')
     .controller('ClearedPaymentController', function($scope, $ionicPopup, $ionicModal, User, Storage, $state, $ionicLoading, $ionicHistory, $ionicSideMenuDelegate, ionicDatePicker) {
         var cleared = this;
         $scope.user = Storage.getUser();
@@ -17,7 +17,7 @@ angular.module('viralDi')
                 authToken: $scope.user.authToken
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.defaultCleared(data, function(err, data) {
                 $ionicLoading.hide();
@@ -95,7 +95,7 @@ angular.module('viralDi')
                 toDate: moment($scope.toDate).format('YYYY/MM/DD')
             };
             $ionicLoading.show({
-                template: 'Loading...'
+                template: '<ion-spinner icon="lines"></ion-spinner> Loading'
             });
             User.getClearedData(data, function(err, data) {
                 $ionicLoading.hide();

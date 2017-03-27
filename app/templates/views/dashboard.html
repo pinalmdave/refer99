@@ -2,75 +2,74 @@
     <ion-header-bar align-title="center">
         <button class="button button-icon icon ion-navicon" style="display: block;color:#000;" menu-toggle="left"></button>
         <h1 class="title">Dashboard</h1>
-
-          <div class="bar bar-subheader bar-light custom_header">
+        <div class="bar bar-subheader bar-light custom_header">
             <div class="row">
-                <div class="col" ui-sref="app.new_campaign">
+                <div class="col" ui-sref="app.new_campaign" ng-if="!disable_camp">
                     <div class="plus">
                         <img src="images/ic_newcampaign@2x.png">
-                        <h2>NEW</br>CAMPAIGN</h2>
+                        <h2>NEW</br>OFFER</h2>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col" ng-click="goToSendCoupons()" ng-if="user_camp_data.campaigns.length">
                     <div class="plus">
                         <img src="images/ic_sendcoupon@2x.png">
-                        <h2>SEND</br>COUPON</h2>
+                        <h2>DISTRIBUTE</br>COUPON</h2>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="plus">
+                <div class="col" ng-if="user_camp_data.campaigns.length">
+                    <div class="plus" ui-sref="app.validate_coupon">
                         <img src="images/ic_validatecoupon@2x.png">
                         <h2>VALIDATE</br>COUPON</h2>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="plus">
+                    <div class="plus" ui-sref="app.manage_customers">
                         <img src="images/ic_managecustomer@2x.png">
-                        <h2>MANAGE</br>CUSTOMER</h2>
+                        <h2>MANAGE</br>CUSTOMERS</h2>
                     </div>
                 </div>
             </div>
         </div>
     </ion-header-bar>
-
-    <ion-content>
-            <div class="redapp_bg">
-
-            <div class="row">
-                <div class="col text-center blank_body">
-                    <h6>You don't have any active campaign</h6>
-                    <h6>Create a new campaign to get started</h6>
+    <ion-content class="redapp_bg">
+        <div class="row" ng-if="!user_camp_data.campaigns.length">
+            <div class="col text-center blank_body">
+                <h6>You don't have any active campaign</h6>
+                <h6>Create a new campaign to get started</h6>
+            </div>
+        </div>
+        <div class="row" ng-if="user_camp_data.campaigns.length">
+            <div class="col active_coupon_view">
+                <!-- <h1>ACTIVE CAMPAIGN</h1> -->
+            </div>
+        </div>
+        <div ng-if="user_camp_data.campaigns.length" ng-repeat="campaign in user_camp_data.campaigns | orderBy:'-created'">
+            <div clas="row">
+                <div class="col active_coupon_view_box margin_top">
+                    <h4><strong>Offer Name</strong> <span> : {{campaign.cp_name}}</span></h4>
+                    <h4><strong>Start Date</strong> <span> : {{getDateFormally(campaign.start_date)}}</span></h4>
+                    <h4><strong>End Date</strong> <span> : {{getDateFormally(campaign.end_date)}}</span></h4>
+                    <h4><strong>Coupons Generated</strong> <span> : {{campaign.coupons.length}}</span></h4>
+                    <h4><strong>Coupons Redeemed</strong> <span> : {{campaign.coupons_redeemed.length}}</span></h4>
+                    <h4><strong>Status</strong> <span> : {{getCampStatus(campaign.end_date)}}</span></h4>
+                    <!-- <h4>Coupons Redemptions:</h4> -->
                 </div>
             </div>
-            <!--  <div class="bar bar-footer nav_background" ui-sref="app.screen28">
-                <div class="row">
-                    <div class="col">
-                        <div class="foter_menu">
-                            <img src="images/ic_help@x.png">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="foter_menu">
-                            <img src="images/ic_profile@x.png">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="foter_main">
-                            <img src="images/ic_dashboard@x.png">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="foter_menu">
-                            <img src="images/ic_notification@x.png">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="foter_menu">
-                            <img src="images/ic_settings@x.png">
-                        </div>
-                    </div>
+            <div class="row main_active_width">
+                <!--                 <div class="active_coupon_view_box_pink " ng-click="viewCoupon(campaign.id)">
+                    <h3>VIEW COUPON</h3>
+                </div> -->
+                <div class="active_coupon_view_box_grre ACTION_BUTNNN" ng-click="showCampActions($index,campaign.id)">
+                    <h3>ACTIONS</h3>
                 </div>
-            </div> --> 
+            </div>
         </div>
     </ion-content>
+    <!-- <div class="float-button" ng-if="isPaidUser && ngClock" ui-sref="app.upgrade">
+        <span class="height-fix">
+            <a ui-sref="add-trip" class="content">
+                <i class="ion-arrow-graph-up-right"></i>
+            </a>
+        </span>
+    </div> -->
 </ion-view>

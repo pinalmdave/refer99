@@ -10,9 +10,6 @@
         "com.lampa.startapp": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "de.tmaximini.viralDi"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
         },
@@ -29,7 +26,44 @@
         },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-actionsheet": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-image-picker": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-fcm": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "de.tmaximini.viralDi"
+        }
+    }
 }

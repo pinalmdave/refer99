@@ -2,28 +2,38 @@
   'use strict';
 
   angular
-    .module('viralDi')
+    .module('viralDL')
     .service('User', User);
 
   /** @ngInject */
-  function User(Restangular, Storage, Notification) {
+  function User(Restangular, Storage, Notification, $rootScope, $cordovaDevice) {
     var thisVar = this;
-    this.login = function(data, next) {
+    this.login = function(data, type, next) {
       Restangular
         .one('members')
         .all('login')
-        .post(data)
+        .post(data, {
+          include: 'user'
+        })
         .then(function(data) {
           // do on success
+          if (type == "fb") {
+            data.user_type = "fb";
+          } else {
+            data.user_type = "sys";
+          }
+          if (data.user.last_payment) {
+            data.is_paid_user = true;
+          } else {
+            data.is_paid_user = false;
+          }
           Storage.setUser(data.plain());
-          /*Notification.registerDevice(function() {
-              thisVar.addDeviceToken(function(err, user) {
-                  if (err) {
-                      console.log('err #getUser @User.Service.js: ', err);
-                  }
-              });
-              // do nothing
-          });*/
+          Restangular.setDefaultRequestParams({
+            access_token: data.id
+          });
+          Notification.registerDevice(data.userId, function() {
+            // do nothing
+          });
           return next(null, data.plain());
         }, function(error) {
           // do on failure
@@ -43,10 +53,103 @@
           return next(error, null);
         });
     };
-     this.change_password = function(data,next) {
+    this.update_user = function(id, data, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .customPUT(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.get_user = function(id, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+     this.get_plans = function(filter, next) {
+      Restangular
+        .one('plans')
+        .get(filter)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.get_user_payments = function(id, next) {
+      Restangular
+        .one('members')
+        .one(id)
+        .get({
+          filter: {
+            "include": 'payments'
+          }
+        })
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.get_user_customers = function(next) {
+      Restangular
+        .one('members')
+        .one('get_user_customers')
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+     this.get_max_status = function(next) {
+      Restangular
+        .one('members')
+        .one('get_max_status')
+        .get()
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.change_password = function(data, next) {
       Restangular
         .one('members')
         .all('change_password')
+        .post(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.create_payment = function(data, next) {
+      Restangular
+        .all('payments')
         .post(data)
         .then(function(data) {
           // do on success
@@ -61,6 +164,18 @@
         .one('members')
         .one('send_reset_password_link')
         .get(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data);
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.send_contact_us_query = function(data, next) {
+      Restangular
+        .all('faqs')
+        .post(data)
         .then(function(data) {
           // do on success
           return next(null, data);
@@ -95,49 +210,46 @@
           return next(error, null);
         });
     };
-    
-    this.clearToken = function(data, next) {
+
+    this.clearToken = function(id, next) {
+      var data = {};
+      var devicePlatform = $cordovaDevice.getPlatform();
+      if (devicePlatform === 'Android') {
+        data.m_token_firebase = "";
+      } else if (devicePlatform === 'iOS') {
+        data.m_device = "";
+      } else {
+        return next(null, {});
+        Restangular.setDefaultRequestParams({
+          access_token: ""
+        });
+      }
       Restangular
-        .one('venue')
-        .one('cleargcm')
-        .get(data)
+        .one('members')
+        .one(id)
+        .customPUT(data)
         .then(function(data) {
           // do on success
-          return next(null, data);
+          return next(null, data.plain());
+          Restangular.setDefaultRequestParams({
+            access_token: ""
+          });
         }, function(error) {
           // do on failure
           return next(error, null);
         });
+
     };
-    
-    this.addDeviceToken = function(next) {
-      var user = Storage.getUser();
-      console.log('user', user);
-      var device = Storage.getDevice();
-      console.log('device', device);
-      if (!user) {
-        return next(null, null);
-      } else if (!device || !device.token) {
-        return next(null, user);
-      } else if (user.deviceToken && user.deviceToken == device.token) {
-        return next(null, user);
-      }
-      var data = {
-        id: user.id,
-        apn: false,
-        authToken: user.authToken,
-        regId: device.token
-      };
+
+    this.get_user_notifications = function(queryFilter, next) {
       Restangular
-        .one('venue')
-        .one('gcmreg')
-        .get(data)
+        .one('notifications')
+        .get(queryFilter)
         .then(function(data) {
-          console.log('gcmreg', data)
-          user.deviceToken = device.token;
-          Storage.setUser(user);
-          return next(null, user);
+          // do on success
+          return next(null, data.plain());
         }, function(error) {
+          // do on failure
           return next(error, null);
         });
     };
