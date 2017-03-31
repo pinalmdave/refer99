@@ -14,6 +14,7 @@ angular.module('viralDL')
       withDiscountTypePer: false,
       withDiscountTypeDol: false
     };
+    // console.log('time',new Date(moment().format('DD-MMMM-YYYY')));
     $scope.$on('$ionicView.enter', function(event, viewData) {
       console.log('ionicView.enter');
       $scope.camp_data = {};
@@ -54,7 +55,7 @@ angular.module('viralDL')
           $scope.camp_data.city = user_data.city;
           $scope.camp_data.state = user_data.state ? user_data.state : "default";
           $scope.camp_data.zip_code = user_data.zip_code;
-          $scope.camp_data.start_date = new Date();
+          $scope.camp_data.start_date = new Date(moment().format('DD-MMMM-YYYY'));
           // $scope.camp_data.business_type = "default";
           $scope.cp_screen_first = true;
           $scope.cp_screen_second = false;
@@ -136,6 +137,7 @@ angular.module('viralDL')
             business_name: $scope.camp_data.business_name,
             business_type: $scope.camp_data.business_type,
             business_address: $scope.camp_data.business_address,
+            business_address_opt: $scope.camp_data.business_address_opt?$scope.camp_data.business_address_opt:"",
             contact: $scope.camp_data.contact,
             contact_person: $scope.camp_data.contact_person,
             city: $scope.camp_data.city,

@@ -8,7 +8,7 @@
         <div class="bg_FOr_cupn">
             <div class="row" ng-if="camp_data.members.business_logo">
                 <div class="col text-center">
-                    <div class="logo logo_viEW_OFER">
+                    <div class="logo">
                         <!-- <img ng-if="!camp_data.members.business_logo" ng-src="images/redlogo@x.png"> -->
                         <img ng-if="camp_data.members.business_logo" ng-src="{{base}}/storage/business_logo/{{camp_data.members.business_logo}}">
                     </div>
@@ -110,7 +110,7 @@
  -->
             <table class="TABLE_PENAL">
                 <tbody>
-                     <tr>
+                    <tr>
                         <td style="border: 1px solid #ccc;background-color:#ff3b69; color:#FFF; ">Offer Name</td>
                         <td style="border: 1px solid #ccc;">{{camp_data.cp_name}}</td>
                     </tr>
@@ -127,6 +127,10 @@
                         <td style="border: 1px solid #ccc;">Not Activated</td>
                     </tr>
                     <tr>
+                        <td style="border: 1px solid #ccc; background-color:#ff3b69; color:#FFF;">Activate coupon</td>
+                        <td style="border: 1px solid #ccc;">{{camp_data.cp_share?"After sharing with someone":"Without sharing"}}</td>
+                    </tr>
+                    <tr ng-if="camp_data.add_discount">
                         <td style="border: 1px solid #ccc; background-color:#ff3b69; color:#FFF;">Additional Discount</td>
                         <td style="border: 1px solid #ccc;">{{camp_data.add_discount?camp_data.add_discount_value:"None"}}</td>
                     </tr>
@@ -134,12 +138,11 @@
                         <td style="border: 1px solid #ccc; background-color:#ff3b69; color:#FFF;" rowspan="2">Redeemable At</td>
                         <td style="border: 1px solid #ccc;">
                             <div ng-if="camp_data.redeemable_at=='location'">
-                                {{camp_data.business_address}},{{camp_data.city}},{{camp_data.state}}
+                                {{camp_data.business_address}} {{camp_data.city}} {{camp_data.state}} {{camp_data.zip_code}}
+                                <br>{{camp_data.business_address_opt ? camp_data.business_address_opt :""}}
                             </div>
                             <div ng-if="camp_data.redeemable_at=='online'">
                                 {{camp_data.web_address}}
-                                                                <br>fb asdadfbafv
-
                             </div>
                         </td>
                     </tr>

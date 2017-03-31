@@ -77,7 +77,7 @@ angular.module('viralDL')
     };
     $scope.getCampStatus = function(date) {
       var daysDiff = moment(moment(date)).diff(moment(), 'days', true);
-      if (daysDiff >= 1) {
+      if (daysDiff >= 0) {
         return "Active";
       } else {
         return "Expired";
